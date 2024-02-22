@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>상대경로 1</title>
+  </head>
+
+  <body>
+    <h1>index.html</h1>
+    <h2>상대경로 1</h2>
+
+  <p><strong>index.html</strong>은 모든 웹 문서의 첫 페이지로 약속됨.<br>임의 변경 불가</p>
+  <p>최상위 root 디렉토리 바로 아래 있는 index.html 문서만 첫페이지로 인식</p>
+
+  <ol>
+    <li>  <p><strong>index.html</strong>은 모든 웹 문서의 첫 페이지로 약속됨.<br>
+      임의 변경 불가</p></li>
+    <li><p>최상위 root 디렉토리 바로 아래 있는 index.html 문서만 첫페이지로 인식</p></li>
+  </ol>
+
+  <!-- 
+    상대경로 : 현재 작업중이 문서 기준. 동일한 사이트 안에서의 이동시 사용(내부이동)
+
+    기준 문서
+    ㄴ 기준 파일과 같은 위치에 있는 파일로 이동 : ./파일명.html 혹은 파일명.html
+    ㄴ 기준 파일보다 하위에 있는 파일로 이동 : ./디렉토리명/파일명.html 혹은 디렉토리명/파일명.html
+    ㄴ 기준 파일보다 상위에 있는ㄴ 파일로 이동 : ../파일명.html (내가 현재 있는 곳을 벗어나겠다는 의미)
+   -->
+    <ul>
+      <!-- 
+        현재 기준 문서는 index.html
+         첫페이지로 돌아가고 싶으면 / 가능 
+        그러나 로컬에서는 최상위 문서가 아니라서 다르게 돌아감 
+        웹에서는 가능 
+        리엑트로 사용할 떄는 ./를 기본값으로 사용 
+        싱글 페이지에서는 ./ 생략 
+
+       -->
+      <li><a href="./index.html">첫페이지(홈)으로 바로가기</a></li>
+      <li><a href="about.html">about.html 바로가기</a></li>
+      <li><a href="./contact.html">contact.html 바로가기</a></li>
+      <!-- 같은 위치에 있는 애들 file:///c%3A/MJY/web/HTML/240222_html/root1/contact.html -->
+      <li><a href="./css/style.html">style.html 바로가기</a></li>
+      <!-- 하위 경로에 있느 애들  file:///c%3A/MJY/web/HTML/240222_html/root1/css/style.html -->
+      <li><a href="./images/photo.html">photo.html 바로가기</a></li>
+      <li><a href="./images/interface.html">interface.html 바로가기</a></li>
+      <li><a href="./scripts/script.html">script.html 바로가기</a></li>
+    </ul>
+  
+  </body>
+</html>
