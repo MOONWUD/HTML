@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>form 기본</title>
+</head>
+<body>
+	
+  <h1>form 기본</h1>
+
+  <p>form 관련 태그들 중 최상위 태그</p>
+
+  <p>폼 관련 태그들이 제대로 실행 되려면 form 태그를 반드시 작성해야 함</p>
+
+  <ul>
+    <li><strong>method="get":</strong> 
+     간단한 데이터 전송시 사용. 데이터가 주소 입력란에 표시되므로 보안 유지 안됨.</li>
+    <li><strong>method="post":</strong>
+     http 헤더에 숨겨져 서버로 전송. 일정한 크기 이상의 데이터 전송시 사용. 데이터가 주소 입력란에 표시되지 않아 보안 유지.</li>
+    <li><strong>action="정보를 전송할 서버 주소"</strong></li>
+  </ul>
+
+  <!-- 검색창을 form 하위 태그로 만듦, 전부 form -->
+  
+  <form action="http://정보를 보낼 주소" method="get">
+    <!-- <input type=""> -->
+  </form>
+
+
+</body>
+</html>

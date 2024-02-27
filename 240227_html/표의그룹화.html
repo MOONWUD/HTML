@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>표의그룹화</title>
+</head>
+<body>
+	
+ <h1>표 영역의 그룹화</h1>
+
+<table border="1">
+ <caption>table 전용캡션</caption>
+ <!-- table에서만 쓸 수 있는 캡션임 
+       <h2>, <p>, <div> 등 테이블 요소와 관련없는 태그는 자식으로 쓸 수 없음
+
+       <caption>은 table 하위 요소로 반드시 table 요소와 함께 작성
+        단독 사용 불가능
+        표에 대한 설명
+-->
+<!-- 표의 머릿말 -->
+<thead>
+<tr> <!--1행--> 
+  <th></th>
+  <th>가정용 호스팅</th>
+  <th>기업용 호스팅</th>
+</tr>
+</thead> 
+
+<tbody>
+ <tr> <!--2행--> 
+  <th>디스크 공간</th>
+  <td>1GB</td>
+  <td>500GB</td>
+</tr>
+
+ <tr> <!--3행--> 
+  <th>대역폭</th>
+  <td>5GB / 월</td>
+  <td>500GB / 월</td>
+</tr>
+
+ <tr> <!--4행--> 
+  <th>이메일 계정</th>
+  <td>5</td>
+  <td>10</td>
+</tr>
+
+ <tr> <!--5행--> 
+  <th>서버</th>
+  <td>공유</td>
+  <td>가상서버호스팅(VPS)</td>
+</tr>
+
+ <tr> <!--6행--> 
+  <th>지원방법</th>
+  <td>이메일</td>
+  <td>전화와 이메일</td>
+</tr>
+
+ <tr> <!--7행--> 
+  <td colspan="3">지금 가입하면 10% 할인</td>
+</tr>
+</tbody>
+
+<!-- 표 바닥글(생략 가능) -->
+<tfoot>
+  <tr> <!--7행--> 
+    <td colspan="3">지금 가입하면 10% 할인</td>
+  </tr>
+</tfoot>
+
+</table>
+</body>
+</html>

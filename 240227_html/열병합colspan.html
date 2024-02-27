@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>열 병합 colspan</title>
+</head>
+<body>
+	<h1>열 병합 colspan 속성</h1>
+
+	<ul>
+		<li>colspan = column + span</li>
+		<li>뒤에 오는 셀(th, td)과 병합. 즉 다른 열colspan과 합침</li>
+	</ul>
+<!-- 셀의 수는 동일해야함 -->
+	<table border="1">
+		<tr> <!--1행-->
+      <th></th>
+      <th>9am</th>
+      <th>10am</th>
+      <th>11am</th>
+      <th>12am</th>
+		</tr>
+		<tr> <!--2행-->
+      <th>월요일</th>
+			<td colspan="2">UI 디자인</td>
+			<td>html</td>
+			<td>css</td>
+		</tr>
+		<tr> <!--3행-->
+      <th>화요일</th>
+			<td colspan="3">체육</td>
+			<td>디자인</td>
+		</tr>
+	</table>
+</body>
+</html>

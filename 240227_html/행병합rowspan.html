@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>행 병합 rowspan</title>
+</head>
+<body>
+	<h1>행 병합 rowspan 속성</h1>
+
+	<ul>
+		<li>rowspan = row + span</li>
+		<li>아래에 있는 셀(th, td)과 병합. 즉 다른 행row과 합침</li>
+	</ul>
+<!-- 셀의 수는 동일해야함, 미리 다 채우고 하는 걸 권장 -->
+	<table border="1">
+    <!-- thead 표의 머릿말  -->
+    <thead> 
+		<tr> <!--1행-->
+      <th></th>
+      <th>넷플릭스</th>
+      <th>티빙</th>
+      <th>apple TV</th>
+		</tr>
+    </thead>
+    <!-- tbody 표의 본문 -->
+    <tbody>
+		<tr> <!--2행-->
+      <th>6pm - 7pm</th>
+      <td rowspan="2">영화</td>
+      <td>코미디</td>
+      <td rowspan="3">뉴스</td>
+		</tr>
+		<tr> <!--3행-->
+      <th>7pm - 8pm</th>
+			<td rowspan="2">스포츠</td>
+		</tr>
+    <tr> <!--4행-->
+      <th>8pm - 9pm</th>
+			<td>다큐멘터리</td>
+		</tr>
+    </tbody>
+	</table>
+</body>
+</html>
