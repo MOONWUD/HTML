@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>formEx</title>
+</head>
+<body>
+  <header>
+	<h1>form 연습</h1>
+</header>
+
+<form>
+  <fieldset>
+
+    <legend>상세정보</legend>
+    <label for="user_name">이름</label>: <input type="text" name="userName" id="user_name" placeholder="이름을 작성 하세요" required autofocus> <br>
+    <label for="user_email">이메일</label>: <input type="email" name="userEmail" id="user_email" placeholder="aabc@abc.com">
+
+  </fieldset>
+
+  <fieldset>
+
+    <legend>리뷰</legend>
+     <label for="userSite">사이트를 알게 된 경위는?</label><br>
+      <select name="userSite" id="userSite">
+       <option value="신문광고" selected>신문광고</option>
+       <option value="인터넷 검색">인터넷 검색</option>
+       <option value="블로그">블로그</option>
+       <option value="유튜브">유튜브</option>
+      </select>  
+
+    <hr>
+
+     <div>다시 방문하시겠습니까?</div>
+      <input type="radio" name="choice" id="yes" value="네"><label for="yes">네</label>
+      <input type="radio" name="choice" id="no" value="아니요" checked="checked"><label for="no">아니요</label>
+      <input type="radio" name="choice" id="dontKnow" value="모름"><label for="dontKnow">모름</label>
+   
+    <hr>
+
+     <div><label for="textbox">의견:</label> <textarea name="text" id="textbox" placeholder="여러 줄의 텍스트 박스"></textarea></div>
+   
+    <hr>
+
+     <input type="checkbox" name="decide" id="email" checked> <label for="email">이메일 업데이트에 가입</label>
+
+    <hr>
+
+     <button type="submit">리뷰 전송</button>
+     <button type="reset">전송 취소</button>
+
+  </fieldset>
+</form>
+</body>
+</html>

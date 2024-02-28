@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>video</title>
+</head>
+<body>
+	
+  <h1>video, audio</h1>
+
+  <ul>
+    <li>웹 브라우저에서 플러그인 도움없이 재생</li>
+    <li>다양한 브라우저에서 재생될 수 있도록 하기 위해 source 태그 사용</li>
+    <li>모던 브라우저에서는 video 태그만 작성해도 동작</li>
+  </ul>
+
+  <!-- 
+    <video>
+    <source src="./video/8.mp4" type="video/mp4">
+    <source src="./video/8.webm" type="video/webm">
+    <source src="./video/8.ogv" type="video/ogv">
+    </video>
+
+   video 속성들 : 
+   poster="대체 이미지. 영상을 불러오지 못하거나 불러오기 전에 보이는 이미지"
+   aotoplay 자동재생(크롬의 경우 반드시 음소거가 되어야 실행)
+   muted 음소거
+   loop 반복
+   controls 컨트롤 바
+   preload 재생 전 파일 미리 불러옴. autoplay와 함께 사용되는 경우 적용 안됨
+-->
+
+<video src="./video/8.mp4" autoplay muted loop controls poster="대기하는 동안 볼 수 있는 이미지"></video>
+
+<h2>audio</h2>
+<audio src="./video/8.mp3" autoplay loop></audio>
+
+</body>
+</html>

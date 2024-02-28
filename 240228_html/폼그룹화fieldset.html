@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>폼그룹화fieldset</title>
+</head>
+<body>
+	<header>
+    <h1>폼 그룹화 fieldeset</h1>
+    <p>같은 주제르 가지고 있는 폼 관련 요소를 구분지을 때 사용</p>
+  </header>
+
+
+  <section>
+    <h2>fieldset 요소의 제목 : legend</h2>
+    <p>fieldset 요소 안에 작성되어야 하며 하나의 fieldset 안에 한 번만 사용</p>
+  </section>
+  <hr>
+  
+  <!-- 
+    내가 했음  
+  <form>
+  <section>
+    <h4>회원가입</h4>
+    이름 : <input type="text" name="userName" id="user_name" placeholder="이름을 작성해 주세요"><br>
+    <br>
+    이메일 : <input type="email" name="userEmail" id="user_email" placeholder="메일을 작성해 주세요"> <br>
+    <br>
+    연착처 : <input type="tel" name="userTel" id="user_tel" placeholder="-없이 입력해 주세요"> <br>
+    <br>
+    <button type="submit">가입</button>
+    <button type="reset">취소</button>
+  </section>
+
+  <section>
+    <h4>약관</h4>
+    <textarea name="text" id="texrbox" cols="20" rows="2">이 안의 내용은 약관을 설명한 글 입니다...</textarea> <br>
+    <textarea name="text" id="texrbox" cols="20" rows="2">사용자에게 힌트르 줍니다</textarea>
+  </section>
+</form> -->
+<hr>
+<!-- 선생님하고 함 -->
+ <form>
+  <fieldset>
+    <legend>회원가입</legend>
+    <p>
+      <label>이름: <input type="text" name="userName" id="user_name" placeholder="이름을 작성해 주세요" autofocus></label></p>
+    <p>
+      <label for="user_email">이메일</label>: <input type="email" name="userEmail" id="user_email" placeholder="메일을 작성해 주세요"></p>
+    <p>
+      <label for="user_tel">연락처</label>: <input type="tel" name="userTel" id="user_tel" placeholder="-없이 입력해 주세요"></p>
+      <button type="submit">가입</button>
+      <button type="reset">취소</button> 
+  </fieldset>
+
+  <fieldset>
+    <legend>약관</legend>
+    <h6>첫번째 약관</h6>
+    <textarea name="text" id="texrbox1" cols="20" rows="2">이 안의 내용은 약관을 설명한 글 입니다...</textarea> <br>
+    <textarea name="text" id="texrbox2" cols="20" rows="2">사용자에게 힌트르 줍니다</textarea>
+  </fieldset>
+ </form>
+</body>
+</html>

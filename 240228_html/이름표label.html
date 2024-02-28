@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>이름표label</title>
+</head>
+<body>
+	<header>
+    <h1>이름표 label</h1>
+  </header>
+
+  <section>
+    <ul>
+      <li>인라인</li>
+      <li>폼과 관련된 요소에 이름표 지정</li>
+      <li>label요소를 정의함으로써 폼 요소와 연관시킬 수 있음</li>
+      <li>키보드를 통해 컨트롤이 가능하며 접근성 향상</li>
+      <li>&lt;input id="one"&gt;의 값과 &lt;label for="one"&gt;의 for 값이 동일해야 연결 됨</li>
+    </ul>
+  </section>
+
+  <form>
+    <section>
+      <h2>연결 방법1 </h2>
+      <label>이름 : <input type="text" name="userName"></label>
+      <!-- 전부다 인라인이어야 함, 방해되는 태그가 없어야 함 -->
+    </section>
+    <hr>
+    <section>
+      <h2>연결 방법 2</h2>
+      <table border="1">
+        <tbody>
+          <tr><!--1행-->
+           <th><input type="radio" name="fruits" value="딸기" id="strawberry"></th>
+           <th><label for="strawberry">딸기</label></th>
+          </tr>
+    
+          <tr><!--2행-->
+           <th><input type="radio" name="fruits" value="토마토" id="tomato"></th>
+           <th><label for="tomato">토마토</label></th>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </form>
+ 
+  <section>
+    <p>연결 방법 1</p>
+    이름 : <input type="text" name="userName" id="user_name">
+  </section>
+
+  <hr>
+  <section>
+    <h2>연결 방법 2</h2>
+
+    <table border="1">
+      <tbody>
+      <tr><!--1행-->
+       <th><input type="radio" name="choice" id="딸기"></th>
+       <th>딸기</th>
+      </tr>
+
+      <tr><!--2행-->
+       <th><input type="radio" name="choice" id="토마토"></th>
+       <th>토마토</th>
+      </tr>
+    </tbody>
+    </table> 
+  </section>
+
+</body>
+</html>
