@@ -3,16 +3,28 @@
 <head>
 
 <!-- ** 문자 인코딩을 나타내는 '문자 집합 선언' -->	
-<meta charset="UTF-8">
+ <meta charset="UTF-8">
 
 <!-- HTTP 헤더가 제공하는 정보와 동일한 "프래그마 지시문"
 IE르 만나면 최신 버전(Edge) 방식으로 렌더링 -->
-<meta http-equiv="X-UA-Compatible" content="IF=edge">
+ <meta http-equiv="X-UA-Compatible" content="IF=edge">
+
+ <meta name="apple-mobile-web-app-title" content="meta">
 
 <!-- 문서 정보들 전체 페이지에 적용되는 "문서 레벨 메타데이터" -->
   <meta name="title" content="meta 태그 공부">
   <meta name="description" content="설명: 메타 태그와 관련된 내용을 공부하는 웹문서입니다.">
   <meta name="keywords" content="메타, 웹문서, meta">
+ 
+ <!-- 이전 방문 사이트 정보 추적
+"no-referrer-when-downgrade" http일 때만 전송 -->
+  <meta name="referrer" content="no-referrer-when-downgrade">
+
+<!-- **open graph -->
+<meta property="og:title" content="오픈 그래피 연습">
+<meta property="og:description" content="메신저나 sns, 블로그, 카페 등에 유용하게 사용됨">
+<meta property="og:image" content="https://이미지주소">
+<meta property="og:url" content="http://사이트주소">
 </head>
 
 <body>
@@ -21,6 +33,7 @@ IE르 만나면 최신 버전(Edge) 방식으로 렌더링 -->
   <ul>
     <li><a href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/meta" target="_blank">meta: 문서 레벨 메타데이터 요소</a></li>
     <li><a href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/meta/name" target="_blank">표준 메타데이터 이름</a></li>
+    <li><a href="http://ogp.me" target="_blank">오픈 그래피</a></li>
   </ul>
 </body>
 </html>
