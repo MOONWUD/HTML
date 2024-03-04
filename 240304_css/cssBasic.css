@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+/* 
+css 기본 구조
+선택자 selector {
+  속성 property: 값 value;
+ }    
+*/
+
+h1 { /* 타입 선택자: html 요소를 그대로 가져와 사용 */
+ color:cornflowerblue;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>css 우선순위</title>
+ 
+  <!-- 외부선언 -->
+  <link rel="stylesheet" href="./style.css">
+  
+  <!-- 내부선언 -->
+  <style>
+    #box_title {
+      color:blue;
+    } 
+
+    .box3_bg {
+      color:aquamarine;
+    }
+  </style>
+</head>
+<body>
+	
+  <!-- hmtl에서, 
+  class="box bg1 text_color"는
+ .box, .bg1, .text_color를 적용하겠다는 의미
+여러 개의 클래스 선택자 적용시 띄어쓰기로 구분
+class 속성만 해당되며 id 속성은 안 됨 -->
+  
+<h1>css 우선순위</h1>
+
+  <section id="box1" class="box bg1"
+  style="background-color: antiquewhite;">
+    <h2 id="box_title" class="box3_bg">같은 이름의 선택자 혹은 같은 종류의 속성인 경우</h2>
+    <p>위에서 아래로 순차적으로 적용되고 마지막에 선언된 스타일이 우선 순위를 갖는다.</p>
+  </section>
+
+  <section id="box2" class="box">
+    <h2>같은 선택자가 아닌 다른 종류 선택자인 경우</h2>
+    <p>!important > (직접, inline >) #id(5) > .class(3) > type(1) 순으로 우선 순위를 갖는다.</p>
+  </section>
+
+  <section id="box3" class="box">
+    <h2>다른 종류의 선언문이며 같은 선택자인 경우</h2>
+    <p>(직접, inline > ) 내부선언 > 외부선언 순으로 우선 순위를 갖는다. </p>
+  </section>
+</body>
+</html>

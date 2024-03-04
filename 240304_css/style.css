@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+/* 같은 이름의 선택자 혹은 같은 종류의 속성인 경우 */
+h1 { /*타입 선택자*/ 
+color:blueviolet;
+color:aquamarine;
+}
+
+h1 {
+  color:#236822;
+} /*같은 소성이 적용된 경우 아래 쪽에 작성된 값이 우선 적용*/
+
+/* 같은 선택자가 아닌 다른 종류의 선택자인 경우 */
+
+#box2{ /*아이디 선택자(5)*/
+ background-color: rgb(255, 218, 225);
+}
+
+.box { /*클래스 선택자(3): 한 문서 안에서 같은 이름을 여러 번 사용할 수 있기 때문애 주로 꾸밈 값을 줄 때나 공통된 값 적용시 사용, 타입선택자보다는 클래스선택자가 더 우선 순위 */
+  background-color: rgb(192, 255, 255);
+}
+
+section { /*타입 선택자(1)*/
+  background-color: #efefef; /* 배경색 */
+}
+
+.bg1 {
+  background-color: rgb(131, 174, 255) !important; /*!important 기본 우선 순위가 무시되며 무조건 적용. 꼭 필요한 경우에만 주의해서 작성*/
+}
+
+/* 우선 순위 */
+#box_title {
+  color:chocolate;
+}
+
+.box3_bg {
+  color:#236822;
+} 

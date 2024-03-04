@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+body {
+  background-color: rgb(227, 255, 149);
+}
+
+#title1 {
+  background-color: rgb(255, 255, 255);
+  color: brown;
+}
+
+#title2 {
+  background-color: rgb(255, 255, 255);
+  color: rgb(165, 42, 144);
+}
+
+#title3 {
+  background-color: rgb(255, 255, 255);
+  color: rgb(61, 42, 165);
+}
+
+#title4 {
+  background-color: rgb(255, 255, 255);
+  color: rgb(42, 106, 165);
+}
