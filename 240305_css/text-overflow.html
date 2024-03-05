@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>text-overflow</title>
+
+  <style>
+    .text {
+      background-color: #ddd;
+      width: 300px;
+      white-space: nowrap; /* 줄바꿈 없음. 사전에 이것을 꼭 설정해야지 말줄임표가 가능 */
+      overflow: hidden; /* 지정된 영역을 넘기면 숨김 */
+      text-overflow: ellipsis; /* 말줄임표 */
+/* 말줄임표는 이것이 세트 */
+      text-indent: 10px;
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>text-overflow</h1>
+  <p class="text">css에서 한 줄의 문장일 때 말줄임표 만드는 방법을 알아봅시다~~~~~~~~~~~~~~~~~~~~ </p>
+</body>
+</html>

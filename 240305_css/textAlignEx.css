@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+p {
+  background-color: rgb(255, 240, 223);
+}
+
+.title1 {
+  text-align: left;
+  color: rgb(255, 215, 37);
+  font-family: '감탄로드탄탄체 TTF', sans-serif;
+}
+
+.title2 {
+  text-align: right;
+  color: green;
+  font-family: '감탄로드바탕체 TTF', sans-serif;
+  font-weight: bolder;
+}
+
+.title3 {
+  text-align: center;
+  color: blue;
+  font-family: '감탄로드돋움체 TTF', sans-serif;
+  font-weight: bold;
+}
+.title4 {
+  text-align: justify;
+  color: red;
+  font-family: '감탄로드감탄체 TTF', sans-serif;
+  
+}

@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+body {
+  text-align: center;
+}
+
+h2 {
+  background-color: antiquewhite;
+}
+.title1 {
+  font-family: '감탄로드탄탄체 TTF', sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  font-style: italic;
+  text-shadow: 10px 2px 3px #c2c2c2;
+  color: rgb(112, 64, 0);
+}
+
+.title2 {
+  font-family: '맑은 고딕', sans-serif;
+  font-size: 25px;
+  font-weight: 300px;
+  text-transform: uppercase;
+  text-shadow: 5px 10px 10px #c2c2c2;
+  color: rgb(0, 155, 21);
+}
+
+.title3 {
+  font-family: '나눔고딕', sans-serif;
+  font-size: 20px;
+  font-weight: 200px;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-shadow: 10px 10px 3px #c2c2c2;
+  color: rgb(192, 124, 255);
+}
+
+.title4 {
+  font-family: '감탄로드감탄체 TTF', sans-serif;
+  font-size: 15px;
+  font-weight: 100px;
+  text-shadow: -10px -5px 3px #c2c2c2;
+  color: rgb(45, 154, 255);
+}
+
+.title5 {
+  font-family: '감탄로드바탕체 TTF', sans-serif;
+  font-size: medium;
+  font-weight: lighter;
+  text-shadow: 0 10px  ;
+  color: rgb(255, 114, 220); /* x축 y축. 번짐 생략. 색상 생략시 글자색을 따라감*/
+}
+
+.title6 {
+  font-family: '감탄로드돋움체', sans-serif;
+  font-size: x-small;
+  text-shadow: 
+  0 0 10px #999,
+  10px 10px 10px #154,
+  -10px -10px 10px #413;
+  color: rgb(255, 208, 55);
+} 
