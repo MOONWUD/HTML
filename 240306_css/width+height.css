@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+ /* 
+      블록 요소: p, div, h1, header, main, article, form, ul...
+       ㄴ 가로 값의 경우 부모 요소의 가로 값을 받음
+       ㄴ 일반적인 흐름에서는 블록 요소 옆에 다른 요소가 올 수 없음
+       ㄴ 자식으로 블록, 인라인 요소 등 대부분이 올 수 있음
+       ㄴ 세로 값의 경우 자식 요소의 높이 값을 가져 옴
+       ㄴ width, height로 제어 가능
+
+      인라인 요소: span, img, a, em, input, strong...
+       ㄴ 가로 값의 경우 자식(컨텐츠)의 값을 가져 옴
+       ㄴ 인라인 요소 옆에 다른 인라인 요소가 올 수 있음
+       ㄴ 자식으로 인라인 요소만 올 수 있음
+       ㄴ 세로 값의 경우 자식 요소의 높이 값을 가져 옴
+       ㄴ width, height로 제어 불가능
+    */
+
+ body {
+  font-size: medium;
+  font-weight: bold;
+ }
+
+ .container {
+  background-color: rgb(159, 212, 255);
+  /* 고정 너비 width: 500px; height: 300px; */
+  /* 가변 너비 */
+  width: 70%; /* 상대 단위 : 부모를 기준으로 100분의 70 */
+  /* height: 50%; 세로 %는 부모의 높이 값이 정의되어 있는 경우에만 적용됨 */
+  height: 400px;
+
+/* 블록 */
+/* div.block_box1 종속 선택자: div 요소들 중 클래스명이 block_box1인 요소 */ 
+ }
+ .container div.block_box1 { /* 하위 선택자 : 기준 선택자 하위에 포함된 선택자. 띄어쓰기로 구분.  .container 하위에 있는 .block_box1 선택자 */
+  background-color: rgb(167, 167, 255);
+  width: 40%; height: 40%;
+ }
+ /* 인라인 */
+ .container span.inline_box1 {
+ background-color: rgb(97, 103, 255);
+
+ }
+
+ .block_box2 {
+  background-color: rgb(9, 221, 221);
+  width: 100px;
+  height: 400px;
+
+ }
+ .inline_box2 {
+  background-color: bisque;
+  width: 100px;
+  height: 400px;
+ }

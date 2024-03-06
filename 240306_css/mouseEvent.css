@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+::selection { /*문서의 일부분 강조. 텍스트 드래그했을 때 */
+  background-color: rgb(196, 134, 255);
+}
+
+body {
+  /* 상속 inherit, hmtl의 내용을 물려받겠다. */
+  font-family: '나눔스퀘어네오', '나눔고딕', '맑은 고딕', 돋움, sans-serif;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #222;
+}
+
+h1::selection {
+ background-color: rgb(190, 255, 233);
+}
+
+/* a {
+  color: orange;
+  text-decoration: none;
+} */
+
+/*  https://developer.mozilla.org/ko/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements 
+
+ 의사 클래스, 의사 요소
+ ㄴ :, :: 가상선택자로 다양한 종류가 있으며 주로 실제하는 요소와 함께 작성
+ ㄴ의사 클래스 : 직접 적용되는 것이 아니라 특정 상태에서 요소를 선택하게 만듦 ::hover
+ ㄴ의사요소 : 특정 부분에 스타일을 적용하기 위해 사용 :: after
+*/
+
+/* 
+a:link { 링크 상태일 때(기본) (1) 
+ text-decoration: none;
+ color: black;
+}
+a:visited {  방문했을 때 (1) 
+ color: #cecece;
+}
+a:hover { 마우스 위에 올렸을 때, 가장 많이 쓰임 (1) 
+ background-color:chartreuse;
+ text-decoration: line-through;
+}
+a:active {  클릭했을 때 (1) 
+ color: blue;
+ text-decoration: none;
+}
+ 우선 순위는 다르지 않음. 가상 선택자는 아래쪽에 있는 게 우선적으로 적용 
+ */
+
+ a {
+    color: #222;
+    text-decoration: none;
+  }
+
+a:hover {
+ background-color: rgb(61, 224, 143);
+ color: rgb(255, 255, 255);
+/* 레이아웃이 무너질 수 있기 때문에 잘 사용하지 않음
+ font-size: 30px;
+ font-weight: bold; */
+}
+
+

@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+body {
+  font-family: '함초롱바탕체', 돋움, sans-serif;
+}
+
+.formevent {
+  background-color: antiquewhite;
+}
+
+.form {
+  background-color: rgb(250, 179, 47);
+  color: antiquewhite;
+}
+
+/* p {
+  text-align: center;
+} */
+
+.submit {
+  color: brown;
+  font-weight: bold;
+}
+
+
