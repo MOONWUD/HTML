@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+  <meta charset="utf-8">
+  <title>안쪽여백padding </title>
+  <style>
+    .box {
+      width: 300px;
+      background-color: #CCD3CA;
+    }
+
+    .box1 {
+      padding-top: 20px;
+      padding-bottom: 10px;
+      padding-left: 5px;
+      padding-right: 20px;
+    }
+
+    .box2 {
+      /* 네 방향의 값이 같을 때*/
+      padding: 30px;
+    }
+
+    .box3 {
+      /* top right bottom left 시계방향 */
+      padding: 20px 30px 30px 50px;
+    }
+
+    .box4 {
+      /* top:40px bottom:40px lefr, right:20px*/
+      padding: 40px 20px 40px 20px;
+      padding: 40px 20px; /* top + bottom, right + left*/
+    }
+
+    .box5 {
+      padding: 30px 20px 40px; /* top, right + left, bottom */
+    }
+
+    .box6 {
+      /* top: 50, right: 10, bottom: 50, left: 50 */
+      padding: 50px;
+      padding-right: 10px;
+
+      padding: 50px 10px 50px 50px; /* 더 좋은 방법 */
+    }
+
+  </style>
+</head>
+  
+<body>
+  <h1>기준 요소 안쪽 여백 padding</h1>
+  <p class="box box1">1.패딩(padding)이란, 콘텐츠 영역과 테두리 사이의 여백을 말한다.</p>
+  <p class="box box2">2.패딩(padding)이란, 콘텐츠 영역과 테두리 사이의 여백을 말한다.</p>
+  <p class="box box3">3.패딩(padding)이란, 콘텐츠 영역과 테두리 사이의 여백을 말한다.</p>
+  <p class="box box4">4.패딩(padding)이란, 콘텐츠 영역과 테두리 사이의 여백을 말한다.</p>
+  <p class="box box5">5.패딩(padding)이란, 콘텐츠 영역과 테두리 사이의 여백을 말한다.</p>
+  <p class="box box6">6.패딩(padding)이란, 콘텐츠 영역과 테두리 사이의 여백을 말한다.</p>
+</body>
+</html>
