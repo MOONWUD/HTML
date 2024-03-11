@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>요소실제크기2</title>
+  <style>
+
+    body {
+      /* 어절을 기준으로 줄 바꿈 */
+      word-break: normal;
+      /* 어절네 맞춰 줄 바꿈. 영어 한정 */
+      word-break: break-all;
+      /* 어절을 유지하며 줄바꿈. 한글 적용 */
+      word-break: keep-all;
+    }
+
+    .box {
+      font-weight: bold;
+      background-color: #FFB38E;
+      font-size: 20px;
+    }
+
+    .box1 {
+      background-color: #FF8E8F;
+      color: #fff;
+      width: 400px; height: 300px;
+      outline: 10px solid #FFB38E;
+      margin: 50px auto;
+      /* auto는 0으로 계산 */
+    }
+
+    .box2 {
+      border: solid 3px #E178C5;
+      width: 300px; height: 300px;
+      margin: 0 auto;
+      padding-top: 100px; padding-left: 20px;
+    }
+
+    .box3 {
+      background-color: #D2D180;
+      outline: 4px solid #F1F5A8;
+      width: 300px; height: 400px;
+      margin: 20px auto 0;
+      padding: 20px 10px 0px 30px;
+    }
+
+    .box4 {
+      background-color: #B2B377;
+      border: dotted 2px #D37676;
+      border-top: none;
+      width: 400px; height: 200px;
+      outline: yellowgreen 30px solid;
+      margin: 20px auto 0;
+      padding: 10px 20px 0 0;
+    }
+
+    .box5 {
+      /* 가로600 세로 250 
+         안쪽여백 위아래 50
+                 좌우 20
+         테두리 위10 오5 아10 왼5*/
+
+      background-color: #F1F5A8;
+      width: 600px; height: 250px; 
+      border-color:#FFB38E;
+      border-style: solid;
+      border-width: 10px 5px;
+      padding: 50px 20px;
+    }
+
+    .box6 {
+      width: 150px; height: 200px;
+      margin: auto;
+      margin-top: 50px;
+      padding: 10px 50px 50px;
+      border-width: 10px 4px 5px 4px;
+      border-color: #F1F5A8;
+      border-style: solid;
+    }
+  </style>
+</head>
+  
+<body>
+  <h1>요소의 실제 크기 2</h1>
+
+  <div class="box box1">
+    <p>너비:w400+m0+m0+p0+p0+b0+b0=400</p>
+    <p>높이:h300+m50+50+p0+p0+b0+b0=400</p>
+  </div>
+  <div class="box box2">
+    <p>너비:w300+m0+m0+p0+p20+b3+b3=326</p>
+    <p>높이:h300+m0+m0+p100+p0+b3+b3=406</p>
+  </div>
+  <div class="box box3">
+    <p>너비:w300+m0+m0+p10+p30+b0+b0=340</p>
+    <p>높이:h400+m20+m0+p20+p0+b0+b0=420</p>
+  </div>
+  <div class="box box4">
+    <p>너비:w400+m0+m0+p20+p0+b2+b2=424</p>
+    <p>높이:h200+m20+m0+p10+p0+b0+b2=232</p>
+  </div>
+  <div class="box box5">
+    <p>너비:w600+m0+m0+p20+p20+b5+b5=650</p>
+    <p>높이:h250+m0+m0+p50+p50+b10+b10=370</p>
+  </div>
+  <div class="box box6">
+    <p>너비:w150 + m0 + m0 + p50 + p50 + b4 + b4 = 258</p>
+    <p>높이: h200+m50+m0+p10+p50+b10+b5=325</p>
+    <p>대통령의 임기연장 또는 중임변경을 위한 헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다.</p>
+  </div>
+</body>
+</html>

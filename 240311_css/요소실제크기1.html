@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>요소실제크기</title>
+  <style>
+    .box {
+      width: 500px;
+      height: 300px;
+      font-weight: bold;
+    }
+
+    .box1 {
+      border: 10px solid olive;
+      background-color: orange;
+      margin: 10px;
+      padding: 10px;
+    }
+
+    .box2 {
+      outline: 30px solid #67C6E3;
+      background-color: #DFF5FF;
+      color: #5356FF;
+      margin: 30px;
+      padding: 10px;
+      /* 아웃라인은 실제 크기에 영향을 끼치지 않음 */
+    }
+  </style>
+</head>
+  
+<body>
+  <h1>요소의 실제 크기</h1>
+  <h2>width + margin-left + margin-right + padding-left + padding-right + border-left + border-right</h2>
+  <h2>height + margin-top + margin-bottom + padding-top + padding-bottom + border-top + border-bottom</h2>
+
+  <div class="box box1">
+    <h3>border</h3>
+    <p>.box1의 실제 너비: w500+m10+m10+p10+p10+b10+b10=560px</p>
+    <p>.box1의 실제 높이: h300+m10+m10+p10+p10+b10+b10=360px</p>
+  </div>
+  <div class="box box2">
+    <h3>outline</h3>
+    <p>.box2의 실제 너비:w500+m30+m30+p10+p10=580</p>
+    <p>.box2의 실제 높이:h300+m30+m30+p10+p10=380</p>
+  </div>
+</body>
+</html>

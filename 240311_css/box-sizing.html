@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>box-sizing</title>
+  <style>
+    .box {
+      font-weight: bold;
+      font-size: 20px;
+
+      width: 300px; height: 200px;
+      margin: 30px;
+      padding: 30px;
+      border: 10px solid #FAEF9B;
+    }
+
+    .box1 {
+      /* 요소의 실제 크기 계산 방식 설정 */
+      box-sizing: content-box; /* 기본값 widht+margin+padding+border */
+    }
+
+    .box2 {
+      box-sizing: border-box; /* width(padding+border)+margin */
+    }
+  </style>
+</head>
+  
+<body>
+  <h1>box-sizing</h1>
+  <div class="box box1">
+    <h3>box-sizing: content-box</h3>
+    <p>w300+m60+p60+b20=440</p>
+  </div>
+  <div class="box box2">
+    <h3>box-sizing: border-box</h3>
+    <p>w300(p60+b20)+m60+360</p>
+  </div>
+</body>
+</html>

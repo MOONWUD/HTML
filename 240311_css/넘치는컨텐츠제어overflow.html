@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>넘치는컨텐츠제어overflow</title>
+  <style>
+    body {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    /* table > thead > tr > th 자식 선택
+       table thead tr th
+       table > thead th
+       ">" 바로 밑에 있는 자식만  */
+    table th, table td {
+      background-color: #AAD9BB;
+      width: 200px;
+    }
+
+    table td p {
+      height: 140px;
+      background-color: #D5F0C1;
+    }
+
+    table .box1 {
+      overflow: inherit; /* 상속은 현재 부모나 조상 요소에 overflow가 적용된 게 없으면 성격을 물려받지 못함 */
+    }
+
+    table .box2 {
+      overflow: visible; /* 기본값 */
+    }
+    table .box3 {
+      overflow: hidden; /* 숨김 */
+    }
+    table .box4 {
+      overflow: auto; /* 자동 */
+    }
+    table .box5 {
+      overflow: scroll; /* 스크롤 yx 다 생김 */
+    }
+
+    table + h2  {
+      /* 인접형제 선택자 : 기준 요소 바로 뒤에 나오는 하나의 형제 요소 */
+      color: rgb(97, 97, 255);
+    }
+
+    .box6 + h2 {
+      color: rgb(84, 121, 17);
+    }
+
+    h2 + p {
+      background-color: #D5F0C1;
+      width: 200px; height: 100px;
+    }
+
+    .box6 {
+      /* x축 스크롤 */
+      overflow-x: scroll;
+
+      /* 글자의 띄어쓰기 기준으로 줄 바꿈 처리 */
+      white-space: wrap; /* 기본값 */
+      white-space: nowrap; /* br 요소로 줄바꿈 시키는 것 외엔 자동 줄바꿈 되지 않음. */
+    }
+
+    .box7 {
+      /* y축 스크롤 */
+      overflow-y: scroll;
+      overflow: hidden;
+      overflow: auto;
+
+    }
+
+  </style>
+</head>
+  
+<body>
+  <h1>넘치는 컨텐츠 제어 overflow</h1>
+  <p>고정된 크기를 가진 부모 요소에서 컨텐츠가 넘칠 때 스크롤바 표시 여부 결정</p>
+
+  <table>
+    <tbody>
+      <tr>
+       <th>inherit</th>
+       <th>visible</th>
+       <th>hidden</th>
+       <th>auto</th>
+       <th>scroll</th>
+     </tr>
+     <tr>
+      <td>
+        <p class="box1">한정된 영역에서 컨텐츠가 넘치지 않았을 때</p>
+      </td>
+      <td>
+        <p class="box2">한정된 영역에서 컨텐츠가 넘치면 무조건 보여짐. 한정된 영역에서 컨텐츠가 넘치면 무조건 보여짐. 한정된 영역에서 컨텐츠가 넘치면 무조건 보여짐.</p>
+      </td>
+      <td>
+        <p class="box3">한정된 영역에서 컨텐츠가 넘치면 무조건 숨김. 한정된 영역에서 컨텐츠가 넘치면 무조건 숨김. 한정된 영역에서 컨텐츠가 넘치면 무조건 숨김. 한정된 영역에서 컨텐츠가 넘치면 무조건 숨김. 한정된 영역에서 컨텐츠가 넘치면 무조건 숨김.한정된 영역에서 컨텐츠가 넘치면 무조건 숨김.</p>
+      </td>
+      <td>
+        <p class="box4">한정된 영역에서 컨텐츠가 넘치면 자동으로 스크롤이 생기고 넘치지 않으면 스크롤이 생기지 않음. 한정된 영역에서 컨텐츠가 넘치면 자동으로 스크롤이 생기고 넘치지 않으면 스크롤이 생기지 않음. 한정된 영역에서 컨텐츠가 넘치면 자동으로 스크롤이 생기고 넘치지 않으면 스크롤이 생기지 않음.</p>
+      </td>
+      <td>
+        <p class="box5">한정된 영역에서 컨텐츠가 넘치든 넘치지 않든 무조건 스크롤이 생김. 한정된 영역에서 컨텐츠가 넘치든 넘치지 않든 무조건 스크롤이 생김. 한정된 영역에서 컨텐츠가 넘치든 넘치지 않든 무조건 스크롤이 생김. 한정된 영역에서 컨텐츠가 넘치든 넘치지 않든 무조건 스크롤이 생김.</p>
+      </td>
+     </tr>
+    </tbody>
+  </table>
+
+  <h2>overflow-x</h2>
+  <p class="box6">가로방향, x축으로 오버플로우 적용. 가로방향, x축으로 오버플로우 적용. 가로방향, x축으로 오버플로우 적용.  가로방향, x축으로 오버플로우 적용. 가로방향, x축으로 오버플로우 적용.</p>
+  <h2>overflow-y</h2>
+  <p class="box7">세로방향, y축으로 오버플로우 적용. 세로방향, y축으로 오버플로우 적용.세로방향, y축으로 오버플로우 적용.세로방향, y축으로 오버플로우 적용.세로방향, y축으로 오버플로우 적용.</p>
+</body>
+</html>

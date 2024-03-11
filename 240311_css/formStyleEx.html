@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>formStyleEx</title>
+  <style>
+    form {
+      font-weight: bold;
+      background-color: #DFF5FF;
+      width: 500px;
+      height: 150px;
+      margin: auto;
+      padding: 50px; 
+    }
+
+    fieldset {
+      margin: auto;
+      background-color: #fff;
+      border: 5px solid #378CE7;
+    }
+
+    legend {
+      background-color: #378CE7;
+      color: #E8751A;
+    }
+    
+  </style>
+</head>
+  
+<body>
+  <form>
+    <fieldset>
+      <legend>회원가입</legend>
+      <p>이름: <input type="text" name="userName" id="user_name" maxlength="10"></p> 
+      <p>이메일: <input type="email" name="email" id="email"></p>
+      <button type="submit">가입</button>
+      <button type="reset">취소</button>
+    </fieldset>
+  </form>
+</body>
+</html>
