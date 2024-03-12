@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>formStyleEx</title>
+  <!-- 서체를 쓰기 위한 사전 설정만 해준 것. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- CDN, 주요한 나라에 서버를 주는 것 -->
+  <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap" rel="stylesheet">
+
+  <!-- 외부선언 -->
+  <link rel="stylesheet" href="./formStyleEx.css">
+  <!-- <style>
+    form {
+      font-family: "오아 고딕", 돋움, sans-serif;
+      background-color: #DFF5FF;
+      width: 500px;
+      height: 200px;
+      margin: auto;
+      padding: 50px; 
+    }
+
+    fieldset {
+      margin: auto;
+      background-color: #fff;
+      border: 5px solid #378CE7;
+      padding: 30px;
+      margin: auto;
+      text-align: right;
+      border-radius: 20px;
+    }
+
+    legend {
+      background-color: #378CE7;
+      color: #FFEDD8;
+      padding: 5px 10px;
+      text-align: left;
+      border-radius: 10px;
+    }
+
+    p {
+      color: #FFB38E;
+    }
+
+    input {
+      border: none;
+      border-bottom: 2px solid #378CE7;
+      width: 300px;
+    }
+
+    button {
+      background-color: #378CE7;
+      color: #FFEDD8;
+      border: none;
+      padding: 3px 15px;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #FFB38E;
+    }
+  </style> -->
+</head>
+  
+<body>
+  <!-- <form>
+    <fieldset>
+      <legend>회원가입</legend>
+      <p><label for="user_name">이름: </label><input type="text" name="userName" id="user_name" maxlength="10" autofocus></p> 
+      <p><label for="email">이메일: </label><input type="email" name="email" id="email"></p>
+      <button type="submit">가입</button>
+      <button type="reset">취소</button>
+     button 태그는 form에 속해 있고, a 태그는 form에 속하지 않아도 됨 
+    </fieldset>
+  </form> -->
+
+  <form>
+    <!-- 
+      h1 h2 p table
+      <button>
+        폼과 관련된 값을 서버로 전송할 때 사용
+        사용자와의 상호작용이 필요할 때 사용(값을 서버에 전송하고 그 결과를 사용자에게 피드백)
+
+      <a>
+        다른 페이지로의 이동이 필요할 때
+        페이지 간의 이동(더보기, 새창 띄우기, 서브페이지, 외부 페이지 이동 등등)
+        이벤트 팝업...  
+     -->
+    <fieldset>
+      <legend>회원가입</legend>
+      <label for="user_name">이름: </label>
+      <input type="text" name="userName" id="user_name" maxlength="10" autofocus required>
+      <br>
+      <label for="user_email">이메일: </label>
+      <input type="email" name="email" id="user_email">
+      <br>
+      <button type="submit">가입</button>
+      <button type="reset">취소</button>
+    </fieldset>
+  </form>
+</body>
+</html>

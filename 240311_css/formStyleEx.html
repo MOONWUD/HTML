@@ -5,10 +5,10 @@
   <title>formStyleEx</title>
   <style>
     form {
-      font-weight: bold;
+      font-family: "오아 고딕", 돋움, sans-serif;
       background-color: #DFF5FF;
       width: 500px;
-      height: 150px;
+      height: 200px;
       margin: auto;
       padding: 50px; 
     }
@@ -17,13 +17,42 @@
       margin: auto;
       background-color: #fff;
       border: 5px solid #378CE7;
+      padding: 30px;
+      margin: auto;
+      text-align: right;
+      border-radius: 20px;
     }
 
     legend {
       background-color: #378CE7;
-      color: #E8751A;
+      color: #FFEDD8;
+      padding: 5px 10px;
+      text-align: left;
+      border-radius: 10px;
     }
-    
+
+    p {
+      color: #FFB38E;
+    }
+
+    input {
+      border: none;
+      border-bottom: 2px solid #378CE7;
+      width: 300px;
+    }
+
+    button {
+      background-color: #378CE7;
+      color: #FFEDD8;
+      border: none;
+      padding: 3px 15px;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #FFB38E;
+    }
+
   </style>
 </head>
   
@@ -31,10 +60,11 @@
   <form>
     <fieldset>
       <legend>회원가입</legend>
-      <p>이름: <input type="text" name="userName" id="user_name" maxlength="10"></p> 
-      <p>이메일: <input type="email" name="email" id="email"></p>
+      <p><label for="user_name">이름: </label><input type="text" name="userName" id="user_name" maxlength="10" autofocus></p> 
+      <p><label for="email">이메일: </label><input type="email" name="email" id="email"></p>
       <button type="submit">가입</button>
       <button type="reset">취소</button>
+      <!-- button 태그는 form에 속해 있고, a 태그는 form에 속하지 않아도 됨 -->
     </fieldset>
   </form>
 </body>

@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+form {
+  background-color: #FFF6E9;
+  color: #222;
+  font-family: "Sunflower", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  max-width: 500px; /* 최대 500이상으로 커지지 않음 */
+  min-width: 300px; /* 최소 300이하로는 작아지지 않음 */
+  margin: 20px auto;
+  overflow: hidden;
+  /* 
+    마진상쇄 현상 : 일반적인 흐름에서,
+     자식의 margin-top과 부모요소의 margin-top이 만나면 둘 중 큰 값이 부모에게 적용
+     해결 방법 -> 부모요소에 overflow:hidden;
+  */
+}
+
+form fieldset {
+  border-radius: 20px;
+  border: 2px solid #0D9276;
+  width: 70%;
+  margin: 50px auto;
+  text-align: right;
+  padding: 5% 8%;
+}
+
+form fieldset legend {
+  text-align: left;
+  background-color: #0D9276;
+  color: #FFF6E9;
+  padding: 4px 10px;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+
+label {
+  color: #0D9276;
+}
+
+form fieldset input {
+  width: 60%;
+  padding: 4px 8px;
+  border: 2px solid transparent;
+  border-bottom: 2px solid #0D9276;
+  margin-bottom: 10px;
+  background-color: transparent;
+  outline: none; /* 크롬, 엣지, 웨일 등 모든 브라우저에서 생기는 현상으로 포커스 상태일 때 테두리 없앰 */
+  font-family: inherit; /* 상속 */
+  color: inherit;
+
+}
+
+form fieldset button {
+  border: none;
+  background-color: #0D9276;
+  color: #FFF6E9;
+  padding: 5px 20px;
+  font-family: inherit;
+  cursor: pointer;
+}
+/* 
+  텍스트 필드 : 마우스 이벤트
+   ㄴ 기본일 때는 border-bottom만 있고
+   ㄴ 마우스를 올렸을 때는 boder 전부가 있고
+   ㄴ 클릭했을 때는 배경색
+
+  버튼 : 마우스 이벤트
+*/
+/* 속성(특성) 선택자: 요소[속성], 요소[속성=값], [속성] */
+form fieldset input:hover {
+  border: #0D9276 2px solid;
+}
+
+form fieldset input[name=userName]:focus { /* :focus 포커스가 잡혔을 때*/
+  background-color: #BBE2EC;
+  border: 2px solid transparent;
+}
+
+form fieldset input[name=email]:focus {
+  border: 2px solid transparent;
+  background-color: #40A2E3;
+}
+form fieldset button:hover {
+  background-color: #BBE2EC;
+}
