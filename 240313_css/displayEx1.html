@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>displayEx1</title>
+  <style> 
+    .gnb {
+      padding-left: 0;
+      text-align: center;
+    }
+
+    .gnb li {
+      display: inline-block;
+      text-align: center;
+      /* background-color: rgb(211, 255, 240); */
+      
+    }
+
+    .gnb li a {
+      text-decoration: none;
+      color: #E78895;
+      display: block; /* a의 필수 제어 요소  */
+      background-color: #FFF7F1;
+      border: 3px solid #E78895;
+      padding: 10px 20px;
+      font-weight: bold;
+      font-size: 20px;
+      text-transform: uppercase;
+      margin: 0 5px;
+    }
+
+    .gnb li:hover a {  /* li에 마우스를 올리면 하위의 a를 바꿈 */
+      background-color: #E78895;
+      color: #FFF7F1;
+      cursor: pointer;
+    }
+
+   
+
+  </style>
+</head>
+  
+<body>
+  <h1>display 연습</h1>
+
+  <ul>
+    <li>마우스를 올리면 글자색과 배경색 변경</li>
+    <li>중앙 정렬</li>
+  </ul>
+
+  <menu class="gnb">
+    <li><a href="#">menu1</a></li>
+    <li><a href="#">menu2</a></li>
+    <li><a href="#">menu3</a></li>
+    <li><a href="#">menu4</a></li>
+  </menu>
+</body>
+</html>

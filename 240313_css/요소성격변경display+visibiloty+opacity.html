@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>요소성격변경display+visibiloty+opacity</title>
+  <style>
+    ul {
+      background-color: #fdf9e3;
+      width: 80%;
+      margin: 50px auto;
+      font-weight: bold;
+      font-size: 20px;
+      text-transform: capitalize;
+      padding-left: 0;
+    }
+
+    ul li {
+      border: 1px solid #265073;
+      background-color: #9AD0C2;
+      padding: 4px 6px;
+    }
+    .menu1 {
+      height: 50px;
+      text-align: center;
+    }
+
+    .menu1 li {
+      display: inline; /* 요소의 기본 성격 변경. 상속 x 해당 요소에만 적용 */
+      width: 200px;
+    }
+
+    .menu2 {
+      text-align: center;
+    }
+
+    .menu2 li {
+      width: 150px;
+      display: inline-block; 
+      /* 
+       인라인, 블록 성격 모두 가짐 
+        ㄴ 인라인처럼 띄어쓰기, 줄바꿈 인식
+        ㄴ 인라인처럼 line-height 값을 가짐
+        ㄴ 블록처럼 widht, height 값을 가짐
+        ㄴ 가로 중앙 정렬의 경우 인라인, 블록 적용 방식 다 가능. 다만, 띄어쓰기가 있어 인라인 방식으로 정렬하는 것이 좀 더 편함 
+      */
+    }
+
+    .menu1 .none {
+      display: none; /* 브라우저 상에서 없는 존재. 코드창에서만 확인 가능하며 레이아웃에 영향을 줌. */
+    }
+    .menu1 .opacity {
+      opacity: 0.322; /* 불투명도 조절. 자식에게 영향을 줌. 0~1*/
+    }
+
+    .menu1 .bg {
+      background-color: rgba(255,20,153,0.5);
+    }
+    .menu2 .hidden {
+      visibility: hidden; /* 브라우저 영역은 남으나 컨텐츠가 보이지 않음. visible 보임, hidden 숨김 */
+    }
+    
+  </style>
+</head>
+  
+<body>
+  <h1>요소의 성격 변경 display</h1>
+  <h2>visibiloty, opacity</h2>
+
+  <ul class="menu1">
+    <li>홈(home)</li>
+    <li>상품(product)</li>
+    <li class="none">서비스(service)</li>
+    <li class="opacity">소개(about)</li>
+    <li class="bg">연락처(contact)</li>
+  </ul>
+
+  <ul class="menu2">
+    <li>홈(home)</li>
+    <li>상품(product)</li>
+    <li class="hidden">서비스(service)</li>
+    <li>소개(about)</li>
+    <li>연락처(contact)</li>
+  </ul>
+</body>
+</html>

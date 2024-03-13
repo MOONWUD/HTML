@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>accen-color</title>
+  <style>
+    /* accent-color 속성
+       input type=checkbox, radio, range, progress 컨트롤 값 제어
+    */
+
+    form fieldset {
+      border: 3px solid #FFB534;
+      font-weight: bold;
+      padding: 20px;
+      width: 300px;
+    }
+
+    form fieldset input[type=radio] {
+      accent-color: #FFB534;
+    }
+
+    form fieldset progress {
+      accent-color: #FFB534;
+    }
+
+    form fieldset input[type=range] {
+      accent-color: #FFB534;
+    }
+
+  </style>
+</head>
+  
+<body>
+  <form>
+    <fieldset>
+     <legend>checkbox, radio</legend>
+     <input type="radio" name="cakes" id="hottcake" value="핫케이크" checked>
+     <label for="hotcake">🥞</label>
+     <input type="radio" name="cakes" id="pancake" value="팬케이크">
+     <label for="pancake">🧇</label>
+     <input type="radio" name="cakes" id="mooncake" value="월병">
+     <label for="mooncake">🥮</label>
+    </fieldset>  
+
+    <fieldset>
+      <legend>progress</legend>
+      <label for="userProgress">progress</label>
+      <progress id="userProgress" min="0" max="100" value="70"></progress>
+    </fieldset>
+
+    <fieldset>
+      <legend>range</legend>
+      <label for="userrange">range</label>
+      <input type="range" id="userrange">
+    </fieldset>
+  </form>
+</body>
+</html>
