@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>viewport단위</title>
+  <style>
+    body {
+      margin: 0;
+      font: bold 20px "나눔고딕", sans-serif;
+    }
+
+    .box1 {
+      background-color: #F1FADA;
+      width: 800px; height: 300px;
+    }
+
+    .box1 p { 
+      background-color: rgba(38, 80, 115,0.5);
+      width: 60%; height: 60%;
+    }
+
+    .box2 {
+      background-color: #2D9596;
+      width: 800px; height: 300px;
+    }
+
+    .box2 p {
+      background-color: rgba(154, 208, 194,0.5);
+      width: 60vw; height: 60vh; 
+      /* 내가 지금 열어둔 브라우저의 크기, 반응형에 잘 적응 */
+    }
+  </style>
+</head>
+  
+<body>
+  <h1>viewport단위</h1>
+  <ul>
+    <li>vw: viewport width, vh: viewport height</li>
+    <li>뷰포트의 가로 세로 값을 기주으로 사용하는 상대 단위 값</li>
+    <li>100분의 1단위</li>
+    <li>상대 단위인 %는 부모를 기준으로 값을 정하지만, vw vh는 부모와 상관없이 뷰포트를 기준으로 값을 정한다</li>
+
+    <div class="box1">
+      <p>%</p>
+    </div>
+    
+    <div class="box2">
+      <p>뷰포트 기준 단위 값 : vw, vh</p>
+    </div>
+  </ul>
+</body>
+</html>

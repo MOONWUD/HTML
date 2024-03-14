@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>rem</title>
+  <style>
+    html { /* rem의 최상위 root 요소 */
+      font-size: 18px;
+    }
+    body{
+      font-size: 20px;
+    }
+
+    .wrapper * {
+      border: 3px solid #2D9596;
+      display: block;
+      margin: 20px; padding: 20px;
+    }
+
+    .wrapper {
+      border: 3px solid #2D9596;
+      font-size: 1em; /* 20px */
+      font-size: 1rem; /* 18px */
+    }
+
+    .wrapper .box {
+      font-size:  1.5em; /* 30px */
+      font-size:  1.5rem; /* 27px */
+    }
+
+    .wrapper .box p {
+      font-size: 1.5em; /* 45px */
+      font-size: 1.5rem; /* 27px */
+    }
+
+    .wrapper .box p span {
+      font-size: 1.5em; /* 67.5px */
+      font-size: 1.5rem; /* 27px */
+    }
+  </style>
+</head>
+  
+<body>
+  <h1>rem 단위</h1>
+  <p>root, 즉 최상위 요소(html)의 font-size를 기준으로 설정</p>
+
+  <div class="wrapper">
+    .wrapper 1rem ==
+    <div class="box">
+      .box 1.5rem ==
+      <p>
+        p 1.5rem ==
+        <span>span 1.5rem</span>
+      </p>
+    </div>
+  </div>
+</body>
+</html>

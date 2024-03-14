@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>em1</title>
+  <style>
+    body { 
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    /*  * { 전체 선택자 } */
+    
+    .wrapper * {
+      border: 3px solid #378CE7;
+      padding: 20px;
+      margin: 20px;
+      display: block;
+    }
+    .wrapper {
+      border: 3px solid #378CE7;
+      font-size: 1em;
+      /* 
+        브라우저 기본 폰트 사이즈 16px
+        1em = 16px
+      */
+    }
+    .wrapper >h2 {
+      font-size: 1.2em;
+      /* 
+        부모인 .wrapper 의 폰트 사이즈 16px
+        1.2em => 19px(19.2)        
+        .wrapper 폰트 사이즈 22px = 현재 h2의 1em 값
+        1.2*22 = 26.4px
+      */
+    }
+    .wrapper > h2 > span {
+      font-size: 1em;
+      /* 
+        부모의 h2의 현재 폰트 사이즈는 19.2px
+        1em => 19.2px
+        상대적으로 계속 변화
+        1em = 26.4px 
+      */
+    }
+    .wrapper > p {
+      font-size: 1em;
+      /* 
+        부모인 .wrapper의 폰트 사이즈 16px
+        1em => 16px
+        1em => 22px
+      */
+    }
+    .wrapper > .box {
+      font-size: 1.1em;
+      /* 
+        부모인 .wrapper의 폰트 사이즈 22px
+        body > .wrapper : 1em => 22px
+        .box 1.1em => 1.1*22 = 24.2px
+        1.1 em => 24.2px
+      */
+    }
+    .wrapper > .box > p {
+      font-size: 1.1em;
+      /* 
+        p의 부모인 .box의 폰트 사이즈 24.2px <- 이 값이 p의 1em 의 값
+        p 1.1em => 1.1*24.2 = 26.62px
+        1.1em => 26.62px
+      */
+    }
+    .wrapper > .box > p > span {
+      font-size: 0.8em;
+      /* 
+        부모인 p의 폰트 사이즈 26.62px
+        span 1em => 26.62
+        0.8*26.62 = 21.296
+        0.8em => 21.296px
+      */
+    }
+  </style>
+</head>
+  
+<body>
+  <h1>em 단위</h1>
+  <ul>
+    <li>알파벳 M을 기준으로 만들어진 단위</li>
+    <li>부모의 "font-size"를 기준으로 값 설정</li>
+    <li>브라우저의 기본 폰트 사이즈: 16px</li>
+  </ul>
+  <div class="wrapper">
+    .wrapper 1em ==
+    <h2>
+      h2 1.2em ==
+      <span>span 1em ==</span>
+    </h2>
+    <p>p 1em ==</p>
+    <div class="box">
+      .box 1.1em ==
+      <p>p 1.1 em==
+       <span>span 0.8em ==</span>
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>

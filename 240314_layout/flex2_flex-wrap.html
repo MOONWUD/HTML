@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>flex2_flex-wrap</title>
+  <style>
+    body {
+      margin: 0;
+      font-size: 2em;
+      font-weight: bold;
+      text-align: center;
+    }
+    .wrapper {
+      border: 6px solid #00065a;
+      width: 80vw;
+      margin: 2vw auto;
+    }
+    
+    .wrapper .item {
+      color: #ffffff;
+    }
+    .wrapper .item1 {
+      background-color: #7b96ff;
+    }
+    .wrapper .item2 {
+      background-color: #4b6fff;
+    }
+    .wrapper .item3 {
+      background-color: #0033ff;
+    }
+
+    #container {
+      display: flex;
+      flex-direction: row; /* 기본값 */
+
+      /* 플렉스 아이템은 한 줄 또는 여러 줄 배치. 줄바꿈 */
+      flex-wrap: nowrap; /* 기본값. 플랙스 아이템 한 줄 배치 */
+      flex-wrap: wrap;
+      flex-wrap: wrap-reverse; /* 역방향 줄바꿈 */
+    }
+
+    #container .item {
+      width: 50%; /* 나를 감싸고 있는 부모 요소의 반을 원하면 % */
+      height: 20vh;
+    }
+
+  </style>
+</head>
+  
+<body>
+  <h1>flex2 : flex-wrap</h1>
+  <div class="wrapper" id="container"> <!--flex-container-->
+    <div class="item item1">item1</div> <!--flex-item-->
+    <div class="item item2">item2</div> <!--flex-item-->
+    <div class="item item3">item3</div> <!--flex-item-->
+  </div>
+</body>
+</html>

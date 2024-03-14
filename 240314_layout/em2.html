@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>em2</title>
+  <style>
+    body {
+      font-size: 22px;
+    }
+
+    .container {
+      font-weight: bold;
+      background-color: #F1F5A8;
+      color: #85863b;
+      width: 600px; height: 400px;
+      width: 37.5em; height: 25em;
+      margin: 30px auto;
+      margin: 1.875em auto;
+    }
+
+    .container .wrapper { 
+      font-size: 16px;
+      /* em을 쓰면 하위에 다 영향을 줌 */
+    }
+
+    .container .wrapper .box { 
+      background-color: #fffae6;
+      width: 400px; height: 200px;
+      width: 25em; height: 12.5em;
+      margin: 10px auto;
+      margin: 0.625em auto;
+    }
+  </style>
+</head>
+  
+<body>
+  <h1>em의 단위</h1>
+    <ul>
+      <li>나를 감싸고 있는 <strong>부모 요소의 font-size</strong>를 기준으로 계산</li>
+    </ul>
+
+    <div class="container">
+      .comtainer 
+      <div class="wrapper">
+        .wrapper
+        <div class="box">.box</div>
+      </div>
+    </div>
+</body>
+</html>

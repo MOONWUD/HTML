@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>vwVSpercent</title>
+  <style>
+    .box1 { 
+      width: 60vw; height: 300px;
+      background-color: #9AD0C2;
+    }
+    
+    .box2 { 
+      width: 60vw; height: 300px;
+      background-color: #85bdd3;
+    }
+    
+    .box1 h2 { 
+      width: 80%; height: 200px;
+      background-color: rgba(241, 243, 110,0.5);
+      /* 부모를 기준으로 하기 때문에 부모 요소를 절대 넘지 않음. 부모 요소가 없으면 적용 X */
+    }
+
+    .box2 h2{ 
+      width: 80vw; height: 200px;
+      background-color: rgba(159, 154, 208,0.5);
+      /* viewport를 기준으로 하기 때문에 부모 요소를 넘김 */
+    }
+  </style>
+</head>
+  
+<body>
+  <h1>vw와 % 차이</h1>
+  
+  <div class="box1">
+    <h2>80%: 부모를 기준으로 두기 때문에 부모 요소를 넘지 않음</h2>
+  </div>
+  <div class="box2">
+    <h2>80%: 뷰포트를 기준으로 두기 때문에 부모 요소를 넘김</h2>
+  </div>
+</body>
+</html>
