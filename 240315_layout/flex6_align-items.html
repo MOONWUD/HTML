@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>flex3_flex-flow</title>
+  <style>
+    body {
+      margin: 0;
+      font-size: 2em;
+      font-weight: bold;
+      text-align: center;
+    }
+    .wrapper {
+      border: 6px solid #000000;
+      width: 80vw;
+      margin: 2vw auto;
+
+      display: flex;
+      flex-flow: row nowrap;
+      height: 40vh;
+      /* 주축 기준 중앙 정렬 */
+      justify-content: center;
+      /* 플렉스 아이템 사이의 여백 10px */
+      gap: 10px;
+    }
+    
+    .wrapper .item { color: #ffffff; }
+    .wrapper .item1 { background-color: #1e2900; }
+    .wrapper .item2 { background-color: #415800; }
+    .wrapper .item3 { background-color: #76a100; }
+    .wrapper .item4 { background-color: #a0da00; }
+
+    #container1 {
+      /* 교차죽 기준 아이템 하니씩 정렬 */
+      align-items: stretch; /* 기본값. 아이템 높이값이 없어도 컨테이너의 높이값만큼 아이템 확장 정렬 */
+      /* 블럭의 가로값은 부모에게서 가져오고 인라인의 가로값은 자식(컨텐츠)에게서 가져온다. 높이값은 둘 다 컨텐츠의 값 */
+      align-items: flex-start; /* 교차축 기준 시작점부터 정렬 */
+      align-items: flex-end;
+      align-items: center;
+    } 
+    #container2 {
+      /* 주축 세로 */
+      flex-direction: column;
+      /* 주축은 col, 교차축은 row */
+      align-items: flex-start; 
+      align-items: flex-end; 
+      align-items: center; 
+    } 
+  </style>
+</head>
+  
+<body>
+  <h1>flex3 : flex-flow</h1>
+  <div class="wrapper" id="container1"> <!--flex-container-->
+    <div class="item item1">item1</div> <!--flex-item-->
+    <div class="item item2">item2</div> <!--flex-item-->
+    <div class="item item3">item3</div> <!--flex-item-->
+  </div>
+
+  <div class="wrapper" id="container2"> <!--flex-container-->
+    <div class="item item1">item1</div> <!--flex-item-->
+    <div class="item item2">item2</div> <!--flex-item-->
+    <div class="item item3">item3</div> <!--flex-item-->
+  </div>
+</body>
+</html>

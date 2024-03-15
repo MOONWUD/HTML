@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>flex4_gap</title>
+  <style>
+    body {
+      margin: 0;
+      font-size: 2em;
+      font-weight: bold;
+      text-align: center;
+    }
+    .wrapper {
+      border: 6px solid #000000;
+      width: 80vw;
+      margin: 2vw auto;
+    }
+    
+    .wrapper .item {
+      color: #ffffff;
+
+    }
+    .wrapper .item1 {
+      background-color: #090029;
+    }
+    .wrapper .item2 {
+      background-color: #4a007c;
+    }
+    .wrapper .item3 {
+      background-color: #cc0099;
+    }
+    .wrapper .item4 {
+      background-color: #f74ebe;
+    }
+
+    #container {
+      /* 아이템 줄바꿈. 주축의 방향이 오른쪽 -> 왼쪽 */
+      display: flex;
+      flex-flow: row-reverse wrap;
+
+      /* 아이템의 행과 열 사이의 간격. 아이템과 아이템 사이의 여백. 작업을 할 수 없는 여백 */
+      gap: 0; /* 기본값 */
+      gap: 20px 10px; /* row-gap column-gap */
+      gap: 20px;
+    }
+
+    #container .item {
+      width: 40%;
+      height: 15vw;
+      margin: 10px; /* 요소가 갖고 있는 여백. gap이랑 다름 */
+
+    }
+
+  </style>
+</head>
+  
+<body>
+  <h1>flex4 : gap</h1>
+  <div class="wrapper" id="container"> <!--flex-container-->
+    <div class="item item1">item1</div> <!--flex-item-->
+    <div class="item item2">item2</div> <!--flex-item-->
+    <div class="item item3">item3</div> <!--flex-item-->
+    <div class="item item4">item4</div> <!--flex-item-->
+  </div>
+</body>
+</html>

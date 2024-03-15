@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>flexEx2</title>
+  <style>
+    /* body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    } */
+    .box {
+      font-weight: bold;
+      list-style: none; 
+      border: 3px solid #000;
+      width: 70vw; height: 70vh;
+      /*box-sizing: border-box;  w/h+p+b*/
+
+      /* css 함수 : calc(값 * 값) 반드시 연산자를 띄어쓰기 */
+      margin: 15vh auto;
+      margin: calc(15vh - 3px) auto;
+      display: flex; 
+      flex-direction: column; /*col | row - */
+      flex-wrap: wrap;
+      padding-left: 0;
+
+      justify-content: center;
+      align-content: center;
+
+     
+
+     
+    }
+
+    .item { 
+      color: #fff;
+      height: 15%; /* 부모의 값이 한정되어 있을 때 높이 값을 %로 정할 수 있음 */
+      /* 주축 row */
+      width: 50%;
+      margin: 0 10px;
+       /* line-height: ; px과 한줄일 떄만 가능 */
+      display: flex; /* 플렉스는 상속 X */
+      justify-content: center;
+      align-items: center;
+    }
+    .item1 { background-color: #fcff40; }
+    .item2 { background-color:rgb(77, 248, 77); }
+    .item3 { background-color: #40e9ff; }
+    .item4 { background-color: #d940ff; }
+    .item5 { background-color: #ff7c40; }
+  </style>
+</head>
+  
+<body>
+  <!-- 내부 박스, 글자 좌우, 상하 중앙 정렬 -->
+  <ul class="box">
+    <li class="item item1">item1<br>item</li>
+    <li class="item item2">item2<br>item</li>
+    <li class="item item3">item3<br>item</li>
+    <li class="item item4">item4<br>item</li>
+    <li class="item item5">item5<br>item</li>
+  </ul>
+</body>
+</html>

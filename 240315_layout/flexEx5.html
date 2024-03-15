@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>flexEx5</title>
+  <style>
+    /* body {
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+    }
+
+    form div {
+      display: flex;
+      flex-direction: row;
+      width: 50vw;
+      padding: 10px 0;
+    }
+
+    form div label {
+      background-color: rgb(194, 255, 235);
+      margin: 0 10px;
+      width: 50%;
+      text-align: right;
+      padding: 5px 0;
+    } */
+
+    h1 {text-align: center;}
+
+    form .container {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border: 1px solid #000;
+      display: flex;
+      /* 주축이 row
+      justify-content: center;
+      flex-wrap: wrap; */
+      flex-direction: column;
+      align-items: center;
+    }
+
+    form .container li { /* flex-item */
+      /* background-color: #944b02; */
+      margin: 0.3rem 0;
+      display: flex;
+      flex-direction: row;
+      text-align: right;
+    }
+    form .container li label { /* flex 적용시 inline 성격이 아님. flex성격을 가짐 */
+      background-color: #BBE2EC;
+      margin-right: 0.4rem;
+      width: 10rem;
+      display: flex;
+      justify-content: flex-end; /* 플렉스 아이템의 성격을 가졌기 떄문에 플렉스의 속성으로 정렬 */
+      align-items: center;
+      padding: 0.4rem;
+    }
+    form .container li input[type=text]{
+      outline: none;
+      border: 1px solid #ddd;
+      padding: 0.3rem;
+      width: 12rem;
+    }
+
+    #flex3, #flex4, #flex5 {
+      height: 5rem;
+    }
+  </style>
+</head>
+  
+<body>
+  <h1>각 폼 제목의 세로 중앙 정렬</h1>
+
+  <!-- <form class="form">
+    <div class="txt1"><label for="txt1">채널 키워드</label>
+    <input type="text" placeholder="플렉스 적용하기" id="txt1"></div>
+    <div class="txt2"><label for="txt2">채널 키워드</label>
+    <input type="text" placeholder="플렉스 적용하기" id="txt2"></div>
+    <div class="txt3"><label for="txt3">채널 키워드 채널 키워드</label>
+    <input type="text" placeholder="플렉스 적용하기" id="txt3"></div> 
+    <div class="txt4"><label for="txt4">채널 키워드 channel keyword</label>
+    <input type="text" placeholder="플렉스 적용하기" id="txt4"></div>
+    <div class="txt5"><label for="txt5">channel keyword 채널 키워드</label>
+    <input type="text" placeholder="플렉스 적용하기" id="txt5"></div>
+  </form> -->
+
+  <form>
+    <ul class="container">
+      <li>
+        <label for="flex1">채널 키워드</label>
+        <input type="text" placeholder="플렉스 적용하기" id="flex1">
+      </li>
+      <li>
+        <label for="flex2">채널 키워드</label>
+        <input type="text" placeholder="플렉스 적용하기" id="flex2">
+      </li>
+      <li>
+        <label for="flex3">채널 키워드 채널 키워드</label>
+        <input type="text" placeholder="플렉스 적용하기" id="flex3">
+      </li>
+      <li>
+        <label for="flex4">채널 키워드 channel keyword</label>
+        <input type="text" placeholder="플렉스 적용하기" id="flex4">
+      </li>
+      <li>
+        <label for="flex5">channel keyword 채널 키워드</label>
+        <input type="text" placeholder="플렉스 적용하기" id="flex5">
+      </li>
+    </ul>
+  </form>
+</body>
+</html>

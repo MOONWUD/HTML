@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>flex3_flex-flow</title>
+  <style>
+    body {
+      margin: 0;
+      font-size: 2em;
+      font-weight: bold;
+      text-align: center;
+    }
+    .wrapper {
+      border: 6px solid #000000;
+      width: 80vw;
+      margin: 2vw auto;
+      display: flex;
+    }
+    
+    .wrapper .item { color: #6d6d6d; }
+    .wrapper .item1 { background-color: #9ff5a3; }
+    .wrapper .item2 { background-color: #d08aff; }
+    .wrapper .item3 { background-color: #ff8de2; }
+    .wrapper .item4 { background-color: #ffec98; }
+
+    #container {
+      height: 50vh;
+      /* 주축은 row 기준으로 양 끝 여백없이 동일한 간격으로 정렬 */
+      flex-direction: row;
+      justify-content: space-between;
+      /* 교차축 기준 중앙 정렬 */
+      align-items: center;
+    }
+
+    #container .item1 {
+      /* 자식인 플렉스 아이템에 적용. 교차축 기준 개별 배치 */
+      align-self: flex-start;
+    }
+    #container .item2 {
+      align-self: flex-end;
+    }
+    #container .item3 {
+      align-self: center;
+      width: 20vw; height: 15vw;
+    }
+    #container .item4 {
+      align-self: stretch;
+    }
+  </style>
+</head>
+  
+<body>
+  <h1>flex3 : flex-flow</h1>
+  <div class="wrapper" id="container"> <!--flex-container-->
+    <div class="item item1">item1</div> <!--flex-item-->
+    <div class="item item2">item2</div> <!--flex-item-->
+    <div class="item item3">item3</div> <!--flex-item-->
+    <div class="item item4">item4</div> <!--flex-item-->
+  </div>
+</body>
+</html>

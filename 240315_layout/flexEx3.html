@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>flexEx3</title>
+  <style>
+    /* body {
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+      margin: 0;
+      height: 100vh; width: 100vw;
+    }
+    .head {
+      display: flex;
+      flex-direction: column;
+    }
+    .main {
+      display: flex;
+      flex-direction: row;
+    }
+    .header { background-color: #9195F6; width: 100vw; height: 15vh;}
+    .nav { background-color: #B7C9F2; width: 100vw; height: 5vh;}
+    .aside { background-color: #fff9a0; width: 30vw; height: 80vh;}
+    .section { background-color: #ffaacb; width: 70vw; height: 80vh;} */
+
+    body {
+      margin: 0;
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    .container {
+      background-color: #9195F6;
+      display: flex;
+      flex-direction: column;
+    }
+    .container header { /* flex-item */
+      background-color: #B7C9F2;
+      height: 14vh;
+    }
+    .container nav { /* flex-item */
+      background-color: #fff9a0;
+      height: 8vh;
+    }
+    .container .contents { /* flex-item /f lex-container */
+      /* background-color: aliceblue; */
+      display: flex;
+      height: 78vh; /* 100vh - header - nav */
+      height: calc(100vh - 14vh - 8vh);
+      /* height: 100vh; */
+    }
+    .container .contents aside{ /* flex-item */
+      background-color: #ffaacb;
+      width: 30%;
+      /* width: 30vw; vw는 안됨 */
+    }
+    .container .contents section { /* flex-item */
+      background-color: #B7E5B4;
+      width: 70%;
+      /* width: 70vw; */
+    }
+    .container .contents section h2 {
+      margin: 0;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+  
+<body>
+ <div class="container"> <!--fles-container-->
+  <header>header</header> <!--flex-item-->
+  <nav>nav</nav> <!--flex-item-->
+  <div class="contents"> <!--flex-item / flex-container-->
+  <aside>aside</aside> <!--flex-item-->
+  <section><h2>section</h2></section> <!--flex-item-->
+ </div> 
+</div>
+</body>
+</html>

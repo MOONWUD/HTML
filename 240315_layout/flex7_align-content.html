@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>flex7_align-content</title>
+  <style>
+    body {
+      margin: 0;
+      font-size: 2em;
+      font-weight: bold;
+      text-align: center;
+    }
+    .wrapper {
+      border: 6px solid #000000;
+      width: 80vw;
+      margin: 2vw auto;
+      display: flex;
+      height: 80vh;
+      flex-wrap: wrap;
+    }
+    
+    .wrapper .item {
+      color: #ffffff;
+      width: 50%;
+    }
+    /* align-item : stretch;와 높이값이 같이 적용된 경우 높이값 우선 */
+    .wrapper .item1 {
+      background-color: #090029;
+      height: 150px;
+    }
+    .wrapper .item2 {
+      background-color: #4a007c;
+      height: 10vw;
+    }
+    .wrapper .item3 {
+      background-color: #cc0099;
+      height: 10em;
+    }
+    .wrapper .item4 {
+      background-color: #f74ebe;
+      height: 10vh;
+    }
+    .wrapper .item5 {
+      background-color: #f74ebe;
+      height: 10%;
+    }
+
+    #container1 {
+      /* 교차축 기준으로 여러 아이템을 하나의 덩어리로 보고 정렬 */
+      align-content: stretch; /* 기본값. 높이값이 지정되어 있으면 적용되지 않음*/
+      align-content: flex-start;  /* 여러 아이템을 하나의 그룹으로 보고 교차축 시작점에서 정렬 */
+      align-content: flex-end;
+      align-content: center;
+      align-content: space-around;
+      align-content: space-between;
+      align-content: space-evenly;
+    }
+
+    #container2 {
+      align-items: flex-start; /* 아이템을 각각 */
+      align-items: flex-end;
+      align-items: center; 
+      /* align-items: space-around; 없음  */
+    }
+
+  </style>
+</head>
+  
+<body>
+  <h1>flex7 : align-content</h1>
+  <div class="wrapper" id="container1"> <!--flex-container-->
+    <div class="item item1">item1</div> <!--flex-item-->
+    <div class="item item2">item2</div> <!--flex-item-->
+    <div class="item item3">item3</div> <!--flex-item-->
+    <div class="item item4">item4</div> <!--flex-item-->
+    <div class="item item5">item5</div> <!--flex-item-->
+  </div>
+
+  <div class="wrapper" id="container2"> <!--flex-container-->
+    <div class="item item1">item1</div> <!--flex-item-->
+    <div class="item item2">item2</div> <!--flex-item-->
+    <div class="item item3">item3</div> <!--flex-item-->
+    <div class="item item4">item4</div> <!--flex-item-->
+    <div class="item item5">item5</div> <!--flex-item-->
+  </div>
+</body>
+</html>
