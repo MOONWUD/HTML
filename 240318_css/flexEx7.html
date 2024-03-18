@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>flexEx7</title>
   <style>
-    body {
+    /* body {
       margin: 0;
       width: 100vw;
       height: 100vh;
@@ -16,7 +16,7 @@
       margin: 0;
       padding: 0;
       display: flex;
-      /* justify-content: space-evenly; */
+      /* justify-content: space-evenly;
       list-style: none;
       background-color: #F4EDCC;
       height: 8vh;
@@ -30,8 +30,8 @@
     .container li a {
       display: flex;
       text-decoration: none;
-      color: black;
-      display: flex;
+      color: blac
+      display: flex;k;
       justify-content: center;
       align-items: center;
       width: 20vw;
@@ -42,12 +42,45 @@
       background-color: #898121;
       color: #fff;
       height: 8vh;
+    }  */
+
+    body {
+      text-align: center;
+      text-transform: capitalize;
+      font-size: 1.2rem;
+      margin: 0;
     }
+
+    .gnb { /* ul은 기본적으로 여백을 가지고 있음 */
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      background-color: #B7C9F2;
+      justify-content: space-evenly;
+      height: 60px;
+      align-items: center; 
+    }
+    .gnb li {
+      width: 20%;
+    }
+    .gnb li a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      height: 60px; /* 부모는 자식의 높이값을 가져와 본인의 높이값을 정하기 때문에 a의 높이값이 곧 li의 높이값 */
+      line-height: 60px;
+    }
+    .gnb li a:hover {
+      background-color: #FB88B4;
+      color: #fff;
+    }
+
   </style>
 </head>
   
 <body>
-  <ul class="container">
+  <ul class="gnb">
     <li><a href="#">Home</a></li>
     <li><a href="#">Company</a></li>
     <li><a href="#">Product</a></li>
