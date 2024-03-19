@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>flexEx9</title>
+  <style>
+    /* body {
+      text-align: center;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .container {
+      border: 3px solid #000;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+      width: 80vw;
+      padding: 10px;
+      gap: 10px;
+    }
+
+    .container figure {
+      margin: 0;
+     
+    }
+    .container figure img {
+      vertical-align: middle;
+      width: 26vw;
+
+    }
+    .container figure figcaption {
+      background-color: #000;
+      color: #fff;
+      padding: 5px;
+    } */
+    body {
+      text-align: center;
+      text-transform: capitalize;
+    }
+
+    .gallery {
+      list-style: none;
+      margin: 0 auto; padding: 0;
+      border: 2px solid #000;
+      width: 80vw;
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-content: space-evenly;
+    }
+    
+    .gallery li {
+      background-color: bisque;
+      margin: 1%;
+      width: 31.33333%;
+    }
+    .gallery li img {
+      vertical-align: middle;
+      width: 100%;
+    }
+    .gallery li h3 {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      padding: 10px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>가로 세로 비율을 유지하는 반응형 박스</h1>
+  <!-- <div class="container">
+    <figure><img src="https://placehold.co/300x200/7BD3EA/ddd/png?text=img1&roboto" alt="1번">
+     <figcaption>Title1</figcaption></figure>
+    <figure><img src="https://placehold.co/300x200/007F73/ddd/png?text=img2&roboto" alt="2번">
+     <figcaption>Title2</figcaption></figure>
+    <figure><img src="https://placehold.co/300x200/FCDC2A/ddd/png?text=img3&roboto" alt="3번">
+     <figcaption>Title3</figcaption></figure>
+    <figure><img src="https://placehold.co/300x200/333A73/ddd/png?text=img4&roboto" alt="4번">
+    <figcaption>Title4</figcaption></figure>
+     <figure><img src="https://placehold.co/300x200/FBA834/ddd/png?text=img5&roboto" alt="5번">
+    <figcaption>Title5</figcaption></figure>
+    <figure><img src="https://placehold.co/300x200/387ADF/ddd/png?text=img6&roboto" alt="6번">
+     <figcaption>Title6</figcaption></figure>
+   </div> -->
+
+   <ul class="gallery">
+    <li>
+      <img src="https://placehold.co/300x200/D04848/ddd/png?text=img1&roboto" alt="img1">
+      <h3>title1</h3>
+    </li>
+    <li>
+      <img src="https://placehold.co/300x200/FC819E/ddd/png?text=img2&roboto" alt="img2">
+      <h3>title2</h3>
+    </li>
+    <li>
+      <img src="https://placehold.co/300x200/0D9276/ddd/png?text=img3&roboto" alt="img3">
+      <h3>title3</h3>
+    </li>
+    <li>
+      <img src="https://placehold.co/300x200/FDE767/ddd/png?text=img4&roboto" alt="img4">
+      <h3>title4</h3>
+    </li>
+    <li>
+      <img src="https://placehold.co/300x200/FBA834/ddd/png?text=img5&roboto" alt="img5">
+      <h3>title5</h3>
+    </li>
+    <li>
+      <img src="https://placehold.co/300x200/387ADF/ddd/png?text=img6&roboto" alt="img6">
+      <h3>title6</h3>
+    </li>
+   </ul>
+</body>
+</html>

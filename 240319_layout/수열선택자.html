@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>수열선택자</title>
+  <style>
+    /* body { text-align: center;}
+
+    ul.container {
+      list-style: none;
+      border: 3px solid #000;
+      margin: 0 auto; padding: 0;
+      width: 350px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-content: space-evenly;
+    }
+    li, p {
+      background-color: #5356FF;
+      color: #fff;
+      width: 100px;
+      height: 100px;
+      border-radius: 100px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin: 1%;
+      font-weight: bold;
+      text-transform: uppercase;
+    } */
+
+    .box {
+      text-align: center;
+      list-style: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      border: 3px solid #000;
+      margin: 50px auto;
+      padding: 0; 
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 480px; /* w100+m10+10=120 */
+    }
+
+    .box li, .box p, .box div {
+      background-color: #2D3250;
+      color: aliceblue;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 100px;
+      margin: 10px;
+      box-sizing: border-box;
+    }
+
+    /* 
+     수열 선택자, 의사 클래스
+      :first-child {} 같은 부모를 둔 자식들 중 첫번째 자식
+      :last-child {} 같은 부모를 둔 자식들 중 마지막 자식
+      :nth-child(n) {} 같은 부모를 둔 자식들 중 n번째 자식
+
+      :first-of-type {} 같은 부모를 둔 자식들 중 '같은 타입'의 첫번째 자식
+      :last-of-type {} 같은 부모를 둔 자식들 중 '같은 타입'의 마지막 자식
+      :nth-of-type(n) {} 같은 부모를 둔 자식들 중 '같은 타입'의 n번째 자식
+
+      (even) 짝수
+      (odd) 홀수
+      (3n+1) 3개를 기준으로 첫번쨰
+      (3n) 3번째
+    */
+
+    .box li:first-child { /* 같은 부모를 둔 자식들 중에 처음 나오는 요소가 li인 경우 적용 */
+      background-color: tomato;
+    }
+
+    .container p:first-child { /* 같은 부모를 둔 자식들 중에 처음 나오는 요소가 p가 아니기 때문에 적용 X */
+      background-color: green;
+    }
+
+    .box p:first-of-type { /* 같은 부모 안에서 같은 타입의 자식들 중 첫번째 타입에 적용 */
+      background-color: green;
+    }
+
+    .box p:last-child { /* 가장 마지막에 나오는 자식이 p여야지만 가능*/
+      background-color: lightgreen;
+    }
+
+    .box div:last-of-type { /* 같은 부모 안에서 같은 타입의 자식들 중 마지막 타입 적용 */
+      background-color: #F4CE14;
+    }
+
+    /* 가장 마지막에 나오는 p에 적용 */
+    .box p:last-of-type {
+      background-color: #512B81;
+    }
+
+    .box li:nth-child(6) { /* 자식들 중 6번째 위치에 li가 있으면 적용 */
+      border: 3px solid tomato;
+    }
+
+    .box li:nth-child(9) { /* 자식들 중에 9번째 위치에 li가 없어서 적용 X */
+      border: 3px solid #EE4266;
+    }
+
+    .box p:nth-of-type(4) { /* 자식들 중 같은 타입의 4번쨰 p에 적용 */
+      border: 3px solid #9195F6;
+    }
+
+    .container li:nth-child(even) { /* 짝수 위치의 li 자식만 */
+      background-color: #BFEA7C;
+    }
+
+    .wrapper p:nth-child(odd) { /* 홀수 위치의 자식 li만 */
+      font-size: 2rem;
+    }
+
+    .container :nth-child(odd) { /* 실제하는 요소 없이 작성시 요소 구분없이 적용 */
+      color: #ffd27f;
+    }    
+
+    .container li:nth-child(4n+3) { /*  */
+      border-radius: 50% 0;
+      background-color: #FFF455;
+    }
+
+    .container :nth-child(5n) {  /* 5개를 기준으로 5번째 */
+      border: #EE4266 3px dotted;
+    }
+
+    /* 3~11 선택 */
+    .wrapper :nth-child(n+3):nth-child(-n+11) {
+      border: 3px solid #4CCD99;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>수열선택자 - 의사클래스</h1>
+
+  <ul class="box container">
+    <li>01</li>
+    <li>02</li>
+    <li>03</li>
+    <li>04</li>
+    <li>05</li>
+    <li>06</li>
+    <li>07</li>
+    <p>p8</p>
+    <p>p9</p>
+    <li>10</li>
+    <li>11</li>
+    <li>12</li>
+    <li>13</li>
+    <li>14</li>
+    <li>15</li>
+    <li>16</li>
+    <li>17</li>
+    <li>18</li>
+    <p>p19</p>
+    <p>p20</p>
+    <p>p21</p>
+    <li>22</li>
+  </ul>
+
+  <div class="box wrapper">
+    <p>w01</p>
+    <p>w02</p>
+    <p>w03</p>
+    <p>w04</p>
+    <div>div5</div>
+    <div>div6</div>
+    <p>w07</p>
+    <p>w08</p>
+    <p>w09</p>
+    <p>w10</p>
+    <p>w11</p>
+    <p>w12</p>
+    <p>w13</p>
+    <p>w14</p>
+  </div>
+</body>
+</html>
