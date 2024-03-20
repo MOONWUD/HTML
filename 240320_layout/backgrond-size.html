@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>background-size</title>
+  <style>
+    /* li의 성격을 없애고, 500x200, 테두리, 중앙정렬, 배경이미지, 반복X */
+    h1 {
+      text-align: center;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    ul li {
+      margin: 20px auto;
+      border: 6px solid #000;
+      width: 500px; height: 200px;
+      background-image: url(./assets/images/magnolia-medium.jpg);
+      background-repeat: no-repeat;
+    }
+
+    ul .box1 {
+      /* 가로사이즈 기준으로 세로사이즈 비율 자동조절 */
+      background-size: 400px;
+      background-position: 50%;
+    }
+    ul .box2 {
+      background-size: 400px 200px; /* x y */
+    }
+    ul .box3 {
+      /* 가로사이즈에 맞춰 조절되며 이미지의 비율도 유지. 화면에서 잘리는 부분 존재 */
+      background-size: 100%;
+    }
+    ul .box4 {
+      /* 요소의 가로세로 크기에 맞춰 조절되기 때문에 이미지의 비율이 맞지 않을 수 있음 */
+      background-size: 1400% 100%;
+    }
+    ul .box5 {
+      /* 영역에 맞춰서 이미지가 전부 보임. 공백이 생길 수 있으나 비율은 유지 됨  */
+      background-size: contain;
+    }
+    ul .box6 {
+      /* 영역에 맞춰 전체 채움. 전체를 채우기 때문에 공백은 생기지 않으나 보이지 않는 배경이미지 부분이 생길 수 있음. 비율 유지 */
+      background-size: cover;
+    }
+
+    ul .box7 {
+      width: 70%;
+      background-size: contain;
+      background-size: cover;
+      background-position: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>backgroun-size</h1>
+  <ul>
+    <li class="box1">1: 400px</li>
+    <li class="box2">2: 400px 200px</li>
+    <li class="box3">3: 100%</li>
+    <li class="box4">4: 100% 100%</li>
+    <li class="box5">5: contain</li>
+    <li class="box6">6: cover</li>
+    <li class="box7">7: </li>
+  </ul>
+</body>
+</html>

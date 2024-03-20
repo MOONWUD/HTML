@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>background-img+repeat</title>
+  <style>
+    body {
+      background-image: url(./assets/images/header.gif);
+      background-repeat: no-repeat;
+    }
+    h1, p { /* ()가 있으면 함수 */
+      background-image: url(./assets/images/header.gif);
+      padding: 20px;
+      color: beige;
+    }
+
+    /* p:last-child  */
+    /* p:nth-child(5)  */
+    /* p:nth-of-type(2)  */
+    p:last-of-type {
+      background-color: rgb(0, 126, 6);
+      background-repeat: repeat; /* 반복. 기본값*/
+      background-repeat: repeat-x; /* x반복. 기본값*/
+      background-size: 30px;
+    }
+
+    h1:first-child {
+      background-repeat: repeat-x;
+      height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>배경이미지</h1>
+  <h2>background-image</h2>
+  <p>모든 국민은 근로의 권리를 가진다. 국가는 사회적·경제적 방법으로 근로자의 고용의 증진과 적정임금의 보장에 노력하여야 하며, 법률이 정하는 바에 의하여 최저임금제를 시행하여야 한다. 각급 선거관리위원회의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 명령·규칙 또는 처분이 헌법이나 법률에 위반되는 여부가 재판의 전제가 된 경우에는 대법원은 이를 최종적으로 심사할 권한을 가진다.</p>
+  <h2>background-repeat</h2>
+  <p>평화통일정책의 수립에 관한 대통령의 자문에 응하기 위하여 민주평화통일자문회의를 둘 수 있다. 대한민국의 영토는 한반도와 그 부속도서로 한다. 대통령은 헌법과 법률이 정하는 바에 의하여 공무원을 임면한다. 국채를 모집하거나 예산외에 국가의 부담이 될 계약을 체결하려 할 때에는 정부는 미리 국회의 의결을 얻어야 한다</p>
+</body>
+</html>
