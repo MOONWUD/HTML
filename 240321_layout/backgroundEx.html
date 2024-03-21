@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>backgroundEx</title>
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <style>
+    body {
+      background: url(./assets/images/hip-square.png) repeat fixed ;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      border: 3px solid #555008;
+      background-color: #FBF3D5;
+      width: 700px;
+      height: 500px;
+      margin: 10px auto;
+      min-width: 20rem;
+    }
+    header {
+      display: flex;
+      background-color: #401F71;
+      height: 60px;
+      justify-content: flex-start;
+      padding: 10px;
+      align-items: center;
+    }
+    header img {
+      width: 50px; height: 50px;
+      margin-right: 10px;
+    }
+    header h1 {
+      padding: 0;
+      margin: 0;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    header p {
+      padding: 0;
+      margin: 0;
+      font-size: 13px;
+    }
+    .gnb {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: flex-start;
+      height: 20px;
+      font-size: 10px;
+    }
+    .gnb li {width: 20%;}
+    .gnb li a {
+      text-decoration: none;
+      color: inherit;
+      height: 20px;
+      box-sizing: border-box; 
+      display: block;
+      line-height: 20px;
+      margin: 0 auto;
+      background-color: #FFC700;
+      text-align: center;
+    }
+    .gnb li a:hover {
+      background-color: #fffab5;
+    }
+    .main {
+      display: flex;
+    }
+
+    article { flex-grow: 3;}
+    aside { 
+      flex-grow: 1;
+      background-color: #c5a328;
+      height: 375px;
+    }
+
+    footer {
+      height: 25px;
+      margin: 0;
+      background-color: #401F71;
+    }
+    p {
+      padding-left: 10px;
+      margin: 0;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+  <header>
+    <img src="./assets/images/common.jpeg" alt="오랑이">
+    <div class="head">
+     <h1>KIM's Kitchen</h1>
+     <p>cooking class</p>
+    </div>
+  </header>
+
+  <ul class="gnb">
+    <li><a href="#">홈</a></li>
+    <li><a href="#">소개</a></li>
+    <li><a href="#">교실</a></li>
+    <li><a href="#">케이터링</a></li>
+    <li><a href="#">연락처</a>
+  </ul>
+
+  <div class="main">
+  <article>
+    <p>article</p>
+  </article>
+
+  <aside>
+    <p>aside</p>
+  </aside>
+</div>
+
+  <footer>
+    <p>footer</p>
+  </footer>
+</div>
+</body>
+</html> 

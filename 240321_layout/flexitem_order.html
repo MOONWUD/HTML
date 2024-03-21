@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>flexitem_order</title>
+  <style>
+    .container {
+      margin: 50px auto;
+      list-style: none;
+      padding: 10px;
+      border: 2px solid #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60vh;
+      width: 80vw;
+      text-align: center;
+      
+    }
+
+    .container .item {
+      color: #ddd;
+      width: 10%;
+      padding: 0.4rem;
+      margin: 5px;
+    }
+
+    .container .item1 { background-color: #D04848; order: 3;}
+    .container .item2 { background-color: #F3B95F; order: 4;}
+    .container .item3 { background-color: #FDE767; order: 5;}
+    .container .item4 { background-color: #87A922; order: 6;}
+    .container .item5 { background-color: #50C4ED; order: 7;}
+    .container .item6 { background-color: #333A73; order: 2;}
+    .container .item7 { background-color: #5E1675; order: 1;}
+  </style>
+</head>
+
+<body>
+  <h1>flexitem : order</h1>
+  <ul class="container">
+    <li class="item item1">item1</li>
+    <li class="item item2">item2</li>
+    <li class="item item3">item3</li>
+    <li class="item item4">item4</li>
+    <li class="item item5">item5</li>
+    <li class="item item6">item6</li>
+    <li class="item item7">item7</li>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>flexitem_flex-shrink</title>
+  <style>
+     ul {
+      list-style: none;
+      margin: 10px;
+      padding: 0;
+
+      background-color: #ddd;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+      display: flex;
+      width: 600px; height: 60px;
+    }
+    ul li { width: 300px; opacity: 0.4;}
+    ul li:nth-child(1) { background-color: #A5DD9B;}
+    ul li:nth-child(2) { background-color: #C5EBAA;}
+    ul li:nth-child(3) { background-color: #F6F193;}
+
+    .box1 li {
+      width: 500px;
+      flex-shrink: 1; /* 기본값 */
+    }
+
+    .box2 li {
+      flex-shrink: 0; /* widht값 그대로 적용. 즉 넘치는 경우 컨테이너를 넘김*/
+    }
+
+    .box3 li:nth-child(1) {flex-shrink: 1;} /* li:300px - (300/5)*1 = 240 */
+    .box3 li:nth-child(2) {flex-shrink: 2;} /* li:300px - (300/5)*2 = 180 */
+    .box3 li:nth-child(3) {flex-shrink: 2;} 
+
+    .box4 li:nth-child(1) {flex-shrink: 0;} /* 아이템 크기 변경 x. widht값 유지 */
+    .box4 li:nth-child(2) {flex-shrink: 2;} /* li:300 - {300-(300/3)}*2 = 100 */
+    .box4 li:nth-child(3) {flex-shrink: 1;} /* li:300 - {300-(300/3)}*1 = 200 */
+  </style>
+</head>
+
+<body>
+  <h1>flexitem: flex-shrink 감소 비율</h1>
+  <p>숫자가 클수록 감소 폭 커짐. 숫자가 클수록 아이템의 크기는 더 작아짐</p>
+
+  <h2>flex-shrink: 1; 기본값. 아이템이 컨테이너를 넘기지 않음</h2>
+  <ul class="box1">
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+  </ul>
+
+  <h2>flex-shrink: 0;</h2>
+  <ul class="box2">
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+  </ul>
+
+  <h2>flex-shrink: 1/ flex-shrink: 2;</h2>
+  <ul class="box3">
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+  </ul>
+
+  <h2>flex-shrink: 0 / flex-shrink:2 / flex-shrink: ;1 </h2>
+  <ul class="box4">
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+  </ul>
+</body>
+</html>

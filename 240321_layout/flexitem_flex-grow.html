@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>flexitem_flex-grow</title>
+  <style>
+    ul {
+      list-style: none;
+      margin: 10px;
+      padding: 0;
+
+      background-color: #ddd;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+      display: flex;
+      width: 800px; height: 60px;
+    }
+
+    ul li:nth-child(1) { background-color: #5356FF;}
+    ul li:nth-child(2) { background-color: #378CE7;}
+    ul li:nth-child(3) { background-color: #67C6E3;}
+    ul li:nth-child(4) { background-color: #DFF5FF;}
+
+    /* 
+      flex-item css 특성 종류
+      ㄴ order, flex-grow, flex-shrink, flex-basis, flex ...
+
+      flex-grow: 0; 숫자가 클수록 더 큰 영역을 가짐. 가변값이 아니거나 0인 경우 적용되지 않음.
+      flex-shrink: 1; 숫자가 클수록 더 큰 영역 감소. 가변값이 아니거나 0인 경우 적용되지 않음.
+      flex-basis: auto; 기본 가로 값 설정. auto인 경우 widht, height 등의 특성으로 가로 설정이 가능하나 단위값이 주어진 경우 설정 안됨
+      flex: 증가 비울(flex-grow) 감소비율(flex-shrink) 기준비율(flex-basis)
+      flex: 0 1 auto; 기본값
+    */
+
+    .box1 li {
+      flex-grow: 0; /* 기본값. 강제로 컨테이너를 채우지 않음 */
+    }
+
+    .box1 ~ ul li {
+      width: 0;
+    }
+
+    .box2 li {
+      flex-grow: 1; /* 각 아이템들의 비율을 1로 증가하여 컨테이너를 채움 */
+    }
+
+    .box3 li:nth-child(1) {flex-grow: 1;} /* 1/5 ==20%== 160px */
+    .box3 li:nth-child(2) {flex-grow: 1;} /* 1/5 */
+    .box3 li:nth-child(3) {flex-grow: 1;} /* 1/5 */
+    .box3 li:nth-child(4) {flex-grow: 2;} /* 2/5  ==40%== 320px */
+
+    .box4 li:nth-child(1) {flex-grow: 1;} /* 1/8 ==12.5== 100px */
+    .box4 li:nth-child(2) {flex-grow: 2;} /* 2/8 200px */
+    .box4 li:nth-child(3) {flex-grow: 2;} /* 2/8 200px */
+    .box4 li:nth-child(4) {flex-grow: 3;} /* 3/8 300px */
+
+    .box5 li:nth-child(1) { width: 300px;} /* 고정값을 뺸 나머지를 계산 800 - 300 = 500 으로 flex-grow를 적용*/
+    .box5 li:nth-child(2) {flex-grow: 1;} /* 1/4 125px */
+    .box5 li:nth-child(3) {flex-grow: 2;} /* 2/4 250px */
+    .box5 li:nth-child(4) {flex-grow: 1;} /* 1/4 125px */
+  </style>
+</head>
+
+<body>
+  <h1>flexitem: flex-grow 플렉스 아이템의 증가 비율 제어</h1>
+
+  <h2>1. flex-grow: 0; 기본값. 증가하지 않음</h2>
+  <p>플렉스 아이템이 가지고 잇는 기본값 그대로 유지</p>
+  <ul class="box1">
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+    <li>item4</li>
+  </ul>
+
+  <h2>2. flex-grow: 1; 1:1:1:1</h2>
+  <p>비율 값으로 동일하게 커져 컨테이너를 채움</p>
+  <ul class="box2">
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+    <li>item4</li>
+  </ul>
+
+  <h2>3. flex-grow: 1; flex-grow: 2; 1:1:1:2</h2>
+  <p>비율로 커지기 때문에 2가 적용된 아이템이 더 큼</p>
+  <ul class="box3">
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+    <li>item4</li>
+  </ul>
+
+  <h2>4. flex-grow: 1; flex-grow: 2 flex-grow: 2;/ flex-grow: 3;</h2>
+  <ul class="box4">
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+    <li>item4</li>
+  </ul>
+
+  <h2>5. width:300px; flex-grow: 1; flex-grow: 2; flex-grow: 1;</h2>
+  <ul class="box5">
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+    <li>item4</li>
+  </ul>
+</body>
+</html>

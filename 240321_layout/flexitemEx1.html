@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>flexitemEx1</title>
+  <style>
+    body {
+      margin: 0;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    div {
+      display: flex;
+      flex-wrap: wrap;
+      height: 100vh;
+    }
+    header { 
+      background-color: #40A2E3;
+      width: 100%; height: 10vh;
+      order: 1;
+    }
+    aside { 
+      background-color: #BBE2EC;
+      flex-grow: 2;
+      order: 2;
+      height: calc(100vh - 10vh);
+    }
+    main { 
+      background-color: #0D9276;
+      flex-grow: 4;
+      order: 3;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+   <header>header</header>
+   <main>contents</main>
+   <aside>aside</aside>
+   
+  </div>
+</body>
+</html>
