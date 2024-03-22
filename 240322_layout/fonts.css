@@ -32,6 +32,9 @@
       block; FOIT 방식. 웹폰트가 로딩되지 않으면 텍스트를 렌더링하지 않음. 로딩 완료 후 글자 보임
       
       unicode-range: 유니코드로 지정한 글자에만 웹폰트를 적용. 등록한 글자가 텍스트에 없으면 다운로드 요청 하지 않기 때문에 불필요한 다운로드를 하지 않음 
+
+    font-weight
+      https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#common_weight_name_mapping
 */
 /* 
    font-family: "East Sea Dokdo", sans-serif;
@@ -40,3 +43,33 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Sofadi+One&display=swap')
+
+/* GmarketSans 설정 */
+@font-face {
+  font-family: 'GmarketSans';/* 내가 설정한 이름 */
+  src: local('GmarketSansTTFLight'),
+    url('./assets/fonts/GmarketSansTTFLight.woff2') format('woff2'),
+    url('./assets/fonts/GmarketSansTTFLight.woff') format('woff');
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;  
+}
+/* 여러 굵기의 서체가 있는 경우 경로와 font-weight의 값 설정만 변경 */
+@font-face {
+  font-family: 'GmarketSans';
+  src: local('GmarketSansTTFMedium'),
+    url('./assets/fonts/GmarketSansTTFMedium.woff2') format('woff2'),
+    url('./assets/fonts/GmarketSansTTFMedium.woff') format('woff');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;  
+}
+@font-face {
+  font-family: 'GmarketSans';
+  src: local('GmarketSansTTFBold'),
+    url('./assets/fonts/GmarketSansTTFBold.woff2') format('woff2'),
+    url('./assets/fonts/GmarketSansTTFBold.woff') format('woff');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;  
+}
