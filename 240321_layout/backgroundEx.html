@@ -9,18 +9,20 @@
       background: url(./assets/images/hip-square.png) repeat fixed ;
       margin: 0;
       padding: 0;
+      font-weight: bold;
     }
     .container {
-      border: 3px solid #555008;
-      background-color: #FBF3D5;
+      border: 4px solid #ffcfdd;
+      background-color: #c6d7fc;
       width: 700px;
       height: 500px;
       margin: 10px auto;
       min-width: 20rem;
     }
+
     header {
       display: flex;
-      background-color: #401F71;
+      background-color: #3D3B40;
       height: 60px;
       justify-content: flex-start;
       padding: 10px;
@@ -31,16 +33,19 @@
       margin-right: 10px;
     }
     header h1 {
+      color: #fff;
       padding: 0;
       margin: 0;
       margin-top: 10px;
       font-size: 16px;
     }
     header p {
+      color: #fff;
       padding: 0;
       margin: 0;
       font-size: 13px;
     }
+
     .gnb {
       list-style: none;
       padding: 0;
@@ -49,8 +54,9 @@
       justify-content: flex-start;
       height: 20px;
       font-size: 10px;
+      background-color: #5356FF;
     }
-    .gnb li {width: 20%;}
+    .gnb li {width: 15%;}
     .gnb li a {
       text-decoration: none;
       color: inherit;
@@ -59,33 +65,39 @@
       display: block;
       line-height: 20px;
       margin: 0 auto;
-      background-color: #FFC700;
+      background-color: #5356FF;
       text-align: center;
     }
     .gnb li a:hover {
-      background-color: #fffab5;
+      background-color: #ffcfdd;
     }
+
     .main {
       display: flex;
     }
 
-    article { flex-grow: 3;}
+    article {
+      flex-grow: 3;
+    }
+    article fieldset
+
     aside { 
       flex-grow: 1;
-      background-color: #c5a328;
+      background-color: #9abef5;
       height: 375px;
     }
 
     footer {
       height: 25px;
       margin: 0;
-      background-color: #401F71;
+      background-color: #3D3B40;
+      color: #fff;
     }
-    p {
+    footer p {
       padding-left: 10px;
       margin: 0;
     }
-
+    
   </style>
 </head>
 
@@ -109,11 +121,29 @@
 
   <div class="main">
   <article>
-    <p>article</p>
+      <fieldset><img src="./assets/images/야채.jpg" alt="샐러드"><figcaption>salsd</figcaption></fieldset>
+      <div class="txt">
+       <div>채식주의자</div>
+       <div>5주간 채식주의자 음식에 대해 소개하고 쌀과 국수 요리를 가르친다.</div>
+      </div>
+    
+      <fieldset><img src="./assets/images/소스.jpg" alt="소스"><figcaption>teriyaki</figcaption></fieldset>
+      <div class="txt">
+       <div>소스 마스터클래스</div>
+       <div>1일 집중 코스에서는 다양한 요리에서 사용할 수 있는 가장 맛있는 소스를 만드는 방법을 살펴본다.</div>
+     </div>
   </article>
 
   <aside>
-    <p>aside</p>
+    <p>인기 요리법</p>
+    <ul>
+      <li><a href="#">후라이드</a></li>
+      <li><a href="#">고추바사삭</a></li>
+      <li><a href="#">양념치킨</a></li>
+      <li><a href="#">뿌링클</a></li>
+    </ul>
+    <p>연락처</p>
+    <div>경기도 수원시 팔달구</div>
   </aside>
 </div>
 

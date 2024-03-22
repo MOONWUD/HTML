@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>flexItemEx2</title>
+  <style>
+    body {
+      background-color: #F7EEDD;
+      font-weight: bold;
+    }
+
+    .wrapper {
+      margin: 50px auto;
+      width: 90vw;
+    }
+
+    .wrapper .box {
+      background-color: #fff;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid #000;
+      border-left: 1px solid #000;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .wrapper .box li {
+      border-bottom: 1px solid #000;
+      border-right: 1px solid #000;
+      padding: 5px 15px;
+      flex-grow: 1; /* 기본값은 0. 1은 남은 영역을 채움 */
+      /* widht: 100%; 나를 감싸고 있는 부모를 기준으로 전체를 채움*/
+    }
+    .wrapper .box li:hover {
+      background-color: aliceblue;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <ul class="box">
+      <li>이름을 무성할 속의 어머님, 까닭입니다</li>
+      <li>하늘에는 멀리 것은 라이너 있습니다</li>
+      <li>프랑시스 별을 이름과 하늘에는 지나고 한 하나에 너무나 아스라히 있습니다</li>
+      <li>옥 어머니 하나에 봅니다</li>
+      <li>된 강아지, 까닭이요</li>
+      <li>이름을 보고</li>
+      <li>잠 별 가슴</li>
+      <li>무성할 별 가슴속에 지나가는 밤을 별빛이 이국 계십니다</li>
+      <li>어머님, 언덕 아직 밤이 까닭입니다</li>
+      <li>둘 위에 파란 이 있습니다</li>
+      <li>청춘이 우는 이름을 잠</li>
+    </ul>
+  </div>
+</body>
+</html>
