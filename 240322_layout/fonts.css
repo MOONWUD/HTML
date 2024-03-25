@@ -37,12 +37,15 @@
       https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#common_weight_name_mapping
 */
 /* 
-   font-family: "East Sea Dokdo", sans-serif;
-   font-family: "Sofadi One", system-ui;
+  font-family: "Norican", cursive;
+  font-family: "Twinkle Star", cursive;
+  font-family: "Butterfly Kids", cursive;
+  font-family: "Pacifico", cursive;
+
 */
-
-
-@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Sofadi+One&display=swap')
+/* @import url('https://fonts.googleapis.com/css2?family=Norican&family=Twinkle+Star&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Butterfly+Kids&family=Pacifico&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Pacifico&display=swap');
 
 /* GmarketSans 설정 */
 @font-face {
