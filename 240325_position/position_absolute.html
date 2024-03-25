@@ -1,55 +1,74 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="utf-8">
-  <title>position_relative</title>
+  <title>position_absolute</title>
   <style>
-    /* 
-       position : 요소의 배치
-       ㄴ static; 기본값. 아무런 특성이 없기 때문에 주로 다른 포지션 값이 적용된 요소를 초기화 하고자 할 때 사용
-       ㄴ relative; 일반적인 흐름에 따라 자기 자신을 기준으로 위치 지정. top, right, bottom, left 위치 특성과 함께 사용되거나 생략될 수 있음 
-       ㄴ absolute; 일반적인 흐름에서 벗어나며 포지션이 적용된 가장 가까운 부모 요소르 기준으로 위치 지정. top, right, bottom, left 위치 특성과 함께 사용. 
-       ㄴ fixed; 일반적인 흐름에서 벗어나며 브라우저를 기준으로 위치 지정. top, right, bottom, left 위치 특성과 함께 사용 
-       transform, perspective, filter 특성이 부모 요소에 적용되어 있으면 그 요소를 기준으로 삼음. 
-       ㄴ stickyl 일반적인 흐름을 가지나 top, right, bottom, left의 값에 따라 offset 적용(스크롤 이벤트)
-    */
-    body {
+     body {
       line-height: 1.5;
+      margin: 0;
+    }
+    body * {
+      margin: 0; padding: 0;
+    }
+    .container {
+      background-color: #ddd;
+      position: relative;
+      margin-top: 500px;
     }
     h1 {
-      background-color: olive;
+      background-color: olivedrab;
       padding: 10px 20px;
       width: 700px;
     }
-    .container {
-      border: 3px solid #000;
-      width: 450px;
-    }
+
     p {
       width: 450px;
       text-align: justify;
     }
+    .pos {
+      border: 3px solid #000;
+      width: 450px;
+      height: 300px;
+      position: relative; 
+    }
 
-    .container h3 {
-      background-color: #ddd;
-      position: relative; /* 원래 있던 위치를 기준을 이동 */
+    .pos .title {
+      background-color: tomato;
+      position: absolute;
       top: 50px;
       left: 100px;
-      /* 
-         x축(left, right) y축(top, bottom) 위치값 작성시 하나의 방향 값만 작성 가능 
-         top, bottom 함께 작성시 top 적용 
-         left, right 함께 작성시 left 적용
-      */
     }
+    /* 
+       absolute 기준은 반드시 부모 이상의 요소에 적용 
+       (자식, 형제 관계의 요소에 기준값을 적용해도 되지 않음)
+       부모와 조상 요소 둘 다 포지션이 적용된 겨우 가까운 부모를 기준을 적용 
+
+       relative를 기준으로 많이 사용하는 이유
+       ㄴ 위치 특성 (top, right, bottom, left)과 함께 사용하지 않으면 기존 레이아웃에 영향을 주지 않기 때문에 많이 사용
+    */
   </style>
 </head>
 
 <body>
-  <h1>position:relative</h1>
-  <h2>상대위치</h2>
-  <h3>일반적인 흐름에 있는 경우, 현재 자신을 기준으로 위치 지정</h3>
   <div class="container">
-    <h3>자전거의 정의와 역사</h3>
+    <h1>position:absolute</h1>
+    <h2>절대위치</h2>
+    <h3>가장 가까운 부모 요소의 포지션을 기준으로 위치값 설정</h3>
+
+    <ul>
+      <li>포지션이 적용된 가장 가가운 보모 요소를 기준으로 위치 지정</li>
+      <li>기준 값을 설정해 주지 않으면 body를 기준으로 위치 설정</li>
+      <li>top, right, bottom, left와 함께 작성</li>
+      <li>일반적인 흐름에서 벗어나 다른 요소와 겹쳐짐. 포토샵 레이어처럼 계층을 만듦</li>
+    </ul>
+  
+
+
+  <div class="pos">
+    <!-- pos:absolute -->
+    <h3 class="title">자전거의 정의와 역사</h3>
   </div>
   <p>모든 국민은 신속한 재판을 받을 권리를 가진다. 형사피고인은 상당한 이유가 없는 한 지체없이 공개재판을 받을 권리를 가진다. 헌법재판소에서 법률의 위헌결정, 탄핵의 결정, 정당해산의 결정 또는 헌법소원에
     관한 인용결정을 할 때에는 재판관 6인 이상의 찬성이 있어야 한다. 대통령으로 선거될 수 있는 자는 국회의원의 피선거권이 있고 선거일 현재 40세에 달하여야 한다.</p>
@@ -69,6 +88,7 @@
     <li>자전거 경기</li>
     <li>사이클</li>
   </ul>
+</div>
 </body>
 
 </html>
