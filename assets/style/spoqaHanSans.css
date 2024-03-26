@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+/* spoqaHanSans */
+@font-face {
+  font-family: 'SpoqaHanSans';
+  src: local('SpoqaHanSansNeo-Thin'), url(../fonts/SpoqaHanSansNeo-Thin.woff2) format('woff2');
+  font-style: normal;
+  font-weight: 100;
+  font-size: swap;
+}
+
+@font-face {
+  font-family: 'SpoqaHanSans';
+  src: local('SpoqaHanSansNeo-Light'), url(../fonts/SpoqaHanSansNeo-Light.woff2) format('woff2');
+  font-style: normal;
+  font-weight: 300;
+  font-size: swap;
+}
+
+@font-face {
+  font-family: 'SpoqaHanSans';
+  src: local('SpoqaHanSansNeo-Regular'), url(../fonts/SpoqaHanSansNeo-Regular.woff2) format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-size: swap;
+}
+
+@font-face {
+  font-family: 'SpoqaHanSans';
+  src: local('SpoqaHanSansNeo-Medium'), url(../fonts/SpoqaHanSansNeo-Medium.woff2) format('woff2');
+  font-style: normal;
+  font-weight: 500;
+  font-size: swap;
+}
+
+@font-face {
+  font-family: 'SpoqaHanSans';
+  src: local('SpoqaHanSansNeo-Bold'), url(../fonts/SpoqaHanSansNeo-Bold.woff2) format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  font-size: swap;
+}
