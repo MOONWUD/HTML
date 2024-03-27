@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>positionEx4</title>
+  <link rel="stylesheet" href="../assets/style/reset.css">
+  <style>
+    body { 
+      margin: 0; 
+      font-weight: bold; 
+      font-size: 1.4rem;
+      color: #fff;
+    }
+
+    header, footer {
+      background-color: #D04848; 
+      height: 100px;
+      padding: 20px;
+    }
+
+    main {
+      display: flex;
+    }
+    main article {
+      background-color: #F3B95F;
+      flex-grow: 3;
+      padding: 20px;
+      height: 300vh;
+      position: relative;
+    }
+    main aside {
+      background-color: #6895D2;
+      flex-grow: 1;
+      padding: 20px;
+      height: 150px;
+      position: sticky;
+      top: 0;
+    }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>positionEx4</h1>
+    <h2>header</h2>
+  </header>
+
+  <main>
+    <article>main contants</article>
+    <aside>sticky sidebar</aside>
+  </main>
+
+  <footer>
+    <div>footer</div>
+  </footer>
+</body>
+</html>

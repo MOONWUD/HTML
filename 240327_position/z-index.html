@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>z-index</title>
+  <style>
+    body {
+      margin: 0;
+      font-weight: bold;
+      height: 300vh;
+    }
+
+    .container {
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+      background-color: #40A2E3;
+      color: aliceblue;
+      position: fixed; /* 일반적인 흐름에서 벗어나 부모 요소에서 가로 값을 가져올 수 없음 */
+      top: 0;
+      width: 100%;
+      z-index: 9999;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+    }
+
+    .container ul { 
+      max-width: 800px; 
+      background-color: #BBE2EC;
+      color: #6b6b6b;
+      padding: 20px;
+      line-height: 1.6rem;
+      box-sizing: border-box;
+    }
+
+    .wrapper {
+      margin: 200px auto;
+      width: 400px; height: 400px;
+      position: relative;
+      background-color: #0D9276;
+    }
+    .wrapper .box {
+      position: absolute;
+      width: 200px; height: 200px;
+      color: #6b6b6b;
+      box-sizing: border-box;
+      padding: 10px 0 0 10px;
+    }
+
+    .wrapper .box1 { background-color: #2ccab5; top: 10px; left: 10px; z-index: 1000; }
+    .wrapper .box2 { background-color: #66dfce; top: 40px; left: 40px; z-index: 100; }
+    .wrapper .box3 { background-color: #93e7dc; top: 70px; left: 70px; z-index: 10; }
+    .wrapper .box4 { background-color: #c6ebe6; top: 100px; left: 100px; z-index: 1; }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>position, flex, grid 요소 계층 순위 설정</h1>
+    <ul>
+      <li>요소에 포지션 값 적용시 포토샵의 레이어처럼 계층이 생김<br>이때 겹치는 순서를 정의</li>
+      <li>숫자가 클수록 위쪽에 위치. 단위값 없음</li>
+    </ul>
+  </div>
+
+  <ul class="wrapper">
+    <li class="box box1">box1</li>
+    <li class="box box2">box2</li>
+    <li class="box box3">box3</li>
+    <li class="box box4">box4</li>
+  </ul>
+</body>
+
+</html>
