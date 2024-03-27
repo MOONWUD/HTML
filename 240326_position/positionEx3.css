@@ -14,7 +14,18 @@ body {
 /* 스크롤바 가로 크기 */
 body::-webkit-scrollbar {
   width: 8px;
-  stroke-width: thin;
+}
+
+/* 스크롤바 배경 */
+body::-webkit-scrollbar-track {
+  background-color: #FFEBB2;
+}
+
+/* 스크롤바 핸들 */
+body::-webkit-scrollbar-thumb {
+  background-color: #FDE767;
+  border: 1px solid #0D9276;
+  border-radius: 5px;
 }
 /* nav */
 .gnb {
@@ -23,21 +34,22 @@ body::-webkit-scrollbar {
   align-items: center;
   position: fixed;
   top: 0;
-  left: 0; right: 0;
+  left: 0;
+  right: 0;
   margin: auto;
-  width: 50%; 
+  width: 50%;
   /* absolute, fixed 좌우 중앙 정렬 */
   background-color: #FFFDD7;
   border-radius: 0 0 30px 30px;
-box-shadow:
-  2.8px 2.8px 2.2px rgba(0, 0, 0, 0.021),
-  6.7px 6.7px 5.3px rgba(0, 0, 0, 0.032),
-  12.5px 12.5px 10px rgba(0, 0, 0, 0.04),
-  22.3px 22.3px 17.9px rgba(0, 0, 0, 0.048),
-  41.8px 41.8px 33.4px rgba(0, 0, 0, 0.056),
-  100px 100px 80px rgba(0, 0, 0, 0.07)
-;
+  box-shadow:
+    2.8px 2.8px 2.2px rgba(0, 0, 0, 0.021),
+    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.032),
+    12.5px 12.5px 10px rgba(0, 0, 0, 0.04),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.048),
+    41.8px 41.8px 33.4px rgba(0, 0, 0, 0.056),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
 }
+
 .gnb li a {
   color: #FFFDD7;
   display: block;
@@ -63,6 +75,7 @@ box-shadow:
 .gnb li a:hover {
   background-color: #0D9276;
 }
+
 /* box */
 .box {
   font-size: 2rem;
@@ -72,7 +85,18 @@ box-shadow:
   padding-top: 100px;
 }
 
-#box1 { background-color: #D04848;}
-#box2 { background-color: #F3B95F;}
-#box3 { background-color: #FDE767;}
-#box4 { background-color: #6895D2;}
+#box1 {
+  background-color: #D04848;
+}
+
+#box2 {
+  background-color: #F3B95F;
+}
+
+#box3 {
+  background-color: #FDE767;
+}
+
+#box4 {
+  background-color: #6895D2;
+}
