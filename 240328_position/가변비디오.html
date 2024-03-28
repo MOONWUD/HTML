@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>가변비디오</title>
+  <style>
+    p {
+      max-width: 800px;
+      min-width: 20%;
+      border: 10px solid #000;
+    }
+    video {
+      width: 100%;
+      background-color: olivedrab;
+      height: 200px;
+    }
+    .wrapper {
+      width: 90%; height: 50vh;
+      position: absolute;
+      top: 40vh;
+      left: 0; right: 0; margin: auto;
+    }
+    .wrapper .video_box {
+      width: 100%; height: 100%;
+      position: absolute;
+      top: 0; left: 0;
+      z-index: 1;
+    }
+
+    .wrapper .video_box video {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>가변비디오</h1>
+  <p>
+    <video src="./img/movie.mp4" autoplay muted loop></video>
+  </p>
+  <div class="wrapper">
+    <div class="video_box">
+      <video src="./img/movie.mp4" autoplay muted loop></video>
+    </div>
+  </div>
+</body>
+</html>

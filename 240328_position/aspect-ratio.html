@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>aspect-ratio</title>
+  <style>
+    .box {
+      border: 6px solid #7AA2E3;
+      background-color: #F8F6E3;
+      margin: 20px auto; padding: 5px;
+      box-sizing: border-box;
+      font-weight: bold;
+      font-size: 2rem;
+      width: 300px;
+    }
+
+    .box1 { aspect-ratio: auto;} /* 기본값 */
+    .box2 { aspect-ratio: 1 / 1;} /* 가로 기준 비율 1 : 세로 비율 1 */
+    .box3 { aspect-ratio: 1;} /* ==1/1 */
+    .box4 { aspect-ratio: 3;} /* ==3/1 한자리 수의 경우 높이 비율 1이 생략된 것 */
+    .box5 { aspect-ratio: 16 / 9;} /* youtube */
+    .box6 { aspect-ratio: 0.5;} /* 1 / 2 */
+    .box7 { aspect-ratio: auto 1 / 1;} /* 기본값을 가지고 있는 경우 기본값 적용. 없는 경우 지정한 비율 적용 */
+
+    /* 적용이 안되는 경우 */
+    .box8 { /* 가로 세로 값이 같이 적용된 경우 */
+      background-color: #c5ebe2; 
+      height: 300px;
+      aspect-ratio: 2 / 1;
+    } 
+    .box9 { /* 컨텐츠가 넘치는 경우 적용 X */
+      aspect-ratio: 3 / 1;
+      /* min-height: 0;  aspect-ratio가 적용되게 하려면 min-height:0; 적용 */
+    } 
+
+    .box10 {  /*  */
+      display: block;
+      margin: 20px;
+      bottom: 6px solid #000;
+      width: 300px;
+      aspect-ratio: auto 1 / 1;
+    }
+    .box11 { /*  */
+      display: block;
+      margin: 20px;
+      bottom: 6px solid #000;
+      width: 300px;
+      aspect-ratio: 1.77777777778;
+      aspect-ratio: 16 / 9;
+    } 
+  </style>
+</head>
+
+<body>
+  <h1>aspect-ratio</h1>
+  <h2>가로 세로 비율 설정</h2>
+  <div class="box box1">box1: auto</div>
+  <div class="box box2">box2: 1 / 1</div>
+  <div class="box box3">box3: 1</div>
+  <div class="box box4">box4: 3</div>
+  <div class="box box5">box5: 16 / 9</div>
+  <div class="box box6">box6: 0.5</div>
+  <div class="box box7">box7: auto 1 / 1</div>
+  <div class="box box8">box8: height 300px</div>
+  <div class="box box9">box9: <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores et earum sit eveniet. Perspiciatis praesentium harum labore in, quo rerum illum? Laudantium, illo voluptatibus! Doloremque eius cum illum expedita voluptatem.</p></div>
+  <img src="https://picsum.photos/id/63/300/200" alt="display" class="box10">
+  <img src="https://picsum.photos/id/116/300/200" alt="div" class="box11">
+</body>
+
+</html>

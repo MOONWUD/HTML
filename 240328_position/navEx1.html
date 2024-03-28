@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>navEx1</title>
+  <style>
+    body {
+      margin: 0;
+      box-sizing: border-box;
+      text-transform: capitalize;
+      font-weight: bold;
+      height: 200vh;
+    }
+
+    /**** header ****/
+    .wrapper {background-color: #C6EBC5; width: 100%;}
+    header {
+      height: 110px;
+      min-width: 700px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    header h1 {
+      margin: 36px 0 0 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5rem;
+      width: 125px;
+      height: 67px;
+      background-color: #FA7070;
+      color: #FEFDED;
+    }
+
+    header .reight {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    header .reight .login {
+      background-color: #FFC94A;
+      width: 156px;
+      text-align: center;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+    }
+
+    header .reight .login button {
+      text-align: center;
+      padding: 0;
+      color: #FEFDED;
+      background-color: transparent;
+      border: none;
+      height: 36px;
+      line-height: 36px;
+      font-size: 1rem;
+    }
+
+    header .reight .login button:hover {
+      color: #FE7A36;
+    }
+
+    header .reight .gnb {
+      display: flex;
+      justify-content: space-evenly;
+      list-style: none;
+      padding: 0;
+      background-color: #81c76e;
+      width: 520px;
+      margin: 6px 0 0 0;
+    }
+
+    header .reight .gnb li {
+      width: calc(520px / 4);
+      height: 54px;
+      line-height: 54px;
+    }
+
+    header .reight .gnb li a {
+      display: block;
+      text-align: center;
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: #FEFDED;
+    }
+
+    header .reight .gnb li a:hover {
+      background-color: #C6EBC5;
+    }
+
+
+    /**** main ****/
+    .main {
+      font-size: 2rem;
+      margin: 0 auto;
+      text-align: center;
+      padding: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 700px 이하로 줄어들지 않게 -->
+  <div class="wrapper">
+    <header>
+      <h1>로고</h1>
+      <div class="reight">
+        <div class="login">
+          <button type="button">로그인</button>
+          <button type="button" class="line">회원가입</button>
+        </div>
+
+        <ul class="gnb">
+          <li><a href="#">menu1</a></li>
+          <li><a href="#">menu2</a></li>
+          <li><a href="#">menu3</a></li>
+          <li><a href="#">menu4</a></li>
+        </ul>
+      </div>
+    </header>
+  </div>
+
+  <div class="main">main</div>
+</body>
+
+</html>
