@@ -1,0 +1,122 @@
+@charset "utf-8";
+
+/* reset 늘 제일 먼저 */
+@import url('../assets/style/reset.css');
+
+/* fonts */
+@import url(../assets/style/spoqaHanSans.css);
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+/***** common / global *****/
+body {
+  font-family: 'SpoqaHanSans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', '맑은 고딕', '돋움', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.6;
+  text-transform: capitalize;
+}
+
+/***** article *****/
+article {
+  font-size: 4rem; font-weight: 700;
+  height: 300vh;
+  margin-top: 200px;
+}
+
+/***** header *****/
+.wrapper {
+  background-color: #FBF3D5;
+  width: 100%;
+  position: fixed; top: 0;
+}
+
+.wrapper header {
+  min-width: 700px; max-width: 1180px;
+  height: 110px;
+  margin: 0 auto;
+  position: relative;
+  /* 현재 요소의 흐름에 영향을 주지 않고 자식 포지션의 기준이 됨 */
+}
+
+.wrapper header h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  width: 120px;
+  height: 60px;
+  line-height: 60px;
+  background-color: #9CAFAA;
+  color: #fff;
+  position: absolute;
+  /* 부모요소를 기준으로 위치를 잡음 */
+  top: 36px;
+  left: 0;
+}
+
+/** 로그인 / 회원가입 **/
+.wrapper header .user_menu {
+  font-weight: 300;
+  font-size: 0.9rem;
+  background-color: #A8CD9F;
+  color: #FBF3D5;
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5px;
+}
+
+.wrapper header .user_menu li {
+  position: relative;
+}
+
+.wrapper header .user_menu li:first-child::after {
+  content: "";
+  background-color: #FBF3D5;
+  width: 2px;
+  height: 16px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.wrapper header .user_menu li a {
+  padding: 0 10px;
+}
+
+.wrapper header .user_menu li a:hover {
+  color: #ffd849;
+}
+
+/** menu **/
+.wrapper header .gnb {
+  font-family: "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  bottom: 14px;
+  right: 0;
+  width: 520px;
+  background-color: #EFBC9B;
+  color: #FBF3D5;
+}
+
+.wrapper header .gnb li {
+  /* width: calc(520px / 4); */
+  flex-grow: 1;
+}
+
+.wrapper header .gnb li a {
+  display: block;
+  height: 54px;
+  line-height: 54px;
+}
+
+.wrapper header .gnb li a:hover {
+  background-color: #FBF3D5;
+  color: #747474;
+}
