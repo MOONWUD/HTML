@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>transform-origin</title>
+  <style>
+    img {
+      width: 100%;
+      border: 4px solid rgb(0, 0, 0);
+      box-sizing: border-box;
+      transition: 0.5s;
+      transform: rotate(415deg);
+    }
+
+    .box {
+      border: 6px solid rgb(0, 132, 255);
+      margin: 100px auto;
+      width: 300px;
+      height: 300px;
+    }
+
+    .box1 img { transform-origin: 50%; } /* 기본값 50% 50% */
+    .box2 img { transform-origin: center center;} 
+    .box3 img { transform-origin: 0 0;} 
+    .box4 img { transform-origin: 100% 100%;} 
+    .box5 img { transform-origin: 20px 100px;}  /* x, y */
+  </style>
+</head>
+
+<body>
+  <h1>transform-origin 기준축</h1>
+  <div class="box box1"><img src="./img/mon.png" alt="img"></div>
+  <div class="box box2"><img src="./img/mon.png" alt="img"></div>
+  <div class="box box3"><img src="./img/mon.png" alt="img"></div>
+  <div class="box box4"><img src="./img/mon.png" alt="img"></div>
+  <div class="box box5"><img src="./img/mon.png" alt="img"></div>
+</body>
+</html>

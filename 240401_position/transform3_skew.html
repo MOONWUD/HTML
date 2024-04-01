@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>transform3_skew</title>
+  <style>
+    img {
+      width: 100%;
+      border: 4px solid rgb(0, 0, 0);
+      box-sizing: border-box;
+      transition: 0.5s;
+    }
+
+    .box {
+      border: 6px solid rgb(0, 132, 255);
+      margin: 100px auto;
+      width: 300px;
+      height: 300px;
+    }
+
+    .box1:hover img { transform: skew(15deg);}
+    .box2:hover img { transform: skew(-15deg, -30deg);}
+    .box3:hover img { transform: skewX(-15deg);}
+    .box4:hover img { transform: skewY(-45deg);}
+  </style>
+</head>
+
+<body>
+  <h1>transform3: skew() 기울기</h1>
+  <div class="box box1"><img src="./img/mon.png" alt="img"></div>
+  <div class="box box2"><img src="./img/mon.png" alt="img"></div>
+  <div class="box box3"><img src="./img/mon.png" alt="img"></div>
+  <div class="box box4"><img src="./img/mon.png" alt="img"></div>
+</body>
+</html>

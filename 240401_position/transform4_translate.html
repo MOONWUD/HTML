@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>transform4_translate</title>
+  <style>
+    img {
+      width: 100%;
+      border: 4px solid rgb(0, 0, 0);
+      box-sizing: border-box;
+      transition: 0.5s;
+    }
+
+    .box {
+      border: 6px solid rgb(0, 132, 255);
+      margin: 100px auto;
+      width: 300px;
+      height: 300px;
+    }
+
+    .box1:hover img { transform: translate(50%);} /* x축 이동 */
+    .box2:hover img { transform: translateX(250px);}
+    .box3:hover img { transform: translateY(-150px);}
+    .box4:hover img { transform: translate(-50%, -50%);}
+
+    /* 
+       이동 가능한 css 속성
+       ㄴmargin: 여백을 만들어서 이동, 레이아웃에 영향을 줌. 옆에 다른 요소가 있음 밀림
+       ㄴposition: 독자적인 흐름을 갖는 경우
+       ㄴtramslate(): 독자적인 흐름. 자기 자신을 기준으로 이동
+    */
+  </style>
+</head>
+
+<body>
+  <h1>transform4: translate</h1>
+  <div class="box box1"><img src="./img/mon.png" alt="img"></div>
+  <div class="box box2"><img src="./img/mon.png" alt="img"></div>
+  <div class="box box3"><img src="./img/mon.png" alt="img"></div>
+  <div class="box box4"><img src="./img/mon.png" alt="img"></div>
+</body>
+</html>

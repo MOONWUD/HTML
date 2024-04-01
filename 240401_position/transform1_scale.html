@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>transform1_scale</title>
+  <style>
+    img {
+      width: 100%;
+      border: 4px solid rgb(0, 0, 0);
+      box-sizing: border-box;
+      transition: 0.5s;
+    }
+
+    .box {
+      border: 6px solid rgb(0, 132, 255);
+      margin: 100px auto;
+      width: 300px;
+      height: 300px;
+    }
+
+    /* 변하지 않을 곳에 이벤트를 줌 */
+    .box1:hover img {
+      /* width: 600px; */
+      transform: scale(2);
+      /* 배수의 값으로 단위값 없음. 기본값이 센터 */
+    }
+
+    .box2:hover img {
+      transform: scale(1.2, 0.5);
+      /* x,  y */
+    }
+
+    .box3:hover img {
+      transform: scaleX(1.7);
+    }
+
+    .box4:hover img {
+      transform: scaleY(0.9);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>transform1: scale()</h1>
+  <div class="box box1"><img src="./img/img1.jpg" alt="img"></div>
+  <div class="box box2"><img src="./img/img1.jpg" alt="img"></div>
+  <div class="box box3"><img src="./img/img1.jpg" alt="img"></div>
+  <div class="box box4"><img src="./img/img1.jpg" alt="img"></div>
+</body>
+
+</html>

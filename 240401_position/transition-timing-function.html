@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>transition-timing-function</title>
+  <style>
+    body {
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    .container {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      border: 3px solid #E9C874;
+      width: 80vw;
+      height: 70vh;
+    }
+
+    .container li {
+      flex-grow: 1; flex-basis: 100px;
+      height: 2rem;
+      background-color: #FBF8DD;
+      color: #E9C874;
+      margin: 0.4rem;
+
+      transition-property: all;
+      transition-duration: 1s;
+    }
+
+    .container:hover li:nth-child(1) {
+      background-color: #FFAF45; color: #d4e6ff; 
+      transition-timing-function: linear; /* 동일한 속도로 진행 */
+    }
+    .container:hover li:nth-child(2) {
+      background-color: #ffba60; color: #aed0ff; 
+      transition-timing-function: ease; 
+    }
+    .container:hover li:nth-child(3) {
+      background-color: #ffc983; color: #87b9ff; 
+      transition-timing-function: ease-in; 
+    }
+    .container:hover li:nth-child(4) {
+      background-color: #ffd9a8; color: #5da0ff; 
+      transition-timing-function: ease-out; 
+    }
+    .container:hover li:nth-child(5) {
+      background-color: #ffe5c3; color: #3d8eff; 
+      transition-timing-function: ease-in-out; 
+    }
+    .container:hover li:nth-child(6) 
+    {background-color: #fff6e9; color: #1174ff; 
+      transition-timing-function: cubic-bezier(0,-0.5,.963,1.68); 
+    }
+    .container:hover li { height: calc(100% - 0.8rem); }
+
+    </style>
+</head>
+
+<body>
+  <h1>transition-timing-function</h1>
+  <h2>움직임 형태 제어</h2>
+  <ul class="container">
+    <li>linear</li>
+    <li>ease</li>
+    <li>ease-in</li>
+    <li>ease-out</li>
+    <li>ease-in-out</li>
+    <li>cubic-bezier()</li>
+  </ul>
+</body>
+
+</html>
