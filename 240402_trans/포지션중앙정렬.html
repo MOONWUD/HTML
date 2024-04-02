@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>포지션중앙정렬</title>
+  <style>
+    body {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+      text-transform: capitalize;
+    }
+
+    .box {
+      width: 60vw;
+      height: 20vh;
+      background-color: #C0D6E8;
+      margin: 2rem auto;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .box h3 {
+      width: 50%;
+      height: 10vh;
+      line-height: 10vh;
+      background-color: #eca0cb;
+      color: #fff;
+      margin: 0;
+      position: absolute;
+    }
+
+    /* 포지션이 적용되어 있지 않고 요소의 값은 정의되어 있을 때 */
+    .box1 h3 {
+      position: static;
+      /* 포지션 초기화 */
+      margin: 5vh auto;
+      /* 일반적인 흐름이기 때문에 마진 상쇄현상 생김*/
+    }
+
+    /* 포지션이 적용되어 있을 때 */
+    .box2 h3 {
+      /* h3의 가로세로값이 정의가 되어 있으면 가능. 요소가 가진 값의 반을 같은 방향의 마진으로 마이너스 처리 */
+      top: 50%;
+      left: 50%;
+      margin-top: -5vh;
+      margin-left: -25%;
+    }
+
+    .box3 h3 {
+      /* h3의 가로세로값이 정의가 되어 있으면 가능 */
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+    .box4 h3 {
+      /* h3의 크기가 정의되어 있지 않아도 가능 */
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>포지션중앙정렬</h1>
+  <div class="box box1">
+    <h3>중앙정렬1</h3>
+  </div>
+  <h1>포지션중앙정렬</h1>
+  <div class="box box2">
+    <h3>중앙정렬2</h3>
+  </div>
+  <h1>포지션중앙정렬</h1>
+  <div class="box box3">
+    <h3>중앙정렬3</h3>
+  </div>
+  <h1>포지션중앙정렬</h1>
+  <div class="box box4">
+    <h3>중앙정렬4</h3>
+  </div>
+</body>
+
+</html>

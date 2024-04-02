@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>transEx4</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    body {
+      box-sizing: border-box;
+      background-color: #ECF4D6;
+      font-weight: bold;
+    }
+
+    .container {
+      background-color: #fff;
+      box-shadow:
+        2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+        6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+        12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+        22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+        41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+        100px 100px 80px rgba(0, 0, 0, 0.07);
+        padding: 20px;
+        width: 800px;
+        height: 400px;
+        margin: 100px auto;
+        position: relative;
+        overflow: hidden;
+    }
+    h1 {
+      border-bottom: 2px solid #000;
+      width: 280px;
+      padding: 0;
+      margin: 0;
+      text-transform: capitalize;
+      font-family: "Kanit", sans-serif;
+    }
+    .icon {
+      width: 30px;
+      height: 30px;
+      margin: 10px;
+    }
+    .main {
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+      margin: 30px 0;
+      width: 280px;
+    }
+    .footer {
+      background-color: #0766AD;
+      color: #fff;
+      padding: 10px 20px;
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 80%;
+      
+    }
+
+    .orang {
+      position: absolute;
+      height: 600px;
+      right: -110px; top: 0; bottom: 0; margin: auto;
+      border-radius: 50%;
+      transition: 1s;
+    }
+
+    .container:hover .orang {
+      right: -100px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 박스 위에 마우스를 올리면 오른쪽 이미지 왼쪽으로 쪼끔! 움직임 -->
+
+  <div class="container">
+    <h1>name</h1>
+    <div class="main">어쩌구 어쩌구 어쩌구 어쩌구 어쩌구 어쩌구 어쩌구 어쩌구 어쩌구 어쩌구 어쩌구 어쩌구 어쩌구 어쩌구</div>
+    <div class="icons">
+      <img src="./img/data_image_png;base… (1).png" alt="카카오" class="icon">
+      <img src="./img/data_image_png;base….png" alt="페이스북" class="icon">
+      <img src="./img/icon_naver.17f7cccb.png" alt="네이버" class="icon">
+    </div>
+    <div class="footer">pofile</div>
+    <img src="./img/common.jpeg" alt="오랑이" class="orang">
+  </div>
+</body>
+
+</html>
