@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>animationBasic</title>
+  <style>
+    .box {
+      background-color: #0766AD;
+      color: #fff;
+      width: 200px;
+      height: 200px;
+      margin: 100px auto;
+      text-align: center;
+      font-weight: bold;
+
+      animation-name: ani1;
+      /* 애니메이션 이름. 키프레임에 부여한 이름*/
+      animation-duration: 2s;
+      /* 진행 시간 */
+      animation-delay: ..5s;
+      /* 대기 시간 */
+      animation-timing-function: linear;
+      /* 움직임 스타일 */
+    }
+
+    /* 애니메이션을 적용시키기 위해 미리 만들어 놓은 움직임. 작성위치는 상관 없음 */
+    @keyframes ani1 {
+      /* 사용자 정의 이름 */
+      from {
+        /* 움직임의 시작 */
+        width: 200px;
+        height: 200px;
+      }
+
+      to {
+        /* 움직임 끝 */
+        background-color: #29ADB2;
+        width: 600px;
+        height: 600px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>animation 기본</h1>
+  <p>스스로 움직임</p>
+  <div class="box">애니메이션</div>
+</body>
+
+</html>

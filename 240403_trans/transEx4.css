@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+/* font-family: "Roboto Slab", serif; */
+
+body {
+  background-image: linear-gradient(#BED7DC 30%, #FBF8DD);
+  height: 100vh;
+}
+
+.pofile-wrapper {
+  background-color: #fff;
+  min-width: 400px;
+  max-width: 500px;
+  margin: 50px auto;
+  box-shadow:
+    2px 2.1px 2.2px rgba(0, 0, 0, 0.023),
+    4.9px 5.1px 5.3px rgba(0, 0, 0, 0.031),
+    9.1px 9.6px 10px rgba(0, 0, 0, 0.033),
+    16.3px 17.2px 17.9px rgba(0, 0, 0, 0.034),
+    30.5px 32.2px 33.4px rgba(0, 0, 0, 0.039),
+    73px 77px 80px rgba(0, 0, 0, 0.07);
+  position: relative;
+  /* 이미지의 기준 */
+  overflow: hidden;
+}
+
+/* 텍스트 박스 */
+.pofile-wrapper .txt-box {
+  width: 50%;
+  padding: 20px;
+}
+
+.pofile-wrapper .txt-box h2 {
+  font-family: "Roboto Slab", serif;
+  text-transform: capitalize;
+  font-size: 2rem;
+  font-style: italic;
+  border-bottom: 2px solid #000;
+  padding-left: 6px;
+}
+
+.pofile-wrapper .txt-box p {
+  margin: 20px 0 20px 6px;
+  line-height: 1.6;
+}
+
+.pofile-wrapper .txt-box .sns-group {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.pofile-wrapper .txt-box .sns-group li a {
+  margin-right: 10px;
+  display: block;
+}
+
+.pofile-wrapper .txt-box .sns-group li a span {
+  color: #378CE7;
+  font-size: 1.8rem;
+  /* font-icons :서체의 속성으로 제어 가능한 아이콘 ex)google icons, font awesone */
+}
+
+.pofile-wrapper .txt-box .sns-group li:hover a span {
+  color: #ece68e;
+}
+
+.pofile-wrapper .txt-box .sns-group li:last-child span {
+  font-size: 2.2rem;
+}
+
+.pofile-wrapper h3 {
+  background-color: #378CE7;
+  color: #fff;
+  font-family: "Roboto Slab", serif;
+  padding: 5px 20px;
+}
+
+.pofile-wrapper .img-box {
+  width: 400px;
+  height: 400px;
+  background: url(./img/common.jpeg) no-repeat 50% / 400px;
+  position: absolute;
+  top: 50%;
+  right: -30%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+.pofile-wrapper:hover .img-box {
+  right: -28%;
+}
