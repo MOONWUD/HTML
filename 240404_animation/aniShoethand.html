@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>aniShoethand</title>
+  <link rel="stylesheet" href="./animation.css">
+  <style>
+    body {
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    .wrapper {
+      width: 100%;
+      display: flex;
+    }
+
+    .wrapper .block {
+      box-sizing: border-box;
+      background-color: #5356FF;
+      color: aliceblue;
+      width: 200px;
+      height: 100px;
+    }
+
+    .wrapper .box p {
+      box-sizing: border-box;
+      background: linear-gradient(#41C9E2 30%, #d7ff78);
+      color: #160091;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 200px;
+      
+      /* position: absolute;
+      left: 0;
+
+
+      animation-name: mov3;
+      animation-duration: 2s;
+      animation-delay: .5s;
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 3;
+      animation-direction: alternate; */
+
+      /* 순서에 상관 없이 띄어쓰기로 구분. 두번째 나오는 s는 대기 시간으로 생략 가능 */
+      animation: mov3 3s .5s 3 ease alternate forwards;
+    }
+    .box:hover {
+      animation-play-state: paused; /* 일시멈춤 */
+    }
+  </style>
+</head>
+
+<body>
+  <h1>animation 축약형</h1>
+  <div class="wrapper">
+    <div class="box">
+      <p>축약형</p>
+    </div>
+    <div class="block">block</div>
+  </div>
+</body>
+
+</html>

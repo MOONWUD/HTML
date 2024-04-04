@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>aniEx3</title>
+  <style>
+    /*
+    @keyframes fireworks {
+      25% {
+        transform: scale(1) rotate(360deg);
+      }
+
+      50% {
+        transform: scale(1.3) rotate(-360deg);
+      }
+
+      75% {
+        transform: scale(.5) rotate(360deg);
+      }
+
+      100% {
+        transform: scale(1.1) rotate(-360deg);
+        opacity: 0;
+      }
+    }
+
+    .fireworks {
+      position: fixed;
+      top: 50px;
+      right: 50px;
+      animation: fireworks 8s infinite ease alternate forwards;
+    }
+
+    
+    @keyframes wheel {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes bicycle {
+      100% {
+        transform: translateX(80vw);
+      }
+
+    }
+
+    .container {
+      animation: bicycle 10s infinite;
+    }
+
+    .container .bicycle {
+      margin-top: 200px;
+      margin-left: 200px;
+    }
+
+    .container .wheel {
+      position: absolute;
+      top: 600px;
+      animation: wheel 1s infinite;
+    }
+
+    .container .wheel1 {
+      left: 114px;
+    }
+
+    .container .wheel2 {
+      left: 585px;
+    } 
+    */
+    body {
+      margin: 0;
+    }
+
+    .container {
+      height: 100vh;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .container .bicycle-wrapper {
+      animation: move 3s infinite linear;
+      position: relative;
+      
+    }
+
+    .container .bicycle-wrapper .bicycle {
+      margin: 300px 0 0 0px;
+    }
+
+    .container .bicycle-wrapper .wheel {
+      animation: spin infinite 1s linear;
+      position: absolute;
+      top: 700px;
+      left: -95px;
+    }
+    .container .bicycle-wrapper .wheel:last-child {
+     left: 382px;
+    }
+
+    .container .fireworks {
+      margin: 20px 20px auto auto;
+      animation: scale 5s infinite alternate ;
+    }
+
+    @keyframes scale {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        transform: rotate(360deg) scale(0.5);
+        opacity: 1;
+      }
+    }
+
+    @keyframes move {
+      0% {opacity: 0; left: -10%;}
+      10% { opacity: 1; left: 0;}
+      80% { opacity: 1; left: 100%;}
+      100% { opacity: 0; left: 110%;}
+    }
+
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="bicycle-wrapper">
+      <img src="./img/bicycle.png" alt="자전거" class="bicycle">
+      <img src="./img/wheel.png" alt="바퀴1" class="wheel">
+      <img src="./img/wheel.png" alt="바퀴2" class="wheel">
+    </div>
+    <img src="./img/fireworks.png" alt="반짝이" class="fireworks">
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>animationBasic</title>
+  <style>
+    .box {
+      background-color: #0766AD;
+      color: #fff;
+      width: 200px;
+      height: 200px;
+      margin: 100px auto;
+      text-align: center;
+      font-weight: bold;
+
+      animation-name: ani4;
+      /* 애니메이션 이름. 키프레임에 부여한 이름*/
+
+      animation-duration: 2s;
+      /* 진행 시간 */
+      animation-delay: .5s;
+      /* 대기 시간 */
+      animation-timing-function: linear;
+      /* 움직임 스타일 */
+      animation-iteration-count: infinite;
+      /* 반복 횟수. 무한 */
+      animation-iteration-count: 3;
+      animation-fill-mode: backwards; 
+      /* 끝난 후 위치. 기본값 끝난 후 출발 점으로 돌아옴 */
+      animation-fill-mode: forwards;
+      /* 끝난 지점에 그대로 있음 */
+      animation-direction: normal; 
+      /* 방향의 값. 기본값 */
+      animation-direction: reverse;
+      /* 역방향 to, 100% -> from, 0% */
+      animation-direction: alternate-reverse; 
+      /* 역방향 진행 후 순방향으로 진행 3>2>1>2>3 */
+      animation-direction: alternate;
+      /* 순방향 진행 후 역방향 진행 1>2>3>2>1 */
+      animation-composition: ;
+      animation-range: ;
+      animation-timeline: ;
+    }
+
+    /* 애니메이션을 적용시키기 위해 미리 만들어 놓은 움직임. 작성위치는 상관 없음 */
+    @keyframes ani1 {
+
+      /* 사용자 정의 이름 */
+      from {
+        /* 움직임의 시작 */
+        width: 200px;
+        height: 200px;
+      }
+
+      to {
+        /* 움직임 끝 */
+        background-color: #29ADB2;
+        width: 600px;
+        height: 600px;
+      }
+    }
+
+    @keyframes ani2 {
+      0% {
+        width: 200px;
+        height: 200px;
+      }
+
+      100% {
+        transform: scale(2);
+        background-color: #B3C8CF;
+        color: #0766AD;
+      }
+    }
+
+    @keyframes ani3 {
+      100%{
+        transform: scale(1.5) translateX(50vw) rotate(360deg);
+        background-color: #627254;
+        color: #fff;
+        font-size: 2rem;
+      }
+    }
+
+    @keyframes ani4 {
+      10%, 70% {
+        background-color: #007F73;
+      }      
+      50% {
+        background-color: #A8CD9F;
+        transform: rotate(180deg);
+      }
+      100% {
+        transform: rotate(-180deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>animation 기본</h1>
+  <p>스스로 움직임</p>
+  <div class="box">애니메이션</div>
+</body>
+
+</html>

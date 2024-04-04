@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>aniEx2</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+    @keyframes neon {
+      25% {
+        text-shadow: 5px 5px #F7C8E0, 5px 6px #bd8ea6;
+      }
+
+      50% {
+        text-shadow: -5px -5px #DFFFD8, -5px -6px #7daa73;
+      }
+
+      75% {
+        text-shadow: 8px 4px #B4E4FF, 8px 3px #536e7e;
+      }
+
+      100% {
+        text-shadow: -8px -4px #ffcea5, -8px -3px #bba78a;
+      }
+
+    }
+
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-size: 13rem;
+      font-weight: bold;
+      font-family: "Anton", sans-serif;
+    }
+
+    .wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    .wrapper span {
+      margin: 20px;
+    }
+    .wrapper span:hover {
+      animation: neon infinite .4s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <span>C</span>
+    <span>S</span>
+    <span>S</span>
+    <span>3</span>
+  </div>
+</body>
+
+</html>
