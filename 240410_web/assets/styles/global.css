@@ -51,10 +51,22 @@ body {
   border: 3px solid #fff;
 }
 .more-btn {
+  font-weight: 700;
+  transition: .3s;
   background-color: #f18d00;
   color:#fff;
+  position: absolute;
+  text-transform: capitalize;
+  padding: 10px 35px;
+}
+.more-btn:hover{
+  border-radius: 300px;
 }
 
+/***** article *****/
+article {
+  padding-top: 170px;
+}
 /***** header *****/
 header {
   position: fixed;
@@ -62,6 +74,7 @@ header {
   width: 100%;
   background-color: rgba(0,0,0,0.5);
   color:#fff;
+  z-index: 99999;
 }
 header .header-wrapper {
   /* background-color: orange; */
@@ -106,7 +119,6 @@ header .header-wrapper .global-utill {
   margin: 0 3.15789%;
   font-size: 14px;
 }
-header .header-wrapper .global-utill li {}
 header .header-wrapper .global-utill li a {
   display: block;
   margin-left: 30px;
