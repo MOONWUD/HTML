@@ -47,9 +47,7 @@ body {
   margin: 0px auto;
   color:#666;
 }
-.ghost-btn {
-  border: 3px solid #fff;
-}
+
 .more-btn {
   font-weight: 700;
   transition: .3s;
@@ -149,3 +147,31 @@ header .header-wrapper .global-utill li:not(:first-child) a::after {
 }
 
 /***** footer *****/
+footer {
+  background-color: #2a2a2a;
+  color: #fff;
+  margin-top: 110px;
+}
+footer .footer-banner {
+  background-color: #ddd;
+  padding: 30px 0;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+footer .footer-bottom {
+  max-width: 1600px;
+  margin: 0 auto;
+  font-size: 12px;
+  padding: 0;
+}
+footer .footer-bottom h2 {
+  background: url(../images/logo.png) no-repeat 0 50% / contain;
+  filter: grayscale(100%) contrast(20%);
+  text-indent: -9999px;
+  width: 300px;
+  height: 40px;
+}
+footer .footer-bottom .footer-utill {}
+footer .footer-bottom address {}
+footer .footer-bottom address p {}

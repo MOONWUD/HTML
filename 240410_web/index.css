@@ -208,7 +208,8 @@
 }
 
 .business .business-wrapper .business-slide img {
-  aspect-ratio: 2 / 1;
+  width: 100%;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
 }
 .business .business-wrapper .more-btn {
@@ -251,14 +252,127 @@
 .contact-wrapper {
   justify-content: center;
   align-items: flex-start;
-  margin: 0 auto;
+  margin: 80px auto;
   max-width: 1600px;
+  gap: 4%;
 }
 .contact-wrapper .press {
+  color: #fff;
+  transition: .3s;
+  width: 37.5%;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url(./assets/images/kakaotalk_20240404_111543987_02.jpg) no-repeat 50% / cover;
+}
+.contact-wrapper .press:hover {
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url(./assets/images/kakaotalk_20240404_111543987_02.jpg) no-repeat 50% / cover;
+}
+.contact-wrapper .press h3 {
+  background-color: #f18d00;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px;
+  width: 140px;
+}
+.contact-wrapper .press h4 {
+  font-size: 2.5rem;
+  margin: 36px 80px;
+  /* 한 줄 일 때 말줄임... 
+  width: 400px;
+  text-overflow: ellipsis; 말줄임
+  white-space: nowrap; 자동줄바꿈 금지
+  overflow: hidden;*/
+
+  /* 여러 줄 말줄임 */
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2; /* 여러 줄 일 때 텍스트 자르는 줄 */
+  -webkit-box-orient: vertical; /* 박스 진행방향 */
+  overflow: hidden;
+}
+.contact-wrapper .press .ghost-btn {
+  border: 3px solid #fff;
+  padding: 10px 30px;
+  display: inline-block;
+  margin: 30px 0 80px;
+}
+.contact-wrapper .notice {
+  width: 37.5%;
+  text-align: left;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 15px 0;
+}
+.contact-wrapper .notice h3 {
+  font-family: "Play", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 700;
+  font-size: 2.4rem;
+  text-transform: capitalize;
+}
+.contact-wrapper .notice .ghost-btn {
+  border: 1px solid #242424;
+  padding: 10px 30px;
   transition: .3s;
 }
-.contact-wrapper .press h3 {}
-.contact-wrapper .press h4 {}
-.contact-wrapper .press .press-date{}
-.contact-wrapper .notice {}
-.contact-wrapper .recruit {}
+.contact-wrapper .notice .ghost-btn:hover {
+  border-radius: 30px;
+}
+.contact-wrapper .notice .notice-list {
+  width: 100%;
+  margin: 20px 0;
+  list-style: inside emojik;
+  color: #999;
+}
+/* 기본 리스트 스타일 외 스타일 설정 */
+@counter-style emojik {
+  system: cyclic; /* 같은 값 반복 */
+  symbols: "🐵";
+  suffix: ""; /* 머릿말 기호 다음 처리 방식 */
+}
+.contact-wrapper .notice .notice-list li::before {
+  content: "- ";
+}
+.contact-wrapper .notice .notice-list li {
+  border-bottom: 1px solid #ddd;
+  padding: 14px 6px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+}
+.contact-wrapper .notice .notice-list li a {
+  /* 한 줄 일 때 말줄임. 정해진 범위가 있어야 함 */
+  overflow: hidden;
+  width: 70%;
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+  display: inline-block; 
+}
+.contact-wrapper .notice .notice-list li a:hover {
+  text-decoration: underline;
+}
+.contact-wrapper .notice .notice-list li .notice-date {
+ /* float: right;  요소의 진행 방향 설정. left, right 두 값만 존재. 최근엔 잘 사용하지 않음 */
+}
+.contact-wrapper .recruit {
+  width: 20%;
+  background: url(./assets/images/bg_main_recruit.png) no-repeat 50% / cover;
+  align-self: stretch;
+  position: relative;
+}
+.contact-wrapper .recruit h3 {
+  color: #f18d00;
+  font-size: 2.4rem;
+  font-family: "Play", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 700;
+  text-align: left;
+  padding: 20px 30px 0;
+  text-transform: capitalize;
+}
+.contact-wrapper .recruit p {
+  text-align: left;
+  font-size: 1.1rem;
+  padding: 0 30px;
+}
+.contact-wrapper .recruit .more-btn {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+}
