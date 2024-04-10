@@ -1,0 +1,139 @@
+@charset "UTF-8";
+/* header 
+@import url();
+*/
+
+/***** common *****/
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  /* 한글 단어 기준으로 줄바꿈 */
+  word-break: break-all;
+  overflow-wrap: break-word;
+  line-height: 1.6;
+}
+
+.flex-wrapper {
+  display: flex;
+  align-items: center;
+}
+.lower-case {
+  text-transform: lowercase;
+}
+.main-title {
+  font-family: "Play", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  position: relative;
+  font-size: 2.875rem;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+.main-title::before {
+  content: "";
+  background-color: #f18d00;
+  position: absolute;
+  width: 4px;
+  height: 21px;
+  bottom:100%; left: 0; right: 0;
+  margin: 100px auto 20px;
+  transform: skewX(-25deg);
+}
+.main-des {
+  font-weight: 300;
+  font-size: 17px;
+  max-width: 500px;
+  min-width: 400px;
+  margin: 0px auto;
+  color:#666;
+}
+.ghost-btn {
+  border: 3px solid #fff;
+}
+.more-btn {
+  background-color: #f18d00;
+  color:#fff;
+}
+
+/***** header *****/
+header {
+  position: fixed;
+  border-bottom: 1px solid rgba(255,255,255,0.7);
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  color:#fff;
+}
+header .header-wrapper {
+  /* background-color: orange; */
+  max-width:1900px; 
+  min-width:1200px;
+  margin: 0 auto;
+  height: 100px;
+
+  justify-content: space-between;
+}
+header .header-wrapper .logo {
+  width: 204px;
+  height: 100%;
+  background: url(../images/logo.png) no-repeat 0 50% / contain;
+  text-indent: -9999px;
+  /* margin: 0 60px; */
+  margin: 0 3.15789%;
+}
+header .header-wrapper .global-nav {
+  font-size: 18px;
+  font-weight: 600;
+  width: 50%; height: 100%;
+  /* background-color: #ddd; */
+}
+header .header-wrapper .global-nav li {
+  flex: 1;/* flex-grow:1 flex-shrink:1 flex-basis:0; */
+  height: 100%;
+}
+header .header-wrapper .global-nav li:hover {
+  color: #f18d00;
+}
+header .header-wrapper .global-nav li a {
+  /* background-color: orange; */
+  height: 100%;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  display: grid;
+  place-items: center;
+}
+header .header-wrapper .global-utill {
+  margin: 0 3.15789%;
+  font-size: 14px;
+}
+header .header-wrapper .global-utill li {}
+header .header-wrapper .global-utill li a {
+  display: block;
+  margin-left: 30px;
+}
+header .header-wrapper .global-utill li:first-child a {
+  background: #f18d00 url(../images/main_reserve_icon2_2108.png) no-repeat 10% 50% / 20px;
+  width: 130px;
+  padding: 9px 0 9px 22px;
+  border-radius: 30px;
+}
+header .header-wrapper .global-utill li {
+  position: relative;
+}
+/* https://developer.mozilla.org/ko/docs/Web/CSS/:not 
+  특정 클래스나 특정 요소를 제외할 때 사용
+  첫번째 li만 빼고
+*/
+header .header-wrapper .global-utill li:not(:first-child) a::after {
+  content:"";
+  position: absolute;
+  width: 0; height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid #fff;
+  top:50%;
+  transform: translateY(-50%);
+  margin-left:4px;
+}
+
+/***** footer *****/
