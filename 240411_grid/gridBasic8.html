@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>gridBasic8</title>
+  <style>
+    body {
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .container {
+      width: 90%;
+      margin: 50px auto;
+      border: 6px solid #000;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 60px 60px;
+      grid-auto-rows: 60px;
+      gap: 0.3rem;
+    }
+
+    .container .item {
+      background-color: #b0f0c5;
+    }
+
+    .box1 {
+      /* column 기준 정렬. 셀 안에서 개별 정렬 */
+      align-items: start;
+      align-items: stretch;
+      /* 기본값 */
+      align-items: end;
+      align-items: center;
+    }
+
+    .box2 {
+      /* row 기준 정렬 */
+      justify-items: stretch;
+      /* 기본값 */
+      justify-items: start;
+      justify-items: end;
+      justify-items: center;
+    }
+
+    .box3 {
+      height: 40vh;
+      /* 중앙 정렬 */
+      place-items: center;
+      place-items: end;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>gridBasic8</h1>
+  <h2>그리드 아이템 정렬 : jsutify-content, align-conten</h2>
+  <div class="container box1">
+    <div class="item">item1</div>
+  </div>
+  <div class="container box2">
+    <div class="item">item1</div>
+  </div>
+  <div class="container box3">
+    <div class="item">item1</div>
+    <div class="item">item1</div>
+    <div class="item">item3</div>
+    <div class="item">item4</div>
+    <div class="item">item5</div>
+    <div class="item">item6</div>
+    <div class="item">item7</div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>gridBasic7</title>
+  <style>
+    body {
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .container {
+      width: 90%;
+      height: 60vh;
+      margin: 50px auto;
+      border: 6px solid #000;
+      display: grid;
+      grid-template-columns: 100px minmax(50px, 150px) 10vw 15%;
+      grid-auto-rows: 50px;
+      gap: 0.3rem;
+    }
+    .container .item {
+      background-color: #41C9E2;
+    }
+    .box1 {
+      /* row 기준 정렬 */
+      justify-content: start; /* 기본값. 그리드라인 시작점 */
+      justify-content: end;
+      justify-content: center;
+      justify-content: space-around;
+      justify-content: space-between;
+      justify-content: space-evenly;
+    }
+
+    .box2 {
+      /* column 정렬 */
+      align-content: start; /* 기본값 */
+      align-content: end;
+      align-content: center;
+      align-content: space-around;
+      align-content: space-between;
+      align-content: space-evenly;
+    }
+
+    .box3 {
+      /* 중앙 정렬
+      justify-content: center;
+      align-content: center;  */
+
+      place-content: center;
+      place-content: center center; /* align-content justify-content */
+      place-content: end center;
+    }
+
+    .box3 .item {
+      display: grid;
+      place-content: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>gridBasic7</h1>
+  <h2>그리드 아이템의 정렬 : jsutify-content, align-content</h2>
+  <div class="container box1">
+    <div class="item">item01</div>
+    <div class="item">item02</div>
+    <div class="item">item03</div>
+    <div class="item">item04</div>
+    <div class="item">item05</div>
+    <div class="item">item06</div>
+    <div class="item">item07</div>
+    <div class="item">item08</div>
+    <div class="item">item09</div>
+    <div class="item">item10</div>
+    <div class="item">item11</div>
+    <div class="item">item12</div>
+    <div class="item">item13</div>
+    <div class="item">item14</div>
+    <div class="item">item15</div>
+    <div class="item">item16</div>
+    <div class="item">item17</div>
+    <div class="item">item18</div>
+  </div>
+  <div class="container box2">
+    <div class="item">item01</div>
+    <div class="item">item02</div>
+    <div class="item">item03</div>
+    <div class="item">item04</div>
+    <div class="item">item05</div>
+    <div class="item">item06</div>
+    <div class="item">item07</div>
+    <div class="item">item08</div>
+    <div class="item">item09</div>
+    <div class="item">item10</div>
+    <div class="item">item11</div>
+    <div class="item">item12</div>
+    <div class="item">item13</div>
+    <div class="item">item14</div>
+    <div class="item">item15</div>
+    <div class="item">item16</div>
+    <div class="item">item17</div>
+    <div class="item">item18</div>
+  </div>
+  <div class="container box3">
+    <div class="item">item01</div>
+    <div class="item">item02</div>
+    <div class="item">item03</div>
+    <div class="item">item04</div>
+    <div class="item">item05</div>
+    <div class="item">item06</div>
+    <div class="item">item07</div>
+    <div class="item">item08</div>
+    <div class="item">item09</div>
+    <div class="item">item10</div>
+    <div class="item">item11</div>
+    <div class="item">item12</div>
+    <div class="item">item13</div>
+    <div class="item">item14</div>
+    <div class="item">item15</div>
+    <div class="item">item16</div>
+    <div class="item">item17</div>
+    <div class="item">item18</div>
+  </div>
+</body>
+
+</html>

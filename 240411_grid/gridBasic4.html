@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>gridBasic4</title>
+  <style>
+    body {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .container {
+      width: 90%;
+      margin: 50px auto;
+      border: 6px solid #000;
+      display: grid;
+    }
+
+    .container .item {
+      background-color: #cee7f0;
+      color: #2ea13e;
+    }
+
+    .box1 {
+      /* 2행 7열, 여백 */
+      /* grid-template: 100px 100px / 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
+      gap: 10px;
+      grid-template: 100px 100px / repeat(7, 1fr);
+    }
+
+    .box2 {
+      gap: 0.3rem;
+      /* 3행 6열 */
+      grid-template: repeat(3, 100px) / repeat(6, 1fr);
+      grid-template: repeat(3, 70px) / 150px repeat(5, 1fr);
+      /* 1, 2열 150px, 3 최대200, 나머지 1 */
+      grid-template: repeat(3, 70px) / repeat(2, 150px) minmax(auto, 200px) repeat(3, 1fr);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>gridBasic4</h1>
+  <h2>repeat(반복횟수, 크기); 행과 열의 값 반복</h2>
+  <div class="container box1">
+    <div class="item">item1</div>
+    <div class="item">item2</div>
+    <div class="item">item3</div>
+    <div class="item">item4</div>
+    <div class="item">item5</div>
+    <div class="item">item6</div>
+    <div class="item">item7</div>
+    <div class="item">item8</div>
+    <div class="item">item9</div>
+    <div class="item">item10</div>
+    <div class="item">item11</div>
+    <div class="item">item12</div>
+  </div>
+  <div class="container box2">
+    <div class="item">item1</div>
+    <div class="item">item2</div>
+    <div class="item">item3</div>
+    <div class="item">item4</div>
+    <div class="item">item5</div>
+    <div class="item">item6</div>
+    <div class="item">item7</div>
+    <div class="item">item8</div>
+    <div class="item">item9</div>
+    <div class="item">item10</div>
+    <div class="item">item11</div>
+    <div class="item">item12</div>
+    <div class="item">item13</div>
+    <div class="item">item14</div>
+    <div class="item">item15</div>
+  </div>
+</body>
+
+</html>

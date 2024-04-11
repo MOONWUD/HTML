@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>gridBasic9</title>
+  <style>
+    body {
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .container {
+      width: 80%;
+      margin: 50px auto;
+      border: 6px solid #000;
+      display: grid;
+      gap: 0.3rem;
+    }
+
+    .container .item {
+      background-color: #eff0b0;
+      display: grid;
+      place-items: center;
+    }
+
+    .box1 {
+      grid-template-rows: repeat(4, 70px);
+    }
+
+    .box1 .item1 {
+      /* column 기준. grid-item에 적용 */
+      align-self: start;
+    }
+
+    .box1 .item2 {
+      align-self: stretch;
+    }
+
+    .box1 .item3 {
+      align-self: center;
+    }
+
+    .box1 .item4 {
+      align-self: end;
+    }
+
+    .box2 {}
+
+    .box2 .item1 {
+      /* row 기준 */
+      justify-self: stretch;
+    }
+
+    .box2 .item2 {
+      justify-self: start;
+    }
+
+    .box2 .item3 {
+      justify-self: center;
+    }
+
+    .box2 .item4 {
+      justify-self: end;
+    }
+
+    .box3 {
+      grid-template: 70px 70px / 1fr 1fr;
+    }
+
+    .box3 .item1 {
+      place-self: center start;
+      /* col row */
+      order: 3;
+    }
+
+    .box3 .item2 {
+      place-self: center;
+      order: 3;
+    }
+
+    .box3 .item3 {
+      place-self: end;
+      order: 2;
+    }
+
+    .box3 .item4 {
+      place-self: stretch center;
+      order: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>gridBasic8</h1>
+  <h2>그리드 아이템 정렬 : jsutify-content, align-conten</h2>
+  <h2>order :flex-item, grid-item에 적용. 아이템들의 순서를 정함</h2>
+  <div class="container box1">
+    <div class="item item1">item1</div>
+    <div class="item item2">item2</div>
+    <div class="item item3">item3</div>
+    <div class="item item4">item4</div>
+  </div>
+  <div class="container box2">
+    <div class="item item1">item1</div>
+    <div class="item item2">item2</div>
+    <div class="item item3">item3</div>
+    <div class="item item4">item4</div>
+  </div>
+  <div class="container box3">
+    <div class="item item1">item1</div>
+    <div class="item item2">item2</div>
+    <div class="item item3">item3</div>
+    <div class="item item4">item4</div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>gridBasic2</title>
+  <style>
+    body {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .container {
+      width: 90%;
+      margin: 50px auto;
+      border: 6px solid #000;
+    }
+
+    .container .item {
+      background-color: #4793AF;
+      margin: 4px;
+      color: #C0D6E8;
+    }
+
+    .box {
+      display: grid;
+      /* 2행 3열 */
+      grid-template-rows: 100px 200px;
+      grid-template-columns: 1fr 1fr 3fr;
+      grid-template-columns: minmax(200px, 400px) 1fr 3fr;
+      grid-template-columns: minmax(200px, 400px) minmax(auto, 300px) minmax(200px, auto);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>gridBasic2</h1>
+  <h2>grid-tamplate: minmax(최소값, 최대값)</h2>
+  <div class="container box">
+    <div class="item">item1</div>
+    <div class="item">item2</div>
+    <div class="item">item3</div>
+    <div class="item">item4</div>
+    <div class="item">item5</div>
+    <div class="item">item6</div>
+    <div class="item">item7</div>
+  </div>
+</body>
+
+</html>
