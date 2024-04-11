@@ -45,9 +45,10 @@
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="youtube"></iframe> -->
 
-      <iframe src="https://www.youtube.com/embed/fGk-271Xwxs?si=mC7CBQKhRTO91mf4&amp;controls=0&loop=1&mute=1&autoplay=1" 
-      title="pan star" frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="youtube"></iframe>
+    <iframe src="https://www.youtube.com/embed/fGk-271Xwxs?si=mC7CBQKhRTO91mf4&amp;controls=0&loop=1&mute=1&autoplay=1"
+      title="pan star" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="youtube"></iframe>
     <div class="main-video-text">
       <h2><span>OVER THE NETWORK</span>CREATE NEW VALUES</h2>
       <p>고객을 위한 새로운 가치를 만들어 가기 위해 팬스타는 먼저 생각하고 먼저 움직입니다</p>
@@ -183,15 +184,15 @@
     </ul>
     <!-- footer-bottom -->
     <article class="footer-bottom">
-      <div class="flex-wrapper">
+      <div class="footer-bottom-box flex-wrapper">
         <h2>로고</h2>
-        <ul class="footer-utill">
+        <ul class="footer-utill flex-wrapper">
           <li><a href="#">법적고지</a></li>
           <li><a href="#">개인정보처리방침</a></li>
           <li><a href="#">이메일 수집거부</a></li>
         </ul>
       </div>
-      <div class="flex-wrapper">
+      <div class="footer-bottom-box flex-wrapper">
         <address>
           <p>서울특별시 중구 무교로 20, 어린이재단빌딩 5층
             부산광역시 중구 해관로 30, 팬스타크루즈 플라자 빌딩 3층</p>
@@ -205,33 +206,41 @@
             <option value="팬스타엔터프라이즈">팬스타엔터프라이즈</option>
           </select> 
         -->
-        <p class="family-site"><a href="#">familysite</a><span>+</span></p>
+        <p class="family-site flex-wrapper"><a href="#">familysite</a>
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path
+                d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+            </svg>
+          </span>
+        </p>
       </div>
     </article>
   </footer>
 
-	<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=c5dc00d7229b0c7e8985143294803190"></script>
-	<script>
-		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-		    mapOption = {
-		        center: new kakao.maps.LatLng(37.26828, 127.0003), // 지도의 중심좌표
-		        level: 3, // 지도의 확대 레벨
-		        mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
-		    }; 
+  <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=c5dc00d7229b0c7e8985143294803190"></script>
+  <script>
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+      mapOption = {
+        center: new kakao.maps.LatLng(37.26828, 127.0003), // 지도의 중심좌표
+        level: 3, // 지도의 확대 레벨
+        mapTypeId: kakao.maps.MapTypeId.ROADMAP // 지도종류
+      };
 
-		// 지도를 생성한다 
-		var map = new kakao.maps.Map(mapContainer, mapOption); 
+    // 지도를 생성한다 
+    var map = new kakao.maps.Map(mapContainer, mapOption);
 
-		// 지도 타입 변경 컨트롤을 생성한다
-		var mapTypeControl = new kakao.maps.MapTypeControl();
+    // 지도 타입 변경 컨트롤을 생성한다
+    var mapTypeControl = new kakao.maps.MapTypeControl();
 
-		// 지도에 마커를 생성하고 표시한다
-		var marker = new kakao.maps.Marker({
-		    position: new kakao.maps.LatLng(37.26828, 127.0003), // 마커의 좌표
-		    map: map // 마커를 표시할 지도 객체
-		});
+    // 지도에 마커를 생성하고 표시한다
+    var marker = new kakao.maps.Marker({
+      position: new kakao.maps.LatLng(37.26828, 127.0003), // 마커의 좌표
+      map: map // 마커를 표시할 지도 객체
+    });
 
-	</script>
+  </script>
 </body>
 
 </html>
