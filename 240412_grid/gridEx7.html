@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>gridEx7</title>
+  <style>
+    ul, li { margin: 0; padding: 0; }
+    .container {
+      font-weight: bold;
+      font-size: 1.2rem;
+      border: 1px solid #000;
+      margin: 20px auto;
+      width: 80vw;
+      box-sizing: border-box;
+      padding: 4%;
+      box-shadow: 
+        5px 5px #5BBCFF,
+        10px 10px #7fcaff,
+        15px 15px #9ed7ff,
+        20px 20px #c7e8ff,
+        25px 25px #ecf7ff;
+    }
+    .container .header-box {
+      display: grid;
+      grid-template-columns: 2fr 2fr 3fr;
+      border-bottom: 1px solid #000;
+      padding: 0.8rem;
+      list-style-position: inside;
+      place-items: end start;
+    }
+    .container .list-box {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      padding: 10px;
+    }
+    .container .list-box li {
+      color: #fffbc7;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+    }
+    .container .list-box li:nth-child(odd) {
+      background-color: #FFD1E3;
+    }
+    .container .list-box li:nth-child(even) {
+      background-color: #5BBCFF;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header-box">
+      <ul>
+        <li>list1</li>
+        <li>list2</li>
+        <li>list3</li>
+        <li>list4</li>
+      </ul>
+      <ul>
+        <li>list1</li>
+        <li>list2</li>
+        <li>list3</li>
+        <li>list4</li>
+      </ul>
+      <address>경기도 수원시 팔달구 123456</address>
+    </div>
+    <ul class="list-box">
+      <li>item1</li>
+      <li>item2</li>
+      <li>item3</li>
+      <li>item4</li>
+      <li>item5</li>
+      <li>item6</li>
+    </ul>
+  </div>
+</body>
+
+</html>
