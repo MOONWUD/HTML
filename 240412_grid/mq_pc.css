@@ -1,0 +1,16 @@
+@charset "utf-8";
+    /* 1200px */
+    @media (min-width: 1200px) {
+      h1 {
+        background-color: #0B60B0;
+        padding: 40px 0;
+      }
+
+      h2 {
+        display: none;
+      }
+
+      .container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
