@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>mqEx3</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <style>
+    body {
+      margin: 0;
+      background-color: #FFF7FC;
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+
+    ul {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      list-style: none;
+      padding: 0;
+      display: grid;
+      place-items: center;
+      gap: 10px;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+    ul .txt {
+      background-color: #8B93FF;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.5rem;
+      display: block;
+      padding: 10px;
+      width: 100px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    ul .txt10 {
+      background-color: #FF71CD;
+    }
+    @media (max-width: 1200px) { 
+      ul {
+        width: 400px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+      }
+      ul .txt4 {
+        display: none;
+      }
+    }
+    @media (max-width: 768px) { 
+      ul {
+        width: 300px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+      }
+      ul .txt10 {
+        display: none;
+      }
+    }
+    @media screen and (max-width: 414px) { 
+      ul {
+        width: 200px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+      }
+      ul .txt {
+        background-color: #7AA2E3;
+      }
+      ul .txt10 {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+ <div class="container">
+  <ul>
+    <li class="txt txt1">txt1</li>
+    <li class="txt txt2">txt2</li>
+    <li class="txt txt3">txt3</li>
+    <li class="txt txt4">txt4</li>
+    <li class="txt txt5">txt5</li>
+    <li class="txt txt6">txt6</li>
+    <li class="txt txt7">txt7</li>
+    <li class="txt txt8">txt8</li>
+    <li class="txt txt9">txt9</li>
+    <li class="txt txt10">txt10</li>
+  </ul>
+ </div>
+</body>
+</html>
