@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>mqEx3</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <style>
+    body { margin: 0; text-align: center; font-weight: bold; }
+    .wrapper {
+      list-style: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-align: center;
+      padding: 50px; margin: 0;
+      background-color: #bbeff5;
+      box-sizing: border-box;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .wrapper .box {
+      width: calc(50% - 10px);
+      background-color: #41B06E; color: #fff;
+      padding: 5px 0;
+    }
+
+    .wrapper .none {
+      display: none; /* 레이아웃에 영향을 줌 */
+    }
+
+    @media (min-width: 768px) {
+      /* 3열 */
+      .wrapper .box {
+        background-color: #8DECB4;
+        width: calc(33.3333% - 10px);
+      }
+      .wrapper .box:last-of-type {
+        display: none;
+      }
+    }
+    @media (min-width: 1200px) {
+      /* 4열 */
+      .wrapper .box {
+        width: calc(25% - 10px);
+      }
+      .wrapper .box:last-of-type {
+        display: block;
+        background-color: #141E46;
+      }
+    }
+    @media (min-width: 1600px) {
+      /* 5열 */
+      .wrapper {
+        width: 90vw;
+        margin: 0 auto;
+        font-size: 1.6rem;
+      }
+      .wrapper .box {
+        width: calc(20% - 10px);
+      }
+      .wrapper .none {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="wrapper">
+    <li class="box">txt1</li>
+    <li class="box">txt2</li>
+    <li class="box">txt3</li>
+    <li class="box none">txt4</li>
+    <li class="box">txt5</li>
+    <li class="box">txt6</li>
+    <li class="box">txt7</li>
+    <li class="box">txt8</li>
+    <li class="box">txt9</li>
+    <li class="box">txt10</li>
+  </ul>
+</body>
+</html>
