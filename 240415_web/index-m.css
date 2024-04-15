@@ -4,28 +4,104 @@
 .flex-wrapper {
   display: flex;
 }
+
 /*********** header ***********/
-header {
-}
+header {}
+
 header .header-wrapper {
   width: 100vw;
   height: 100px;
   background-color: #fff;
   position: relative;
 }
+
 header .header-wrapper .logo {
   top: 0;
   position: absolute;
-  left: 2vw;
+  left: 20px;
 }
+
 header .header-wrapper .menu img {
   position: absolute;
-  right: 3vw;
+  right: 20px;
   width: 50px;
   height: 50px;
   margin: 25px 0;
 }
+
 header .header-img {
   height: 80vh;
   background-color: #ddd;
+}
+
+/*********** main1 ***********/
+.main1 .main1-text-list {
+  padding: 0 20px;
+  margin-bottom: 30px;
+}
+
+.main1 .main1-text-list li {
+  border-bottom: 1px solid #ddd;
+}
+
+.main1 .main1-text-list li h3 {
+  font-size: 1.7rem;
+  font-weight: bold;
+  padding: 30px 0;
+}
+
+.main1 .main1-text-list li p {
+  padding-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.main1 .main1-text-list li:last-child {
+  border-bottom: none;
+}
+
+/*********** main2 ***********/
+.main2-img-list {}
+
+.main2-img-list li {
+  position: relative;
+  width: 100vw;
+}
+
+.main2-img-list li img {
+  width: 100vw;
+  margin-bottom: 20px;
+}
+
+.main2-img-list li p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: none;
+}
+
+.main2-img-list li:hover p {
+  display: block;
+}
+
+.main2-img-list .main2-img-list-1 {}
+
+/*********** main3 ***********/
+.title-txt {
+  padding: 20px;
+}
+.title-txt h2 {
+  font-size: 2.4rem;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+}
+.title-txt p {
+  font-size: 1.3rem;
+  margin: 10px auto;
+  text-align: center;
+  font-weight: 200;
+  line-height: 1.5;
 }
