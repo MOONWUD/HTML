@@ -9,9 +9,24 @@ body {
   font-size: 1.5rem;
   text-transform: uppercase;
   background: url(./img/바탕.jpg) no-repeat fixed 50% / cover;
-  color: #fff;
+  color: #05001f;
 }
-nav .global-menu {}
-nav .global-menu li {}
-nav .global-menu li a {}
-nav .mobaile-btn {}
+.nav .global-menu {
+  display: grid;
+  /* display: none; */
+  /* grid-auto-rows: 40px; */
+}
+.nav .global-menu.active {
+  display: grid;
+}
+.nav a {
+  display: block;
+  border-bottom: 1px solid #05001f;
+  /* height: 40px; */
+  padding: 10px;
+}
+.nav .global-menu li {}
+.nav .global-menu li a {}
+.nav .mobile-btn {
+  background: #ffffff48 url(./img/more_vert_FILL0_wght400_GRAD0_opsz24.png) no-repeat 98%  50% / contain;
+}

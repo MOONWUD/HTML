@@ -1,1 +1,26 @@
 @charset "UTF-8";
+
+@media (min-width: 1200px) {
+  body {
+    font-size: 1.8rem;
+  }
+  .nav {}
+  .nav .global-menu {
+    grid-template-columns: repeat(5, minmax(100px, 200px));
+    justify-content: center;
+  }
+  .nav .global-menu li {
+  }
+  .nav .global-menu li a {
+    display: grid;
+    place-items: center;
+    border-bottom: none;
+    border-right: 1px solid #05001f;
+  }
+  .nav .global-menu li:last-child a {
+    border-right: none;
+  }
+  .nav .global-menu li:hover a {
+    background-color: #ffffff48;
+  }
+}

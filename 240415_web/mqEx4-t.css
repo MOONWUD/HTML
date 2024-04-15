@@ -1,1 +1,20 @@
 @charset "UTF-8";
+
+@media (min-width: 768px) {
+  .nav .mobile-btn {
+    display: none;
+  }
+
+  .nav .global-menu {
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 0 4px #05001f;
+  }
+
+  .nav .global-menu li:nth-child(odd) a {
+    border-right: 1px solid #05001f;
+  }
+
+  .nav .global-menu li:last-child a {
+    border-bottom: none;
+  }
+}
