@@ -12,9 +12,8 @@ body {
   color: #05001f;
 }
 .nav .global-menu {
-  display: grid;
-  /* display: none; */
-  /* grid-auto-rows: 40px; */
+  /* display: grid; */
+  display: none;
 }
 .nav .global-menu.active {
   display: grid;

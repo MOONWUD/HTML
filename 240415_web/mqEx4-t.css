@@ -6,6 +6,7 @@
   }
 
   .nav .global-menu {
+    display: grid;
     grid-template-columns: 1fr 1fr;
     box-shadow: 0 4px #05001f;
   }

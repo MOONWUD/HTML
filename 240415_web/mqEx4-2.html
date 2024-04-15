@@ -26,6 +26,13 @@
     </ul>
     <a href="#" class="mobile-btn">menu</a>
   </div>
+
+  <script>
+    const mobileBtn = document.querySelector(".mobile-btn")
+    const globalMenu = document.querySelector(".global-menu")
+
+    mobileBtn.addEventListener('click' , () => globalMenu.classList.toggle('active'))
+  </script>
 </body>
 
 </html>
