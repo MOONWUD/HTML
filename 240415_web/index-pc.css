@@ -11,15 +11,18 @@
     top: 50%;
     transform: translateY(-50%);
     display: flex;
-    font-size: 1.2rem;
-    padding: 0;
-    height: 100%;
+    align-items: center;
+    font-size: 1.1rem;
+    height: 60px;
   }
   header .gnb li {
     color: #575757;
-    padding: 25px 20px 20px;
-    font-weight: bold;
+    height: 100%;
+    padding: 0 20px ;
+    font-weight: 700;
     font-family: "Montserrat", sans-serif;
+    display: grid;
+    place-items: center;
   }
   header .gnb li:hover {
     background-color: rgb(98, 178, 202);
@@ -124,6 +127,10 @@
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: 150px 1fr;
+    align-items: center;
+  }
+  .address-item p {
+    padding: 0;
   }
   /*********** footer ***********/
   footer .footer-list {

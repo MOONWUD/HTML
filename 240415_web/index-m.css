@@ -3,9 +3,12 @@
 /* font-family: "Montserrat", sans-serif; */
 p {
   font-family: "Noto Sans KR", sans-serif;
+  color: #464646;
+  line-height: 1.6;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", sans-serif;
+  color: #202020;
 }
 /*********** header ***********/
 header .gnb {
@@ -14,28 +17,31 @@ header .gnb {
 
 header .header-wrapper {
   width: 100%;
-  height: 80px;
+  height: 60px;
   background-color: #fff;
   position: relative;
 }
 
 header .header-wrapper .logo img {
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
   position: absolute;
-  left: 20px;
-  width: 100px;
+  left: 3vw;
+  width: 70px;
 }
 
 header .header-wrapper .menu img {
   position: absolute;
-  right: 20px;
-  width: 30px;
-  height: 30px;
-  margin: 25px 0;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 3vw;
+  width: 20px;
+  height: 20px;
+  color: #202020;
 }
 
 header .header-img {
-  height: 90vh;
+  height: 94vh;
   background-color: #ddd;
 }
 
@@ -50,15 +56,16 @@ header .header-img {
 }
 
 .main1 .main1-text-list li h3 {
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   font-weight: bold;
   padding: 30px 0;
 }
 
 .main1 .main1-text-list li p {
   padding-bottom: 20px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.5;
+  color: #464646;
 }
 
 .main1 .main1-text-list li:last-child {
@@ -81,6 +88,7 @@ header .header-img {
 }
 
 .main2-img-list li p {
+  font-family: "Montserrat", sans-serif;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -88,7 +96,7 @@ header .header-img {
   font-weight: bold;
   font-size: 1.7rem;
   display: none;
-  background-color: #ffffff71;
+  background-color: rgba(255, 255, 255, 0.651);
   width: 100%;
   height: 100%;
 
@@ -110,7 +118,17 @@ header .header-img {
   font-size: 2.5rem;
   text-align: center;
   font-weight: bold;
-  padding: 30px;
+  padding: 30px 0 10px;
+  color: #202020;
+}
+
+.title-txt h2::after {
+  content: "";
+  display: block;
+  margin: 15px auto;
+  width: 50px;
+  height: 2px;
+  background-color: #202020;
 }
 
 .title-txt p {
@@ -119,6 +137,8 @@ header .header-img {
   text-align: center;
   font-weight: 200;
   line-height: 1.5;
+  padding: 0 20px 50px;
+  color: #464646;
 }
 
 .main3 .main3-img-list li {
@@ -133,13 +153,16 @@ header .header-img {
 }
 
 .main3 .main3-img-list li h5 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   padding: 20px 0 10px 0;
+  color: #464646;
+  font-weight: 700;
 }
 
 .main3 .main3-img-list li p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   padding-bottom: 70px;
+  color: #464646;
 }
 
 /*********** main4 ***********/
@@ -153,12 +176,14 @@ header .header-img {
   text-align: left;
   font-weight: bold;
   padding: 50px 50px 30px;
+  color: #202020;
 }
 
 .main4 p {
   padding: 0 50px 50px;
   line-height: 1.5;
   font-size: 1.2rem;
+  color: #464646;
 }
 
 .main4 iframe {
@@ -178,6 +203,7 @@ header .header-img {
 .main5 .main5-img h6 {
   padding: 20px 0;
   font-size: 1.2rem;
+  color: #202020;
 }
 .main5 .main5-img p {
   font-size: 1.2rem;
@@ -198,13 +224,13 @@ header .header-img {
   font-weight: bold;
   padding: 50px 50px 30px;
   font-family: "Noto Sans KR", sans-serif;
-
+  color: #202020;
 }
 .main6 #map {
   width: 100%;
   height: 300px;
   border-radius: 20px;
-  border: 2px solid #000;
+  border: 2px solid #202020;
   text-align: center;
 }
 .main6 .choice {
@@ -216,18 +242,19 @@ header .header-img {
 }
 .main6 .choice h4 {
   padding: 15px;
+  color: #202020;
 }
 .main6 .choice h4:last-child {
   border-bottom: 4px solid #ddd;
 }
 .main6 .choice h4:first-child {
-  border-bottom: 4px solid #000000;
+  border-bottom: 4px solid #202020;
 }
 
 .main6 .address li {
   padding: 20px 0;
   font-size: 1.2rem;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 .main6 .address li p {
   font-weight: 400;
@@ -239,6 +266,7 @@ header .header-img {
 /*********** main7 ***********/
 .main7 .main7-box {
   position: relative;
+  color: #202020;
 }
 .main7 .main7-box img {
   object-fit: cover;
@@ -254,8 +282,10 @@ header .header-img {
   height: 500px;
   background-color: rgba(81, 166, 199, 0.781);
   padding: 5vw;
-  color: #fff;
   text-align: center;
+}
+.main7 .main7-box .main7-txt-box h4, .main7 .main7-box .main7-txt-box p{
+  color: #fff;
 }
 .main7 .main7-box h4 {
   padding-top: 30px;
@@ -268,11 +298,17 @@ header .header-img {
   font-weight: 200;
 }
 .main7 .main7-box a {
+  color: #fff;
   border: 2px solid #fff;
   padding: 10px 30px;
   border-radius: 3px;
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+.main7 .main7-box a:hover {
+  background-color: #fff;
+  color: #202020;
 }
 /*********** footer ***********/
 footer .footer-top {
