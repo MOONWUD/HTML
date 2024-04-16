@@ -284,7 +284,7 @@ header .header-img {
 .main6 .address li {
   padding: 20px 0;
   font-size: 1.2rem;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 4px solid #ddd;
 }
 
 .main6 .address li p {
