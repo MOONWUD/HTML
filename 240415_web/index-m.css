@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /* font-family: "Noto Sans KR", sans-serif; */
 /* font-family: "Montserrat", sans-serif; */
 p {
@@ -6,10 +7,17 @@ p {
   color: #464646;
   line-height: 1.6;
 }
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Montserrat", sans-serif;
   color: #202020;
 }
+
 /*********** header ***********/
 header .gnb {
   display: none;
@@ -19,6 +27,7 @@ header .header-wrapper {
   width: 100%;
   height: 60px;
   background-color: #fff;
+  box-shadow: 0px 2px 10px rgba(124, 124, 124, 0.3);
   position: relative;
 }
 
@@ -26,7 +35,7 @@ header .header-wrapper .logo img {
   top: 50%;
   transform: translateY(-50%);
   position: absolute;
-  left: 3vw;
+  left: 30px;
   width: 70px;
 }
 
@@ -34,7 +43,7 @@ header .header-wrapper .menu img {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 3vw;
+  right: 30px;
   width: 20px;
   height: 20px;
   color: #202020;
@@ -46,6 +55,10 @@ header .header-img {
 }
 
 /*********** main1 ***********/
+.main1 {
+  margin-bottom: 10vh;
+}
+
 .main1 .main1-text-list {
   padding: 0 50px;
   margin-bottom: 30px;
@@ -73,7 +86,9 @@ header .header-img {
 }
 
 /*********** main2 ***********/
-.main2-img-list {}
+.main2 {
+  margin-bottom: 10vh;
+}
 
 .main2-img-list li {
   position: relative;
@@ -110,6 +125,10 @@ header .header-img {
 .main2-img-list .main2-img-list-1 {}
 
 /*********** main3 ***********/
+.main3 {
+  margin-bottom: 10vh;
+}
+
 .title-txt {
   padding: 20px 50px;
 }
@@ -169,6 +188,7 @@ header .header-img {
 .main4 {
   width: 100%;
   background-color: #ebebeb;
+  margin-bottom: 10vh;
 }
 
 .main4 h2 {
@@ -193,9 +213,14 @@ header .header-img {
 }
 
 /*********** main5 ***********/
+.main5 {
+  margin-bottom: 10vh;
+}
+
 .main5 .main5-img {
   padding: 20px 50px 50px;
 }
+
 .main5 .main5-img img {
   width: 100%;
 }
@@ -205,6 +230,7 @@ header .header-img {
   font-size: 1.2rem;
   color: #202020;
 }
+
 .main5 .main5-img p {
   font-size: 1.2rem;
   line-height: 1.5;
@@ -217,7 +243,9 @@ header .header-img {
 /*********** main6 ***********/
 .main6 {
   padding: 0 50px 50px;
+  margin-bottom: 10vh;
 }
+
 .main6 h2 {
   font-size: 2.5rem;
   text-align: center;
@@ -226,13 +254,12 @@ header .header-img {
   font-family: "Noto Sans KR", sans-serif;
   color: #202020;
 }
+
 .main6 #map {
   width: 100%;
-  height: 300px;
-  border-radius: 20px;
-  border: 2px solid #202020;
-  text-align: center;
+  height: 400px;
 }
+
 .main6 .choice {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -240,13 +267,16 @@ header .header-img {
   font-size: 1.5rem;
   padding: 0 0 30px;
 }
+
 .main6 .choice h4 {
   padding: 15px;
   color: #202020;
 }
+
 .main6 .choice h4:last-child {
   border-bottom: 4px solid #ddd;
 }
+
 .main6 .choice h4:first-child {
   border-bottom: 4px solid #202020;
 }
@@ -256,9 +286,11 @@ header .header-img {
   font-size: 1.2rem;
   border-bottom: 1px solid #ddd;
 }
+
 .main6 .address li p {
   font-weight: 400;
 }
+
 .main6 .address li:last-child {
   border-bottom-color: #000000;
 }
@@ -268,11 +300,13 @@ header .header-img {
   position: relative;
   color: #202020;
 }
+
 .main7 .main7-box img {
   object-fit: cover;
   width: 100%;
   height: 500px;
 }
+
 .main7 .main7-box .main7-txt-box {
   position: absolute;
   top: 50%;
@@ -284,19 +318,24 @@ header .header-img {
   padding: 5vw;
   text-align: center;
 }
-.main7 .main7-box .main7-txt-box h4, .main7 .main7-box .main7-txt-box p{
+
+.main7 .main7-box .main7-txt-box h4,
+.main7 .main7-box .main7-txt-box p {
   color: #fff;
 }
+
 .main7 .main7-box h4 {
   padding-top: 30px;
   font-size: 2.5rem;
 }
+
 .main7 .main7-box p {
   font-size: 1.3rem;
   padding: 50px;
   line-height: 1.8;
   font-weight: 200;
 }
+
 .main7 .main7-box a {
   color: #fff;
   border: 2px solid #fff;
@@ -310,27 +349,33 @@ header .header-img {
   background-color: #fff;
   color: #202020;
 }
+
 /*********** footer ***********/
 footer .footer-top {
   padding: 30px 20px;
   width: 100%;
   background-color: #ebebeb;
 }
+
 footer .footer-top .footer-list li {
   padding: 20px 0;
 }
+
 footer .footer-top .footer-list li h6 {
   padding: 20px 0;
   font-size: 1.2rem;
 }
+
 footer .footer-top .footer-list li p {
   line-height: 1.8;
   font-size: 1.2rem;
 }
+
 footer .footer-top .footer-list .social-list {
   display: flex;
   gap: 20px;
 }
+
 footer .footer-bottom {
   width: 100%;
   background-color: #acacac;

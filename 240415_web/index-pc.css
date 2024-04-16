@@ -7,7 +7,7 @@
   }
   header .gnb {
     position: absolute;
-    right: 20px;
+    right: 30px;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
@@ -116,6 +116,20 @@
   }
   .main5 .main5-img-box {
     display: flex;
+    gap: 25px;
+  }
+  .main5 .main5-img-box .main5-img {
+    box-shadow: 
+    4px 7px 10px rgba(0, 0, 0, 0.05),
+    -4px 0px 10px rgba(0, 0, 0, 0.05);
+    padding: 0;
+  }
+  .main5 .main5-img-box .main5-img img {
+    width: 100%;
+  }
+  .main5 .main5-img-box .main5-img h6,
+  .main5 .main5-img-box .main5-img p {
+    padding: 20px;
   }
 
   /*********** main6 ***********/
