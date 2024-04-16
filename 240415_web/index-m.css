@@ -1,7 +1,16 @@
 @charset "UTF-8";
-
+/* font-family: "Noto Sans KR", sans-serif; */
+/* font-family: "Montserrat", sans-serif; */
+p {
+  font-family: "Noto Sans KR", sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+}
 /*********** header ***********/
-header {}
+header .gnb {
+  display: none;
+}
 
 header .header-wrapper {
   width: 100%;
@@ -188,6 +197,8 @@ header .header-img {
   text-align: center;
   font-weight: bold;
   padding: 50px 50px 30px;
+  font-family: "Noto Sans KR", sans-serif;
+
 }
 .main6 #map {
   width: 100%;

@@ -1,6 +1,30 @@
 @charset "UTF-8";
 
 @media  (min-width: 1200px) {
+  /*********** header ***********/
+  header .menu  {
+    display: none;
+  }
+  header .gnb {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    font-size: 1.2rem;
+    padding: 0;
+    height: 100%;
+  }
+  header .gnb li {
+    color: #575757;
+    padding: 25px 20px 20px;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+  }
+  header .gnb li:hover {
+    background-color: rgb(98, 178, 202);
+    color: #fff;
+  }
   /*********** main1 ***********/
   .main1 {
     padding: 0 10vw;
@@ -91,14 +115,20 @@
   .main5 .main5-img-box {
     display: flex;
   }
-  
+
   /*********** main6 ***********/
   .main6 {
     padding: 0 10vw 100px;
   } 
+  .address-item {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 150px 1fr;
+  }
   /*********** footer ***********/
   footer .footer-list {
     display: flex;
     justify-content: space-around;
   }
+
 }
