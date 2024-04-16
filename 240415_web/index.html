@@ -16,7 +16,7 @@
       <h1 class="logo"><img src="./assets/images/logo (1).png" alt="logo"></h1>
       <div class="menu"><img src="./assets/images/햄버거.png" alt="menu"></div>
     </div>
-    <div class="header-img">></div>
+    <div class="header-img"></div>
   </header>
 
   <!---------- main1 ----------->
@@ -121,7 +121,10 @@
       the design starts. Needless to say it's very important, content is king and people are beginning to understand
       that. However, back over in reality some project schedules and budgets don't allow for web copy to be written
       before the design phase, this is sad but true.</p>
-    <div><video src="#"></video>video</div>
+    <iframe src="https://www.youtube.com/embed/xuqNfKnOyOo?si=zOFgwdIRU-Z5mzxj&amp;controls=0&loop=1&mute=1&autoplay=1"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </article>
 
   <!---------- main5 ----------->
@@ -129,22 +132,22 @@
     <div class="title-txt">
       <h2>Our Service</h2>
     </div>
-    <div class="main5-img-1">
+    <div class="main5-img">
       <img src="./assets/images/img-05.jpg" alt="img5">
       <h6>Branding</h6>
       <p>This theme does everything you could possibly want it to do</p>
     </div>
-    <div class="main5-img-2">
+    <div class="main5-img none">
       <img src="./assets/images/img-06.jpg" alt="img6">
       <h6>Branding</h6>
       <p>This theme does everything you could possibly want it to do</p>
     </div>
-    <div class="main5-img-3">
+    <div class="main5-img none">
       <img src="./assets/images/img-07.jpg" alt="img7">
       <h6>Branding</h6>
       <p>This theme does everything you could possibly want it to do</p>
     </div>
-    <div class="main5-img-4">
+    <div class="main5-img none">
       <img src="./assets/images/img-08.jpg" alt="img8">
       <h6>Branding</h6>
       <p>This theme does everything you could possibly want it to do</p>
@@ -158,7 +161,7 @@
       <h4>OFFICE</h4>
       <h4>FACTORY</h4>
     </div>
-    <div class="map">지도</div>
+    <div id="map">지도</div>
     <ul class="address">
       <li class="address-1">
         <h6>ADDRESS</h6>
@@ -186,10 +189,13 @@
   <!---------- main7 ----------->
   <article class="main7">
     <div class="main7-box">
-      <h4>Let's Talk</h4>
-      <p>Herb multiply also earth one you'll a wherein form creature be.
-      Unto land open creature give their midst together, fruit good thing multiply fill it.</p>
-      <a href="#">CONTACT US</a>
+      <img src="./assets/images/img-bg.jpg" alt="배경이미지">
+      <div class="main7-txt-box">
+        <h4>Let's Talk</h4>
+        <p>Herb multiply also earth one you'll a wherein form creature be.
+          Unto land open creature give their midst together, fruit good thing multiply fill it.</p>
+        <a href="#">CONTACT US</a>
+      </div>
     </div>
   </article>
   <!---------- footer ----------->
@@ -218,11 +224,23 @@
         </li>
       </ul>
     </div>
+    
     <div class="footer-bottom">
       <p>Copyrights © 2020 All Rights Reserved by DYAMI.</p>
       <p>Terms of Use / Privacy Policy</p>
     </div>
   </footer>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c5dc00d7229b0c7e8985143294803190"></script>
+  <script>
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+      mapOption = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+      };
+
+    // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+    var map = new kakao.maps.Map(mapContainer, mapOption); 
+  </script>
 </body>
 
 </html>
