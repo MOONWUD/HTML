@@ -159,7 +159,7 @@ header img {
 
 .content4 .content4_item img {
   width: 100%;
-  border-radius: 15px;
+  border-radius: 20px;
 }
 
 .content4 .content4_item p {
@@ -292,7 +292,7 @@ header img {
 
 .content8 .content8_item1 {
   display: grid;
-  grid-template-columns: 30px 1fr;
+  grid-template-columns: 40px 1fr;
   font-size: 0.8rem;
 }
 
@@ -311,7 +311,7 @@ header img {
 .bus_item {
   width: 100%;
   display: grid;
-  grid-template-columns: 80px repeat(4, 40px);
+  grid-template-columns: 80px repeat(5, 40px);
   grid-template-rows: 1fr 1fr;
 }
 
