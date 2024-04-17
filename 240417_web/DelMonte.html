@@ -187,13 +187,15 @@
         <h6>버스</h6>
         <ul class="bus_container">
           <li class="bus_item">
-            <p class="wrapper">• 청담동 방면 :</p>
+            <p>• 청담동 방면 :</p>
+            <div></div>
             <p class="box box_b">301</p>
             <p class="box box_g">2415</p>
             <p class="box box_g">3011</p>
           </li>
           <li class="bus_item">
-            <p class="wrapper">• 강남역 방면 :</p>
+            <p>• 강남역 방면 :</p>
+            <div></div>
             <p class="box box_b">146</p>
             <p class="box box_b">341</p>
             <p class="box box_b">360</p>
@@ -201,7 +203,8 @@
             <p class="box box_g">3412</p>
           </li>
           <li class="bus_item">
-            <p class="wrapper">• 잠실 방면 :</p>
+            <p>• 잠실 방면 :</p>
+            <div></div>
             <p class="box box_b">333</p>
             <p class="box box_b">341</p>
             <p class="box box_b">360</p>
@@ -209,7 +212,8 @@
             <p class="box box_g">2415</p>
           </li>
           <li class="bus_item">
-            <p class="wrapper">• 대치동 방면 :</p>
+            <p>• 대치동 방면 :</p>
+            <div></div>
             <p class="box box_b">333</p>
             <p class="box box_g">2415</p>
             <p class="box box_g">3311</p>
@@ -259,19 +263,19 @@
     </div>
   </footer>
 
-	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	c5dc00d7229b0c7e8985143294803190"></script>
-	<script>
-		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-		    mapOption = {
-		        center: new kakao.maps.LatLng(37.56800, 126.98209), // 지도의 중심좌표
-		        level: 4, // 지도의 확대 레벨
-		        mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
-		    }; 
+  <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	c5dc00d7229b0c7e8985143294803190"></script>
+  <script>
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+      mapOption = {
+        center: new kakao.maps.LatLng(37.56800, 126.98209), // 지도의 중심좌표
+        level: 4, // 지도의 확대 레벨
+        mapTypeId: kakao.maps.MapTypeId.ROADMAP // 지도종류
+      };
 
-		// 지도를 생성한다 
-		var map = new kakao.maps.Map(mapContainer, mapOption); 
+    // 지도를 생성한다 
+    var map = new kakao.maps.Map(mapContainer, mapOption);
 
-	</script>
+  </script>
 </body>
 
 </html>
