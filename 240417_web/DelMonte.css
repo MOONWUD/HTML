@@ -1,10 +1,10 @@
 @charset "UTF-8";
-
 /* 
 좁은 여백 양 옆 15px
 넓은 여백 양 옆 50px
 
 content와 content 사이의 간격 margin-botton: 130px; 
+기본 폰트 사이즈 0.8rem
 */
 body {
   font-family: "Noto Sans KR", sans-serif;
@@ -45,8 +45,6 @@ header img {
 }
 
 /***** content1 *****/
-.content1 {}
-
 .content1 .main_img {
   position: relative;
   padding: 0 15px;
@@ -76,18 +74,16 @@ header img {
   transform: translateX(-50%);
   top: 10vh;
   width: 100%;
+  text-align: center;
 }
 
 .content1 .main_img .txt_box h4 {
   color: #005F2E;
   font-size: 1.5rem;
-  text-align: center;
   padding-bottom: 15px;
 }
 
 .content1 .main_img .txt_box p {
-  padding: 0 20px;
-  text-align: center;
   font-weight: 400;
   font-size: 0.8rem;
 }
@@ -123,8 +119,6 @@ header img {
   text-align: center;
 }
 
-.content3 .content3_container {}
-
 .content3 .content3_item {
   margin: 75px 0;
   padding: 50px;
@@ -158,11 +152,9 @@ header img {
   text-align: center;
 }
 
-.content4 .content4_container {}
-
 .content4 .content4_item {
   position: relative;
-  padding: 10px 15px;
+  padding: 10px;
 }
 
 .content4 .content4_item img {
@@ -260,7 +252,7 @@ header img {
 .content6 p {
   line-height: 2.3;
   font-weight: 300;
-  padding: 30px 0;
+  padding: 40px 0;
 }
 
 .content6 a {
@@ -284,7 +276,6 @@ header img {
 .content8 #map {
   margin: 0 15px;
   height: 500px;
-  border: 1px solid #000;
 }
 
 .content8 .content8_container {
