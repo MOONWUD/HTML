@@ -251,8 +251,8 @@ header img {
 }
 
 .content8 #map {
-  /* border: 1px solid #ddd;
-  height: 500px; */
+  width: 100%;
+  height: 500px; 
 }
 
 .content8 .content8_container {
