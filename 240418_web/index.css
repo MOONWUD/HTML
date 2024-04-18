@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+/* *** header *** */
+/* *** main-slide *** */
+.main-slide  {
+  margin-top: 60px;
+  height: 80vh;
+  background-color: green;
+} 
+
+/* *** main-intro *** */
+.main-intro {}
+.main-intro .main-intro-wrapper {}
+.main-intro .main-intro-wrapper li {
+  border-bottom: var(--color-gray-50) 1px solid;
+  padding: 10px 30px 30px;
+}
+.main-intro .main-intro-wrapper li:last-child {
+  border-bottom: none;
+}
+.main-intro .main-intro-wrapper li h3 {
+  font-family: var(--font-m-en);
+  font-weight: 700;
+  font-size: var(--font-title-md);
+  margin: 20px 0  30px;
+}
+
+/* *** main-grid *** */
+.main-grid {}
+
+/* *** main-business *** */
+.main-business {}
+
+/* *** main-youtube *** */
+.main-youtube {}
+
+/* *** main-service *** */
+.main-service {}

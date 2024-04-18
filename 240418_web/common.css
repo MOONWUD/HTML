@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+/* *** fonts *** */
+@import url(../assets/style/pretendard-subset.css);
+/* 
+font-family: 'Pretendard', sans-serif;
+*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+/* 
+font-family: "Montserrat", sans-serif;
+font-optical-sizing: auto;
+font-weight: <weight>;
+font-style: normal; 
+*/
+
+/* *** css 변수 *** */
+/* 전역 변수 */
+:root {
+  /* 선언(설정) */
+  --font-m-ko: 'Pretendard', -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", Arial, sans-serif;
+  --font-m-en: "Montserrat", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", Arial, sans-serif;
+  --font-pc-ko: 'Pretendard', -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+
+  --font-title-xlg: 2.5rem;
+  --font-title-lg: 2.1rem;
+  --font-title-md: 1.5rem;
+  --font-title-sm: 1.2rem;
+
+  --color-primaty: #8B93FF;
+
+  --color-gray-10: #f2f2f2;
+  --color-gray-20: #f7f7f7;
+  --color-gray-50: #d6d6d6;
+  --color-gray-80: #464646;
+  --color-white: #fff;
+
+  --bg-color-lightGray: ;
+}
+
+/* ***** Global Style ***** */
+img {
+  width: 100%;
+}
+
+/* 부드러운 스크롤 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 드래그 */
+::selection {
+  color: var(--color-white);
+  background-color: var(--color-primaty);
+  /* css 변수 적용 방식 */
+}
+
+/* 스크롤바 */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-gray-50);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-primaty);
+  box-shadow: 0 1px 10px var(--color-gray-80);
+  border-radius: 10px;
+}
+
+/* body */
+body {
+  font-family: var(--font-m-ko);
+  color: var(--color-gray-80);
+  line-height: 1.5;
+  word-break: break-all;
+  word-wrap: break-word;
+  text-transform: capitalize;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+}
+
+.grid-container {
+  display: grid;
+}
+
+.margin-lg {
+  margin: 0 38px;
+}
+.margin-md {
+  margin: 0 26px;
+}
+
+.padding-md {}
+
+.padding-sm {
+  padding: 0 14px;
+}
+
+.main-title {
+  font-family: var(--font-m-en);
+  font-size: var(--font-title-xlg);
+}
+
+.main-title::after {}
+
+.main-des {}
+
+/* 980 이상일 때 */
+@media (min-width: 960px) {
+}
+
+/*  */

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>반응형 웹 연습</title>
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1,minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <!-- css -->
+  <!-- 성능 최적화를 고려한다면 link로, 관리를 고려한다면 import로 -->
+  <link rel="stylesheet" href="../assets/style/reset.css">
+  <!-- 공통내용 -->
+  <link rel="stylesheet" href="./common.css">
+  <!-- layout: header, footer -->
+  <link rel="stylesheet" href="./layout.css">
+  <!-- layout: 현재페이지 -->
+  <link rel="stylesheet" href="./index.css">
+
+</head>
+
+<body>
+  <!-- header, 보통 페이지가 변해도 변하지 않는 영역을 말함, 변하기도 함...( `ε´ ) -->
+  <header class="header padding-sm flex-container">
+    <h1 class="logo"> <!-- 로고라는 의미의 태그 규칙 -->
+      <a href="./index.html"><img src="./images/logo.png" alt="반응형 웹 로고"></a>
+    </h1>
+    <nav class="header-nav">
+      <!-- pc-menu -->
+      <ul class="global-menu">
+        <li><a href="#">about</a></li>
+        <li><a href="#">service</a></li>
+        <li><a href="#">portfolio</a></li>
+        <li><a href="#">board</a></li>
+        <li><a href="#">contact</a></li>
+      </ul>
+      <!-- mobile-menu -->
+      <a href="#" class="mobile-menu">
+        <span>모바일 메뉴</span>
+      </a>
+    </nav>
+  </header>
+
+
+  <!-- contents -->
+  <!-- main-slide -->
+  <section class="main-slide">
+    <div class="main-swiper">main-swiper</div>
+  </section>
+
+  <!-- main-intro -->
+  <section class="main-intro margin-md">
+    <ul class="main-intro-wrapper grid-container">
+      <li>
+        <h3>Branding</h3>
+        <p>대법원은 법률에 저촉되지 아니하는 범위안에서 소송에 관한 절차, 법원의 내부규율과 사무처리에 관한 규칙을 제정할 수 있다. 국무회의는 대통령·국무총리와 15인 이상 30인 이하의 국무위원으로 구성한다.</p>
+      </li>
+      <li>
+        <h3>Development</h3>
+        <p>헌법재판소는 법관의 자격을 가진 9인의 재판관으로 구성하며, 재판관은 대통령이 임명한다. 국회는 국정을 감사하거나 특정한 국정사안에 대하여 조사할 수 있으며, 이에 필요한 서류의 제출 또는 증인의
+          출석과 증언이나 의견의 진술을 요구할 수 있다.</p>
+      </li>
+      <li>
+        <h3>Analysis</h3>
+        <p>정당은 법률이 정하는 바에 의하여 국가의 보호를 받으며, 국가는 법률이 정하는 바에 의하여 정당운영에 필요한 자금을 보조할 수 있다. 대통령은 법률이 정하는 바에 의하여 훈장 기타의 영전을
+          수여한다.</p>
+      </li>
+      <li>
+        <h3>Marketing</h3>
+        <p>모든 국민은 법 앞에 평등하다. 누구든지 성별·종교 또는 사회적 신분에 의하여 정치적·경제적·사회적·문화적 생활의 모든 영역에 있어서 차별을 받지 아니한다.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- main-grid -->
+  <section class="main-grid">
+    <ul class="main-grod-wrapper">
+      <li class="main-grid-bg1">
+        <h3>Branding</h3>
+      </li>
+      <li class="main-grid-bg2">
+        <h3>Development</h3>
+      </li>
+      <li class="main-grid-bg3">
+        <h3>Analysis</h3>
+      </li>
+      <li class="main-grid-bg4">
+        <h3>Marketing</h3>
+      </li>
+      <li class="main-grid-bg5">
+        <h3>Design</h3>
+      </li>
+      <li class="main-grid-bg6">
+        <h3>Strategy</h3>
+      </li>
+      <li class="main-grid-bg7">
+        <h3>Strategy</h3>
+      </li>
+    </ul>
+  </section>
+
+  <!-- main-business -->
+  <section class="main-business">
+    <h2 class="main-title">Our Business</h2>
+    <p class="main-des">"구단이 월의 줄어들지 것 참여를 총재에 일상이 내, 지향하다" 규탄이 발달의, 적어도 되어 생성, 지나는 씨 타 껍데기다 잃다 관하다.</p>
+    <div class="main-business-list margin-lg">
+      <figure>
+        <img src="./images/img-01.jpg" alt="Brokerage & Trading">
+        <figcaption>
+          <strong>Brokerage & Trading</strong>
+          흔히 아는 데, 가장 사냥을 선거가 촉구한 고고의 논의되다.
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="./images/img-02.jpg" alt="Brokerage & Trading">
+        <figcaption>
+          <strong>Investment Banking</strong>
+          이 방송만 온라인을 또 등 1,940,000원 있은 화살을 범죄가 된 하다.
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="./images/img-03.jpg" alt="Brokerage & Trading">
+        <figcaption>
+          <strong>Contracts & Research</strong>
+          흔히 아는 데, 가장 사냥을 선거가 촉구한 고고의 논의되다.
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="./images/img-04.jpg" alt="Brokerage & Trading">
+        <figcaption>
+          <strong>Award winning agency</strong>
+          흔히 아는 데, 가장 사냥을 선거가 촉구한 고고의 논의되다.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- main-youtube -->
+  <section class="main-youtube">
+    <div class="main-youtube-text margin-lg">
+      <h2 class="main-title">Our Youtube</h2>
+      <p class="main-youtube0des">불행하는 논리가, 조금은 없는 달려갈 하다. 이달의 관련에 자는 17가지 있은지. 본 함 금융으로 근본적 단순하여야 있다. 유학으로 교육의 비추어 관계를
+      않은 그룹으로 문제가 있는다.비서다 위한다, 봅니다 다양한 같다. 방침도 프로가 가치를 것 충분히 지역의 끝난 결정되다. 그저 합작과 있는 보습도 승점이 협정을 비롯되고 대처하다.</p>
+    </div>
+    <div class="main-youtube-video margin-lg">
+      <iframe 
+        src="https://www.youtube.com/embed/Gm011ZYugQg?si=ElEQGwwMuPdbHjlf&amp;controls=0&mute=1&loop=1&autoplay=1" title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- main-service -->
+  <section class="main-service">
+    <h2 class="main-title">Our Service</h2>
+    <ul class="main-service-gallery margin-md">
+      <li><a href="#"><img src="./images/img-05.jpg" alt="Branding"></a>
+        <div class="service-gallery-text">
+          <h4>Branding</h4>
+          <p>지난 넷째를 논리를 흔적에서 심판이 두 남북문제에 않다.</p>
+        </div>
+      </li>
+      <li><a href="#"><img src="./images/img-06.jpg" alt="Branding"></a>
+        <div class="service-gallery-text">
+          <h4>Branding</h4>
+          <p>지급되다 당면에 피할 경우따라 부정부패에 품목에 결정짓다.</p>
+        </div>
+      </li>
+      <li><a href="#"><img src="./images/img-07.jpg" alt="Branding"></a>
+        <div class="service-gallery-text">
+          <h4>Branding</h4>
+          <p>일부는 합당이 되는, 모가 45초 10명 위하는데,</p>
+        </div>
+      </li>
+      <li><a href="#"><img src="./images/img-08.jpg" alt="Branding"></a>
+        <div class="service-gallery-text">
+          <h4>Branding</h4>
+          <p>"싣자 평가가 특례로 수사의 마련 폐리어카로 잘리냐"</p>
+        </div>
+      </li>
+      <li><a href="#"><img src="./images/img-09.jpg" alt="Branding"></a>
+        <div class="service-gallery-text">
+          <h4>Branding</h4>
+          <p>지하에 극심하더라도, 누증에 법인의 마비되다 세력에서 부처다.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- main-location -->
+  <section class="main-location">
+    <h2 class="main-title">Location</h2>
+    <ul class="location-menu margin-lg">
+      <li class="location-office">
+        <h3>office</h3>
+        <div class="location-map tap-box">
+          <div class="kakao-map"></div>
+          <ul class="location-office-info">
+            <li><strong>ADDRESS</strong>795 Folsom Ave, Suite 600 San Francisco</li>
+            <li><strong>TEL</strong>02-1234-5678</li>
+            <li><strong>FAX</strong>02-1234-5678</li>
+            <li><strong>SUB</strong>Working at the nexus of aesthetics and sustainability to craft meaningful design ideas that endure.</li>
+            <li><strong>BUS</strong>This theme does everything you could possibly want it to do and, it is beautifully designed.</li>
+          </ul>
+        </div>
+      </li>
+      <li class="location-factory">
+        <h3>factory</h3>
+        <div class="tab-box">
+          <p>내용 없음</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- main-talk -->
+  <section class="main-talk">
+    <div class="color-layer">
+      <h2 class="main-talk-title">Let's Talk</h2>
+      <p>사춘기의 비용을 등 의회는 일월의 17평 흐름을 합법을 나타내다. 그가 관한다 연대에서 시행의 폐품이어 과반수를 반국가를 있다.</p>
+      <a href="#" class="ghost-btn">contact us</a>
+    </div>
+  </section>
+
+
+  <!-- footer -->
+  <footer class="footer padding-sm">
+    <section class="footer-info">
+      <h2 class="footer-logo">로고</h2>
+      <div class="footer-info-list">
+        <h3>CONTACT</h3>
+        <p>02 1234 5678 <br>
+          from.yami@gmail.com</p>
+      </div>
+      <div class="footer-info-list">
+        <h3>LOCATION</h3>
+        <p>795 Folsom Ave, Suite 600 <br>
+          San Francisco, CA 94107</p>
+      </div>
+      <div class="footer-info-list">
+        <h3>SOCIAL</h3>
+        <ul>
+          <li><a href="#">
+              <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>Facebook</title>
+                <path
+                  d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" />
+              </svg>
+            </a></li>
+          <li><a href="#">
+              <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>Instagram</title>
+                <path
+                  d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" />
+              </svg>
+            </a></li>
+          <li><a href="#">
+              <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>YouTube</title>
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a></li>
+          <li><a href="#">
+              <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>GitHub</title>
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+              </svg>
+            </a></li>
+        </ul>
+      </div>
+    </section>
+    <div class="footer-copyright">
+      <p>Copyrights © 2020 All Rights Reserved by DYAMI.</p>
+      <ul class="footer-policy">
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+
+    </div>
+  </footer>
+
+  <!--위로 go-to-top  -->
+  <a href="#" class="go-to-top">위로</a>
+</body>
+
+</html>
