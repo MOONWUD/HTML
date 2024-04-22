@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>대입연산자Ex</title>
+
+</head>
+
+<body>
+  <!-- <ul>
+    <li>HTML5</li>
+    <li>CSS3</li>
+    <li>JavaScript</li>
+    <li>jQuery</li>
+  </ul> -->
+
+  <script>
+    // 더하기 대입 연산자를 이용해 DOM 구축
+    // 변수 선언
+    let output = '';
+
+    output += '<ul>'; // output('') + '<ul>' -> output('<ul>')
+    output += '<li>HTML5</li>'; // output('ul') + '<li>HTML5</li>' -> output('<ul><li>HTML5</li>')
+      output += '<li>CSS3</li>';
+      output += '<li>JavaScript</li>';
+      output += '<li>jQuery</li>';
+      output += '</ul>';
+
+    document.body.innerHTML = output;
+
+    /*
+      숫자 변수 초기화 let num = 0;
+      문자열 변수 초기화 let txt = "";
+      논리 변수 초기화 let boo = false;
+      객체 변수 초기화 let obj = null;
+    */
+  </script>
+</body>
+
+</html>

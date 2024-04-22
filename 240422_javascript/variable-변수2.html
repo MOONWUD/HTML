@@ -1,0 +1,21 @@
+<body>
+  <script>
+    //variable-변수2
+
+    console.log('----var----');
+    // 변수 apple을 인지하고 메모리에 변수 자리를 만들어 놓은 상태(초기화)<- 변수 호이스팅
+    console.log(apple); // undefined 선언만 되고 값을 할당 받지 못함
+    var apple = 100;
+    apple = 200; // 값 재할당
+    console.log(apple); 
+    var apple = '중복 선언, 재선언 가능';
+    console.log(apple);
+
+    console.log('----let----');
+    // console.log(banana); 참조 에러. 변수 호이스팅 X
+    let banana = 500;
+    banana = 1000; // 선언이 아니라 사용한 것. let을 붙여야지 선언.
+    console.log(banana);
+    // let banana = 2000; 중복 선언, 재선언 불가능 ! 
+  </script>
+</body>

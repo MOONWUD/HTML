@@ -1,0 +1,76 @@
+<body>
+  <h1>데이터타입</h1>
+  <script>
+    console.log('---- 문자열 String----')
+    let str = "string1"; // 큰 따옴표 
+    str = 'string1'; // 작은 따옴표 
+    str = `string1 ${str}`; // 백틱 ES6 
+    str = "큰 따옴표로 감싼 문자열 내의 '작은 따옴표'는 문자열이다"; 
+    str = '큰 따옴표로 감싼 문자열 내의 "작은 따옴표"는 문자열이다';
+    str = `orange`;
+    str = str.toUpperCase(); // 대문자
+    str = str.toLowerCase(); // 소문자
+    str = str.substring(1,3); // (시작 인덱스, 마지막 인덱스 앞까지) 문자열 구분
+    console.log(str); // ra
+    console.log(str.length); // .length  요소의 갯수
+    console.log(typeof str); // 데이터 타입 string
+
+    console.log('---- 숫자 Nunber ----')
+    let num = 10; // 양의 정수
+    num = 1.10; // 실수
+    num = -1.10; // 음의 실수
+    num = '-1.10';  // 문자열
+    num = Number(num); // 숫자형으로 변환해주는 함수 
+    console.log(num); 
+    // console.log(num.length); undefined
+    console.log(typeof num);
+    console.log(typeof NaN); // 숫자 타입 포함. Not a Number
+
+    console.log('---- 논리 Boolean ----')
+    let boo = true; // 참 = 1 
+    boo = false; // 거짓 = 0
+    boo ="안녕?";
+    boo = Boolean(boo);
+    console.log(boo);
+    console.log(typeof boo);
+
+    console.log('---- undefined ----')
+    // 선언은 되엇지만 값이 할당되지 않은 변수에 접근할 때
+    // 존재하지 않는 객체 프로퍼티(속성)에 접근할 때
+    // 개발자가 의도적으로할당한 값이 아닌 자바스트립트 엔진에 의해 초기화된 값
+    let und;
+    console.log(und);
+    console.log(typeof und); // undefined
+
+    console.log('---- null ----')
+    // 값 없음. 개발자가 의도적으로 변수에 값을 넣지 않았다는 것을 명시할 때 사용
+    let nu = null;
+    console.log(nu); // null
+    console.log(typeof nu); // object  설계오류
+
+    console.log('---- 객체 Object ----')
+    let obj = {};
+    obj = {
+      name: 'js',
+      num :1
+    };
+    console.log(obj);
+    console.log(typeof obj);
+
+    console.log('---- 함수 Function ----')
+    let foo = function () {};
+    console.log(foo); 
+    console.log(typeof foo); 
+
+    console.log('---- 배열 Array ----')
+    let arr = ['배열', 2, obj, function(){}, true, nu];
+    console.log(arr);
+    console.log(typeof arr);
+
+    console.log('---- typeof 연산자 : 데이터 타입을 문자열로 변환 ----')
+    console.log(typeof []);
+    console.log(typeof '');
+    console.log(typeof false);
+
+  </script>
+</body>

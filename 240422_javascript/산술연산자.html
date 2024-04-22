@@ -1,0 +1,61 @@
+<body>
+  <script>
+    /*
+      산술 연산자
+       = 대입 혹은 할당,
+       + 더하기,
+       - 빼기,
+       * 곱하기,
+       / 나누기,
+       % 나머지값,
+       ** 거듭제곱
+
+       자바스크립트의 연산은 사칙 연산의 방식을 대부분 따름
+    */
+
+    // 대입연산자
+    let a = 333, b = 22, c =55;
+
+    // +, - 연산자만 있을 때 왼쪽에서 오른쪽으로 순차 연산
+    console.log( a - b + c );
+
+    // *, /, %, ** 연산자만 있을 때 왼쪽에서 오른쪽으로 순차 연산
+    console.log( a * b / c );
+
+    // +, - *, /, %, ** 곱하기, 나누기, 나머지값, 거듭제곱이 먼저 연산되고, 더하기 빼기는 나중에 연산
+    console.log( a - b * c ); // b * c 먼저 연산 후 a에서 값을 빼 줌
+
+    // ()가 먼저 연산 후 나머지 연산
+    console.log((a - b) * c )
+
+    console.log('--- 거듭 제곱 연산자')
+    // 앞의 숫자를 뒤의 숫자만큼 거듭해서 곱함
+    console.log(2 ** 2) // 2 * 2 -> 4
+    console.log(2 ** 3) // 2 * 2 * 2 -> 8
+    console.log(2 ** 4) // 2 * 2 * 2 * 2 -> 16
+    console.log(2 ** 5) // 2 * 2 * 2 * 2 * 2-> 32
+
+    console.log('--- 나머지값 연산자')
+    // 값을 나눈 후 남는 값을 반환 
+    console.log( 6 / 4 ); // 1.5
+
+    console.log( 6 % 4 ); // 2
+    console.log( 6 % 3 ); // 0
+    console.log( 5 % 3 ); // 2
+    console.log( 4 % 3 ); // 1
+    
+    console.log( 12 % 5 ); // 2
+    console.log( 10 % 5 ); // 0
+    console.log( 1 % 5 ); // 1
+    console.log( 4 % 4 ); // 0
+    console.log( 6 % 7 ); // 6
+    console.log( 0 % 3 ); // 0
+    console.log( 4 % 3 + 1 ); // 2
+    
+    
+    console.log( 5 + 6 % 4 ); // 7
+    console.log( (10 + 2) % 3 ); // 0
+    console.log( 5 * (16 % 4) ); // 0
+    console.log( (9 % 8) + 3 ** 2 ); // 10 
+  </script>
+</body>

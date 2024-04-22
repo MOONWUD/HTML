@@ -1,0 +1,34 @@
+<body>
+  <script>
+    // variable-변수1
+
+    // 변수 선언
+    var apple; // 유연한 문법
+    console.log(apple); // undefined : 변수가 선언만 되고 값을 할당 받지 못했을 때 
+    console.log('apple'); // 문자열 String 타입
+
+    // 변수 선언 후 대입 
+    let banana; // 변수 선언, let을 써야함....
+    banana = 1000; // 변수 banana 먼저 선언 후 숫자 1000을 '대입'. script에서 =은 대입 시키겠다는 의미, 같다라는 의미가 아님 (==, === 이 같다)
+    console.log(banana);
+    banana = 2000; // 값의 재할당
+    console.log(banana);
+
+    // 변수 선언과 동시에 대입
+    let orange ='1234'; // 변수 선언과 동시에 문자 타입 대입
+    console.log(orange); 
+
+    // 여러 개의 변수 선언 후 각 각의 값 대입
+    let a, b, c, d;
+    a = 1, b = 2, c = 4, d = a + b + c;
+    console.log(a); 
+    console.log(b); 
+    console.log(c + b); 
+    console.log(d); 
+
+    // 한 줄에 여러 변수 선언과 동시에 값 대입
+    let 변수1 = 22, 변수2 = 33, 합계 = 변수1 + 변수2;
+    console.log(합계);
+    
+  </script>
+</body>
