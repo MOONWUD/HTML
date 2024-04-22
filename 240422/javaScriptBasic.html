@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>javaScriptBasic</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style>
+    body {
+      background-color: #ddd;
+    }
+  </style>
+
+  <!-- 내부선언 -->
+  <script type="text/javascript"> 
+  // 스크립트의 한 줄 주석
+  // type 속성은 xml.xhtml 방식일 때 필수이나 html 에선 없는 게 기본
+  // react에서는 type 속성 필수
+
+  /* shift + alt + a 
+    스크립트 여러 줄 주석 처리
+
+      - JS 작성시 주의 사항
+        head 영역 등 DOM을 불러오기 전에 작성시 문서 준비 이벤트 필요
+  */
+  </script>
+
+  <!-- 외부선언 -->
+  <!-- <script src="./javaScriptBasic.js"></script> -->
+
+  <!-- 관리 차원에서 head 영역에 작성하고 싶다면. defer 속성 작성시 스크립트 내부 문서 준비 이벤트 불필요-->
+  <script src="./javascriptBasic.js" defer></script>
+</head>
+
+<body>
+  
+  <!-- DOM을 다 불러온 다음 JS 실행 -->
+  <script>
+    // document.querySelector("body").innerHTML="Hello JavaScript !"
+  </script>
+<!-- <script src="./javascriptBasic.js"></script> -->
+</body>
+</html>
