@@ -1,32 +1,30 @@
 @charset "UTF-8";
-
 /* *** fonts *** */
-@import url(../assets/style/pretendard-subset.css);
+/* 'Pretendard', sans-serif */
+@import url(../assets/styles/pretendard-subset.css);
+
 /* 
-font-family: 'Pretendard', sans-serif;
+  * font-family: "Montserrat", sans-serif;
+  * font-optical-sizing: auto;
+  * font-weight: <weight>;
+  * font-style: normal;
 */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
-/* 
-font-family: "Montserrat", sans-serif;
-font-optical-sizing: auto;
-font-weight: <weight>;
-font-style: normal; 
-*/
 
 /* *** css 변수 *** */
 /* 전역 변수 */
 :root {
   /* 선언(설정) */
-  --font-m-ko: 'Pretendard', -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", Arial, sans-serif;
-  --font-m-en: "Montserrat", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", Arial, sans-serif;
+  --font-m-ko: 'Pretendard', -apple-system, BlinkMacSystemFont, "Helvetica Neue","Apple SD Gothic Neo", Arial, sans-serif;
+  --font-m-en: 'Montserrat', -apple-system, BlinkMacSystemFont, "Helvetica Neue","Apple SD Gothic Neo", Arial, sans-serif;
   --font-pc-ko: 'Pretendard', -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
 
-  --font-title-xlg: 2.5rem;
-  --font-title-lg: 2.1rem;
-  --font-title-md: 1.5rem;
-  --font-title-sm: 1.2rem;
+  --font-title-xlg: 2.5rem; 
+  --font-title-lg: 2.1rem; 
+  --font-title-md: 1.5rem; 
+  --font-title-sm: 1.2rem; 
 
-  --color-primaty: #8B93FF;
+  --color-primary: #1679AB;
 
   --color-gray-10: #f2f2f2;
   --color-gray-20: #f7f7f7;
@@ -34,10 +32,12 @@ font-style: normal;
   --color-gray-80: #464646;
   --color-white: #fff;
 
-  --bg-color-lightGray: ;
+  /* swiper */
+  --swiper-navigation-size : 30px;
+  --swiper-theme-color: maroon;
 }
 
-/* ***** Global Style ***** */
+/* *** Global Style *** */
 img {
   width: 100%;
 }
@@ -49,24 +49,20 @@ html {
 
 /* 드래그 */
 ::selection {
+  background-color: var(--color-primary);/* css 변수 적용 */
   color: var(--color-white);
-  background-color: var(--color-primaty);
-  /* css 변수 적용 방식 */
 }
 
 /* 스크롤바 */
 ::-webkit-scrollbar {
   width: 10px;
 }
-
 ::-webkit-scrollbar-track {
-  background-color: var(--color-gray-50);
+  background-color: var(--color-primary);
 }
-
 ::-webkit-scrollbar-thumb {
-  background-color: var(--color-primaty);
+  background-color: var(--color-gray-20);
   box-shadow: 0 1px 10px var(--color-gray-80);
-  border-radius: 10px;
 }
 
 /* body */
@@ -83,40 +79,24 @@ body {
   display: flex;
   align-items: center;
 }
-
 .grid-container {
   display: grid;
-}
-
-.margin-lg {
-  margin: 0 38px;
-}
-.margin-md {
-  margin: 0 26px;
-}
-
-.padding-md {}
-
-.padding-sm {
-  padding: 0 14px;
 }
 
 .main-title {
   font-family: var(--font-m-en);
   font-size: var(--font-title-xlg);
-  margin-top: 50px;
+  margin-top:50px;
   text-align: center;
+  color:#000;
 }
-
 .main-title::after {
-  content: "";
-  width: 50px;
-  height: 2px;
+  content:"";
+  width: 50px; height: 2px;
   display: block;
-  background-color: var(--color-gray-80);
+  background-color: #000;
   margin: 20px auto;
 }
-
 .main-des {
   text-align: center;
   line-height: 1.7;
@@ -124,8 +104,38 @@ body {
   margin: 25px auto;
 }
 
-/* 980 이상일 때 */
-@media (min-width: 960px) {
+.margin-md {
+  margin: 0 26px;
+}
+.margin-lg {
+  margin: 0 38px;
+}
+.padding-sm {
+  padding: 0 14px;
 }
 
-/*  */
+/* 980이상일 때 */
+@media (min-width: 960px) {
+  :root {
+    --font-title-xlg: 3rem;
+    --font-title-lg: 2.5rem; 
+    --font-title-md: 1.7rem; 
+    --font-title-sm: 1.5rem; 
+
+    /* swiper */
+    --swiper-navigation-size : 50px;
+  }
+  .main-title {
+    margin-top: 100px;
+  }
+  .main-des {
+    width: 40%;
+  }
+
+  html {
+    font-size: 18px;
+  }
+  .padding-sm {
+    padding: 0 33px;
+  }
+}
