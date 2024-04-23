@@ -1,0 +1,57 @@
+<body>
+  <h1>비교연산자</h1>
+  <script>
+    /*
+      비교 연산자 :
+        <, > 작다, 크다
+        <=, >= 작거나 깉디, 크거나 같다
+        == 같다
+        != 같지 않다
+        === 완전히 같다(데이터형까지 비교)
+        !== 완전히 같지 않다
+
+        두 개 이상의 값 비교
+        왼쪽의 피연산자 기준
+        주로 조건문에서 많이 사용되며 결과값은 true(1)와 false(0)로 변환
+        자바스크립트에서는 boolean을 넣지 않아도 자동으로 변환해 연산
+    */
+
+    let i; // 변수 선언
+    // 변수에 5를 대입
+    i = 5 < 4; // ~ 보다 작다(웹은 왼쪽이 기준, 4보다 작다), 거짓 false == 0
+    i = 5 > 4; // ~ 보다 크다, 참 true == 1
+    i = 5 == 4; // 같다, 거짓 false == 0
+    i = 5 != 4; // 같지 않다, true
+    
+    i = 5 <= 4; // 작거나 같다(이하), false
+    i = 5 >= 4; // 크거나 같다(이상), true
+
+    i = 'korea' > 'america'; // true 11 > 1
+    i = 'apple' > 'america'; // true 첫번째 자리값이 동일하면 두번째 자리값 비교
+    i = '한글' > '영어'; // true ㅎ이 더 나중에 나오기 때문에 
+    i = '한글' > 'english' // true 영어가 1번이기 때문에
+
+    console.log(i, typeof i)
+
+    console.log(1 == true); // true
+    console.log(0 == false); // true
+    console.log('345' == 345); // true. 비교 연산시 숫자형 문자열은 자동 형변환되어 비교
+    console.log('15' > "12"); // true
+    console.log('01' == "1"); // false
+    console.log('01' == 1); // true
+
+    console.log('' == false); // true
+    console.log('' == 0); // true
+
+    // null, undefind의 비교값은 대부분 false
+    console.log('' == null); // false
+    console.log(0 == null); // false
+    console.log(0 >= null); // true. <, > 에서는 숫자형으로 변환(null=0)되어 연산. ==와 다른 비교 연산자의 동작 방식과 다름
+
+    console.log('' == undefined); // false
+    console.log(0 == undefined); // false
+
+    console.log(null == undefined); // true
+    console.log(null >= undefined); // false <, >에서는 숫자로 변환
+  </script>
+</body>

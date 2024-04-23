@@ -1,0 +1,30 @@
+<body>
+  <h1>else-if조건문</h1>
+  <script>
+    /*
+      else-if 조건문
+
+      if(조건1) {
+        실행문;
+      } else if(조건2) { else if()는 제한 없이 작성 가능
+       실행문; 
+      } else if(조건3) { 
+        실행문;
+      }  else { 위의 조건이 모두 거짓일 때 실행
+       실행문;
+      }
+    */
+
+    // 걸음 수를 입력하면
+    let walk = prompt('하루의 걸음 수를 입력하세요');
+
+    if (walk >= 5000) { // 5000보 이상이면 칭찬 if
+      alert(`${walk}보 이상이면 잘하셨습니다`);
+    } else if (walk < 5000) { // 미만 격려 else if
+      alert(walk + '보 미만이면 힘내세요');
+    } else { // '숫자만 입력하세요' else
+      alert('숫자만 입력하세요');
+    }
+
+  </script>
+</body>

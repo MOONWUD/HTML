@@ -1,0 +1,32 @@
+<body>
+  <h1>if-else조건문</h1>
+  <script>
+    /*
+      if-else 조건문
+      
+      if(조건) { 조건이 참인경우 실행
+      실행문; 
+    } else { 위의 조건이 거짓이면 실행
+      실행문;
+    }
+    */
+
+    // 변수에 입력창(prompt)을 대입해서 하루의 걸음 수를 입력 받아
+    let walk = prompt('하루 걸음 수를 입력하세요','여기에 숫자로 입력하세요'); // <- 입력된 값이 변수 walk에 대입
+    console.log(typeof walk); // 숫자로 입력해도 문자로 값을 받음
+    // walk = Number(walk); 숫자 타입 변환
+    // walk = parseInt(walk);  정수 타입 변환
+    // walk = + walk; 
+    walk = walk * 1;
+    // walk = walk + ""; 빈 문자열을 뒤에 더하기 연산자로 붙이면 문자열로 변환
+
+    console.log(typeof walk);
+
+    // 5000보 이상이면 잘하셨습니다 출력
+    if(walk >= 5000) {
+      alert(`${walk}보 이상이면 잘 하셨습니다.`);
+    } else {
+      alert(`${walk}보 미만이면 안됩니다.`);
+    }
+  </script>
+</body>

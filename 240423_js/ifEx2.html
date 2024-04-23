@@ -1,0 +1,26 @@
+<body>
+  <h1>ifEx2</h1>
+  <script>
+    /*
+      회원 탈퇴 하겠습니까? 라고 확인창(confirm)이 뜨면,
+      확인 버튼 클릭시 '탈퇴 처리 되었습니다' 알림창
+      취소 버튼 클릭시 '탈퇴 취소 되었습니다' 알림창
+    */
+
+    const user = confirm('회원 탈퇴 하겠습니까?');
+
+   // if(user == true) {  true
+   // if(user === true) {  true
+   // if(user === 1) {  엄격한 비교 false. 데이터 타입이 다르기 때문
+   
+   /* if(user) { // true
+      alert('탈퇴 되었습니다');
+    } else { // false
+      alert('취소 되었습니다');
+    } */
+
+    // 삼항 연산자
+    // (조건식) ? 참인 실행문 : 거짓인 실행문;
+    user ? alert('탈퇴 되었습니다') : alert('취소 되었습니다');
+  </script>
+</body>

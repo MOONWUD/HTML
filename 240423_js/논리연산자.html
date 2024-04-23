@@ -1,0 +1,61 @@
+<body>
+  <h1>논리연산자</h1>
+  <script>
+    /*
+      논리연산자 : 두 개 이상의 조건 값 비교
+      %%(AND), ||(OR), !(NOT) 
+    */
+
+    let a = 10, b = 20; // 선언 동시에 대입
+
+    // A조건 && B조건 : A조건, B조건 모두 만족 시킬 때 true 반환
+    console.log(true && false); // false
+    console.log(true && true); // true
+
+    console.log(
+      a > 10 && b === 20
+    ); // false && true -> false
+
+    console.log(
+      a >= 10 && b === 20
+    ); // true && true -> true
+
+    console.log(
+      a != 10 && b <= 20 
+    ); // false && true ->false (앞 조건이 false면 뒤에를 읽을 필요가 없음)
+
+    // A조건 || B조건 : A조건, B조건 둘 중 하나만 만족 시켜도 true 반환
+    console.log(true || true); // true
+    console.log(true || false); // true
+    console.log(false || true); // true
+    console.log(false || false); // false
+
+    console.log(
+      a >= 10 || b === 20
+    ); // true || true -> true
+    console.log(
+      a > 10 || b === 20
+    ); // false || true -> true
+    console.log(
+      a !== 10 || b <= 20
+    ); // false || true -> true(앞 조건이 true면 뒤에를 읽을 필요가 없음)
+
+    // !A조건 : A조건의 반대값 반환(토글버튼)
+    console.log(true); // true
+    console.log(!true); // false
+    console.log(!false); // true
+    
+    console.log(
+      !(a === 10)
+    ); // (true) -> !true -> false
+    console.log(
+      !(b === 10)
+    ); // (false) -> !false -> true
+
+    console.log(!0); // true
+    console.log(!1); // false
+
+    console.log(!"hello"); // false. 내용이 있으면 true인데 부정했기 때문에.
+    console.log(!""); // true. 내용이 없으면 false인데 부정했기 때문에.
+  </script>
+</body>

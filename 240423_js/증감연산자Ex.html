@@ -1,0 +1,47 @@
+<body>
+  <h1>증감연산자Ex</h1>
+  <script>
+    let a = 40;
+    console.log(`a: ${a++}`); // 40, 41
+    console.log(`a: ${a++}`); // 41, 42
+    console.log(`a: ${a++}`); // 42, 43
+    console.log(`a: ${a}`); // 43
+    
+    let b = 5;
+    console.log(`b: ${++b}`); // 6
+    console.log(`b: ${++b}`); // 7
+    console.log(`b: ${++b}`); // 8
+    console.log(`b: ${++b}`); // 9
+    
+    let c = 8;
+    console.log(`c: ${++c}`); // 9
+    console.log(`c: ${++c}`); // 10
+    console.log(`c: ${c++}`); // 10, 11
+    console.log(`c: ${c}`); // 11
+    
+    let d = 10;
+    d--; // 10, 9
+    d; // 9
+    d--; // 9, 8
+    --d; // 7, 7
+    --d; // 6, 6
+    d++; // 6, 7
+    console.log(`d: ${d}`); // 7
+    
+    let e = 10;
+    e++; // 10, 11
+    e++; // 11, 12
+    e; // 12
+    e--; // 12, 11
+    e--; // 11, 10
+    console.log(`e: ${e}`); // 10
+    
+    let f =20;
+    --f; // 19, 19
+    f++; // 19, 20
+    ++f; // 21, 21
+    f--; // 21, 20
+    console.log(`f: ${f}`); // 20 
+
+  </script>
+</body>

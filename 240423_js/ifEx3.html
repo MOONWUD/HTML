@@ -1,0 +1,22 @@
+<body>
+  <h1>ifEx3</h1>
+  <script>
+    /*
+     숫자를 입력 받아 짝수면 xx는 짝수 입니다 출력 0, 2, 4, 6....
+     홀수면 xx는 홀수 입니다 출력 1, 3, 5..... 
+    */
+
+    const num = prompt('숫자를 입력해 주세요')
+
+    if(num % 2) { // 0 == false, 1 == true
+      alert(num + '는 홀수 입니다')
+    } else {
+      alert(num + '는 짝수 입니다')
+    }
+    if(num % 2 == 0) { 
+      alert(num + '는 짝수 입니다')
+    } else {
+      alert(num + '는 홀수 입니다')
+    }
+  </script>
+</body>

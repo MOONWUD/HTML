@@ -1,0 +1,20 @@
+<body>
+  <h1>데이터형비교연산자</h1>
+  <script>
+    // === 완전한 일치. 데이터 타입까지 완전히 같다(엄격한 비교)
+    console.log('' === 0); //false
+    console.log(true === 1); //false
+    console.log('1234' === 1234); //false
+    console.log(null === undefined); //false
+
+    // !== 데이터 타입까지 완전히 같지 않다
+    console.log("" !== 0); // true
+    console.log(null !== undefined); // true
+
+    console.log(
+      40 > 25 > 10
+    ); // false  
+    // 40 > 25 -> true (1)
+    // true(1) > 10 -> false
+  </script>
+</body>
