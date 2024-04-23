@@ -1,0 +1,32 @@
+<body>
+  <h1>중첩if문</h1>
+  <script>
+    /*
+      if(조건1) {
+        실행문
+        if(조건1-1) {
+          실행문;
+        } else {
+          실행문;
+        }
+
+      } else {
+        실행문;
+      }
+    */
+
+    const num = '3'; // 숫자형 문자열
+
+    if(num == 3) {
+      console.log('데이터 타입은 모르겠지만 3입니다.');
+
+      if(num == 3) {
+        console.log('숫자형 데이터 입니다');
+      } else {
+        console.log('문자열 데이터 입니다');
+      }
+    } else {
+      console.log('3이 아닙니다');
+    }
+  </script>
+</body>

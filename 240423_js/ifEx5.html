@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>ifEx5</title>
+  
+</head>
+
+<body>
+  <h1>ifEx5</h1>
+  <!-- <img src="./img/food1.jpg"> -->
+  <script>
+    // 1~4 사이의 숫자를 입력하면 해당 번호의 이미지를 출력
+
+    // document.body.innerHTML = "<h2>문제</h2>"
+
+    // document.write("<h2>문제</h2>");
+
+    
+    let num = prompt('1~4 사이의 숫자를 입력하세요')
+    // output = "";
+    // document.body.innerHTML = "output";
+
+    /*
+    if(num > 4) {
+      alert('1~4 사이의 숫자만 입력해 주세요');
+    } else if(num == 1) {
+      document.body.innerHTML = '<img src="./img/food1.jpg">';
+    } else if(num == 2) {
+      document.body.innerHTML = '<img src="./img/food2.jpg">';
+    } else if(num == 3) {
+      document.body.innerHTML = '<img src="./img/food3.jpg">';
+    } else if(num == 4) {
+      document.body.innerHTML = '<img src="./img/food4.jpg">';
+    }
+    */
+
+    /*
+    if(num === '1') {
+      document.body.innerHTML += '<img src="./img/food1.jpg" alt="img1">';
+    } else if(num === '2') {
+      document.body.innerHTML += '<img src="./img/food2.jpg" alt="img2">';
+    } else if(num === '3') {
+      document.body.innerHTML += '<img src="./img/food3.jpg" alt="img3">';
+    } else if(num === '4') {
+      document.body.innerHTML += '<img src="./img/food4.jpg" alt="img4">';
+    } else {
+      document.body.innerHTML += "<h2>해당 번호만 입력해 주세요</h2>";
+    }
+    */ 
+
+    // 숫자 데이터 타입으로 변환
+    // num = Number(num);
+    // num = parseInt(num);
+    // num = +num;
+    num = num *1;
+    if(num === 1) {
+      document.body.innerHTML += '<img src="./img/food1.jpg" alt="img1">';
+    } else if(num === 2) {
+      document.body.innerHTML += '<img src="./img/food2.jpg" alt="img2">';
+    } else if(num === 3) {
+      document.body.innerHTML += '<img src="./img/food3.jpg" alt="img3">';
+    } else if(num === 4) {
+      document.body.innerHTML += '<img src="./img/food4.jpg" alt="img4">';
+    } else {
+      document.body.innerHTML += "<h2>해당 번호만 입력해 주세요</h2>";
+    }
+
+  </script>
+</body>
+</html>

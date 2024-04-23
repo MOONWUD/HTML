@@ -1,0 +1,35 @@
+<body>
+  <h1>ifEx4</h1>
+  <script>
+    /*
+      3~5월 ('봄엔 딸기!') 6~8월 ('여름엔 수박!') 9~11월 ('가을엔 사과!') 12~2월 ('겨울엔 귤!')
+      1~12 사이의 숫자만 넣어주세요 출력
+    */
+
+    const month = prompt('좋아하는 달을 입력하세요')
+
+    if(month > 13) {
+      alert('1~12 사이의 숫자만 넣어주세요');
+    } else if(month > 2 && month < 6) {
+      alert('봄엔 딸기 !');
+    } else if(month > 5 && month < 9) {
+      alert('여름엔 수박 !');
+    } else if(month > 8 && month < 12) {
+      alert('가을엔 사과 !');
+    } else if(month < 11 && month < 3) {
+      alert('겨울엔 귤 !');
+    }
+
+    if(month >=3 && 5 >= month) {
+      alert(`${month}월엔 딸기!`);
+    } else if(month >=6 && 8 >= month) {
+      alert(`${month}월엔 수박!`);
+    } else if(month >=9 && 11 >= month ) {
+      alert(`${month}월엔 사과!`);
+    } else if(month ==12 || 2 >= month) { // 12, 1, 2. || : OR연산자는 하나만 만족 시켜도 반환
+      alert(`${month}월엔 귤!`);
+    } else {
+      alert('1~12 사이의 숫자만 넣어주세요');
+    }
+  </script>
+</body>
