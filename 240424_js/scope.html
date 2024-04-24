@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>scope</title>
+  
+</head>
+
+<body>
+  <h1>scope</h1>
+  <h2>변수 scope</h2>
+  <p>fucntion level scope : 함수 내에서만 유효한 범위. var</p>
+  <p>block level scope : {} 안에서만 유요한 범위. fucntion, if, for, switch문 등. let</p>
+
+  <script>
+    // 전역 변수 선언
+    var x = 100, y =200, z =300;
+
+    // 함수 선언 
+    function num () {
+      var x = '지역 변수';
+      y = '전역 변수'; // var 키워드 생략시 전역 변수 인식
+
+      console.log(`함수 내의 x: ${x}, y: ${y}, z: ${z}`);
+    }
+
+    console.log(`x: ${x}, y: ${y}, z: ${z}`); // x: 100, y: 200, z: 300
+    num(); // 함수 호출. 함수 내의 x: 지역 변수, y: 전역 변수, z: 300
+    console.log(`x: ${x}, y: ${y}, z: ${z}`); // x: 100, y: 200, z: 300
+
+    var a =100; 
+    {
+      var a = 200; //var 키워드는 함수 범위에서만 인식
+    }
+    console.log('a: '+ a);
+
+    console.log(`----block level scope----`)
+    let b =200, c =300;
+    {
+      let b = '지역 변수'; 
+      c = 500; // 변수 키워드 생략시 전역변수var로 인식
+      console.log(`{}안의 b는 ${b}`); // {}안의 b는 지역 변수
+    }
+
+    console.log(`{}밖의 b는 ${b}`); // {}밖의 b는 200
+    console.log(`{}밖의 c는 ${c}`); // {}밖의 c는 500
+
+    console.log('===')
+
+    var i = 10;
+    var i = 20; // 같은 키워드로 같은 이름의 재선언이 허용
+
+    let k = 10;
+    // let k = 20; 같은 키워드로 같은 이름의 재선언 허용 안됨
+    k = 30; // 재할당만 가능
+    
+    {
+      let k = 40; // 전역 변수 k와 다른 이 지역에서만 사용되는 k라서 가능 
+    }
+  
+  </script>
+</body>
+</html>

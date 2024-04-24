@@ -1,0 +1,20 @@
+<body>
+  <h1>while반복문2</h1>
+  <script>
+    /*
+
+    */
+   
+    let i = 0;
+    while (true) { // while의 무한 반복. 한계가 설정되지 않으면 무한 반복되기 때문에 반드시 빠져 나올 조건이 필요함
+      console.log(i++);
+
+      if(i === 10) {
+        console.log(`여기서 멈춤 ${i}`);
+        break;
+      }
+
+      console.log(`변수 i : ${i}`) //break가 위에서 걸렸기 때문에 10 출력 안됨
+    }
+  </script>
+</body>

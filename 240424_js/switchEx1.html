@@ -1,0 +1,45 @@
+<body>
+  <h1>switchEx1</h1>
+
+  <script>
+    /*
+      입력받은 값이 짝수인 경우 xx는 짝수 입니다 출력
+      입력받은 값이 홀수인 경우 xx는 홀수 입니다 출력
+    */
+
+
+    let num = prompt('값을 입력해 주세요')
+    // switch는 엄격한 비교.... 숫자형 문자열은 더하기 연산자를 빼고 연산이 가능 
+    
+    /*
+    switch (num % 2) {
+      case  1 :
+          document.body.innerHTML += `<h2>${num} - 홀수입니다</h2>`;
+          break;
+      case  0 :
+          document.body.innerHTML += `<h2>${num} - 짝수입니다</h2>`;
+          break;
+          
+      default:
+        document.body.innerHTML += `<h2>숫자만 입력해 주세요</h2>`;
+        break;
+    } */
+
+    let mag = "";
+    switch (num % 2) {
+      case 0 :
+        msg = "짝"
+        break;
+      case 1 :
+        msg = "홀"
+        break;
+    
+      default:
+        document.body.innerHTML += `<h2>숫자만 입력해 주세요</h2>`;
+        break;
+    }
+
+    if(msg) document.body.innerHTML += `<h2>${num} - ${msg}수 입니다</h2>`;
+  
+  </script>
+</body>

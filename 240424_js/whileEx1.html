@@ -1,0 +1,32 @@
+<body>
+  <h1>whileEx1</h1>
+  <script>
+    /*
+      선생님은 김지원을 닮지 않았다 라고 물어보면 (confirm)
+      확인(네)을 누르면 계속 질문
+      취소(아니오)를 누르면 빠져나옴 '저도 그렇게 생각합니다'
+    */
+
+    /*
+    let i = 0;
+    while (true) { // while의 무한 반복. 한계가 설정되지 않으면 무한 반복되기 때문에 반드시 빠져 나올 조건이 필요함
+      console.log(i++);
+
+      if(i === 10) {
+        console.log(`여기서 멈춤 ${i}`);
+        break;
+      }
+
+      console.log(`변수 i : ${i}`) //break가 위에서 걸렸기 때문에 10 출력 안됨
+    } */
+    while (1) { // 무한 반복 설정
+      // confirm 
+        const answer = confirm('선생님은 김지원을 닮지 않았다?');
+      // if 
+      if(!answer) {
+        alert('저도 그렇게 생각합니다');
+        break;
+      }  
+    }
+  </script>
+</body>

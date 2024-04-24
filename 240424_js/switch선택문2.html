@@ -1,0 +1,51 @@
+<body>
+  <h1>switch선택문2</h1>
+  <script>
+    /* 
+      사이트명 입력시 해당 사이트로 이동
+
+      window.locatoin.href = "http://~"; 현재 탭에서 이동
+      window.open().location.href = "http://~"; 새 탭으로 열기
+    */
+
+    let site = prompt('네이버, 구글, 자바스크립트 중 원하는 사이트를 입력하세요');
+
+    /*
+    switch (site) {
+      case '네이버':
+         window.open('about:blank').location.href = "http://naver.com";
+         break;
+      case '구글':
+         window.open('about:blank').location.href = "http://google.com";
+         break;
+      case '자바스크립트':
+        window.open('about:blank').location.href = "http://ko.javascript.info/";
+         break;
+
+      default:
+        document.body.innerHTML += '<h2>제시된 사이트만 입력해 주세요</h2>';
+    } */
+
+    let url = '';
+    switch (site) {
+      case '네이버':
+        url = 'http://naver.com';
+        break;
+
+      case '구글':
+         url = 'http://google.com';
+        break;
+
+      case '자바스크립트':
+        url = 'http://ko.javascript.info/';
+        break;
+    
+        default: 
+        document.body.innerHTML += '<h2>제시된 사이트만 입력해 주세요</h2>';
+        break;
+      }
+      if(url) { 
+        window.open('about:blank').location.href = url;
+      }
+  </script>
+</body>

@@ -1,0 +1,61 @@
+<body>
+  <h1>switchEx3</h1>
+  <script>
+    /*
+      입력 받은 커피와 가격 출력
+      아메리카노 : 1,500, 카페라떼: 2,000, 카페모카: 2,000, 바닐라라떼: 2,500
+    */
+
+    const coffee = prompt('메뉴를 선택하세요');
+
+    /*
+    num = '';
+    switch (coffee) {
+      case '아메리카노':
+        num = '1,500';
+        break;
+      case '카페라떼':
+        num = '2,000';
+        break;
+      case '카페모카':
+        num = '2,000';
+        break;
+      case '바닐라라떼':
+        num = '2,500';
+        break;
+    
+      default:
+        document.body.innerHTML += `<h1>존재하는 메뉴를 입력해주세요</h1>`
+        break;
+    }
+    document.body.innerHTML += `<h1>${coffee} : ${num}원 입니다</h1>`
+    */
+
+    let price = 0; // 숫자로 초기화
+
+    switch (coffee) {
+      case '아메리카노':
+        price = 15000;
+        break;
+      case '카페라떼':
+        price = 20000;
+        break;
+      case '카페모카':
+        price = 20000;
+        break;
+      case '바닐라라떼':
+        price = 25000;
+        break;
+      case '아샷추':
+        price = 15000;
+        break;
+    
+      default:
+        document.body.innerHTML += '<h2>메뉴에 있는 음료만 주문해주세요</h2>';
+        break;
+    }
+    if(price) document.body.innerHTML += `<h1>주문한 ${coffee}의 가격은 ${price.toLocaleString()}원입니다</h1>`;
+
+    // .toLocaleString() 지역별 정의값을 문자열로 반환
+  </script>
+</body>

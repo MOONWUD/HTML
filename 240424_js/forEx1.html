@@ -1,0 +1,30 @@
+<body>
+  <h1>forEx1</h1>
+  <script>
+   /*
+    사용자가 입력한 값까지의 합을 출력
+    5 -> 1+2+3+4+5 = ??
+   */ 
+
+   const num = prompt('숫자를 입력하세요') // 문자열
+   let total = 0;
+   /* 
+   switch (num) {
+      case num:
+         for(let i = 1; i <= num; i++) {
+           total += i;
+          }
+          document.body.innerHTML += `<strong>${num} -> ${total}</strong>`;
+        break;
+    
+      default:
+        break;
+    } */
+
+    for(let i = 1; i <= num; i++) { // i(숫자) <= num(숫자형 문자열이나 자동변환)
+      total += i;
+    }
+
+    console.log(`사용자가 입력한 ${num}의 합은 ${total}입니다.`);
+  </script>
+</body>

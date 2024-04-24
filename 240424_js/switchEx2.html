@@ -1,0 +1,54 @@
+<body>
+  <h1>switchEx2</h1>
+  <script>
+    /*
+      1~4 사이의 숫자를 입력하면 해당 번호의 이미지 출력
+      취소 버튼 클릭 시 취소했습니다 출력
+    */
+
+    let img = prompt('1 ~ 4 사이의 숫자를 입력하세요')
+    let food = "";
+    
+    /*
+    switch (img) {
+      case 1 :
+        document.body.innerHTML += `<img src="./img/food1.jpg" alt="img1">`;
+        break;
+      case 2 :
+        document.body.innerHTML += `<img src="./img/food2.jpg" alt="img2">`;
+        break;
+      case 3 :
+        document.body.innerHTML += `<img src="./img/food3.jpg" alt="img3">`;
+        break;
+      case 4 :
+        document.body.innerHTML += `<img src="./img/food4.jpg" alt="img4">`;
+        break;
+    
+      default:
+      document.body.innerHTML += `<h1>1~4 사이의 숫자만 입력하세요</h1>`;
+        break;
+    } */
+    switch (img) {
+      case null :
+        food = `<h1>취소 했습니다</h1>`;
+        break;
+      case '1' :
+        food = `<img src="./img/food${img}.jpg" alt="img${img}">`;
+        break;
+      case '2' :
+        food = `<img src="./img/food2.jpg" alt="img2">`;
+        break;
+      case '3' :
+        food = `<img src="./img/food3.jpg" alt="img3">`;
+        break;
+      case '4' :
+        food = `<img src="./img/food4.jpg" alt="img4">`;
+        break;
+    
+      default:
+        food = `<h1>1~4 사이의 숫자만 입력하세요</h1>`;
+      }
+
+    document.body.innerHTML += food;
+  </script>
+</body>
