@@ -1,0 +1,22 @@
+<body>
+  <h1>break키워드</h1>
+  <script>
+    //  5번 알림창 반복. 'n번째 알림입니다'
+    let i = 1; // 초기값
+    /*
+    while (1 조건 ) { 
+        const num = confirm(`${i}번째 알림창입니다`);
+        i++;
+      if(i === 6) {
+        break;
+      }  
+    } */
+    while (i <= 5) { 
+        alert(`${i}번째 알림입니다`);
+        if(i === 3) {
+          break; // 이 키워드를 만나는 즉시 구문을 벗어남. if, while, switch, for
+        }
+        i++; // 증감식. 증감되고 나서 실행이니까 위치가 중요
+    }
+  </script>
+</body>
