@@ -1,0 +1,34 @@
+<body>
+  <h1>Math객체</h1>
+  <p>수학과 함수를 위한 속성(프로퍼티)를 제공하는 내장객체</p>
+  <ul>
+    <li><a href="https://ko.javascript.info/number" target="_blank">javascript info</a></li>
+  </ul>
+  <script>
+    console.log(Math.PI); // 3.141592653589793
+
+    console.log('.random()-----');
+    // 0~1 사이의 랜덤의 실수(난수)를 반환. 0은 포함되나 1은 포함되지 않음
+    console.log(Math.random());
+    // 1~10까지의 난수
+    let ran = Math.random() * 10 + 1;
+    console.log(ran);
+
+    console.log('.floor()-----');
+    // 소수점 이하 내림하여 정수로 반환
+    console.log(Math.floor(1.8)); // 1
+    console.log(Math.floor(-1.8)); // -2
+    console.log(Math.floor(-9.1)); // -10
+    console.log(Math.floor(ran)); // 4
+
+    // 1000까지의 난수
+    console.log(
+      Math.floor(Math.random() * 1000 +1)
+    ); 
+
+    // 50까지의 난수
+    console.log(
+      Math.floor(Math.random() * 50 +1)
+    ); 
+  </script>
+</body>

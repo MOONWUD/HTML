@@ -1,0 +1,45 @@
+<body>
+  <h1>가격에 따른 할인금액 계산</h1>
+  <dl>
+    <dt><strong>가격에 따른 할인 금액 계산하기</strong></dt>
+    <dd>최종 금액은 정수로 출력할 것</dd>
+    <dd>최종 금액에 지역의 정의값을 문자열로 반환할 것(10,000)</dd>
+    <dd>시작은 let productPrice = prompt("상품 가격을 입력해 주세요"); 을 활용할 것</dd>
+    <dd>숫자 외에 것을 입력 했을 때 '상품의 가격만 숫자로 입력해주세요' 출력할 것</dd>
+  </dl>
+
+  <dl>
+    <dt><strong>할인율표</strong></dt>
+    <dd>0 ~ 29,999원  0%</dd>
+    <dd>30,000 ~ 49,999원  5%</dd>
+    <dd>50,000 ~ 99,999원  10%</dd>
+    <dd>100,000 ~ 149,999원  20%</dd>
+    <dd>150,000 ~   30%</dd>
+  </dl>
+
+
+  <script>
+    let productPrice = prompt("상품 가격을 입력해 주세요");
+
+
+    let discountRate = 0;
+    if (productPrice >= 150000) {
+      discountRate = 0.3;
+    } else if (productPrice < 150000 && productPrice >= 100000) {
+      discountRate = 0.2;
+    } else if (productPrice < 100000 && productPrice >= 50000) {
+      discountRate = 0.1;
+    } else if (productPrice < 50000 && productPrice >= 30000) {
+      discountRate = 0.05;
+    } else if (productPrice < 30000 && productPrice >= 0) {
+      discountRate = 0;
+    } else {
+      alert('상품의 가격만 숫자로 입력해주세요')
+    }
+    let discountedPrice = productPrice * (1 - discountRate);
+    let clearingPrice = (Math.floor(`${discountedPrice}`).toLocaleString())
+    document.body.innerHTML += `<h1>할인율: ${discountRate * 100}%</h1>`;
+    document.body.innerHTML += `<h2>할인된 가격: ${clearingPrice}원<h2>`;
+  
+  </script>
+</body>

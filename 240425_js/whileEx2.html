@@ -1,0 +1,40 @@
+<body>
+  <h1>whileEx2</h1>
+  <script>
+    /*
+      사용자가 입력한 구구단을 출력해 봅시다
+    */
+
+    
+    let num = prompt('2~9사이의 숫자를 입력하세요')
+    let i = 1;
+    let result = '';
+    while(i <= 9) {
+      if(num >=2 && num <= 9) {
+      result += `<p>${num} * ${i} = ${num * i}</p>`;
+      i++;} else {
+        alert('2~9사이의 숫자를 입력하세요')
+        break;
+      }
+    }
+
+    if(num < 2 || num > 9 || isNaN(num) ) {
+      alert('2~9사이의 숫자를 입력하세요')
+    } else {
+      while(i <= 9) {
+      result += `<p>${num} * ${i} = ${num * i}</p>`;
+      i++;
+      }
+      document.body.innerHTML += result;
+    }
+
+    /*
+      isNaN(); 
+        ㄴ NaN을 확인하는 함수. NaN이 맞으면 true, 아니면 false.
+        ㄴ NaN은비교 함수로 판별하지 않음
+        ㄴisNaN('문자열'); true 반환하기 때문에 문자임을 인식할 수 있음
+        ㄴisNaN(123); false 반환하기 때문에 숫자임을 인식할 수 있음
+        
+    */
+  </script>
+</body>

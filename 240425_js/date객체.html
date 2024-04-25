@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>date객체</title>
+  
+</head>
+
+<body>
+  <h1>date객체</h1>
+  <p>날짜와 시간을 생성하는 내장 객체이자 생성자 함수</p>
+  <ul>
+    <li><a href="https://ko.javascript.info/date" target="_blank">javascript info</a></li>
+    <li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date"
+        target="_blank">MDN</a></li>
+  </ul>
+
+
+  <script>
+    console.log(new Date()); // 생성자 함수. 현재 날짜 시간 알려주는 date 객체를 생성하는 생성자 함수.
+    console.log(
+      new Date(2030, 12, 30, 23, 59, 59)
+    ) // 년, 월, 일, 시, 분, 초 
+
+  const now = new Date();
+  console.log(new Date().getMonth() + 1); // 월 0~11까지 반환
+  console.log(now.getDate()); // 날짜
+  console.log(now.getDay()); // 요일 0~6 반환 0:알, 1:월
+  console.log(now.getHours()); // 시간 0~23
+  console.log(now.getMinutes()); // 분 0~59
+  console.log(now.getSeconds()); // 초 0~59
+  console.log(now.getMilliseconds()); // 밀리세컨
+
+  console.log(now.getTime()); // 1970년 1월 1일 이후의 UTC(협정 세계지)자정과의 시간 차이를 밀리초로 나타내는 정수의 값
+  console.log(now.getTimezoneOffset()); // 현지 시간과 표준 시간 차이(분) 반환
+
+  // 날짜, 시간 요소 설정
+  console.log(now.setHours(2)); // 1970년 1월 1일 이후 밀리초로 시간 설정
+  now.setDate(now.getDate() + 2); // 현재 날짜에서 이틀뒤로 설정
+  console.log(now);
+
+    // 문자열 날짜 반환
+    console.log(now.toString()); // Sat Apr 27 2024 02:55:05 GMT+0900 (한국 표준시)
+    console.log(now.toDateString()); // Sat Apr 27 2024
+    console.log(now.toTimeString()); // 02:57:01 GMT+0900 (한국 표준시)
+    console.log(now.toLocaleString()); // 2024. 4. 27. 오전 2:57:01
+    //10000.toLocaleString -> 10,000. 현지 날짜, 시간, 숫자, 통화, 단위 등 맞춤
+
+    console.log(new Date('2024/11/27/12:27')); // Wed Nov 27 2024 12:27:00 GMT+0900 (한국 표준시)
+    console.log(new Date('2024/11/27/12:27').toLocaleString()); // 2024. 11. 27. 오후 12:27:00
+  </script>
+</body>
+</html>
