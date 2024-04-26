@@ -1,0 +1,48 @@
+<body>
+  <h1>string객체</h1>
+  <ul>
+    <li><a href="https://ko.javascript.info/string" target="_blank">javascript info</a></li>
+    <li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String"
+        target="_blank">MDN</a></li>
+  </ul>
+
+  <script>
+    console.log('.trim() -------');
+    // 문자열 양 끝 공백 제거. 스페이스, 탭, 줄바꿈 등 공백 제거
+      let str1 = `              안    녕     하 세요         `;
+      console.log(str1);
+      str1 = str1.trim();
+      console.log(str1); // 앞 뒤만 삭제 
+
+    console.log('.indexOf("검색대상문자열") -------');
+    // 문자열 탐색. 인덱스 번호로 반환. -1은 찾을 수 없는 경우 반환. 대소문자 구분
+      str1 = '재미있는 자바스크립트🤥';
+      // str1 = str1.indexOf('재미있는');  0
+      // str1 = str1.indexOf('자바스');  5 문자열에서는 공백도 포함
+      str1 = str1.indexOf('즐거운'); // -1 찾을 수 없는 경우
+      console.log(str1);
+
+    console.log('.slice(시작인덱스[, 미포함인덱스]) -------');
+     // 문자 추출. 두번째 인덱스를 생략하면 끝까지 출력. 두번째 인덱스 번호 작성시 그 인덱스 앞까지만 출력, []는 옵션
+      console.log('재미있는 자바스크립트, 즐거운 자바스크립트!'.slice(0)); // 재미있는 자바스크립트, 즐거운 자바스크립트!
+      console.log('재미있는 자바스크립트, 즐거운 자바스크립트!'.slice(3)); // 는 자바스크립트, 즐거운 자바스크립트!
+      console.log('재미있는 자바스크립트, 즐거운 자바스크립트!'.slice(1, 8)); // 미있는 자바스. 공백도 자릿수에 포함
+
+
+    console.log('.replace(문자1,문자2) -------');
+    // 문자1을 문자2로 변경. 가장 처음 만나는 글자 변경. 대소문자 구분
+      let str2 = 'title';
+      // str2 = str2.replace('t', 'T');
+      str2 = str2.replace('title', '매미');
+      console.log(str2);
+
+    console.log('.split("기준문자"[, 최대분할숫자]) -------');
+    // 기준 문자를 분할 숫자만큼 나눠 배열로 반환
+      let url = 'http://www.naver.com';
+      // url = url.split('.', 2); ['http://www', 'naver']
+      url = url.split('.'); // ['http://www', 'naver', 'com']
+      console.log(url);
+
+      console.log('javascript'.toUpperCase());
+  </script>
+</body>

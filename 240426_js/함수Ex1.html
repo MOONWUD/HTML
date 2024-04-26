@@ -1,0 +1,22 @@
+<body>
+  <h1>함수Ex1</h1>
+  <script>
+    /*
+      아메리카노는 4000원 입니다 출력
+      라떼는 4500원 입니다 출력
+    */
+
+   /*
+   function coffee(a, b) {
+     console.log(`${a}는 4000원 입니다`)
+     console.log(`${b}는 4500원 입니다`)
+    }
+    */
+   
+   const coffee = function (drink1, drink2 = '물') {
+     console.log(`${drink1}은 4000원입니다.`);
+     console.log(`${drink2}은 4500원입니다.`);
+    }
+    coffee('아메리카노', '라떼'); // 함수 호출
+    </script>
+</body>

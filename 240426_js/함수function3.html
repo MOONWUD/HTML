@@ -1,0 +1,37 @@
+<body>
+  <h1>함수function3</h1>
+  <h2>return 키워드</h2>
+  <p>함수 안에서  선언된 변수나 값의 경우 외부에서 접근 불가능</p>
+
+  <ul>
+    <li>리턴 키워드를 이용해 호출한 곳으로 반환</li>
+    <li>함수 실행 후 결과를 다시 얻고자 할 때 사용</li>
+    <li>함수 종료를 위해 사용</li>
+  </ul>
+
+  <script>
+    /*
+      function fn(x) {
+        실행문;
+        return; 함수 강제 종료. 이 다음 구문 실행 x
+        return 반환값; 반환값을 데이터로 반환
+      }
+    */
+
+    // 선언함수
+    function 과일() {
+      console.log('사과');
+    }
+    과일();
+
+    // 함수 표현식
+    const fruits = function () { // 익명함수
+      // 'apple'; undefined 함수 호출시 내에서만 데이터를 가지기 때문에
+
+      // return 'apple';  호출한 곳으로 데이터 반환후 함수 종료
+      // return '귤';
+      return ['귤', '사과', '블루베리'];
+    }
+    console.log(fruits()); 
+  </script>
+</body>
