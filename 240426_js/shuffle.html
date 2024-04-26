@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>랜덤 추첨기</title>
+  <style>
+    button {
+      border: 3px solid #FFDD95; 
+      background-color: #FF9843;
+      color: #FFDD95;
+      padding: 6px 16px;
+      font-weight: bold;
+      border-radius: 10px;
+      box-shadow: 2px 4px 10px #ddd;
+    }
+    button:hover {
+      background-color: #FCFFE0;
+      color: #FFDD95;
+    }
+  </style>
+
+  <script src="" defer></script>
+</head>
+
+<body>
+  <button onclick="btn()">랜덤의 수</button>
+  <ul class="output"></ul>
+
+    <script>
+      const nums = [1,2,3,4,5,6,7,8,9,10];// 배열 생성
+      let index = 0;
+  
+      // 배열 섞기
+      const shuffle = (num) => {// 리터럴 방식으로 화살표 함수 작성
+        for(let i = num.length - 1; i > 0; i--) {
+          const k = Math.floor(Math.random() * (i + 1));
+          [num[i], num[k]] = [num[k], num[i]];// 구조분해할당
+        }
+      }
+  
+      shuffle(nums);// 함수 호출
+  
+      function btn() {// 선언 함수
+        if(index < nums.length) {
+          document.querySelector('.output').innerHTML += `<li>${nums[index++]}</li>`;
+        } else {
+          alert('더이상 없습니다')
+        }
+      }
+    </script>
+</body>
+</html>

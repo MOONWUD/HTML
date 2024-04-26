@@ -1,0 +1,19 @@
+<body>
+  <h1>서브웨이 섭픽 3가지 주문하기</h1>
+  <script>
+      
+      let menu=prompt('이탈리안 비엠티, 스테이크&치즈, 로티세리 바비큐 치킨 이 세가지 중 하나를 입력하면 소스를 추천해드립니다.')
+      if(menu=='이탈리안 비엠티'){
+          let bmt='추천 소스는 스위트 어니언 소스&랜치 소스입니다'
+          document.body.innerHTML=(`${bmt}<br>맛있게 드세요 <img src="./subway.jpg" alt="img">`);
+      } else if (menu=='스테이크&치즈'){
+          let steak='추천 소스는 사우스웨스트 치폴레 소스&마요네즈 소스입니다'
+          document.body.innerHTML=(`${steak}<br>맛있게 드세요 <img src="./subway.jpg" alt="img">`);
+      } else if (menu=='로티세리 바비큐 치킨'){
+          let bbq='추천 소스는 스위트칠리소스&랜치 소스입니다'
+          document.body.innerHTML=(`${bbq}<br>맛있게 드세요 <img src="./subway.jpg" alt="img">`);
+      } else {
+          alert('판매불가')
+      }
+  </script>
+</body>
