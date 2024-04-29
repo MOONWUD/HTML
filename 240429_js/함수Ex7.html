@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>함수Ex7</title>
+  <style>
+    .btn {
+      border: 3px solid #121481;
+      display: block;
+      width: 100px;
+      padding: 6px 10px;
+      text-align: center;
+      text-decoration: none;
+      color: #121481;
+      margin: 20px auto;
+      font-weight: bold;
+      border-radius: 10px;
+    }
+
+    .btn:hover {
+      background-color: #121481;
+      color: tomato;
+    }
+  </style>
+
+  <script>
+    // 문서 준비 이벤트
+    /*
+    window.onload = function () {
+      function tomato() {
+        document.querySelector('body').style.backgroundColor = 'tomato';
+      }
+
+      const orange = () => document.body.style.backgroundColor = 'orange';
+    }
+    */
+
+  /*
+  css  vs  js
+  background-color | backgroundColor
+  margin-right | marginRight
+  padding-top | paddingTop
+  */
+  </script>
+
+  <script defer src="./함수Ex7.js"></script>
+</head>
+
+<body>
+  <!-- 버튼을 클릭하면 배경색 변경 -->
+  <a href="#" class="btn" id="tomato" onclick="tomato()">tomato🍅</a>
+  <a href="#" class="btn" id="orange" onclick="orange()">orange🍊</a>
+</body>
+
+</html>

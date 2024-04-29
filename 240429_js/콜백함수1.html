@@ -1,0 +1,21 @@
+<body>
+  <h1>콜백함수1</h1>
+  <p>callback function : 함수의 매개 변수 parameter로 함수를 넘기는 것</p>
+
+  <script>
+
+    const foo1 = () => console.log(`foo1 함수`);
+    const foo2 = function () {
+      console.log(`foo2 함수`);
+    } 
+    const foo3 = () => console.log(`foo3 함수`);
+
+    function addFn(num1, num2) { // 넘겨준 매개변수의 값이 함수인경우 콜백 함수
+      num1(); // 함수 호출 
+      num2();
+    }
+    addFn(foo1, foo2);
+    addFn(foo2, foo3);
+    addFn(foo1, foo3);
+  </script>
+</body>

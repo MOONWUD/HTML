@@ -1,0 +1,24 @@
+<body>
+  <h1>setTimeout</h1>
+  <script>
+    /*
+      setTimeout(콜백함수, 시간) 비동기 함수
+      정해진 시간 뒤에 힌 번만 실행
+      
+      setTimeout( () => {
+        console.log(`3초 뒤에 실행`);
+      }, 3*1000);
+    */
+
+   
+   const obj = () => console.log(`3초 뒤 실행`);
+   setTimeout(obj, 3000);
+
+   const once = setTimeout(()=> {
+    consol.log(`2초 뒤에 실행`)
+   }, 4000 / 2);
+   clearTimeout(once);
+
+  //  clearTimeout(); setTimeout() 중단
+  </script>
+</body>

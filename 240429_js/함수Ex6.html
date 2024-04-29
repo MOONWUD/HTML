@@ -1,0 +1,32 @@
+<body>
+  <h1>함수Ex6</h1>
+  <script>
+    // 입력한 금액의 부가세 포함 가격은 xxx원 입니다 출력
+    /*
+    let productPrice = prompt("상품 가격을 입력해 주세요");
+    let tax = 0;
+    productPrice = Number(productPrice);
+    if(productPrice >= 1) {
+      tax = 1.1;
+      let clearingPrice = productPrice * tax;
+      let Price = (Math.floor(`${clearingPrice}`).toLocaleString());
+      document.body.innerHTML += `입력한 금액의 부가세 포함 가격은 ${Price}원입니다`;
+    } else {
+      alert('가격만 입력해주세요 !');
+    }
+    */
+    const tax = () => {
+      let price = prompt('가격을 입력해주세요!');
+      // price * 1.1
+      // const cash = price * 1.1 ;
+      if(price) {
+        let cash = parseInt(price) *1.1;
+        alert(`입력한 가격의 부가세 포함은 ${cash.toLocaleString()}원입니다`);
+      } else {
+        alert(`금액만 입력해주세요 !`);
+      }
+    }
+    
+    tax();
+  </script>
+</body>

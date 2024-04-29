@@ -1,0 +1,18 @@
+<body>
+  <h1>setInterval</h1>
+  <p>setInterval(콜백함수, 시간); 지정된 시간마다 반복 실행 비동기 함수</p>
+
+  <script>
+    setInterval(()=>{
+      let count = 1;
+      console.log(`3초마다 ${count++}번째 실행`)
+    }, 3000);
+
+    const time = () => console.log(`time 함수`);
+    const obj = setInterval(time, 2000);
+
+    clearInterval(obj);
+    
+    setInterval(time, 2000);
+  </script>
+</body>

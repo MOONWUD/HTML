@@ -1,0 +1,58 @@
+<body>
+  <h1>함수function4</h1>
+  <h2>화살표 함수</h2>
+  <p><a href="https://ko.javascript.info/arrow-functions-basics" target="_blank">화살표 함수(javascript info)</a></p>
+
+  <ul>
+    <li>ES6 + 사용</li>
+    <li>함수 표현식(익명함수)에서만 사용 가능</li>
+    <li>this, arguments, new 키워드 사용 어려움</li>
+    <li>본문이 여러 줄인 경우 {} 사용 권장</li>
+    <li>{} 사용시 반드시 return 키워드를 통해 반환</li>
+  </ul>
+  <script>
+      /* 
+      변수명 = () => 실행문; 매개변수가 없는 경우 반드시 () 작성
+
+      변수명 = para1, para2 => { 매개변수가 있는 경우 () 생략 가능
+        실행문;
+        return 반환값;
+      }
+    */
+    
+    function obj1() {} // 선언 함수. 화살표 함수로 바꾸기 어려움 
+    
+
+    const obj2 = function() {
+      console.log('함수 표현식(리터럴)으로 작성된 함수');
+    }
+
+    obj2(); // 함수 호출
+    
+    const obj3 = function(n = 1) {
+      n * 5; // undefined. 함수 내에서 만 값을 가지기 때문에
+      return n * 5; // 함수는 return 키워드를 통해 호출했던 곳으로 반환
+    }
+
+    console.log(obj3(5)); // 함수 호출
+
+    const obj22 = () => console.log('리터럴 방식으로 작성된 화살표 함수');
+    obj22();
+
+    const obj33 = (n = 1) => n * 5; // 화살표 함수는 한 줄 일 때 return 키워드 없이 반환
+    console.log(obj33(3));
+
+    const obj4 = (a, b) => {
+      a + b; // undefined
+      return a + b; // {}를 써서 두 줄로 사용하면 return 키워드 필수 ! 
+    }
+    console.log(obj4(5, 8)); 
+
+
+    // 3개의 매개변수를 받아 연산 후 콘솔에 출력
+    const obj5 = (a, b, c = "?") => a + b + c ;
+    console.log(obj5("절거운 ", "오늘은... "));
+
+    
+  </script>
+</body>

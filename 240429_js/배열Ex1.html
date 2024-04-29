@@ -1,0 +1,19 @@
+<body>
+  <h1>배열Ex1</h1>
+  <h2 onclick="drink()">버튼</h2>
+  <script>
+    /*
+      아메리카노, 카페라떼, 바닐라라떼, 카페모카, 에스프레소
+      위 메뉴를 하나의 배열로 만들고, 콘솔 영역에 랜덤으로 출력
+      오늘의 커피는 xx입니다.
+    */
+
+   const drink = () => {
+     const coffee = ['아메리카노', '카페라떼', '바닐라라떼', '카페모카', '에스프레소'];
+    //  console.log(coffee[0]);
+    const idx = Math.floor(Math.random() * coffee.length);
+    console.log(`오늘의 커피는 ${coffee[idx]}입니다☕`)
+    }
+    drink(); // 
+  </script>
+</body>

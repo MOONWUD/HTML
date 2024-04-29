@@ -1,0 +1,29 @@
+<body>
+  <h1>this키워드</h1>
+  <p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/this" target="_blank">MDN this</a></p>
+  <h3>일반 함수에는 메서드 호출할 때 사용된 "그" 객체를 나타내는 키워드</h3>
+
+  <script>
+    const noName = { // 객체 
+      // key : value -> property
+      id : 1,
+      text: '--- this 키워드 ---',
+      func : function() { // 일반 함수
+        // 일반함수에서 this는 noName(객체 자신)을 가리키는 키워드
+        console.log(this);
+      },
+      arrow : () => { // 화살표 함수
+        // 화살표 함수에서 this는  참조하는 대상이 window, 혹은 상황에 다라 다른 객체를 참조하기도 함
+        // 참조라는 것은 원본은 따로 있지만, 신용카드로 결제하는 것처럼 현물은 은행에 있지만 실제하지 않는 상태에서 결제하는 것.
+        console.log(this); 
+      }
+    }
+
+    // 객체를 읽는 방법
+    // 콘솔에 문자열을 읽어서 출력
+
+    console.log(noName.text);
+    noName.func(); // {id: 1, text: '--- this 키워드 ---', func: ƒ, arrow: ƒ}
+    noName.arrow(); // window 객체
+  </script>
+</body>

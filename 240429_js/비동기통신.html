@@ -1,0 +1,43 @@
+<body>
+  <h1>비동기통신</h1>
+
+  <script>
+    /*
+    // 동기적 통신
+    function fn1() {
+      console.log(`동기적 호출 fn1`);
+    }
+    // 비동기적 통신
+    function fn2() {
+      setTimeout( ()=> console.log(`비동기적 호출 fn2`), 2000)
+    }
+
+    fn1();
+    console.log(`순차적으로 호출`);
+
+    fn2();
+    console.log(`비동기 통신이기 때문에 순차적으로 호출되지 않음`);
+    */
+
+
+    // 비동기 통신의 단점 콜백지옥. 그래서 async와 await를 통해 프라미스를 좀 더 편하게 사용함
+    function fn3(x,y,z) {
+      const obj = () => {
+        const sum = x + y;
+        z(sum);
+      }
+      setTimeout(obj, 3000)
+    }
+    fn3(10, 30, (item3) => {
+      console.log(`fn3 : ${item3}`);
+      fn4(item3, (item4) => {
+        console.log(`fn4 : ${item4}`);
+        fn5(item4, (item5) => {
+          console.log(`fn5 : ${item5}`);
+        })
+      })
+    });
+
+    fn3();
+  </script>
+</body>
