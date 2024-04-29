@@ -2,14 +2,14 @@
   <h1>브라우저객체Ex3</h1>
   <p>실패했음. 왜 안되는지 도통 알 수가 없어</p>
   <script>
-    var addnum = 0;
+    var addNum = 0;
     var subNum = 1000;
 
-    var plus = setlnterval(function(){
+    var plus = setInterval(function(){
       addNum++;
       console.log("addNum: " + addNum);
     },3000);
-    var minus = setlnterval(function(){
+    var minus = setInterval(function(){
       subNum--;
       console.log("subNum: " + subNum);
     },3000);
