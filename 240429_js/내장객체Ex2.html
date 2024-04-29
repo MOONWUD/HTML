@@ -1,0 +1,19 @@
+<body>
+  <h1>내장객체Ex2</h1>
+  <script>
+    var happyDay = new Date(2022,3,15);
+    
+    var 
+    theyear = happyDay.getFullYear(),
+    theMonth = happyDay.getMonth(),
+    theDate = happyDay.getDate(),
+    theDay = happyDay.getDay();
+
+    document.body.innerHTML += `<h2>HAPPY DAY ! 🦧</h2>`;
+    document.body.innerHTML += `<p>HappyDay year : ${theyear}</p>`;
+    document.body.innerHTML += `<p>HappyDay months : ${theMonth}</p>`;
+    document.body.innerHTML += `<p>HappyDay date : ${theDate}</p>`;
+    document.body.innerHTML += `<p>HappyDay days : ${theDay}</p>`;
+
+  </script>
+</body>

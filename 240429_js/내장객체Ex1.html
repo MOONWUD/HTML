@@ -1,0 +1,30 @@
+<body>
+  <h1>내장객체Ex1</h1>
+  <script>
+    var newJeans = new Object();
+
+    newJeans.newSong = "Bubble Gum";
+    newJeans.Debut = 220722;
+    newJeans.fandom = "Bunnies";
+
+    newJeans.info = function() {
+      document.body.innerHTML += `<p>뉴진스의 신곡은 <strong>${this.newSong}</strong> 입니다.</p>`;
+      document.body.innerHTML += `<p>뉴진스의 데뷔일은 <strong>${this.Debut}</strong> 입니다.</p>`;
+      document.body.innerHTML += `<p>뉴진스의 팬덤명은 <strong>${this.fandom}</strong> 입니다.</p>`;
+    }
+    
+    var MinHeeJin = new Object();
+    
+    MinHeeJin.mom = "엄마";
+    MinHeeJin.slang = "개저씨";
+    
+    MinHeeJin.info = function() {
+      document.body.innerHTML += `<p>민희진은 뉴진스의 <strong>${this.mom}</strong> 입니다.</p>`;
+      document.body.innerHTML += `<p>민희진의 유행어는 <strong>${this.slang}</strong> 입니다.</p>`;
+    }
+    document.body.innerHTML += `<h1>뉴진스 소개</h1>`; 
+    newJeans.info();
+    document.body.innerHTML += `<h1>민희진 소개</h1>`; 
+    MinHeeJin.info();
+  </script>
+</body>

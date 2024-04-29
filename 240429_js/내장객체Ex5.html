@@ -1,0 +1,28 @@
+<body>
+  <h1>내장객체Ex5</h1>
+  <script>
+    document.body.innerHTML += `<h2>홀짝 맞추기🧨</h2>`;
+
+    let game = prompt(' 홀, 짝 중 선택하세요', '홀이냐 짝이냐');
+
+    var gameNun;
+    switch(game) {
+      case "홀":
+        gameNum = 1; break;
+      case "짝":
+        gameNum = 2; break;
+      default: alert('홀 또는 짝만 입력해주세요😒');
+      location.reload();
+    }
+
+    var com = Math.ceil(Math.random()*2);
+
+    document.body.innerHTML += `<img src="./img/IMG_${com}.jpg">이 나왔습니다......`;
+    
+    if(gameNum === com) {
+      document.body.innerHTML += `<img src="./img/IMG_6994.JPG"><strong>당신은 통과</strong>`;
+    } else {
+      document.body.innerHTML += `<img src="./img/IMG_6999.JPG"><strong> 미안하지만 당신은 틀렸음</strong>`;
+    }
+  </script>
+</body>

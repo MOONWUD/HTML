@@ -1,0 +1,14 @@
+<body>
+  <h1>내장객체Ex3</h1>
+  <script>
+    var toDay = new Date(2024,4,28);
+    var nowYear = toDay.getFullYear();
+
+    var theDate = new Date(nowYear,11,14);
+    var diffDate = theDate.getTime() - toDay.getTime();
+
+    var result = Math.ceil(diffDate / (60*1000*60*24));
+
+    document.body.innerHTML += `올해 수능은 ${result}일 남았습니다🎉`;
+  </script>
+</body>
