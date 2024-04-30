@@ -1,0 +1,22 @@
+<body>
+  <h1>함수Ex1</h1>
+  <script>
+    var count = 0;
+    
+    myFnc();
+
+    function myFnc() {
+      count++;
+      document.body.innerHTML += `<p>hello ${count}</p>`
+    }
+    
+    myFnc();
+    
+    var theFnc = function() {
+      count++;
+      document.body.innerHTML += `<p>bye ${count}</p>`
+    }
+
+    theFnc();
+  </script>
+</body>

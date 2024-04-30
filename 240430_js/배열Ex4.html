@@ -1,0 +1,78 @@
+<body>
+  <h1>배열Ex4</h1>
+
+  <script>
+    // 점수를 배열로 만들고 점수의 최대 점수, 최저 점수, 평균 출력
+    const score = [33, 30, 50, 90, 57];
+    // 최고
+    /*
+    const maxArr = (score) => {
+      let num = score.length, max = score[0];
+      while (num--) {
+        if (score[num] > max) {
+          max = score[num];
+        }
+      }
+      return max;
+    };
+    // 최저
+    const minArr = (score) => {
+      let num = score.length, min = score[0];
+      while (num--) {
+        if (score[num] < min) {
+          min = score[num];
+        }
+      }
+      return min;
+     }
+     */
+    
+    // 최고
+    const maxArr = (num) => {
+      let maxNum = 0;
+      for(let i = 0; i < num.length; i++) {
+        if(maxNum < num[i]) {
+          maxNum = num[i]; // maxNum 변수에 현재 비교했던 배열의 값을 재할당
+        }
+      }
+      return maxNum
+    }
+    // 최저
+    const minArr = (num) => {
+      let minNum = 100;
+      for(let i = 0; i < num.length; i++) {
+        if(minNum > num[i]) {
+          minNum = num[i]; // minNum 변수에 현재 비교했던 배열의 값을 재할당
+        }
+      }
+      return minNum
+    }
+    // 평균
+    /* const avgArr = (score) => {
+       const init = 0;
+      let num = score.reduce((total, current) => total + current,
+        init);
+      return num / score.length; 
+      let sum = 0;
+      for(let i = 0; i < sum.length; i++) {
+        sum += score[i]
+      }
+      return sum / score.length;
+      const avg = sum/score.length;
+      return avg;
+    } */
+    const avgArr = (score) => {
+      let sum = 0;
+      for(let i = 0; i < score.length; i++) {
+        sum += score[i]
+      }
+      // return sum / score.length;
+      const avg = sum / score.length;
+      return avg;
+    }
+
+    console.log(`최고 점수 : ${maxArr(score)}`);
+    console.log(`최저 점수 : ${minArr(score)}`);
+    console.log(`평균 점수 : ${avgArr(score)}`);
+  </script>
+</body>

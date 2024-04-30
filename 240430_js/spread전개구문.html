@@ -1,0 +1,38 @@
+<body>
+  <h1>spread전개구문</h1>
+
+  <script>
+    /* 
+      ... 전개구문
+      배열, 문자열, 객체 등을 복사해 반환
+    
+      함수 호출 : myFn(...iterableObj);
+      배열 리터럴과 문자열 : [...iterableObj, "4", "five", 6];
+      객체 리터럴 : let objClone = { ...obj };
+    */
+
+    const nums = [10, '20', 20, 30, 40, 54];
+    const arr1 = nums.concat(); // 배열이나 객체를 복사해 새로운 배열로 반환
+    const arr2 = [...nums];
+
+    console.log(arr1);
+    console.log(arr2);
+    
+    console.log('================');
+    // 복사 추가 
+    const arr3 = nums.concat('고양이', '강아지');
+    console.log(arr3);
+    const arr4 = ['고양이', '강아지',...nums]
+    console.log(arr4);
+    console.log('================');
+    const coffee = {
+      no : 1,
+      name : '아메리카노'
+    }
+    console.log(coffee);
+    const drink1 = {...coffee};
+    console.log(drink1);
+    const drink2 = {...coffee, price: 4500, size: 'tall'};
+    console.log(drink2);
+  </script>
+</body>

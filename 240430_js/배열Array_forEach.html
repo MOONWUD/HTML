@@ -1,0 +1,32 @@
+<body>
+  <h1>배열Array_forEaach</h1>
+  <script>
+    /*
+      Array.prototype.forEach()
+      각 배열 요소에 대해 제공된 함수를 한 번씩 실행
+
+      Array.forEach(callbackFn);
+      Araay.forEach((현재요소[, 인덱스]) => {});
+
+      반환값 없음 undefined
+
+    */
+
+    const arr = [10, 20, 30, 40, 50];
+    // 배열이 가지고 있는 요소의 수만큼 순회하여 함수 적용 뒤 반환
+    arr.forEach(function(num, idx) {
+      console.log(`arr 배열 번호는 ${idx +1}, 요소는 ${num}입니다`);
+    });
+    
+    console.log('=======================');
+
+    const coffees = ['아메리카노', '라떼', '바닐라라떼', '에스프레소'];
+    coffees.forEach(coffee => console.log(coffee));
+    // console.log(coffee[0]);
+
+    console.log('=======================');
+
+    const menu = item => console.log(item);
+    coffees.forEach(menu); // 리터럴 작성 방식의 주의. 호출 값은 반드시 나중에 작성되어야 함
+  </script>
+</body>

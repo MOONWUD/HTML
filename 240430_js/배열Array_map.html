@@ -1,0 +1,43 @@
+<body>
+  <h1>배열Array_map</h1>
+
+  <script>
+    /*
+     Array.prototype.map()
+     배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환
+     기존 배열은 수정하지 않음
+
+     Array.map(callback(currentValue[, index[, array]])[, thisArg])
+     Array.map((현재요소)[, 인덱스[, 배열]] => {});
+
+     반환값 : callback의 결과를 모든 새로운 배열
+    */
+
+    const arr = [10, 20, 50];
+    arr.map((elem, idx, arr) => {
+      console.log(elem);
+      console.log(idx);
+      console.log(arr);
+      console.log(elem * elem);
+      console.log('============');
+    });
+
+    const date = [
+      {id : 1, menu : '된장찌개'},
+      {id : 2, menu : '김치찌개'},
+      {id : 3, menu : '뚝배기비빔밥'},
+      {id : 4, menu : '제육볶음'},
+      {id : 4, menu : '육개장'},
+      {id : 5, menu : '된장찌개'},
+    ];
+    /*
+    date.map((item, idx) => {
+      console.log(`배열 요소 : ${item}, 인덱스 번호 : ${idx}`);
+    });
+    */
+    date.map((item, idx) => {
+      // console.log(`배열 요소 : ${item}, 인덱스 번호 : ${idx}`); item 객체 자체를 반환
+      console.log(`배열 요소 이름 : ${item.menu}, 인덱스 번호 : ${idx}`);
+    });
+  </script>
+</body>
