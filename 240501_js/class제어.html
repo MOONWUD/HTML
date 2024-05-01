@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>class제어</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <style>
+    .btn {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      width: 80px;
+      text-align: center;
+      border: 3px solid #0A6847;
+      color: #0A6847;
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-weight: bold;
+    }
+
+    .btn.bg {
+      background-color: #F6E9B2;
+      color: #0A6847;
+    }
+
+    .gray {
+      background-color: #cfcfcf;
+    }
+
+    .blue {
+      background-color: #7AA2E3;
+    }
+
+    .orange {
+      background-color: #FFBB70;
+    }
+
+    .bold {
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+
+    .title {
+      font-weight: normal;
+      font-size: 24px;
+      background-color: #F3CA52;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="title">js에서의 클래스 선택자 제어</h1>
+  <a href="#" class="btn">버튼</a>
+  <p></p>
+  <ul>
+    <li>텍스트</li>
+    <li>텍스트</li>
+    <li>텍스트</li>
+  </ul>
+
+  <script>
+    const btn = document.querySelector('.btn');
+    const title = document.querySelector('.title');
+    const p = document.querySelector('p');
+    const ul = document.querySelector('ul');
+    const li = document.querySelectorAll('ul li');
+
+    // .classList.add(); 클래스 속성 추가
+    document.body.classList.add('gray');
+
+    // .classList.remove(); 클래스 속성 제거
+    title.classList.remove('title');
+
+
+    // .classList.toggle(); .add(), .remove()의 반복
+    /*
+    btn.addEventListener('click', function () {
+      // 일반함수에서의 this의 대상은 내가 클릭한 그 btn
+      this.classList.toggle('bg')
+    });
+    */
+    btn.addEventListener('click', (e) => {
+      e.target.classList.toggle('bg');
+
+      // .contains('클래스명'); 매개변수 안의 클래스 존재 여부를 true, false로 반환
+      const isBold = p.classList.contains('bold');
+      console.log(isBold);
+
+      if(isBold) {// p 노드에 클래스 bold가 있으면 true
+        p.textContent = `${isBold}반환. 클래스 bold 있음. 그래서 bold 삭제`;
+        p.classList.remove('bold')
+      } else {// p 노드에 클래스 bold가 없으면 false
+        p.textContent = `${isBold}반환. 클래스 bold 없음. 그래서 bold 추가`;
+        p.classList.add('bold');
+      }
+
+    });
+
+    // .className 속성. 클래스 값을 가져오거나 변경
+    title.className = 'title';
+    title.className = 'orange';// 원래 값에서 교체
+    console.log(title.className);
+    
+    // li 노드에 클래스네임 blue 적용
+    li.forEach(li => li.className = 'blue');
+
+    // .classList.replace('현재클래스','변경클래스');
+    // lis[0].classList.replace('bleu', 'orange');
+    li.forEach(li => li.classList.replace('blue','orange'));
+    
+  </script>
+</body>
+
+</html>

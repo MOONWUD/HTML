@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>DOM객체2_표준속성</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+</head>
+
+<body>
+  <h1>html 표준 정의 속성 접근</h1>
+
+  <ul>
+    <li><a href="#" data-color="orange" data-bg="#ddd">텍스트1</a></li>
+    <li><a href="#" data-color="teal" data-size="1.2rem">텍스트2</a></li>
+    <li><a href="#" data-color="salmon" data-bg="rgba(120,10,130,0.7)">텍스트3</a></li>
+    <li><a href="#" data-color="lightskyblue" data-bg="#f96">텍스트4</a></li>
+    <li><a href="#" data-color="tomato" data-size="1.3rem">텍스트5</a></li>
+  </ul>
+
+  <script>
+    /*
+      html 표준 정의 속성 접근 방법
+        ul.id = 'gnb';
+        a.href = '';
+        body.style = '';
+        input.value = '';
+        input.type = '';
+        img.src = '';
+
+      html 표준 모델에서
+        data-사용자정의이름=""
+          data-color="", data-name="", data-size=""
+      
+      js 에서 접근
+        .dataset.사용자정의이름; 사용자 정의 속성에 접근 가능
+          .dataset.color, .dataset.name, .dataset.size
+    */
+
+    // ul 노드 탐색해 ul 변수의 대입, li 하위의 a 노드들도 탐색해 a에 대입
+    const ul = document.querySelector('ul');
+    const lia = document.querySelectorAll('li a');
+    // console.log(ul, lia);
+    ul.id = 'gnb'; // 대입
+    console.log(ul.id); // 탐색
+    console.log(document.querySelector('#gnb')); // 탐색
+
+    // a의 밑줄 x, 색상 변경
+    lia.forEach((a) => { 
+      // a.style.color = '#7ABA78';
+      a.style.textDecoration = 'none';
+
+      console.log(a.dataset.color);
+      a.style.color = a.dataset.color; // html 속성 중 data-속성의 이름 color인 값을 가지고 와 대입
+
+      const bg = a.dataset.bg;
+      a.style.backgroundColor = bg;
+
+      const size = a.dataset.size;
+      a.style.fontSize = size;
+    });
+  </script>
+</body>
+
+</html>

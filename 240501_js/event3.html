@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>event3-이벤트전달</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <style>
+    .box1, .box1 * { border: 3px solid #000; margin: 30px;}
+    .box1 { background-color: #F3CA52;}
+    .box2 { background-color: #F6E9B2;}
+    .box3 { background-color: #0A6847;}
+    h2 { background-color: #7ABA78;}
+  </style>
+</head>
+
+<body>
+  <h1>이벤트 전달</h1>
+  <p><a href="https://ko.javascript.info/bubbling-and-capturing" target="_blank">버블링과 캡처링</a></p>
+  <ul>
+    <li>이벤트 버블링 bubbling : 자식 -> 부모순으로 이벤트 전달. 주로 지원</li>
+    <li>이벤트 캡쳐링 capturing : 부모 -> 자식순으로 이벤트 전달.</li>
+  </ul>
+
+  <div class="box1" onclick="alert('box1')">
+    <div class="box2" onclick="alert('box2')">
+      <div class="box3" onclick="alert('box3')">
+        <h2 onclick="alert('h2')">클릭</h2>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

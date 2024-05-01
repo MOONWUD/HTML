@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>DOM객체1_탐색</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+</head>
+
+<body>
+  <h1 id="title"></h1>
+
+  <h2>Document Object Model</h2>
+  <h3>문서의 구조화된 표현으로 스크립트 및 프로그래밍 언어와 페이지를 연결</h3>
+  <p>문서의 구조, 스타일, 콘텐츠 변경</p>
+
+  <ul class="box">
+    <li><a href="https://developer.mozilla.org/ko/docs/Web/API/Document_Object_Model/Introduction" target="_blank">DOM
+        소개</a></li>
+    <li><a href="https://developer.mozilla.org/ko/docs/Web/API/Document_Object_Model" target="_blank">문서 객체 모델(DOM)</a>
+    </li>
+    <li><a href="https://ko.javascript.info/browser-environment#ref-888" target="_blank">javascript.info</a></li>
+  </ul>
+
+  <ul class="gnb">
+    <li class="list"></li>
+    <li class="list"></li>
+    <li class="list"></li>
+    <li class="list"></li>
+  </ul>
+
+  <script>
+    // id 속성 노드탐색 document.getElementById('id')
+    document.getElementById('title').textContent = 'DOM객체'
+
+    /* 
+     class 속성 노드 .getElementsByClassName('class'); 
+     tag 노드 탐색 getElementsByTagName('tag');
+     유사 배열 형태로 반환 -> [li, li, li, li]
+
+     NodeList로 반환
+       배열은 아니지만 배열처럼 처리할 수 있는 객체로 숫자로 된 key와 length 프로퍼티(속성)가 있음
+       NodeList는 .forEach()는 사용 가능
+       .map(), .filter() 등의 배열 메서드는 사용 불가능 <- 배열이 아니기 때문
+       spread 연산자를 이용하여 배열로 변환 후 사용은 가능
+   */
+    document.getElementsByClassName('box')[0].style.border = '3px solid #000';
+
+    const lis = document.getElementsByTagName('li');
+    console.log(lis);
+
+    lis[0].style.listStyle = 'none'
+    lis[0].firstElementChild.style.textDecoration = 'none'
+
+    // 표준 탐색 메서드  document.querySelector(''); 제일 처음 탐색한 노드 반환
+    const A = document.querySelector('a');
+    const As = document.querySelectorAll('a'); // 여러 노드를 유사배열의 형태로 탐색하지만 하나의 노드만 반환
+    console.log(As); // NodeList(3) [a, a, a]
+
+    /*
+    As[0].style.color = 'inherit'
+    As[1].style.color = 'inherit'
+    As[2].style.color = 'inherit'
+    */
+
+    As.forEach((a) => { // 탐샏된 a의 수만큼 함수를 반복
+      a.style.color = 'yellowgreen';
+      a.style.textDecoration = 'none';
+      a.style.margin = '6px 10px';
+      a.style.display = 'block';
+    });
+  </script>
+</body>
+
+</html>

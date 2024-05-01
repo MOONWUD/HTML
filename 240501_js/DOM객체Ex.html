@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>DOM객체Ex</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+</head>
+
+<body>
+  <div class="container">
+    <img src="" alt="img1" class="pic">
+    <img src="" alt="img2" class="pic">
+    <img src="" alt="img3" class="pic">
+    <img src="" alt="img4" class="pic">
+  </div>
+
+  <script>
+    const imgs = [
+      'https://placehold.co/200/F3B95F/fff?text=img1',
+      'https://placehold.co/200/D04848/fff?text=img2',
+      'https://placehold.co/200/FDE767/fff?text=img3',
+      'https://placehold.co/200/6895D2/fff?text=img4',
+    ];
+    
+    const pics = document.querySelectorAll('.pic'); 
+    pics.forEach((pic, idx) => { // 내가 탐색한 pic 하나 하나에 아래의 식을 적용시키겠다
+      pic.src = imgs[idx]
+    });
+  </script>
+</body>
+</html>

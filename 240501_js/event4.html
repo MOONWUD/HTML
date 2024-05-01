@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>event4-이벤트제어</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <style>
+    h2, a {
+      border: 3px solid #000;
+      padding: 50px;
+      display: block;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>이벤트 제어</h1>
+  <h2><a href="https://naver.com" target="_blank">네이버 바로가기</a></h2>
+
+  <script>
+    const h2 = document.querySelector('h2');
+    const link = document.querySelector('a');
+
+    h2.addEventListener('click', () => h2.style.backgroundColor='#BED7DC');
+
+    link.addEventListener('click', (event) => {
+      event.stopPropagation(); // 현재 이벤트가 상위 노드까지 전달되는 것을 방지(이벤트 버블링방지!)
+      event.preventDefault(); // 요소의 기본 성격을 제거(a의 기본성격인 이동과 페이지를 제일 위로 이동x)
+      link.style.backgroundColor = 'tomato';
+    })
+  </script>
+</body>
+</html>

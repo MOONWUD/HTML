@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>event1</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+</head>
+
+<body>
+  <h1>event</h1>
+  <li><a href=" https://ko.javascript.info/introduction-browser-events" target="_blank">이벤트 javascript.info</a></li>
+  <li><a href="https://developer.mozilla.org/ko/docs/Learn/JavaScript/Building_blocks/Events" target="_blank">이벤트
+      MDN</a></li>
+  <li><a href=" https://developer.mozilla.org/ko/docs/Web/API/EventTarget/addEventListener" target="_blank">표준 이벤트 모델
+      MDN</a></li>
+  </ul>
+
+  <script>
+    /*
+      이벤트란?
+      무언가 일어났다는 신호
+      DOM에서 발생하는 이벤트 -> 마우스, 폼 요소, 키보드, 문서, CSS 이벤트
+
+      - 고전 이벤트 모델
+         인라인 이벤트 : <a href="#" onclick="fn()">
+         .on접두어 : .on('click', function(){})
+         .onclick(function(){}), onblur(), .onmouseenter .. 
+
+       - 표준 이벤트 모델
+          EventTarget.addEventListener();
+          대상: Element, Document, Window, XMLHttpRequest ..
+          .addEventListener(type, listener);
+          .addEventListener('이벤트이름', 콜백함수event handler);
+    */
+
+    /*
+    window.addEventListener('click', () => {
+      alert('클릭했습니다');
+    });
+    */
+    // 대상을지정하지 않으면 전역객체 window에 binding
+    addEventListener('click', () => alert('클릭했습니다'));
+  </script>
+</body>
+
+</html>

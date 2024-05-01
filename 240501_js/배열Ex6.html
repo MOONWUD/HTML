@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>배열Ex6</title>
+
+</head>
+
+<body>
+  <h1>배열Ex6</h1>
+  <h2 class="title">현재 날짜와 시간</h2>
+  <!-- 
+    현재 년 월 일 요일 am pm 시 분 초
+    24 x -> 12
+    2024년 4월 30일 화요일 PM 05:01:15
+
+    1초에 한 번씩 실행
+    setTimeout(function() {}, 시간) 지정 시간 후 한 번만 실행
+    setInterval(콜백함수, 시간); 지정 시간 마다 실행 
+
+    재귀함수 : 
+      함수 내부에서 자기 자신으 호출하는 함수.
+      재귀함수 사용시 종료 조건을 설정하지 않으면 무한 호출됨
+      내부적으로 호출 스택(call stack)을 사용하기 때문에 호출시 스택이 쌓이게 되고 
+      각 호출이 종료되면 스택에서 제거됨
+      단점. 메모리 사용이 많음
+
+    즉시 실행 함수
+    (function 함수명 () {})();
+    (function 함수명 () {} ()); 
+   -->
+</body>
+
+<script>
+  /*
+  var toDay = new Date();
+  let nYear = toDay.getFullYear(),
+    nMonth = toDay.getMonth(),
+    nDate = toDay.getDate(),
+    nDay = toDay.getDay(),
+    nHours = toDay.getHours(),
+    nMinutes = toDay.getMinutes(),
+    nSeconds = toDay.getSeconds();
+
+  const day = ['일', '월', '화', '수', '목', '금', '토'];
+  let ampm = '';
+  if (nHours < 12) {
+    ampm = 'AM';
+  } else {
+    ampm = 'PM';
+  }
+  let nHours12 = nHours % 12;
+
+
+  // console.log(`${nYear}년 ${nMonth + 1}월 ${nDate}일 ${day[nDay]}요일 ${ampm} ${nHours12}: ${nMinutes}: ${nSeconds}`);
+
+
+   document.querySelector('.title').innerHTML = `${nYear}년 ${nMonth + 1}월 ${nDate}일 ${day[nDay]}요일 ${ampm} ${nHours12}: ${nMinutes}: ${nSeconds}`;
+  //  document.querySelector('.title').innerHTML = output;
+  */
+  // const time = () => {
+  (function time() {
+    const now = new Date();
+
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1;
+    const date = now.getDate();
+    let day = ['일', '월', '화', '수', '목', '금', '토'];
+    const dayidx = now.getDay(); // 0~6
+    // day = day[now.getDay()];
+    /*
+    let ampm = '';
+    if(hour >= 12){
+      ampm = 'PM';
+    } else {
+      ampm = 'AM';
+    }
+    */
+    let hour = now.getHours();
+    hour = hour % 12;
+    hour = hour ? hour : 12; // 0시는 12시로 표현
+    /*
+    if(hour < 10) {
+      hour = '0' + hour;
+    } else {
+      hour;
+    }
+    */
+    hour = hour < 10 ? '0' + hour : hour;
+    // .padStart(문자열길이, '채워넣을문자')
+    const ampm = hour >= 12 ? 'PM' : 'AM';
+    const min = now.getMinutes().toString().padStart(2, '0');
+    const sec = now.getSeconds().toString().padStart(2, '0');
+
+    const output = `${year}년 ${month}월 ${date}일 ${day[dayidx]}요일 ${ampm} ${hour}: ${min}: ${sec}`;
+    document.querySelector('.title').innerHTML = output;
+
+    setTimeout(time, 1000);
+  })(); // 즉시 실행 함수. 스크립트 리더기를 만나면 즉시 실행
+  // time();
+  // setInterval(time, 1000);  1초에 한 번씩 돌아감. 속도가 점점 빨라짐
+</script>
+
+</html>

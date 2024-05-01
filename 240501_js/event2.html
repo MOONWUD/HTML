@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>event2-DOMContentLoaded</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <script>
+    const h2 = txt => `<h2>${txt}</h2>`;
+    const write = txt => {
+      return `<h2>${txt}번째</h2>`;
+    };
+
+    /* DOM을 불러오기 전에 호출하므로 에러
+    document.body.innerHTML = `<h2>내용출력</h2>`;
+    document.body.innerHTML = write(1);
+    
+    DOM, CSSOM 등 외부 노드도 모두 불러왔을 때 실행
+    window.onload = function() {
+      document.body.innerHTML += `<h2>내용출력</h2>`;
+      document.body.innerHTML += write(1);
+    }
+    */
+
+    // 다른 외부 구조, 노드 상관없이 DOM만 불러오면 실행. 이미지나, 영상 등을 기다리지 않음
+    document.addEventListener('DOMContentLoaded', ()=>{
+      document.body.innerHTML += write(1);
+      // DOM을 만들고나서 실행했기 때문에 제일 마지막에 반환
+    });
+  </script>
+
+</head>
+
+<body>
+  <script>
+    document.body.innerHTML += h2(2);
+  </script>
+
+  <h1>event2-DOMContentLoaded</h1>
+  <p><a href="https://ko.javascript.info/onload-ondomcontentloaded" target="_blank">DOMContentLoaded</a></p>
+
+  <script>
+    document.body.innerHTML += h2(3);
+  </script>
+</body>
+
+</html>
