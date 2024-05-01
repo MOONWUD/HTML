@@ -22,54 +22,29 @@
 </body>
 
 <script>
-      var toDay = new Date();
-      let nYear = toDay.getFullYear(),
-        nMonth = toDay.getMonth(),
-        nDate = toDay.getDate(),
-        nDay = toDay.getDay(),
-        nHours = toDay.getHours(),
-        nMinutes = toDay.getMinutes(),
-        nSeconds = toDay.getSeconds();
+  var toDay = new Date();
+  let nYear = toDay.getFullYear(),
+    nMonth = toDay.getMonth(),
+    nDate = toDay.getDate(),
+    nDay = toDay.getDay(),
+    nHours = toDay.getHours(),
+    nMinutes = toDay.getMinutes(),
+    nSeconds = toDay.getSeconds();
 
-      const day = ['일', '월', '화', '수', '목', '금', '토'];
-      let ampm = '';
-      if (nHours < 12) {
-        ampm = 'AM';
-      } else {
-        ampm = 'PM';
-      }
-      let nHours12 = 0;
-      if(nHours === 13) {
-        nHours12 = 1;
-      } else if(nHours === 14) {
-        nHours12 = 2;
-      } else if(nHours === 15) {
-        nHours12 = 3;
-      } else if(nHours === 16) {
-        nHours12 = 4;
-      } else if(nHours === 17) {
-        nHours12 = 5;
-      } else if(nHours === 18) {
-        nHours12 = 6;
-      } else if(nHours === 18) {
-        nHours12 = 6;
-      } else if(nHours === 19) {
-        nHours12 = 7;
-      } else if(nHours === 20) {
-        nHours12 = 8;
-      } else if(nHours === 21) {
-        nHours12 = 9;
-      } else if(nHours === 22) {
-        nHours12 = 10;
-      } else if(nHours === 23) {
-        nHours12 = 11;
-      } else if(nHours === 24) {
-        nHours12 = 12;
-      }
-
-      console.log(`${nYear}년 ${nMonth+1}월 ${nDate}일 ${day[nDay]}요일 ${ampm} ${nHours12}: ${nMinutes}: ${nSeconds}`);
+  const day = ['일', '월', '화', '수', '목', '금', '토'];
+  let ampm = '';
+  if (nHours < 12) {
+    ampm = 'AM';
+  } else {
+    ampm = 'PM';
+  }
+  let nHours12 = nHours % 12;
 
 
+  // console.log(`${nYear}년 ${nMonth + 1}월 ${nDate}일 ${day[nDay]}요일 ${ampm} ${nHours12}: ${nMinutes}: ${nSeconds}`);
+
+
+   document.querySelector('.title').innerHTML = `${nYear}년 ${nMonth + 1}월 ${nDate}일 ${day[nDay]}요일 ${ampm} ${nHours12}: ${nMinutes}: ${nSeconds}`;
   //  document.querySelector('.title').innerHTML = output;
 </script>
 
