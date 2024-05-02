@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>eventMethodEx2</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <style>
+    button {
+      border: none;
+      background-color: #F05945;
+      color: #bbe2f1;
+      padding: 10px 30px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin: 20px;
+    }
+    button:hover {
+      background-color: #bbe2f1;
+      color: #F05945;
+    }
+    .box {
+      display: block;
+      width: 300px;
+      height: 300px;
+      border: 20px solid #AAC4FF;
+      margin: 30px auto;
+      padding: 10px;
+      font-weight: bold;
+      transition: .5s;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script>
+    // $(function () {}); DOM과 같이 실행
+     $(function () {
+      $('button').on('click', () => {
+        $('.box1').css({'background-color' : '#CDF0EA'});
+      });
+
+      $('.box2').hover((e) => {
+        $(e.target).css({'border-radius': '50%'})
+      },(e) => {
+        $(e.target).css({'border-radius': '0%'})
+      });
+     });
+     /*
+       $('#box2').on({
+        'mouseenter': (e) => {
+          $(e.target).css({ borderRadius: '50%' })
+        },
+        'mouseleave': (e) => {
+          $(e.target).css({ borderRadius: 0 })
+        },
+      });
+     */
+  </script>
+</head>
+
+<body>
+  <button>버튼</button>
+  <div class="box box1">버튼 클릭시 박스 배경색 변경</div>
+  <div class="box box2">박스 위에 마우스를 올리면 원으로 변하고 벗어나면 원래대로 돌아옴</div>
+</body>
+</html>

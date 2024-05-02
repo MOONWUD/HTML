@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>한글로렘입숨생성기</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <style>
+    h1 {
+      padding: 10px;
+      border-radius: 30px;
+      width: 400px;
+      text-align: center;
+      box-shadow: 0 5px 10px #d1d1d1;
+      margin: 40px auto;
+    }
+    form {
+      text-align: center;
+    }
+    input {
+      background-color: #cfcfcf;
+      box-shadow: 0 5px 10px #d1d1d1;
+      border: none;
+      padding: 15px;
+      margin: 150px auto 20px;
+      display: block;
+      width: 300px;
+      outline: none;
+    }
+    input:hover {
+      outline: none;
+    }
+    .btn {
+      border: none;
+      padding: 10px 20px;
+      margin: 8px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background-color: #68D2E8;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>한글 로렘 입숨 생성기</h1>
+  <form>
+    <input type="number" id="amount" placeholder="숫자만 입력해주세요"> 
+    <!-- 사용자가 입력하는 숫자 창 -->
+    <button type="submit" class="btn create_btn">생성</button>
+    <button type="submit" class="btn short_btn">짧게</button>
+    <button type="submit" class="btn middle_btn">중간</button>
+    <button type="submit" class="btn long_btn">길게</button>
+  </form>
+  <p class="result_text"></p>
+  <script>
+    let input = document.querySelector('#amount');
+    let create = document.querySelector('.create_btn');
+    let short = document.querySelector('.short_btn');
+    let middle = document.querySelector('.middle_btn');
+    let long = document.querySelector('.long_btn');
+    let text = document.querySelector('.result_text')
+    let num= 0;
+
+    let texts = ['계절이', '지나가는', '하늘에', '가을로', '있습니다', '나는', '걱정도', '아무', '없이', '가을 속의',
+     '여름 하나', '별들을', '모두', '헤일 듯', '합니다', '가슴속에', '하나둘', '이제', '헤는 것은', '쉬이', '아침이',
+     '오는', '까닭이요', '내일', '남은', '청춘이', '아니다', '다하지', '아직', '별 하나에', '추억과', '사랑과', '쓸쓸함과',
+     '동경과', '시와', '어머니', '한마디', '이국 소녀들의', '이름과', '꽃들 속에서', '바람들과', '비둘기들', '불러봅니다',
+     '릴케의', '시선과', '북간도에', '계십니다', '별빛들', '우는 벌레는', '부끄러운', '지난 겨울에', '봄이 오면', '피어나듯이',
+     '우정의', '눈물과', '호수 속에', '한 마디의', '이듬 해', '민들레는', '지저귀는', '햇살 속에', '기울어진', '서로를',
+     '닮아', '삶 속의', '소원을', '담아', '차오르는', '달의', '하려다 만', '속의 말', '시간의', '바깥에서']; 
+    let randomNum = Math.floor(Math.random(num) * 73);
+    text.innerHTML = texts[randomNum];
+
+    
+    if(short) {
+      num>=10&&num<=15; 
+      let randomNum = Math.floor(Math.random()* 73); 
+      text.innerHTML = texts[randomNum];
+    } else if(middle) {
+      num>=25&&num<=30 
+      let randomNum = Math.floor(Math.random()* num); 
+    } else if(middle) {
+      num>=40&&num<=50 
+      let randomNum = Math.floor(Math.random()* num); 
+    } 
+
+  </script>
+</body>
+</html>

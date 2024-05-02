@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>slideUp+slideDown+slideToggle</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <!-- <link rel="stylesheet" href="../assets/style/reset.css"> -->
+  <style>
+    .box {
+      width: 400px;
+      height: 300px;
+      background-color: #FFE3E1;
+      font-weight: bold;
+      padding: 10px;
+      box-sizing: border-box;
+      margin: 20px;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script>
+    $(function () {
+      $('#btn1').on('click', () => {
+        $('.box').slideUp(); // == display : none;
+      });
+      $('#btn2').on('click', () => {
+        $('.box').slideDown(); // == display : block;
+      });
+      $('#btn3').on('click', () => {
+        $('.box').slideToggle(); // toggle은 하나의 버튼 2개의 기능 
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <h1>.slideUp() .slideDown() .slideToggle()</h1>
+
+  <button class="btn" id="btn1">slideUp()</button>
+  <button class="btn" id="btn2">slideDown()</button>
+  <button class="btn" id="btn3">slideToggle()</button>
+
+  <div class="box">
+    <p>.slideUp();서서히 올라감</p>
+    <p>.slideDown();서서히 내려감</p>
+    <p>.slideToggle(); Up, Down</p>
+  </div>
+
+</body>
+</html>

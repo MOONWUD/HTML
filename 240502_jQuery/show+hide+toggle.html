@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>show+hide+toggle</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+  <style>
+    .box {
+      width: 400px;
+      height: 300px;
+      background-color: #AAC4FF;
+      font-weight: bold;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script>
+    $(function () {
+      //  btn1
+      $('#btn1').on('click', () => {
+        $('.box').show(); // == display : block
+      });
+      //  btn2
+      $('#btn2').on('click', () => {
+        $('.box').hide(); // == display : none
+      });
+      $('#btn3').on('click', () => {
+        $('.box').toggle(); 
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <h1>.show() .hide() .toggle()</h1>
+  <p><a href="https://api.jquery.com/category/effects" target="_blank">Effects</a></p>
+
+  <button class="btn" id="btn1">show()</button>
+  <button class="btn" id="btn2">hide()</button>
+  <button class="btn" id="btn3">toggle()</button>
+
+  <div class="box">
+    <p>show() 보임</p>
+    <p>hide() 숨김</p>
+    <p>toggle() show, hide 반복</p>
+  </div>
+</body>
+</html>

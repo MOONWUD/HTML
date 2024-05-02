@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>eventMethodEx1</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <style>
+    .mainBtn {
+      border: none;
+      background-color: #A0C3D2;
+      display: block;
+      width: 150px;
+      padding: 15px;
+      color: #F8F6F4;
+      font-weight: bold;
+      font-size: 1.3rem;
+      margin: 50px auto;
+      border-radius: 10px;
+      box-shadow: 3px 3px 5px #c9c9c9;
+    }
+    .mainBtn:hover {
+      background-color: #EAC7C7;
+    }
+    .popUp {
+      background-color: #FBF8F1;
+      border-radius: 10px;
+      width: 300px;
+      height: 400px;
+      margin: 20px auto;
+      position: relative;
+      text-align: center;
+      box-shadow: 3px 3px 5px #c9c9c9;
+      display: none;
+    }
+    .popUp h1 {
+      padding-top: 30px;
+    }
+    .popUp p {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #F2A154;
+    }
+
+    .popUp .subBtn {
+      box-shadow: 2px 2px 3px #c9c9c9;
+      border: none;
+      background-color: #dddfd9;
+      display: block;
+      width: 50px;
+      padding: 5px 0;
+      color: #1d1d1d;
+      font-weight: bold;
+      border-radius: 10px;
+      position: absolute;
+      bottom: 15px;
+      right: 20px;
+    }
+    .subBtn:hover {
+      background-color: #F2A154;
+      color: #fff;
+    }
+  </style>
+  <script>
+     $(document).ready(function () {
+      // 팝업창 열기
+      $('.mainBtn').on('click', () => {
+        // $('.popUp').css({'display' : 'block'});
+        $('.popUp').show();
+      });
+      // 팝업창 닫기
+      $('.subBtn').on('click', () => {
+        // $('.popUp').css({'display' : 'none'});
+        $('.popUp').hide();
+      });
+     });
+  </script>
+</head>
+
+<body>
+  <button class="mainBtn">열기 버튼</button>
+  <div class="popUp">
+    <h1>🤜🐵🤛</h1>
+    <p>오랑이는 귀엽다 너무</p>
+    <button class="subBtn">닫기</button>
+  </div>
+</body>
+</html>

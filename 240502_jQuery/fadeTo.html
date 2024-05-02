@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>fadeTo</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <style>
+     .box {
+      font-weight: bold;
+      list-style: none;
+    }
+    .box li{
+      color: #383838;
+      padding: 10px;
+      width: 150px;
+      height: 150px;
+      text-align: center;
+    }
+
+    .box li:nth-child(1) {background-color: #75A47F;}
+    .box li:nth-child(2) {background-color: #F6995C;}
+    .box li:nth-child(3) {background-color: #8E7AB5;}
+    .box li:nth-child(4) {background-color: #EEC759;}
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script>
+    $(function () {
+      $('#btn1').on('click', () => {
+      // opacity
+        $('.box').children().first().fadeTo(500, 0); // (속도, 불투명도 0~1)
+        $('.box').children().eq(1).fadeTo(1500, 0.3); // (1.5초, 불투명도 30%)
+        $('.box').children('li:nth-child(3)').fadeTo(1000, 0.5); // (1초, 불투명도 50%)
+        $('.box').find('li:eq(3)').fadeTo(2000, 0.2); // (1초, 불투명도 50%)
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <h1>fadeTo</h1>
+  <button class="btn" id="btn1">fadeTo()</button>
+
+  <ul class="box">
+    <li>box1</li>
+    <li>box2</li>
+    <li>box3</li>
+    <li>box4</li>
+  </ul>
+</body>
+</html>
