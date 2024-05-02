@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>타자게임</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+  <!-- 
+    *** 타자 게임 ***
+      1. 20개의 영단어가 랜덤으로 등장합니다.
+      2. 30초의 시간이 주어지며 1초씩 줄어듭니다. 30초의 시간이 지나면 게임이 종료됩니다.
+      3. 정답을 맞히면 점수가 1점씩 늘어납니다.
+      4. 게임 시작 전엔 "게임 시작", 게임 중일 땐 "게임 중", 게임 종료 시 "게임 종료" 문구가 적힌 버튼을 만들어 주세요.
+  -->
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .header {
+      width: 100%;
+      background: #F3CA52;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .word_display {
+      margin-top: 3rem;
+      font-size: 80px;
+      color: #7AA2E3;
+    }
+
+    .word_input_box {
+      margin-top: 2rem;
+    }
+
+    .word_input {
+      border-radius: 10px;
+      box-shadow: 2px 2px 3px #ddd;
+      border: 2px solid #5f5f5f;
+      padding: 0.5rem;
+      width: 300px;
+    }
+
+    .game_info {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 500px;
+      margin: 10px;
+      color: #2c2c2c;
+    }
+
+    .time,
+    .score {
+      margin: 10px;
+      width: 100%;
+      font-size: 25px;
+      color: #2c2c2c;
+    }
+
+    .gameBtn {
+      border: none;
+      width: 100px;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      color: #fff;
+      background-color: #5f5f5f;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <h1>재밌는 타자게임 ⌨️</h1>
+  </div>
+  <div class="word_display">
+    Hello
+  </div>
+  <div class="word_input_box">
+    <input type="text" class="word_input">
+  </div>
+  <div class="game_info">
+    <div>
+      남은 시간 : <span class="time">0</span>초
+    </div>
+    <div>
+      획득 점수 : <span class="score">0</span>점
+    </div>
+  </div>
+  <button class="gameBtn">게임 시작</button>
+
+  <script>
+    let text = document.querySelector('.word_display');
+    let input = document.querySelector('.word_input');
+    let times = document.querySelector('.time');
+    let scores = document.querySelector('.score');
+    let btn = document.querySelector('.gameBtn')
+    let score = 0;
+    let time = 30;
+    let playGame = false;
+    let timeInterval;
+
+    let texts = ['false', 'straight', 'matter', 'climb', 'hurt', 'habit', 'carpenter', 'discuss', 'strange', 'throw', 'expression', 'principal', 'garage', 'plant', 'hen', 'shine', 'message', 'foggy', 'favorite', 'spend']; // 영단어 종류
+    let randomNum = Math.floor(Math.random() * 20); // 랜덤으로 영단어 나타나게끔
+    text.innerHTML = texts[randomNum];
+
+    btn.addEventListener('click', function () { // 게임 시작 버튼 클릭 시
+      if (playGame) return; // playGame = true
+      btn.innerHTML = '게임 중';
+      btn.style.backgroundColor = '#F3CA52';
+      playGame = true; // 게임 진행 중
+      times.innerHTML = time;
+      timeInterval = setInterval(timer, 1000);
+      times.style.color = '#7AA2E3';
+      scores.style.color = '#7AA2E3';
+    });
+
+    function timer() {
+      time > 0 ? time-- : playGame = false; // 1초씩 줄어드는 타이머. 0(false)초가 되면 게임 종료
+      times.innerHTML = time;
+      if (!playGame) { // 게임 중이 아닐 경우
+        btn.innerHTML = '게임 종료';
+        clearInterval(timeInterval);
+        btn.style.backgroundColor = '#5f5f5f';
+        scores.style.color = '#7AA2E3';
+        times.style.color = '#2c2c2c';
+      }
+    }
+
+    input.addEventListener('input', function () {
+      if (!playGame) return; // 게임 중이 아니라면 return
+      if (text.innerHTML === input.value) { // 입력한 영단어와 화면의 영단어가 일치할 경우
+        score += 1; // 점수 +1
+        let randomNum = Math.floor(Math.random() * 20);
+        text.innerHTML = texts[randomNum];
+        input.value = "";
+        scores.innerHTML = score;
+      }
+    })
+
+
+  </script>
+</body>
+
+</html>
