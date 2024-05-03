@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>attrEx2</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <link rel="stylesheet" href="../assets/style/reset.css">
+  <style>
+    .gallery {
+      margin: 50px auto;
+      width: 60vw;
+      display: grid;
+      grid-template-rows: 4fr 1fr;
+      box-shadow: 3px 3px 5px #adadad;
+      border: 5px solid #fff;
+    }
+    .gallery .main-img img {
+      width: 100%;
+    }
+    .gallery ul {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .gallery ul li img {
+      width: 100%;
+      opacity: 0.6;
+    }
+    .gallery ul li img:hover {
+      opacity: 1;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script>
+    $(function () {
+      /*
+      $('li').eq(0).on('click', () => {
+        $('.main-img').find('img').attr({src : './img/img5.jpg'})
+      });
+      $('li').eq(1).on('click', () => {
+        $('.main-img').find('img').attr({src : './img/img6.jpg'})
+        
+      });
+      $('li').eq(2).on('click', () => {
+        $('.main-img').find('img').attr({src : './img/img7.jpg'})
+        
+      });
+      $('li').eq(3).on('click', () => {
+        $('.main-img').find('img').attr({src : './img/img8.jpg'})
+      });
+      */
+    //  e.currentTarget; 내가 클릭한 그 요소의 이벤트 리스너가 바인딩 된 요소
+    //  e.target; 내가 클릭한 그 요소
+     $('li').on('click', (e) => {
+      const imgSrc = $(e.target).attr('src');
+      const imgAlt = $(e.target).attr('alt');
+        $('.main-img img').attr({src : imgSrc, alt : imgAlt});
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="gallery">
+    <div class="main-img">
+      <img src="./img/img5.jpg" alt="bg1">
+    </div>
+    <ul>
+      <li><img src="./img/img5.jpg" alt="bg1"></li>
+      <li><img src="./img/img6.jpg" alt="bg2"></li>
+      <li><img src="./img/img7.jpg" alt="bg3"></li>
+      <li><img src="./img/img8.jpg" alt="bg4"></li>
+    </ul>
+  </div>
+</body>
+</html>

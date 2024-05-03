@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>attr2</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style>
+    img {
+      width: 80vw;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script>
+    $(function () {
+      $('.btn1').on('click', () => {
+        $('img').attr({src : './img/img1.jpg', alt : 'img1'});
+      });
+      $('.btn2').on('click', () => {
+        $('img').attr({src : './img/img2.jpg', alt : 'img2'});
+      });
+      $('.btn3').on('click', () => {
+        $('img').attr({src : './img/img3.jpg', alt : 'img3'});
+      });
+      $('.btn4').on('click', () => {
+        $('img').attr({src : './img/img4.jpg', alt : 'img4'});
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <h1>attr2</h1>
+  <button class="btn1">img1</button>
+  <button class="btn2">img2</button>
+  <button class="btn3">img3</button>
+  <button class="btn4">img4</button>
+
+  <p><img src="" alt="img1"></p>
+</body>
+</html>

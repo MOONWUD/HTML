@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>attrEx1</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style>
+    body { text-align: center;}
+    button, p {
+      border: 1px solid #78C1F3;
+      border-radius: 10px;
+      background-color: #fff;
+      padding: 10px 15px;
+      margin: 10px;
+      font-weight: bold;
+      box-shadow: 2px 2px 5px #ddd;
+    }
+    button:hover {
+      background-color: #78C1F3;
+      color: #fff;
+    }
+    
+    img {
+      box-shadow: 2px 2px 5px #ddd;
+      width: 416px;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script>
+    $(function() {
+      $('.btn1').on('click', () => {
+        const src = $('img').attr('src'); // src 속성 읽기
+        $('p').text(src).css({'background-color' : '#bce4ff'});
+      });
+      $('.btn2').on('click', () => {
+        const alt = $('img').attr('alt'); // src 속성 읽기
+        $('p').text(alt).css({'background-color' : '#bce4ff'});
+      });
+      $('.btn3').on('click', () => {
+        const width1 = $('img').attr('width'); // width 속성이 존재하지 않기 때문에 읽지 못함
+        const width2 = $('img').css('width');
+        $('p').text(width2).css({'background-color' : '#bce4ff'});
+
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <h1>attrEx1</h1>
+  <button class="btn1">경로확인</button>
+  <button class="btn2">대체 텍스트</button>
+  <button class="btn3">이미지 가로 사이즈</button>
+
+  <img src="./img/img3.jpg" alt="여름방구" width="416px">
+
+  <p>이곳에 출력됩니다</p>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>text</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style></style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script>
+    $(function () {
+      const txt1 = $('#txt1').text(); // 문자만 반횐하고 em은 반환하지 않음
+      console.log(txt1);
+
+      $('#txt2').text('text2'); // 내가 작성한 값으로 변경
+
+      const colors = $('.color').text();
+      console.log(colors); // 텍스트1text2텍스트3
+    });
+  </script>
+</head>
+
+<body>
+  <h1>.text()</h1>
+  <p>기준 요소의 문자를 가져오거나 반환</p>
+
+  <ul>
+    <li id="txt1" class="color"><em>텍스트1</em></li>
+    <li id="txt2" class="color">텍스트2</li>
+    <li id="txt3" class="color">텍스트3</li>
+    <li id="txt4">텍스트4</li>
+    <li id="txt5">텍스트5</li>
+  </ul>
+</body>
+</html>

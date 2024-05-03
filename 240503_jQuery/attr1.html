@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>attr1</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style></style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script>
+    $(function () {
+      $('.btn').on('click', () => {
+        const title = $('h1').attr('class'); // 속성 class의 값을 반환
+        console.log(title);
+
+        // $('ul').find('a').attr('href', 'https://naver.com');
+        $('ul').find('a').attr({ href : 'https://naver.com', target : '_blank'});
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <h1 class="title">.attr1</h1>
+  <P>html 태그 속성(attribute)의 값을 가져오거나 반환</P>
+  <button class="btn">네이버 주소 속성 넣기</button>
+
+  <ul>
+    <li><a href="#">네이버로 바로가기</a></li>
+  </ul>
+</body>
+</html>

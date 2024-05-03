@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>slideUpDownEx2</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <link rel="stylesheet" href="../assets/style/reset.css">
+  <style>
+    ul {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      width: 300px;
+      background-color: #8CC0DE;
+      color: #646464;
+    }
+    ul li {
+    }
+    
+    ul li:last-child h4 {
+      border-bottom: none;
+    }
+    ul li h4 {
+      border-bottom: 1px solid #fff;
+      padding: 10px;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+    ul li h4:hover {
+      background-color: #9cd6f5
+    }
+    ul li .none {
+      display: block;
+      background-color: #ddd;
+      height: 250px;
+      line-height: 250px;
+      font-size: 6rem;
+      display: none;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="./slideUpDownEx2.js"></script>
+</head>
+
+<body>
+  <ul>
+    <li class="menu menu1">
+      <h4>1</h4>
+      <div class="none">🍤</div>
+    </li>
+    <li class=" menu menu2">
+      <h4>2</h4>
+      <div class="none">🥦</div>
+    </li>
+    <li class="menu3">
+      <h4>3</h4>
+      <div class="none">🍆</div>
+    </li>
+    <li class="menu4">
+      <h4>4</h4>
+      <div class="none">🌽</div>
+    </li>
+  </ul>
+</body>
+</html>

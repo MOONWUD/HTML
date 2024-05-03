@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>width+height</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <style>
+    .box {
+      width: 40px;
+      height: 40px;
+      margin: 50px auto;
+      background-color: #F3CA52;
+      transition: 0.5s;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script>
+    $(function () {
+      /*
+      $('.box').width('50vw').height('50vw');
+      $('.box').width('40vw');
+
+      const wt = $('.box').width();
+      const ht = $('.box').height();
+      console.log(wt, ht);
+      
+      $('.box').on('click', (e) => {
+         const wt = $('.box').width();
+         $(e.target).height('50vw');
+        $(e.target).height(wt);
+       })
+      */
+
+      $('button[type=submit]').on('click', () => {
+        // console.log('클릭');
+        // form의 값은 JS에서는 .value, jQuery에서는 .val();
+        const num = $('.size').val();
+        console.log(typeof num, num);
+        $('.box').height(num).width(num);
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <h1>width() height()</h1>
+    <input type="number" class="size" placeholder="숫자를 입력해 주세요">
+    <button type="submit">적용</button>
+    <div class="box">박스</div>
+</body>
+
+</html>

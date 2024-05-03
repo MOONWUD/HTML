@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>html</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style></style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script>
+    $(function () {
+      $('#btn1').on('click', () => {
+        const txt = $('ul').text();
+        console.log(`text()는 ${txt}`);
+      });
+      $('#btn2').on('click', () => {
+        const ht = $('ul').html(); // 기준 요소의 자식 요소 노드 모두 리턴(태그포함)
+        console.log(`html()는 ${ht}`);
+      });
+
+      $('li').eq(3).html(`<strong>strong태그로 변경</strong>`);
+    });
+  </script>
+</head>
+
+<body>
+  <h1>.html()</h1>
+  <p>html 구조를 가져오거나 반환</p>
+  
+  <button id="btn1">text()</button>
+  <button id="btn2">html()</button>
+
+  <ul>
+    <li><strong><em>메뉴1</em></strong></li>
+    <li><em>메뉴2</em></li>
+    <li>메뉴3</li>
+    <li><a href="#">메뉴4</a></li>
+    <li>메뉴5</li>
+  </ul>
+</body>
+</html>

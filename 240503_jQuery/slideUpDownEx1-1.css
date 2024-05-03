@@ -1,0 +1,57 @@
+@charset "UTF-8";
+body {
+  text-align: center;
+}
+header, main {
+  height: 500px;
+  background-color: #F6E9B2;
+  font-weight: bold;
+  font-size: 3rem;
+}
+main {
+  background-color: #FA7070;
+}
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 60px;
+  font-weight: bold;
+  background-color: #A1C398;
+}
+nav a { 
+  display: block;
+}
+nav .global-menu {
+  color: #fff;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 200px));
+  justify-content: center;
+}
+nav .global-menu li {
+  width: 100%;
+}
+nav .global-menu > li > a {
+  height: 60px;
+  line-height: 60px;
+}
+nav .global-menu > li > a:hover {
+  background-color: #fff;
+  color: #A1C398;
+
+}
+nav .global-menu li ul {
+  display: none;
+  background-color: #E1F0DA;
+  color: #4d4d4d;
+  height: 260px;
+}
+nav .global-menu li .sub-menu {}
+nav .global-menu li .sub-menu li {}
+nav .global-menu li .sub-menu li a {
+  font-weight: normal;
+  line-height: 50px;
+}
+nav .global-menu li .sub-menu li a:hover {
+  background-color: #fff;
+}

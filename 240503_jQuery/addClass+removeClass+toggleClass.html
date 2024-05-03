@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>addClass+removeClass+toggleClass</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <style>
+    #box {
+      border: 1px solid #999;
+      margin: 20px;
+      padding: 0 20px;
+    }
+
+    #box.style1 { background-color: orange; width: 500px; margin: 50px auto; }
+    #box.style2 { background-color: salmon; font-style: italic; border :3px dotted deeppink; }
+    #box.style3 { background-color: lightblue; font-weight: normal; }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script>
+    $(function() {
+      $('.btn1').on('click', () => {
+        $('#box').addClass('style1');
+      });
+      $('.btn2').on('click', () => {
+        $('#box').removeClass('style1');
+      });
+      $('.btn3').on('click', () => {
+        $('#box').addClass('style2');
+      });
+      $('.btn4').on('click', () => {
+        $('#box').removeClass('style2');
+      });
+      $('.btn5').on('click', () => {
+        $('#box').removeClass();// 매개변수를 넣지 않으면 클래스 값 전부 제거
+      });
+      $('.btn6').on('click', () => {
+        $('#box').toggleClass('style3');
+      });
+    })
+  </script>
+</head>
+
+<body>
+  <h1>addClass() removeClass() toggleClass()</h1>
+  <button class="btn1">클래스1 적용</button>
+  <button class="btn2">클래스1 제거</button>
+  <button class="btn3">클래스2 적용</button>
+  <button class="btn4">클래스2 제거</button>
+  <button class="btn5">클래스 제거(매개변수 x)</button>
+  <button class="btn6">toggle</button>
+
+  <div id="box">
+    <h2>.addClass(); 클래스 선택자 적용</h2>
+    <h2>.removeClass(); 클래스 선택자 제거</h2>
+    <h2>.toggleClass(); on/off</h2>
+  </div>
+</body>
+</html>
