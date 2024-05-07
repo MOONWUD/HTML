@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>hasClass</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style>
+    .box {
+      width: 300px;
+      height: 200px;
+      border: 3px solid #000;
+      margin: 30px auto;
+      padding: 10px;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+  <h1>hasClass()</h1>
+  <p>기준 요소에 해당 클래스가 있으면 true, 없으면 false 반환</p>
+  <div class="box on" id="box1">on 있음</div>
+  <div class="box" id="box2">on 없음</div>
+  <script>
+    const box1 = $('#box1').hasClass('on');
+    if(box1) { // true
+      $('#box1').css({background : '#CAF4FF'})
+    }
+    const box2 = $('#box2').hasClass('on');
+    if(box2) { // false 
+      $('#box2').css({background : '#FDDE55'})
+    }
+  </script>
+</body>
+</html>

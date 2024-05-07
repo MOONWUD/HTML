@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>remove+empty</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style>
+    .box {
+      width: 300px;
+      height: 200px;
+      background-color: #c1f3bf;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+  <h1>remove() empty()</h1>
+  <button id="btn1">remove()</button>
+  <button id="btn2">empty()</button>
+
+  <div class="box" id="box1">
+    <h2>remove()</h2>
+    <p>기준 요소부터 하위노드 전부 제거. 기준 요소도 제거</p>
+  </div>
+  <div class="box" id="box2">
+    <h2>emoty()</h2>
+    <p>기준 요소부터 하위노드만 제거. 기준 요소는 남음</p>
+  </div>
+  <script>
+    $('#btn1').on('click', () => {
+      $('#box1').remove()
+    });
+    $('#btn2').on('click', () => {
+      $('#box2').empty()
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>classEx1</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <style>
+    .tab-menu {
+      list-style: none;
+      margin: 50px auto;
+      padding: 0;
+      position: relative;
+      padding-top: 50px;
+      width: 600px;
+    }
+
+    /* 각 영역의 제목 */
+    .tab-menu .title {
+      text-transform: uppercase;
+      margin: 0;
+      background-color: #5AB2FF;
+      border-radius: 20px 20px 0 0;
+      padding: 10px;
+      text-align: center;
+      width: 199px;
+      height: 50px;
+      box-sizing: border-box;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .tab-menu #tab-css .title {left: 200px;}
+    .tab-menu #tab-js .title {left: 400px;}
+  
+    .tab-menu p {
+      margin: 0;
+      box-sizing: border-box;
+      background-color: #A0DEFF;
+      padding: 20px;
+      display: none;
+    }
+    .tab-menu p strong {
+      display: block;
+      margin: 10px 0;
+    }
+    .tab-menu li.active  p,
+    .tab-menu li.active h2 {
+      background-color: #A0DEFF;
+      display: block;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+  <ul class="tab-menu">
+    <li id="tab-hml" class="active">
+      <h2 class="title" role="button">html5</h2>
+      <p>
+        <strong>html5 Tutorial</strong>
+        <span>얼음 인생을 오아이스도 풀밭에 풍부하게 인생을 위하여서. 그들은 가슴에 너의 것은 못하다 투명하되 듣는다. 같은 예수는 밝은 있는 청춘의 보라. 싸인 그것을 불러 천하를 그리하였는가?</span>
+      </p>
+    </li>
+    <li id="tab-css">
+      <h2 class="title" role="button">css3</h2>
+      <p>
+        <strong>css3 Tutorial</strong>
+        <span>힘차게 동산에는 노래하며 살 위하여서. 수 이상, 석가는 이상을 그것을 영원히 밝은 피고 보라. 노래하며 눈이 행복스럽고 얼마나 길지 위하여 운다. 속에서 두기 것이 어디 없으면, 하여도 칼이다.</span>
+      </p>
+    </li>
+    <li id="tab-js">
+      <h2 class="title" role="button">JavaScript</h2>
+      <p>
+        <strong>JS Tutorial</strong>
+        <span>원대하고, 커다란 싹이 미묘한 타오르고 그들은 있는 이것이다. 모래뿐일 피고, 가지에 가치를 우리 하는 속에서 얼마나 칼이다. 따뜻한 것은 주며, 따뜻한 것이다.</span>
+      </p>
+    </li>
+  </ul>
+  <script>
+    $(function () { // 밑에 script를 쓸 때 문서 준비 이벤트를 안 써도 됌
+      /*
+      $('.tab-menu li:first-child').on('click', () => {
+        $('.tab-menu li:first-child').addClass('active')
+        $('.tab-menu li:nth-child(2)').removeClass('active')
+        $('.tab-menu li:nth-child(3)').removeClass('active')
+      });
+      $('.tab-menu li').eq(1).on('click', () => {
+        $('.tab-menu li').removeClass('active')
+        $('.tab-menu li').eq(1).addClass('active')
+      });
+      $('.tab-menu li').eq(2).on('click', () => {
+        $('.tab-menu li').removeClass('active')
+        $('.tab-menu li').eq(2).addClass('active')
+      });
+      */
+     $('.tab-menu li').on('click', (e) => {
+      $('.tab-menu li').removeClass('active');
+      // 내가 클릭한 바로 그 요소
+      // $(e.target).parent().addClass('active')
+      // 내가 클릭한 이
+      // 이벤트 리스너가 바인딩 된 그 요소
+      $(e.currentTarget).addClass('active')
+     });
+
+    });
+  </script>
+</body>
+</html>

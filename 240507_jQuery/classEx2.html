@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>classEx2</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+    .wrapper {
+      position: relative;
+    }
+    .txt-wrapper {
+      font-weight: bold;
+      position: absolute;
+      margin: 20px;
+      font-family: "Poetsen One", sans-serif;
+    }
+    .txt-wrapper span {
+      color: #7469B6;
+      font-size: 1.3rem;
+      display: block;
+      transition: 0.4s;
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    .txt-wrapper h2 {
+      margin: 20px 0;
+      color: #ffe77c;
+      font-size: 3rem;
+      line-height: 1.2;
+      transition: 1s 0.4s;
+      transform: translateY(40px);
+      opacity: 0;
+    }
+
+    .wrapper .txt-wrapper.active  h2,
+    .wrapper .txt-wrapper.active  span {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="txt-wrapper active">
+      <span>about</span>
+      <h2>think &<br>solution</h2>
+    </div>
+    <div class="txt-wrapper">
+      <span>skill</span>
+      <h2>html & css3<br>javascript</h2>
+    </div>
+    <div class="txt-wrapper">
+      <span>contact</span>
+      <h2>jQuery</h2>
+    </div>
+  </div>
+  <script>
+    /* 
+      setTimeout(콜백함수, 시간);
+      setInterval(() => {},1000);
+    */
+$(function() {
+       /*
+      let nextIdx = 0;
+      setInterval(() => {
+        //  nextIdx에 0, 1, 2 순환
+        nextIdx = (nextIdx + 1) % $('.wrapper .txt-wrapper').length; // $('.wrapper .txt-wrapper').length = 3
+        
+        $('.wrapper .txt-wrapper').removeClass('active');
+        $('.wrapper .txt-wrapper').eq(nextIdx).addClass('active');
+      }, 2000);
+      */
+     function movingText(num){
+      // 0, 1, 2 인덱스가 자동으로 순환
+       const nextIdx = (num + 1) % $('.wrapper .txt-wrapper').length;
+       $('.wrapper .txt-wrapper').removeClass('active').eq(num).addClass('active');
+      setTimeout(()=> movingText(nextIdx), 2000);
+    }
+    movingText(0);
+    });
+  </script>
+</body>
+</html>
