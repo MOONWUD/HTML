@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>bingo</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <style>
+    #bingo-board {
+      margin: 100px auto 50px;
+      width: 300px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+    }
+
+    .cell {
+      border: 1px solid black;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .cell.selected {
+      background-color: rgb(255, 253, 218);
+    }
+
+    .btn {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 100%;
+      justify-content: center;
+      width: 250px;
+      margin: auto;
+    }
+    #shuffle-button {
+      background-color: #e5fae5;
+      color: #35553a;
+      width: 100px;
+      height: 40px;
+      border: 2px solid #375236;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    #btn {
+      background-color: #e5fae5;
+      color: #35553a;
+      width: 100px;
+      height: 40px;
+      border: 2px solid #375236;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    #random {
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem;
+      background-color: #35553a;
+      color: #fff;
+      border-radius: 10px;
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="bingo-board">
+    <!-- Bingo board will be generated dynamically -->
+  </div>
+  <div class="btn">
+  <button id="shuffle-button">새로고침</button>
+  <button id="btn">번호뽑기</button>
+  <p id="random"></p>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const board = document.getElementById("bingo-board");
+      const shuffleButton = document.getElementById("shuffle-button");
+      let gameStarted = false;
+      let lastBingoCount = 0;
+
+      // 빙고판 초기화
+      initializeBoard();
+
+      function initializeBoard() {
+        if (!gameStarted) {
+          gameStarted = true;
+
+          // 빙고판에 숫자 1~9까지 랜덤 생성
+          let numbers = [];
+          while (numbers.length < 9) {
+            let randomNum = Math.floor(Math.random() * 9) + 1; // 1~9까지 숫자 랜덤 대입
+            if (!numbers.includes(randomNum)) { // includes : 알고리즘을 사용하여 배열의 요소와 비교 0 값은 부호와 관계없이 모두 동일한 것으로 간주 (-0 = 0 / 0 =/= false)
+              numbers.push(randomNum); // push : 배열 끝에 여러 값을 추가. 주어진 값을 입력하는 것을 어디에 시작할 것인지 결정하기 위해 length에 의존
+            }
+          }
+
+          // 숫자 셔플
+
+          // 랜덤 생성된 숫자 빙고판에 대입
+          for (let i = 0; i < 9; i++) {
+            const cell = document.createElement("div"); // Document.createElement(): 지정한 tagName의 HTML 요소를 만들어 반환
+            cell.classList.add("cell");
+            cell.textContent = numbers[i];
+            board.appendChild(cell);
+          }
+
+          // 셀을 클릭하면 이벤트(백그라운드 컬러) 추가
+          board.addEventListener("click", function (e) {
+            const cell = e.target;
+            if (!cell.classList.contains("selected")) { // .contains('클래스명'); 매개변수 안의 클래스 존재 여부를 true, false로 반환
+              cell.classList.add("selected");
+              checkForBingo();
+            }
+          });
+        }
+      }
+
+      // 빙고 확인하는 기능
+      function checkForBingo() {
+        const cells = document.querySelectorAll(".cell");
+
+        // 빙고 가로, 세로 및 대각선 확인
+        let bingoCount = 0;
+
+        // 세로 칸 빙고 확인
+        for (let i = 0; i < 3; i++) {
+          if (cells[i * 3].classList.contains("selected") && // 1, 4, 7번째 칸
+            cells[i * 3 + 1].classList.contains("selected") && // 2, 5, 8번째 칸
+            cells[i * 3 + 2].classList.contains("selected")) { // 3, 6, 9번째 칸
+            bingoCount++; // 이 선택되면 빙고 카운트
+          }
+        }
+
+        // 가로 칸 빙고 확인
+        for (let i = 0; i < 3; i++) {
+          if (cells[i].classList.contains("selected") && // 1, 2, 3번째 칸
+            cells[i + 3].classList.contains("selected") && // 4, 5, 6번째 칸
+            cells[i + 6].classList.contains("selected")) { // 7, 8, 9번째 칸
+            bingoCount++; // 이 선택되면 빙고 카운트
+          }
+        }
+
+        // 대각선 확인
+        if ((cells[0].classList.contains("selected") && // 1번째 칸
+          cells[4].classList.contains("selected") && // 5번째 칸
+          cells[8].classList.contains("selected")) || // 9번째 칸이 선택되거나 (11시 방향부터 5시 방향 대각선 빙고 확인) || : OR
+          (cells[2].classList.contains("selected") && // 3번째 칸
+          cells[4].classList.contains("selected") &&  // 5번째 칸
+          cells[6].classList.contains("selected") // 7번째 칸이 선택되면 (1시 방향부터 7시 방향 대각선 빙고 확인)
+        )) {
+          bingoCount++; // 빙고 카운트
+        }
+
+        // 빙고가 만들어지면 알림 표시
+        if (bingoCount > lastBingoCount) { // (현재) 빙고 카운트가 마지막 빙고 카운트보다 커지면
+          alert(bingoCount + " 빙고 완성!"); // 빙고 완성 알림을 띄운 후
+          lastBingoCount = bingoCount; // 마지막 빙고 개수에 (현재) 빙고 카운트를 대입함
+        }
+      }
+
+      // 새로고침 버튼으로 숫자를 섞는 기능
+      function shuffleNumbers() {
+        const cells = document.querySelectorAll(".cell");
+        let numbers = [];
+        while (numbers.length < 9) {
+          let randomNum = Math.floor(Math.random() * 9) + 1;
+          if (!numbers.includes(randomNum)) {
+            numbers.push(randomNum);
+          }
+        }
+
+        cells.forEach((cell, index) => {
+          cell.textContent = numbers[index];
+          cell.classList.remove("selected");
+        });
+        lastBingoCount = 0;
+      }
+
+      // 클릭 이벤트 수신기를 셔플 버튼에 추가
+      shuffleButton.addEventListener("click", function () {
+        shuffleNumbers();
+      });
+    });
+
+    // 번호 뽑기 랜덤 버튼 
+    let randombtn = document.querySelector('#btn')
+    let text = document.querySelector('#random');
+    let texts = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    let randomBtnNum = Math.floor(Math.random() * 9);
+    text.innerHTML = texts[randomBtnNum];
+
+    randombtn.addEventListener('click', function() {
+      let randomBtnNum = Math.floor(Math.random() * 9);
+      text.innerHTML = texts[randomBtnNum];
+    });
+      
+  </script>
+
+</body>
+
+</html>
