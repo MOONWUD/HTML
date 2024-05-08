@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>animate1</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style>
+    .box {
+      background-color: #CAF4FF;
+      box-shadow: 3px 3px 5px #ddd;
+      width: 100px; height: 100px;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <!-- jQuery UI 색상, 움직임 스타일 등은 이 파일이 필요 -->
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <h1>animate()</h1>
+  <p><a href="https://api.jquery.com/animate/" target="_blank">공식문서</a></p>
+
+  <button class="btn">클릭</button>
+  <div class="box">제이쿼리 애니메이션</div>
+  <script>
+    $('.btn').on('click', () => {
+      // .animate({속성 : 값, 속성 : 값, ...}, 진행시간, 움직임 형태...)
+      $('.box').animate({
+        'width' : '300px',
+        'height' : 300,
+        fontSize : '1.5rem',
+        'font-weight' : 'bold',
+        'color' : '#FF5580',
+        'background-color' : '#CDE8E5',
+      },1500, 'easeOutElastic');
+    });
+  </script>
+</body>
+</html>

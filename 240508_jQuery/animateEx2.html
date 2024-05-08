@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>animateEx2</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+  <style>
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .gallery {
+      position: relative;
+      min-height: 400px;
+      width: 50vw;
+      min-width: 400px;
+      border: 3px solid #fff;
+      box-shadow: 3px 3px 5px #ddd;
+      margin: 50px auto;
+      overflow: hidden;
+    }
+
+    .gallery .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      position: absolute;
+      width: 100%;
+      bottom: 20px;
+      text-indent: -9999px;
+      z-index: 9999;
+    }
+
+    .gallery .btn-group li {
+      display: block;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background-color: rgba(82, 76, 66,0.3);
+      box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+
+    .gallery .btn-group li:hover {
+      background-color: rgb(82, 76, 66,0.8);
+    }
+
+    .gallery .img-group {
+      display: flex;
+      outline: 3px solid #00000060;
+      width: 400%; /* img 개수. 부모인 container의 4배*/
+      position: relative;
+    }
+    .gallery .img-group li {
+      width: 25%; /* 부모인 ul을 기준으로 1/4을 차지해야 하므로 */
+    }
+    
+    .gallery .img-group li img {
+      width: 100%;
+      margin: 0;
+      vertical-align: top;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <div class="gallery">
+    <ul class="btn-group">
+      <li class="btn1">첫번째 버튼</li>
+      <li class="btn2">두번째 버튼</li>
+      <li class="btn3">세번째 버튼</li>
+      <li class="btn4">네번째 버튼</li>
+    </ul>
+    <ul class="img-group">
+      <li><img src="./img/img5.jpg" alt="img1"></li>
+      <li><img src="./img/img6.jpg" alt="img2"></li>
+      <li><img src="./img/img7.jpg" alt="img3"></li>
+      <li><img src="./img/img8.jpg" alt="img4"></li>
+    </ul>
+  </div>
+  <script>
+    /*
+    $('.btn1').on('click', () => {
+      $('.img-group').animate({
+        'left' : '0'
+      }, 500, 'easeInQuad');
+    });
+    $('.btn2').on('click', () => {
+      $('.img-group').animate({
+        'left' : '-100%'
+      }, 500, 'easeInQuad');
+    });
+    $('.btn3').on('click', () => {
+      $('.img-group').animate({
+        'left' : '-200%'
+      }, 500, 'easeInQuad');
+    });
+    $('.btn4').on('click', () => {
+      $('.img-group').animate({
+        'left' : '-300%'
+      }, 500, 'easeInQuad');
+    });
+    */
+   $('.btn-group li').on('click', (e) => {
+    const idx = $(e.target).index();
+    // $('.img-group').animate({ marginLeft : -100 * idx + '%' }, 500, 'easeInOutCubic');
+    const containerWt = $('.gallery').width(); // px로 반환
+    $('.img-group').animate({ marginLeft : -containerWt * idx + '%' }, 500, 'easeInOutCubic');
+   });
+
+  </script>
+</body>
+
+</html>

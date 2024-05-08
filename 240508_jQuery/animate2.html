@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>animate2</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style>
+    .box {
+      background-color: #FEEFAD;
+      box-shadow: 3px 3px 5px #ddd;
+      width: 100px; height: 100px;
+      padding: 10px;
+      position: relative;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <h1>animate2</h1>
+  <button id="btn1">실행</button>
+  <button id="btn2">순차실행1</button>
+  <button id="btn3">순차실행2</button>
+
+  <div class="box">애니메이션</div>
+  <script>
+    // 첫번째 버튼 클릭시 width, height, margin-top, 오른쪽으로 이동
+    $('#btn1').on('click', () => {
+      $('.box').animate({
+        'width' : 500,
+        'height' : 300,
+        'margin-top' : 100,
+        // 'margin-left' : 200,
+        left : 300,
+        'background-color' : '#FDDE55'     
+      },1000, 'easeInOutBack');
+    });
+    $('#btn2').on('click', () => {
+      $('.box').animate({'width' : 500},300, 'easeInOutBack',() => {
+        $('.box').animate({height : 300}, 400, 'easeInQuart', () => {
+          $('.box').animate({marginTop : 100}, 500, 'easeInOutSine', () => {
+            $('.box').animate({left : 400}, 1000, 'easeOutQuint', () => {
+              $('.box').animate({backgroundColor : '#0A6847'}, 1000, 'easeInCirc')
+            })
+          })
+        })
+      });
+    });
+    $('#btn3').on('click', () => {
+      $('.box').animate({'width' : 200},300, 'easeInOutBack').animate({height : 500}, 400, 'easeInQuart').animate({marginTop : 200}, 500, 'easeInOutSine').animate({left : 200}, 1000, 'easeOutQuint').css({backgroundColor : '#7ABA78'});
+    });
+  </script>
+</body>
+</html>

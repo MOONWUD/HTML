@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>animateEx4</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style>
+        body {
+      margin: 0;
+    }
+    .wrapper {
+      position: fixed;
+      height: 100%;
+      width: 240px;
+      left: -190px;
+    }
+    .wrapper .side-menu {
+      list-style: none;
+      box-sizing: border-box;
+      padding: 100px 30px;
+      margin: 0;
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #D2E0FB;
+      width: 190px;
+      height: 100%;
+      line-height: 2.5;
+      background-color: #FF9843;
+      position: relative;
+    }
+    .wrapper .btn {
+      box-sizing: border-box;
+      background: #FF9843 url(./img/lock.svg)no-repeat 50%;
+      font-size: 1.6rem;
+      font-weight: bold;
+      writing-mode: vertical-lr;
+      text-align: center;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 20px;
+      left: 190px;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      text-indent: -9999999px;
+    }
+    .wrapper .btn.opened {
+      background-image: url(./img/open.svg);
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <nav class="wrapper">
+    <ul class="side-menu">
+      <li>menu1</li>
+      <li>menu2</li>
+      <li>menu3</li>
+      <li>menu4</li>
+    </ul>
+    <div class="btn">버튼</div>
+  </nav>
+  <script>
+   $('.btn').on('click', (e) => {
+     $('.wrapper').animate({
+      left : $('.wrapper').css('left') === '0px' ? '-190px' : '0px'
+     },600, 'easeInBounce');
+     $(e.target).toggleClass('opened');
+   })
+  </script>
+</body>
+</html>

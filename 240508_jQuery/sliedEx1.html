@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>sliedEx1</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+    body {
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      position: relative;
+      height: 60vh;
+      /* overflow: hidden; */
+    }
+
+    .container .btn-group li {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.3);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      cursor: pointer;
+      z-index: 99999;
+    }
+
+    .container .btn-group li:last-child {
+      right: 0;
+    }
+
+    .container .btn-group li:hover {
+      background-color: rgba(117, 117, 117, 0.3);
+    }
+
+    .container .img-group {}
+
+    .container .img-group li {
+      font-family: "Poetsen One", sans-serif;
+      width: 100%;
+      height: 60vh;
+      font-size: 18rem;
+      font-weight: bold;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      position: absolute;
+      transition: 0.2s;
+      opacity: 0;
+    }
+
+    .container .img-group li.active {
+      opacity: 1;
+
+    }
+
+    .container .img-group .bg1 {
+      background: #F28585;
+    }
+
+    .container .img-group .bg2 {
+      background: #FFA447;
+    }
+
+    .container .img-group .bg3 {
+      background: #FFFC9B;
+    }
+
+    .container .img-group .bg4 {
+      background: #B7E5B4;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <ul class="btn-group">
+      <li class="left">◀</li>
+      <li class="right">▶</li>
+    </ul>
+    <ul class="img-group">
+      <li class="bg1">bg1</li>
+      <li class="bg2">bg2</li>
+      <li class="bg3">bg3</li>
+      <li class="bg4">bg4</li>
+    </ul>
+  </div>
+  <script>
+    function movingText(num) {
+      const nextIdx = (num + 1) % $('.img-group li').length;
+      $('.img-group li').removeClass('active').eq(num).addClass('active');
+      setTimeout(() => movingText(nextIdx), 3000);
+    }
+    movingText(0);
+    $('.left').on('click', () => {
+        $('.img-group li').last().prependTo('.img-group').addClass('active');
+      });
+      $('.right').on('click', () => {
+        $('.img-group li').first().appendTo('.img-group').addClass('active');
+      });
+  </script>
+</body>
+
+</html>
