@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>prependTo+appendToEx2</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style>
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    .gallery {
+      position: relative;
+      width: 600px;
+      height: 600px;
+      border: 3px solid #fff;
+      box-shadow: 3px 3px 5px #ddd;
+      background-color: #ddd;
+      margin: 50px auto;
+    }
+    .btn-group li {
+      box-sizing: border-box;
+      margin: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      display: block;
+      width: 40px;
+      height: 40px;
+      line-height: 30px;
+      font-size: 2.4rem;
+      color: #fff;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      border-radius: 10px;
+      transform: translateY(-50%);
+      z-index: 9999;
+      cursor: pointer;
+      user-select: none;
+    }
+    .btn-group li:last-child {
+      right: 0;
+    }
+    .btn-group li:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+      font-size: 2.8rem;
+    }
+    .gallery .img-wrapper {
+      display: flex;
+      position: absolute;
+      top: 0;
+      width: 600px;
+      height: 600px;
+      margin: 0;
+      overflow: hidden;
+    }
+    .gallery .img-wrapper li {
+    }
+    img {
+      width: 600px;
+      height: 600px;
+      vertical-align: middle;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+  <h1>prependTo+appendToEx2</h1>
+  <div class="gallery">
+    <ul class="btn-group">
+      <li class="left">&lt;</li>
+      <li class="right">&gt;</li>
+    </ul>
+    <ul class="img-wrapper">
+      <li><img src="./img/img5.jpg" alt="img1"></li>
+      <li><img src="./img/img6.jpg" alt="img2"></li>
+      <li><img src="./img/img7.jpg" alt="img3"></li>
+      <li><img src="./img/img8.jpg" alt="img4"></li>
+    </ul>
+  </div>
+  <script>
+    $(function () {
+      $('.left').on('click', () => {
+        // 제일 마지막에 있는 이미지가 제일 처음으로 이동
+        $('.img-wrapper li').last().prependTo('.img-wrapper');
+      });
+      $('.right').on('click', () => {
+        // 제일 처음에 있는 이미지가 제일 마지막으로 이동
+        $('.img-wrapper li').first().appendTo('.img-wrapper');
+      });
+    });
+  </script>
+</body>
+</html>
