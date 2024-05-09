@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>animateEx2</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <style>
+    ul { list-style: none; margin:0; padding:0 }
+    img { width: 100%; vertical-align: bottom }
+
+    .container {
+      width: 80vw;
+      min-width: 400px;
+      /* height:40vh; || aspect-ratio: 2 / 1; */
+      margin: 50px auto;
+      border: 3px solid #000;
+      position: relative;
+      overflow: hidden;
+    }
+    .container .btn-group {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      z-index: 999;
+    }
+    .container .btn-group li {
+      text-indent: -9999px;
+      background-color: rgba(0,0,0,0.8);
+      width: 20px; height: 20px;
+      margin: 6px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .container .btn-group li:hover {
+      background-color: rgba(0,0,0,1);
+    }
+
+    .container .img-group {
+      display: flex;
+      outline: 3px solid rgb(255, 0, 0, 0.5);
+      width: 400%;/* img 개수. 부모인 .container의 4배 */
+      position: relative;
+    }
+    .container .img-group li {
+      width: 25%;/* 부모인 ul을 기준으로 1/4을 차지해야 하므로 */
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <ul class="btn-group">
+      <li>첫번째 이미지 버튼</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+    <ul class="img-group">
+      <li><img src="https://placehold.co/600x400/03AED2/000?text=img1" alt="img1"></li>
+      <li><img src="https://placehold.co/600x400/68D2E8/000?text=img2" alt="img2"></li>
+      <li><img src="https://placehold.co/600x400/FDDE55/000?text=img3" alt="img3"></li>
+      <li><img src="https://placehold.co/600x400/FEEFAD/000?text=img4" alt="img4"></li>
+    </ul>
+  </div>
+
+  <script>
+    /*
+    $('.btn-group li').eq(0).on('click', () => {
+      // $('.img-group').animate({ left: 0 }, 300, 'linear');
+      $('.img-group').animate({ marginLeft: 0 }, 300, 'linear');
+    });
+    $('.btn-group li').eq(1).on('click', () => {
+      $('.img-group').animate({ marginLeft: '-100%' }, 300, 'linear');
+    });
+    $('.btn-group li').eq(2).on('click', () => {
+      $('.img-group').animate({ marginLeft: '-200%' }, 300, 'linear');
+    });
+    $('.btn-group li').eq(3).on('click', () => {
+      $('.img-group').animate({ marginLeft: '-300%' }, 300, 'linear');
+    });
+    */
+
+    $('.btn-group li').on('click', (e) => {
+      const idx = $(e.target).index();
+      console.log(idx);
+      // $('.img-group').animate({ marginLeft: -100 * idx + '%'  }, 300, 'linear');
+      const containerWt = $('.container').width();// px로 반환
+      console.log(containerWt);
+      $('.img-group').animate({ marginLeft: -containerWt * idx + 'px'  }, 300, 'linear');
+    });
+  </script>
+</body>
+</html>

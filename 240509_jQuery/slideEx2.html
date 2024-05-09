@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>slideEx2</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      background-color: #ddd;
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80vh;
+      /* overflow: hidden; */
+    }
+
+    .container .btn-wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .container .btn-wrapper li{
+      text-indent: -999999px;
+      display: block;
+      width: 25px;
+      height: 8px;
+      background-color: #fff;
+    }
+
+    .container .img-wrapper {
+      width: 400%;
+      height: 100%;
+      ;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .container .img-wrapper .img-item {
+      text-indent: -99999px;
+      width: 25%;
+      height: 100%;
+      background: no-repeat 50% / cover;
+      transition: 0.4s;
+    }
+
+    .container .img-wrapper #bg1 {
+      background-image: url(https://placehold.co/1000x600/4793AF/fff?text=bg1);
+    }
+
+    .container .img-wrapper #bg2 {
+      background-image: url(https://placehold.co/1000x600/FFC470/fff?text=bg2);
+    }
+
+    .container .img-wrapper #bg3 {
+      background-image: url(https://placehold.co/1000x600/DD5746/fff?text=bg3);
+    }
+
+    .container .img-wrapper #bg4 {
+      background-image: url(https://placehold.co/1000x600/8B322C/fff?text=bg4);
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <!-- 사용자가 보는 화면 -->
+  <div class="container">
+    <!-- 이미지가 나열되는 영역 -->
+    <ul class="btn-wrapper">
+      <li class="active">버튼1</li>
+      <li>버튼2</li>
+      <li>버튼3</li>
+      <li>버튼4</li>
+    </ul>
+    <ul class="img-wrapper">
+      <li class="img-item" id="bg1">bg1</li>
+      <li class="img-item" id="bg2">bg2</li>
+      <li class="img-item" id="bg3">bg3</li>
+      <li class="img-item" id="bg4">bg4</li>
+    </ul>
+  </div>
+  <script>
+    $('.btn-wrapper li').on('click', (e) => {
+      const idx = $(e.target).index();
+      console.log(idx);
+      // $('.img-group').animate({ marginLeft: -100 * idx + '%'  }, 300, 'linear');
+      const containerWt = $('.container').width();// px로 반환
+      console.log(containerWt);
+      $('.img-wrapper').animate({ marginLeft: -containerWt * idx + 'px' }, 300, 'linear');
+    });
+
+
+  </script>
+</body>
+
+</html>
