@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+body {
+  background-color: #A1C398;
+}
+
+.slide-wrapper {
+  margin: 100px auto;
+  width: 80vw;
+  height: 60vh;
+  background-color: #ddd;
+  position: relative;
+}
+
+.slide-wrapper .button-group {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 3px 3px;
+  width: 50px;
+  height: 30px;
+  background-color: #8B93FF;
+  color: #fff;
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 99999;
+}
+
+.slide-wrapper .button-group #prevBtn::after {
+  content: "";
+  width: 2px;
+  height: 15px;
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  bottom: 5px;
+  left: 23px;
+}
+.slide-wrapper .slide-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80vw;
+  height: 60vh;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  opacity: 0;
+}
+.slide-wrapper .slide-item.active {
+  opacity: 1;
+} 
+.slide-wrapper .slide-item .textBox {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.3s;
+}
+.slide-wrapper .slide-item .textBox .text {
+  padding: 20px 0;
+}
+.slide-wrapper .slide-item .textBox .more {
+  color: #4b5096;
+}
+.slide-wrapper .slide-item .img {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: no-repeat 50% / cover;
+  transition: 0.5s;
+}
+.slide-wrapper .slide-box1 .img { background-image: url(https://placehold.co/500x500/F28585/F8F6E3?text=img1);}
+.slide-wrapper .slide-box2 .img { background-image: url(https://placehold.co/500x500/FFA447/F8F6E3?text=img2);}
+.slide-wrapper .slide-box3 .img { background-image: url(https://placehold.co/500x500/FDE767/F8F6E3?text=img3);}
+.slide-wrapper .slide-box4 .img { background-image: url(https://placehold.co/500x500/6895D2/F8F6E3?text=img4);}
