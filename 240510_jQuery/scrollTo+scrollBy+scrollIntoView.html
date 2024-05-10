@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>scrollTo+scrollBy+scrollIntoView</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+  <style>
+    body {
+      height: 200vh;
+    }
+
+   .wrapper {
+      position: fixed;
+      top: 20px;
+      z-index: 9999;
+    }
+
+    #box1 {
+      position: absolute;
+      top: 600px;
+      left: 50px;
+      width: 200px;
+      height: 100px;
+      background-color: #B0C5A4;
+    }
+
+    #box2 {
+      position: fixed;
+      top: 500px;
+      left: 30px;
+      width: 300px;
+      height: 200px;
+      background-color: #D37676;
+    }
+
+    #box3 {
+      position: absolute;
+      top: 500px;
+      left: 400px;
+      width: 100px;
+      height: 400px;
+      background-color: #EBC49F;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <h1>scrollTo+scrollBy+scrollIntoView</h1>
+  <div class="wrapper">
+    <button id="btn1">box1 이동</button>
+    <button id="btn2">box1 이동</button>
+    <button id="btn3">box2 이동</button>
+    <button id="btn4">box3 이동</button>
+    <button id="btn5">스크롤 이동</button>
+  </div>
+
+  <div class="box" id="box1">box1</div>
+  <div class="box" id="box2">box2</div>
+  <div class="box" id="box3">box3</div>
+  <script>
+    /*
+      https://ko.javascript.info/size-and-scroll-window#page-scroll
+    
+       pageX; 페이지 기준
+       window.scrollTo(pageX, pageY); 절대 좌표 '스크롤' 값
+       window.scrollBy(x, y); 현재 스크롤 상태를 기준으로 상대적 '스크롤' 정보 변경
+       window.scrollIntoView(); 화면 처음으로 해당 요소가 '스크롤'로 이동. false값인 경우 화면의 제일 아래로 이동 
+    */
+
+    /*
+    const btns = document.querySelectorAll('button');
+  
+    // 버튼 1을 누르면 box1의 offsettop값 console 출력
+    console.log(btns);
+    btns[0].addEventListener('click', () => console.log(document.querySelector('#box1').offsetTop));
+    btns.forEach((button, idx)=>{
+      button.addEventListener('click', () => {
+        console.log(document.querySelector('#box${idx+1}').offsetTop)
+      })
+    }) // 모든 버튼 다 탐색
+    */
+
+    $('#btn1').on('click', () => {
+      scrollTo(0, 200); // 스크롤 값
+    })
+
+    $('#btn2').on('click', () => {
+      const box1 = $('#box1').offset().top
+      scrollTo({
+        behavior: 'smooth',
+        top: box1,
+      });
+    })
+
+    //  #box2 : fixed
+    $('#btn3').on('click', () => {
+      const box2 = $('#box2').offset().top
+      console.log(box2);
+      scrollTo(0, box2); // 해당 박스 이동 x. 스크롤만 이동 
+    })
+
+    // #box3 
+    document.querySelector('#btn4').addEventListener('click', () => {
+      // document.querySelector('#box3').scrollIntoView(); 화면 처음 위치에 요소 보임
+      document.querySelector('#box3').scrollIntoView(false); // 화면 마지막 위치에 요소 보임
+    })
+
+    // scrollBy(0, 100); 상대값으로 현재 위치에서 스크롤 이동
+    document.querySelector('#btn5').addEventListener('click', () => {
+      scrollBy({
+        behavior : 'smooth',
+        top : -50
+      });
+    })
+  </script>
+</body>
+
+</html>

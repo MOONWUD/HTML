@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>scrollTopEx</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style>
+    body {
+      margin: 0;
+      height: 300vh;
+      background-color: #fff9dc;
+    }
+    .header {
+      list-style: none;
+      padding: 40px;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      background-color: #03AED2;
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      transition: 0.4s;
+    }
+    .header li {
+      margin-right: 20px;
+    }
+
+    div {
+      text-align: center;
+      margin: 150px auto;
+      font-weight: bold;
+      font-size: 3rem;
+      color: #03AED2;
+      transition: 0.3s;
+    }
+    a {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      text-decoration: none;
+      color: #03AED2;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      border-radius: 50%;
+      box-shadow: 3px 3px 5px #a8a8a8;
+      background-color: #fff;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    .header.active {
+      background-color: #FDDE55;
+      padding: 20px;
+      font-size: 1.3rem;
+      backdrop-filter: blur(80px);
+    }
+    a:hover {
+      margin-bottom: 10px;
+    }
+    .header.active + div {
+      padding-top: 100px;
+      color: #FDDE55;
+    } 
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <ul class="header">
+      <li>menu1</li>
+      <li>menu2</li>
+      <li>menu3</li>
+      <li>menu4</li>
+    </ul>
+    <div>main</div>
+
+    <a href="#" class="go-to-top">TOP</a>
+  <script>
+    $('a[href="#"]').on('click', (e) => {
+      e.preventDefault (); // 요소의 기본 성격 제거
+    });
+    $('.go-to-top').on('click', () => {
+      $('html, body').animate({scrollTop : 0}, 300)
+    })
+
+    let scroll = 300;
+    $(window).on('scroll', (e) => {
+      // let windowScroll = $('html, body').scrollTop();
+      let windowScroll = $(e.target).scrollTop();
+      if(windowScroll > scroll) {
+        $('.header').addClass('active');
+      } else {
+        $('.header').removeClass('active');
+      }
+    })
+  </script>
+</body>
+</html>

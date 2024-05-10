@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>offset</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style>
+  body {
+      margin:0;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .box {
+      position: absolute;
+    }
+    #box1 {
+      background-color: #7AA2E3;
+      width: 500px; height: 200px;
+      margin-top: 80px; margin-left: 100px;
+      top: 500px; left: 150px;
+    }
+    #box2 {
+      background-color: #6AD4DD;
+      width: 150px; height: 150px;
+      margin-top: 1000px;
+      left: 400px;
+      transform: translate(500px);
+    }
+    #box3 {
+      background-color: #C6EBC5;
+      width: 200px; height: 400px;
+      top: 200px; left: 50px;
+      padding: 10px; border: 4px solid #000;
+    }
+    #box4 {
+      background-color: #A1C398;
+      width: 100px; height: 100px;
+      top: 50px; left: 50px;
+    }
+    .container {
+      position: relative;
+      border: 4px solid #FA7070;
+      top: 100px; left: 50px;
+      width: 300px; height: 300px;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <div class="box" id="box1">box1</div>
+
+  <div class="wrapper">
+    <div class="box" id="box2">box2</div>
+  </div>
+  
+  <div class="box" id="box3">box3</div>
+
+  <div class="container">
+    <div class="box" id="box4">box4</div>
+  </div>
+
+  <script>
+      /* 
+      https://ko.javascript.info/size-and-scroll#ref-806
+
+      요소 element의 거리 - 상대 위치로 게산하고자 할 때
+        offsetParent: position이 설정되어 있는 조상 요소 기준. 없으면 body 기준 
+        offsetTop: offsetParent 기준 위에서부터 떨어져 있는 거리
+        offsetLeft: offsetParent 기준 왼쪽으로부터 떨어져 있는 거리
+
+      요소 element의 크기
+        offsetWidth: width + padding + border + scrollbar
+        offsetHeight: height + padding + border + scrollbar
+        clientWidth: width + padding
+        clientHeight: height + padding
+
+      jQuery
+        .offsetParent();
+        .offset().top, .offset().left
+    */
+
+    /*
+    console.log('box1.offsetParent:' , $('#box1').offsetParent()); // html를 기준으로 box1의 위치 확인
+    console.log('box1.offsetParent:' , document.querySelector('#box1').offsetParent); // body를 기준으로 box1의 위치 확인
+
+    console.log('box2.offsetParent:' , $('#box2').offsetParent()); // html. 부모요소는 있으나 position적용이 안되어 있기 때문에
+    console.log('box2.offsetParent:' , document.querySelector('#box2').offsetParent); // body 
+
+    console.log('box4.offsetParent:' , $('#box4').offsetParent()); // pos가 있기 때문에 container
+    console.log('box4.offsetParent:' , document.querySelector('#box4').offsetParent); // container
+    */
+
+    const box1 = document.querySelector('#box1');
+    const box2 = document.querySelector('#box2');
+    const box3 = document.querySelector('#box3');
+    const box4 = document.querySelector('#box4');
+
+    /*
+    // #box1 : 기준  body
+    console.log('box1.offsetTop:', box1.offsetTop); // 580 = margin-top + top
+    console.log('box1.offsetTop:', $('#box1').offset().top);
+    console.log('box1.offsetLeft:', box1.offsetLeft); // 250 = margin-left + left
+    console.log('box1.offsetLeft:', $('#box1').offset().left);
+    
+    // #box2 : 부모가 있지만 pos가 없기 때문에 body가 기준. transfrom은 인식 x
+    console.log('box2.offsetTop:', box2.offsetTop); // 1000 = margin-top.transfrom은 인식 x
+    console.log('box2.offsetTop:', $('#box2').offset().top); // transfrom은 인식 
+    console.log('box2.offsetLeft:', box2.offsetLeft); // 400 = left. transfrom은 인식 x
+    console.log('box2.offsetLeft:', $('#box2').offset().left); // 900. transfrom은 인식 
+    */
+   
+   // box4 : pos가 있기 때문에 container가 기준
+   console.log('box4.offsetTop : ', box4.offsetTop); // 50
+   console.log('box4.offsetTop:', $('#box4').offset().top); // 154  
+   console.log('box4.offsetleft :', box4.offsetLeft); // 50
+   console.log('box4.offsetLeft:', $('#box4').offset().left); // 104
+   
+   // box3
+   console.log('box3.offsetWidht : ', box3.offsetWidth); // w+p+b+scrollbar = 228
+   console.log('box3.offsetWidht : ', box3.offsetHeight); // 428
+   console.log('box3.offsetWidht : ', box3.clientWidth); // w+p = 220
+   console.log('box3.offsetWidht : ', box3.clientHeight); // 420
+  </script>
+</body>
+</html>

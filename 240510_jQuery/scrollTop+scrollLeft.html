@@ -5,7 +5,25 @@
   <title>scrollTop+scrollLeft</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
   
-  <style></style>
+  <style>
+    body {
+      height: 200vh;
+    }
+    .container {
+      width: 250px;
+      height: 250px;
+      overflow: auto;
+    }
+    .container .box {
+      width: 2000px;
+      height: 1000px;
+      background-color: greenyellow;
+    }
+    p {
+      margin: 0; 
+      padding: 10px;
+    }
+  </style>
   <script src="../assets/jquery-3.7.1.min.js"></script>
   <script src="../assets/jquery-ui.min.js"></script>
 </head>
@@ -13,13 +31,38 @@
 <body>
   <h1>scrollTop, scrollLeft</h1>
   <h2>.scrollTop()</h2>
-  <h1>가로, 세로 스크롤 되는 크기를불러오거나 반환</h1>
+  <h3>가로, 세로 스크롤 되는 크기를불러오거나 반환. 스크롤 값. 숫자로 반환</h3>
   <p><a href="https://ko.javascript.info/size-and-scroll#ref-811" target="_blank">javascript.info</a></p>
-  <button>Left -> right</button>
-  <button>top -> bottom</button>
+  <button id="btn1">left -> right</button>
+  <button id="btn2">top -> bottom</button>
+
+  <div class="container">
+    <div class="box">
+      <p>text1</p>
+      <p>text2</p>
+      <p>text3</p>
+      <p>text4</p>
+    </div>
+  </div>
   <script>
-    //on()
-    addEventListener('scroll');
+    /* 낮은 버전 브라우저. IE 등을 고려했을 때 작성
+    if(document.body.scrollTop || document.documentElement.scrollTop){}
+    */
+
+
+    // == on();
+    addEventListener('scroll', () => {
+      console.log('JS: '+ document.documentElement.scrollTop); // 문서 처음부터 얼마만큼 스크롤 했는지 값 반환
+    });
+
+    $(window).on('scroll', () => {
+      console.log('jQuery: '+ $(document).scrollTop());
+    })
+
+    $('#btn1').on('click', () => {
+      // document.querySelector('.container').scrollLeft = 300;
+      $('.container').animate({scrollLeft : '+=' + 50 });
+    })
   </script>
 </body>
 </html>
