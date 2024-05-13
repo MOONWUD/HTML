@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>scrollEx1</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+  <style>
+    @keyframes move {
+      0%, 100% {
+        transform: translateX(5px) rotate(5deg);
+      }
+
+      50% {
+        transform: translateX(0) rotate(-5deg);
+      }
+    }
+
+    body {
+      height: 300vh;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 4rem;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      transition: 0.4s;
+      animation: move 0.5s infinite alternate;
+      opacity: 0;
+      pointer-events: none; /* 마우스 성격 제어 */
+    }
+
+    a.on {
+      opacity: 1;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <h1>TOP</h1>
+  <a href="#">🐠</a>
+  <script>
+
+    /*
+    $(window).on('scroll', (e) => {
+      const scrollTop = $(e.target).scrollTop();
+      if(scrollTop > 300) {
+        $('a').css({opacity : 1, pointerEvents:'auto'})
+      } else {
+        $('a').css({opacity : 0, pointerEvents:'none'})
+      }
+    });
+    const goToUP = document.querySelector('a');
+    $('a').on('click', (e) => {
+      e.preventDefault(); // 가지고 있는 기본 성격 초기화 !!!
+      // $('html, body').animate({scrollTop : 0});
+      scrollTo({
+        top : 0,
+        behavior : 'smooth'
+      });
+    });
+    */
+   
+   $(window).on('scroll', (e) => {
+     if(scrollY > 300) {
+       $('a').css({opacity : 1, pointerEvents:'auto'})
+     } else {
+       $('a').css({opacity : 0, pointerEvents:'none'})
+     }
+   });
+
+   $('a').on('click', (e) => {
+     e.preventDefault();
+     scrollTo({
+       top : 0,
+       behavior : 'smooth'
+     });
+   });
+
+  </script>
+</body>
+
+</html>

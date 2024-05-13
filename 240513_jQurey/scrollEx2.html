@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>scrollEx2</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style>
+    body {
+      margin: 0;
+      text-align: center;
+      height: 300vh;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #ACE1AF;
+      border-bottom: 5px solid #A0DEFF;
+      transition: 0.5s;
+    }
+    header .global-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      height: 80px;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    header .global-menu li a{
+      margin: 20px;
+      text-decoration: none;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #002379;
+    }
+    main {
+      margin-top: 500px;
+      font-size: 3rem;
+      color: #002379;
+    }
+
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <ul class="global-menu">
+      <li><a href="#">menu1</a></li>
+      <li><a href="#">menu2</a></li>
+      <li><a href="#">menu3</a></li>
+      <li><a href="#">menu4</a></li>
+    </ul>
+  </header>
+  <main>
+    <h1>scrollEx2</h1>
+  </main>
+  <script>
+    // 스크롤이 내려가면 헤더가 사라지고, 스크롤이 올라가면 헤더가 내려옴
+    let prevScroll = window.scrollY;
+    console.log('prevScroll', prevScroll);
+    
+    $(window).on('scroll', () => {
+      // 스크롤을 하면, scrollY의 값을 반환
+      let currentScroll = window.scrollY;
+      console.log('currentScroll', currentScroll);
+      if(prevScroll > currentScroll) { // 스르롤을 올리면 헤더가 보이고
+        // $('header').show();
+        // $('header').slideDown();
+        $('header').css({top : 0});
+        
+      } else { // 스크롤을 내리면 헤더 숨김
+        // $('header').hide();
+        // $('header').slideUp();
+        $('header').css({top : -80});
+        // prev에 현재 스크롤 값 재할당
+        prevScroll = currentScroll;
+        console.log('재할당된 prevScroll', prevScroll)
+      }
+    })
+  </script>
+</body>
+</html>

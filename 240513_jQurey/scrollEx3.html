@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>scrollEx3</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style>
+    body {
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      text-transform: capitalize;
+      font-weight: bold;
+      height: 400vh;
+      position: relative;
+      width: 100%;
+    }
+    nav {
+      background-color: #FFB1B1;
+      color: #424242;
+      padding: 20px;
+      margin: 0;
+    }
+    h1 {
+      margin: 0;
+      background-color: #0E46A3;
+      color: #fff;
+      padding: 50px;
+      position: sticky;
+      top: 0;
+    }
+    main {
+      margin-top: 300px;
+      font-size: 2rem;
+    }
+
+    footer {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      background-color: #0E46A3;
+      padding: 30px 0;
+      color: #fff;
+    }
+
+    .banner {
+      background-color: #fff;
+      box-shadow: -3px 3px 8px rgba(0, 0, 0, 0.4) ;
+      width: 300px;
+      height: 40px;
+      font-size: 1.5rem;
+      position: fixed;
+      bottom: 100px;
+      right: -320px;
+      display: block;
+      transition: 0.4s;
+    }
+    .banner.on {
+      right: 0;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <nav>네비게이션</nav>
+  <h1>scrollEx3</h1>
+  <main>원하는 위치에서 실행 !</main>
+  <footer>푸터</footer>
+
+  <div class="banner">배너 뿅 💨</div>
+  <script>
+    $(window).on('scroll', () => {
+      let mainHt = $('main').offset().top + $('main').height() * 0.8;
+      if(scrollY > mainHt ) {
+        $('.banner').addClass('on')
+      } else {
+        $('.banner').removeClass('on')
+
+      }
+    })
+  </script>
+</body>
+</html>
