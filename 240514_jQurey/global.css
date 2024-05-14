@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+body {
+  font-family: 'SpoqaHanSans', '맑은 고딕', 돋움, sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  background-color: #ddd;
+}
+.transit {
+  transition: 0.3s;
+}
+
+.flex-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.grid-wrapper {
+  display: grid;
+}

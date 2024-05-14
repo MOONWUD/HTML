@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>scrollEx4</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+  <style>
+    body {
+      margin: 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    header {
+      margin: 0;
+      padding: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+    header .header-contants {
+      background-color: #C6EBC5;
+      display: flex;
+      width: 100%;
+      height: 80px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header .header-contants.scroll {
+      background-color: rgba(198, 235, 197, 0.3);
+      border-bottom: #82d87d 2px solid;
+      height: 60px;
+    }
+    header .header-contants h1 {
+      margin: 0 20px;
+      background-color: #FA7070;
+      color: #fff;
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+    }
+    header .header-contants p {
+      display: none;
+    }
+    header .header-contants .close {
+      display: block;
+      background-color: #ffd0d0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin: 0 20px;
+      position: relative;
+      transition: 0.3s;
+    }
+    header .header-contants .close::after {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 3px;
+      background-color: #FA7070;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    header .header-contants .close::before {
+      content: "";
+      display: block;
+      width: 3px;
+      height: 20px;
+      background-color: #FA7070;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    header .header-contants .close.on {
+      transform: rotate(45deg);
+    }
+    header .nav {
+      width: 100%;
+      background-color: #82d87d;
+      margin: 0;
+      text-align: center;
+      font-weight: bold;
+      display: none;
+    }
+    header .nav li {
+      padding: 10px;
+    }
+    header .nav li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    section {
+      margin: 80px 0 0;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    main ul li {
+      height: 100vh;
+      text-align: center;
+      font-weight: bold;
+      color: #fff;
+      padding: 300px;
+    }
+    main ul li:nth-child(1) { background-color: #9195F6;}
+    main ul li:nth-child(2) { background-color: #B7C9F2;}
+    main ul li:nth-child(3) { background-color: #F9F07A;}
+    main ul li:nth-child(4) { background-color: #FB88B4;}
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="header-contants">
+      <h1>로고</h1>
+      <p>부드럽게 이동해 봅시다</p>
+      <div class="close"></div>
+    </div>
+    <ul class="nav">
+      <li><a href="#box1">box1</a></li>
+      <li><a href="#box2">box2</a></li>
+      <li><a href="#box3">box3</a></li>
+      <li><a href="#box4">box4</a></li>
+    </ul>
+  </header>
+  <section>
+    <h2>slide</h2>
+  </section>
+  <main>
+    <ul>
+      <li id="box1">box1</li>
+      <li id="box2">box2</li>
+      <li id="box3">box3</li>
+      <li id="box4">box4</li>
+    </ul>
+  </main>
+  <script>
+    /* Mo jQ */
+    $('.close').on('click', (e) => {
+      $('.nav').slideToggle()
+      $(e.target).toggleClass('on')
+    });
+
+    $(window).on('scroll', () => {
+      if(scrollY > 10) {
+        $('.header-contants').addClass('scroll')
+      } else {
+        $('.header-contants').removeClass('scroll')
+      }
+    })
+    /* PC jQ*/
+
+  </script>
+</body>
+
+</html>
