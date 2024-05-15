@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>progressBar</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style>
+    body {
+      margin: 0;
+      height: 400vh;
+    }
+    .progress-bar-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background-color: #BED7DC;
+    }
+    .progress-bar {
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(to left, #A1C398, #FA7070);
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <div class="progress-bar-wrapper">
+    <div class="progress-bar"></div>
+  </div>
+
+  <h1>진행 바</h1>
+  <p>문서의 크기를 계산해 봅시다</p>
+  <script>
+    const proegress = () => {
+      // 문서 전체 높이. 스크롤바로 숨겨진 부분까지 포함
+      const scrollHtjQ = $(document).height();
+      const scrollHtJs = document.documentElement.scrollHeight;
+      // console.log(scrollHtJs, scrollHtjQ)
+      
+      // 스크롤바 미포함 브라우저 내부 높이
+      const clientHtjQ = $(window).height();
+      const clientHtJs = document.documentElement.clientHeight;
+      console.log(clientHtJs, clientHtjQ)
+
+      const total = scrollHtJs - clientHtJs
+      const preWt = (scrollY / total) * 100; 
+      $('progress-bar').css({width : preWt + '%'})
+    };
+
+    // addEventListener('scroll', () => {})
+    $(window).on('scroll',() => {
+      requestAnimationFrame(progress)
+    });
+  </script>
+</body>
+</html>

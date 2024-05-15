@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>마우스 좌표</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style></style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <h1>마우스 좌표</h1>
+  <h2><a href="https://ko.javascript.info/mouse-events-basics#ref-1501" target="_blank">clientX, clientY와 pageX, pageY</a></h2>
+  <script>
+    $(document).on('click', (evt) => {
+      /* 
+      // 브라우저 기준 마우스 좌표. 스크롤과 상관없음
+      console.log('브라우저 기준 x좌표 event.clientX: ', evt.clientX)
+      console.log('브라우저 기준 y좌표 event.clientY: ', evt.clientY)
+      //  요소 기준 마우스 좌표. 스크롤 포함 인식
+      console.log('요소 기준 x좌표 event.offsetX: ', evt.offsetX)
+      console.log('요소 기준 y좌표 event.offsetY: ', evt.offsetY)
+      //  페이지 기준 마우스 좌표. 스크롤 포함 인식
+      console.log('페이지 기준 x좌표 event.pageX: ', evt.pageX)
+      console.log('페이지 기준 y좌표 event.pageY: ', evt.pageY)
+      */
+     //  디바이스 기준. 스크롤과 상관없음
+     console.log('디바이스 기준 x좌표 event.screenX: ', evt.screenX)
+     console.log('디바이스 기준 y좌표 event.screenY: ', evt.screenY)
+    
+
+    })
+  </script>
+</body>
+</html>

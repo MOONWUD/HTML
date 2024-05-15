@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>horizontal scrolling2</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style>
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      font-style: 1.5rem;
+      font-weight: bold;
+    }
+    body * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      list-style: none;
+    } 
+    .box {
+      height: 100vh;
+      background-color: #D9EDBF;
+    }
+    .box:nth-of-type(1) { background-color: #FFB996;}
+    .box:nth-of-type(2) { background-color: #FFCF81;}
+    .box:nth-of-type(3) { background-color: #FDFFAB;}
+
+    .horizontal-container {
+      width: 100%;
+      position: relative;
+    }
+    .horizontal-container .sticky-box {
+      position: sticky;
+      top: 0;
+      display: flex;
+      width: 300%;
+    }
+    .horizontal-container .sticky-box .horizontal-inner-box {
+      position: absolute;
+      display: flex;
+      width: 100%;
+    }
+    .horizontal-container .sticky-box .horizontal-inner-box li {
+      width: 100%;
+      height: 100vh;
+    }
+    .horizontal-container .sticky-box .horizontal-inner-box .row1{}
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <section class="box">
+    <h2>box1</h2>
+  </section>
+  <!-- 가로 스크롤 영역 -->
+  <div class="horizontal-container">
+    <!-- pos: sticky -->
+    <div class="sticky-box">
+      <!-- 실제 가로로 움직이는 영역 -->
+      <ul class="horizontal-inner-box">
+        <li class="row1">row-box1</li>
+        <li class="row2">row-box2</li>
+        <li class="row3">row-box3</li>
+      </ul>
+    </div>
+  </div>
+  <section class="box">
+    <h2>box3</h2>
+  </section>
+  <section class="box">
+    <h2>box4</h2>
+  </section>
+  <script>
+    const horizontalContainer = document.querySelector('.horizontal-containe');
+    const stickyBox = document.querySelector('.sticky-box');
+    const innerBox = document.querySelector('.horizontal-inner-box');
+
+    // addEventListener('scroll', scrolled);
+  </script>
+</body>
+</html>

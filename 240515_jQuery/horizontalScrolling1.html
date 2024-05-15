@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>horizontal scrolling1</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style>
+    body, h1, h2 {
+      margin: 0;
+    }
+    main {
+      display: flex;
+      height: 100vh;
+      text-align: center;
+      color: #525252;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    section {
+      width: 100%;
+      flex-shrink: 0;
+      box-sizing: border-box;
+    }
+    section:nth-child(1) { background-color: #F28585; }
+    section:nth-child(2) { background-color: #FFA447; }
+    section:nth-child(3) { background-color: #FFFC9B; }
+    section:nth-child(4) { background-color: #B7E5B4; }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <main>
+    <section>
+      <h1>horizontal scrolling1</h1>
+      <h2>section1</h2>
+    </section>
+    <section>
+      <h2>section2</h2>
+    </section>
+    <section>
+      <h2>section3</h2>
+    </section>
+    <section>
+      <h2>section4</h2>
+    </section>
+  </main>
+  <script>
+    /* 
+      https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event
+    */
+
+    const main = document.querySelector('main');
+    // main.addEventListener('wheel', (e) => {
+    //   e.preventDefault();
+    //   main.scrollLeft += e.deltaY;
+    // });
+
+      const scrolled = (e) => {
+        e.preventDefault();
+        main.scrollLeft += e.deltaY;
+      }
+      main.addEventListener('wheel', scrolled)
+  </script>
+</body>
+</html>
