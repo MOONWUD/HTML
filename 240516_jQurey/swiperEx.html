@@ -15,18 +15,20 @@
 
 <body>
    <!-- Swiper container -->
-   <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper main-swiper">
-    <div class="parallax-bg" style="
+   <div class="swiper main-swiper">
+    <!--   배경은 고정되어 있고 글자만 움직일 때 -->
+    <!-- <div class="parallax-bg" style="
           background-image: url(https://swiperjs.com/demos/images/nature-1.jpg);
-        " data-swiper-parallax="-23%"></div>
+        " data-swiper-parallax="-23%"></div> -->
     <ul class="swiper-wrapper">
       <!-- 각 각의 슬라이드 .swiper-slide -->
       <li class="swiper-slide bg1">
+        <div class="bg-box" data-swiper-parallax="-900"></div>
         <h2 class="title" data-swiper-parallax="-300">Title</h2>
         <h3 class="subtitle" data-swiper-parallax="-200">Subtitle</h3>
-          <p class="text" data-swiper-parallax="-100">
-            별들을 시간의 까닭이요 남은 다하지 바깥에서 없이 헤일 듯 하나둘 있습니다 없이 가을 속의 불러봅니다 별빛들 부끄러운
-          </p>
+        <p class="text" data-swiper-parallax="-100">
+          별들을 시간의 까닭이요 남은 다하지 바깥에서 없이 헤일 듯 하나둘 있습니다 없이 가을 속의 불러봅니다 별빛들 부끄러운
+        </p>
       </li>
       <li class="swiper-slide bg2">
         <section class="section-box" data-swiper-parallax="-900">
@@ -36,6 +38,7 @@
         </section>
       </li>
       <li class="swiper-slide bg3">
+        <div class="bg-box" data-swiper-parallax="-900"></div>
         <h2 class="title" data-swiper-parallax="-300">Slide 3</h2>
         <h3 class="subtitle" data-swiper-parallax="-200">Subtitle</h3>
         <p class="text" data-swiper-parallax="-100">
@@ -43,6 +46,7 @@
         </p>
       </li>
       <li class="swiper-slide bg4">
+        <div class="bg-box" data-swiper-parallax="-900"></div>
         <h2 class="title" data-swiper-parallax="-300">Slide 3</h2>
         <h3 class="subtitle" data-swiper-parallax="-200">Subtitle</h3>
         <p class="text" data-swiper-parallax="-100">
@@ -52,7 +56,22 @@
     </ul>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
+    <div class="swiper-pagination main-page-on"></div>
+  </div>
+  
+  <div class="swiper sub-swiper">
+    <ul class="swiper-wrapper">
+      <li class="swiper-slide">
+        <img src="http://placehold.co/600x400/121481/fff?text=img1" alt="img1">
+      </li>
+      <li class="swiper-slide">
+        <img src="http://placehold.co/600x400/4793AF/fff?text=img2" alt="img2">
+      </li>
+      <li class="swiper-slide">
+        <img src="http://placehold.co/600x400/DBA979/fff?text=img3" alt="img3">
+      </li>
+    </ul>
+    <div class="swiper-pagination sub-page-no"></div>
   </div>
 </body>
 </html>
