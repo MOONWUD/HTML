@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+/* main-swiper */
+.main-swiper {
+  width: 90vw;
+  height: 60vh;
+  margin: 0 auto;
+  background-color: #ddd;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+}
+.main-swiper .

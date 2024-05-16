@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>vegasEx</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <!--- style --->
+  <!-- reset -->
+  <link rel="stylesheet" href="../assets/style/reset.css">
+  <!-- font -->
+  <!-- plugIn -->
+  <link rel="stylesheet" href="./vegas.min.css">
+  <!-- 내가 작업한 css -->
+  <style>
+    .container {
+      width: 100%;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+
+    .container .btn {
+      border: 2px solid #fff;
+      box-shadow: 3px 3px 5px #b1b1b1;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 8px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .container .btn:hover {
+      background-color: black;
+      color: #fff;
+    }
+    .container .vegas-timer {
+      top: 0;
+      height: 10px;
+    }
+    .container .vegas-timer-progress {
+      background-color: black;
+    }
+  </style>
+  <!--- jQuery --->
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+  <script src="./vegas.min.js"></script>
+  <!-- plugIn -->
+  <!-- 내가 작업한 script -->
+  <script>
+    $(document).ready(function () {
+      $('.container').vegas({
+        delay: 3000,
+        timer: true,
+        shuffle: true,
+        firstTransition: 'fade',
+        firstTransitionDuration: 5000,
+        transition: 'slideLeft2',
+        transitionDuration: 2000,
+        slides: [
+          { src: './img/bg1.png' },
+          { src: './img/bg2.png' },
+          { src: './img/bg3.png' },
+          { src: './img/bg4.png' }
+        ]
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <a href="#" class="btn">버튼</a>
+  </div>
+  <script></script>
+</body>
+
+</html>

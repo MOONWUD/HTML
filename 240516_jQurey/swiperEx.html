@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>swiperEx</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <link rel="stylesheet" href="../assets/style/reset.css">
+  <link rel="stylesheet" href="../assets/style/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./swiperEx.css">
+
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/swiper-bundle.min.js"></script>
+  <script defer src="./swiperEx.js"></script>
+</head>
+
+<body>
+   <!-- Swiper container -->
+   <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper main-swiper">
+    <div class="parallax-bg" style="
+          background-image: url(https://swiperjs.com/demos/images/nature-1.jpg);
+        " data-swiper-parallax="-23%"></div>
+    <ul class="swiper-wrapper">
+      <!-- 각 각의 슬라이드 .swiper-slide -->
+      <li class="swiper-slide bg1">
+        <h2 class="title" data-swiper-parallax="-300">Title</h2>
+        <h3 class="subtitle" data-swiper-parallax="-200">Subtitle</h3>
+          <p class="text" data-swiper-parallax="-100">
+            별들을 시간의 까닭이요 남은 다하지 바깥에서 없이 헤일 듯 하나둘 있습니다 없이 가을 속의 불러봅니다 별빛들 부끄러운
+          </p>
+      </li>
+      <li class="swiper-slide bg2">
+        <section class="section-box" data-swiper-parallax="-900">
+          <h2 class="title"></h2>
+          <h3 class="subtitle"></h3>
+          <p class="text">기울어진 불러봅니다 달의 별 하나에 이듬 해 까닭이요 지나가는 다하지 햇살 속에 봄이 오면 추억과 쉬이 아무 까닭이요 북간도에</p>
+        </section>
+      </li>
+      <li class="swiper-slide bg3">
+        <h2 class="title" data-swiper-parallax="-300">Slide 3</h2>
+        <h3 class="subtitle" data-swiper-parallax="-200">Subtitle</h3>
+        <p class="text" data-swiper-parallax="-100">
+          하늘에 시선과 사랑과 속의 말 부끄러운 이국 소녀들의 아직 부끄러운 민들레는 아니다 모두 오는
+        </p>
+      </li>
+      <li class="swiper-slide bg4">
+        <h2 class="title" data-swiper-parallax="-300">Slide 3</h2>
+        <h3 class="subtitle" data-swiper-parallax="-200">Subtitle</h3>
+        <p class="text" data-swiper-parallax="-100">
+          한마디 여름 하나 모두 나는 우정의 이제 아침이 불러봅니다 아니다 한마디 삶 속의
+        </p>
+      </li>
+    </ul>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+</body>
+</html>
