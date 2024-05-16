@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>resize</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style></style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <h1>resize</h1>
+  <p>리사이즈 이벤트가 발생했을 때</p>
+  <script>
+    /*
+      Js
+      addEventListener('resize', () => {}); 리사이즈 이벤트가 발생했을 때
+      jQ
+      $(window).on('resize', () => {});
+    */
+
+    // const mq = window.matchMedia('(width >= 768px)');
+    const mq = matchMedia('(max-width: 768px)');
+
+    if(mq.matches) {
+      document.body.style.backgroundColor = 'lightgreen';
+      document.body.innerHTML += `<h2>768 이하 화면</h2>`;
+    } else {
+      document.body.style.backgroundColor = 'lightblue';
+      document.body.innerHTML += `<h2>768 이상 화면</h2>`;
+    }
+
+  </script>
+</body>
+</html>

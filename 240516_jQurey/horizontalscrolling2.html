@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>horizontal scrolling2</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style>
+    body { 
+      margin:0; 
+      overflow-x: hidden;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    body * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      list-style: none;
+    }
+    .box {
+      height: 100vh;
+      background-color: #5BBCFF;
+    }
+    .box:nth-of-type(1) { background-color: #0A6847; }
+    .box:nth-of-type(2) { background-color: #7ABA78; }
+    .box:nth-of-type(3) { background-color: #b1f3b7; }
+
+    .horizontal-container {
+      width: 100%;
+      position: relative;
+      text-align: center;
+    }
+    .horizontal-container .sticky-box {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+    }
+    .horizontal-container .sticky-box .horizontal-inner-box {
+      position: absolute;
+      display: flex;
+      width: 300%;
+    }
+    .horizontal-container .sticky-box .horizontal-inner-box li {
+      width: 100%;
+      height: 100vh;
+    }
+    .horizontal-container .sticky-box .horizontal-inner-box .row1 { background-color: #FDE49E; }
+    .horizontal-container .sticky-box .horizontal-inner-box .row2 { background-color: #FEB941; }
+    .horizontal-container .sticky-box .horizontal-inner-box .row3 { background-color: #FDDE55; }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <section class="box">
+    <h2>box1</h2>
+  </section>
+  <!-- 가로 스크롤 영역 -->
+  <div class="horizontal-container">
+    <!-- pos: sticky -->
+    <div class="sticky-box">
+      <!-- 실제 가로로 움직이는 영역 -->
+      <ul class="horizontal-inner-box">
+        <li class="row1">row-box1</li>
+        <li class="row2">row-box2</li>
+        <li class="row3">row-box3</li>
+      </ul>
+    </div>
+  </div>
+  <section class="box">
+    <h2>box3</h2>
+  </section>
+  <section class="box">
+    <h2>box4</h2>
+  </section>
+  <script>
+    const horizontalContainer = document.querySelector('.horizontal-container');
+    const stickyBox = document.querySelector('.sticky-box');
+    const innerBox = document.querySelector('.horizontal-inner-box');
+
+    const calcHt = (elem) => {
+      // scrollWidth : 스크롤바에 의해 감춰진 영역 포함 반환
+      // document.documentElement.clientWidth : 실제로 들어가게 될 영역의 너비와 높이 값을 반환
+      return elem.scrollWidth - document.documentElement.clientWidth + document.documentElement.clientHeight
+    };
+
+    horizontalContainer.style.height = `${calcHt(innerBox)}px`;
+    
+    console.log(calcHt(innerBox));
+    const scrolled = () => {
+      console.log(`stickyBox.offsetTop: `, stickyBox.offsetTop);
+      innerBox.style.transform = `translate(-${stickyBox.offsetTop}px)`;
+    };
+
+    // Js offsetTop; 상대값. offset의 가장 가까운 포지션 값을 기준. 없는 경우 body가 기준
+    // jQ offset().top; 절대값 반환. body 기준
+    addEventListener('scroll', scrolled);
+  </script>
+</body>
+</html>
