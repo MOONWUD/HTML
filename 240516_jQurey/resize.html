@@ -14,24 +14,37 @@
   <h1>resize</h1>
   <p>리사이즈 이벤트가 발생했을 때</p>
   <script>
-    /*
-      Js
-      addEventListener('resize', () => {}); 리사이즈 이벤트가 발생했을 때
-      jQ
+    /* 
+      JS
+      addEventListener('resize', () => {}); 
+
+      jQuery
       $(window).on('resize', () => {});
     */
-
+    
     // const mq = window.matchMedia('(width >= 768px)');
     const mq = matchMedia('(max-width: 768px)');
 
     if(mq.matches) {
-      document.body.style.backgroundColor = 'lightgreen';
-      document.body.innerHTML += `<h2>768 이하 화면</h2>`;
+      document.body.style.backgroundColor = 'orange';
+      document.body.innerHTML += `<h2>768이하 화면</h2>`;
     } else {
       document.body.style.backgroundColor = 'lightblue';
-      document.body.innerHTML += `<h2>768 이상 화면</h2>`;
+      document.body.innerHTML += `<h2>768이상 화면</h2>`;
     }
 
+    const view = (bg, txt) => {
+      document.body.style.backgroundColor = bg;
+      document.body.innerHTML = `<h2>768${txt} 화면</h2>`;
+    }
+
+    const resizeEx = () => {
+      console.log('리사이즈 됨');
+      mq.matches ? view('orange', '이하') : view('lightblue', '이상');
+    }
+
+    addEventListener('resize', resizeEx);
+    // $(window).on('resize', resizeEx);
   </script>
 </body>
 </html>
