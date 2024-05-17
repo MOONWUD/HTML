@@ -1,0 +1,169 @@
+@charset "UTF-8";
+
+/* 'Pretendard', sans-serif; */
+@import url(../assets/styles/pretendard-subset.css);
+/* 
+  font-family: "Poetsen One", sans-serif;
+  font-family: "Ubuntu Sans", sans-serif;
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+
+/* common */
+body {
+  font-family: "Ubuntu Sans", sans-serif;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  padding: 20px;
+  z-index: 99999;
+}
+header .info {
+  display: flex;
+  gap: 20px;
+}
+header.colorChange .logo {
+  fill : #fff;
+}
+header.colorChange .info {
+  color: #fff;
+}
+
+/* nav */
+.side-menu {
+  z-index: 99999;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+}
+.side-menu li a {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px;
+}
+.side-menu li a .dot {
+  width: 16px; height: 16px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  text-indent: -9999px;
+}
+.side-menu li a .menu-label {
+  opacity: 0;
+}
+.side-menu li a:hover .menu-label {
+  opacity: 1;
+}
+.side-menu li.active a .menu-label {
+  opacity: 1;
+  transform: scale(1.4);
+  font-weight: 500;
+}
+/* .side-menu li:nth-child(1).active a .dot {
+  background-color: #E3D9BF;
+}
+.side-menu li:nth-child(2).active a .dot {
+  background-color: #00394f;
+} */
+
+/* main */
+.contents {
+  width: 100%;
+  height: 100vh;
+}
+.contents .box {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  position: relative;
+  overflow: hidden;
+  /* fullPage스타일에서만 !  */
+}
+
+.contents #box1 {
+  background: #E3D9BF url(./images/bg1.png) no-repeat fixed 50%;
+}
+.contents #box2 {
+  background: #003941 url(./images/bg2.png) no-repeat fixed 50%;
+}
+.contents #box3 {
+  background: #be2934 url(./images/bg3.png) no-repeat fixed 50%;
+}
+.contents #box4 {
+  background: #59375c url(./images/bg4.png) no-repeat fixed 50%;
+}
+
+.contents .box .txt-wrapper {
+  position: relative;
+  width: 70vw;
+  
+}
+.contents .box:first-child .txt-wrapper {
+  width: 70vw;
+}
+.contents .box .txt-wrapper h2 {
+  color: #003941;
+  font-size: 7rem;
+  line-height: 0.9;
+  font-family: "Poetsen One", sans-serif;
+}
+.contents .box .txt-wrapper  p {
+  font-family: 'Pretendard';
+  line-height: 1.8;
+  max-width: 40%;
+  min-width: 300px;
+  font-size: 1.1rem;
+  position: absolute;
+  left: 340px;
+  top: 220px;
+}
+.contents .box .txt-wrapper h3 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.contents .box .txt-wrapper .circle {
+  border: 2px solid #fff;
+  width: 100px; height: 100px;
+  padding: 10px;
+  color: #fff;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+.contents .box img {
+  position: absolute;
+}
+
+/* 움직이는 이미지 */
+.contents .box img {
+  position: absolute;
+}
+.contents .box .box2-left,
+.contents .box .box3-left,
+.contents .box .box4-left {
+  left: -200px;
+  top: 10px;
+}
+.contents .box .box2-right,
+.contents .box .box3-right,
+.contents .box .box4-right {
+  right: 10px;
+  bottom: 10px;
+}
