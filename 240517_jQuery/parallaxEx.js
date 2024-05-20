@@ -97,9 +97,10 @@ $('.box').each(function () {
      currentTop = nextBox ? nextBox.offsetTop : this.offsetTop;
     } else { // 휠 올렸을 때
       if(prevBox) {
-
+        currentTop = prevBox.offsetTop;
       } else {
-
+        // currentTop = 0; 첫번째 박스에 도달하면 높이값을 0으로 반환
+        return; // 이전 박스의 값이 없는 경우 벗어남
       }
     }
     scrollTo ({
