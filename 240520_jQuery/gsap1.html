@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>gsap1</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style>
+    body{
+      margin: 0;
+    }
+    body * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container {
+      height: 100vh;
+      position: relative;
+    }
+    .container h1 {
+      font-size: 5rem;
+      text-align: center;
+    }
+    .container .btn {
+      color: #ACD793;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 2rem;
+      display: grid;
+      place-items: center;
+      width: 130px;
+      height: 80px;
+      border: 5px solid #ACD793;
+      background-color: #fff;
+      box-shadow: 2px 2px 5px #24242491;
+      border-radius: 30px;
+      padding: 10px;
+      text-transform: capitalize;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .container .btn:hover {
+      background-color: #ACD793;
+      color: #FFF;
+    }
+    .container img {
+      transform: translateX(-50%) scale(0);
+      position: absolute;
+      top: 50%;
+    }
+    img:nth-child(2) {
+      width: 200px;
+      left: 5%;
+      z-index: 9;
+    }
+    img:nth-child(3) {
+      width: 400px;
+      left: 10%;
+    }
+    img:nth-child(4) {
+      width: 800px;
+      left: 50%;
+    }
+    img:nth-child(5) {
+      width: 300px;
+      left: 85%;
+    }
+    img:nth-child(6) {
+      width: 400px;
+      left: 90%;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+  <script src="../assets/gsap.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>gsap1</h1>
+    <img src="./images/flower2.png" alt="flower2">
+    <img src="./images/flower1.png" alt="flower1">
+    <img src="./images/flowerCenter.png" alt="flowerCenter">
+    <img src="./images/flower2.png" alt="flower2">
+    <img src="./images/flower1.png" alt="flower1">
+    
+    <a href="#" class="btn">hover</a>
+  </div>
+  <script>
+    /*
+    $('.btn').on('hover', function(){}, function(){})
+    $('.btn').on({
+      'mouseenter' : () => {}, 
+      'mouseleave' : () => {}
+    });
+    */
+
+    const btn = document.querySelector('.btn');
+    const imgs = document.querySelectorAll('img');
+
+    const TL = gsap.timeline({ paused: true });// 타임라인 생성. 일시정시
+
+    TL.to(imgs, {
+      duration: 0.4,
+      scale: 1,
+      stagger: 0.1,
+      ease: "back.out(1.7)",
+    });
+
+    btn.addEventListener('mouseenter', () => {
+      TL.play();
+    });
+    btn.addEventListener('mouseleave', () => {
+      TL.reverse();
+    });
+  </script>
+</body>
+</html>
