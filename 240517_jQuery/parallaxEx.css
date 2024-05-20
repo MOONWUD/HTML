@@ -3,14 +3,14 @@
 /* 'Pretendard', sans-serif; */
 @import url(../assets/styles/pretendard-subset.css);
 /* 
-  font-family: "Poetsen One", sans-serif;
-  font-family: "Ubuntu Sans", sans-serif;
+  "Kanit", sans-serif; 400, 500, 700
+  "Lobster", sans-serif; 400
 */
-@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;700&family=Lobster&display=swap');
 
 /* common */
 body {
-  font-family: "Ubuntu Sans", sans-serif;
+  font-family: "Kanit", Arial, Helvetica, sans-serif;
   font-weight: 400;
   text-transform: capitalize;
 }
@@ -23,26 +23,30 @@ header {
   top: 0; left: 0;
   width: 100%;
   padding: 20px;
-  z-index: 99999;
+  /* background-color: #ddd; */
+  z-index: 999;
 }
 header .info {
   display: flex;
   gap: 20px;
 }
+header.colorChange {
+  backdrop-filter: blur(100px);
+}
 header.colorChange .logo {
   fill : #fff;
 }
 header.colorChange .info {
-  color: #fff;
+  color : #fff;
 }
 
 /* nav */
 .side-menu {
-  z-index: 99999;
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
   right: 20px;
+  z-index: 99;
 }
 .side-menu li a {
   display: flex;
@@ -63,107 +67,94 @@ header.colorChange .info {
   opacity: 1;
 }
 .side-menu li.active a .menu-label {
+  margin-right: 20px;
   opacity: 1;
   transform: scale(1.4);
   font-weight: 500;
 }
-/* .side-menu li:nth-child(1).active a .dot {
+/* 
+.side-menu li:nth-child(1).active a .dot {
   background-color: #E3D9BF;
 }
 .side-menu li:nth-child(2).active a .dot {
   background-color: #00394f;
-} */
+} 
+*/
 
-/* main */
+/* main.contents */
 .contents {
   width: 100%;
   height: 100vh;
 }
 .contents .box {
-  width: 100%;
+  width: 100%; 
   height: 100%;
   display: grid;
   place-content: center;
   position: relative;
   overflow: hidden;
-  /* fullPage스타일에서만 !  */
 }
-
-.contents #box1 {
-  background: #E3D9BF url(./images/bg1.png) no-repeat fixed 50%;
-}
-.contents #box2 {
-  background: #003941 url(./images/bg2.png) no-repeat fixed 50%;
-}
-.contents #box3 {
-  background: #be2934 url(./images/bg3.png) no-repeat fixed 50%;
-}
-.contents #box4 {
-  background: #59375c url(./images/bg4.png) no-repeat fixed 50%;
-}
+.contents #box1 { background: #E3D9BF url(./images/bg1.png) no-repeat fixed 50% ;}
+.contents #box2 { background: #00394f url(./images/bg2.png) no-repeat fixed 50% ;}
+.contents #box3 { background: #be2934 url(./images/bg3.png) no-repeat fixed 50% ;}
+.contents #box4 { background: #69375c url(./images/bg4.png) no-repeat fixed 50% ;}
 
 .contents .box .txt-wrapper {
   position: relative;
-  width: 70vw;
-  
+  width: 60vw;
+  margin-bottom: 150px;
 }
 .contents .box:first-child .txt-wrapper {
   width: 70vw;
 }
 .contents .box .txt-wrapper h2 {
-  color: #003941;
+  color: #00394f;
   font-size: 7rem;
-  line-height: 0.9;
-  font-family: "Poetsen One", sans-serif;
+  line-height: 1;
+  font-family: "Lobster", sans-serif;
 }
-.contents .box .txt-wrapper  p {
-  font-family: 'Pretendard';
-  line-height: 1.8;
-  max-width: 40%;
+.contents .box .txt-wrapper h2 + p {
+  font-family: 'Pretendard', sans-serif;
+  line-height: 1.6;
+  max-width: 50%;
   min-width: 300px;
   font-size: 1.1rem;
   position: absolute;
-  left: 340px;
-  top: 220px;
+  left: 300px;
+  bottom: 0;
 }
+
 .contents .box .txt-wrapper h3 {
   font-size: 3rem;
   font-weight: 700;
-  color: #fff;
+  color:#fff;
+  margin-bottom: 20px;
 }
-
 .contents .box .txt-wrapper .circle {
-  border: 2px solid #fff;
+  border: 3px solid #fff;
   width: 100px; height: 100px;
-  padding: 10px;
-  color: #fff;
+  color:#fff;
   display: grid;
   place-content: center;
-  text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 500;
+  text-align: center;
   line-height: 1;
   border-radius: 50%;
-  margin-top: 10px;
 }
-
-.contents .box img {
-  position: absolute;
-}
-
 /* 움직이는 이미지 */
-.contents .box img {
-  position: absolute;
+.contents .box img { 
+  position: absolute; 
+  will-change: position;
 }
 .contents .box .box2-left,
 .contents .box .box3-left,
 .contents .box .box4-left {
   left: -200px;
-  top: 10px;
+  top: 50px
 }
 .contents .box .box2-right,
 .contents .box .box3-right,
 .contents .box .box4-right {
-  right: 10px;
-  bottom: 10px;
+  right: 50px; bottom: -50px;
 }
