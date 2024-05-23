@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "월요일",
+    "description": "월요일입니다",
+    "url": "./images/bg1.png"
+  },
+  {
+    "id": 2,
+    "title": "화요일",
+    "description": "화요일입니다",
+    "url": "./images/bg2.png"
+  },
+  {
+    "id": 3,
+    "title": "수요일",
+    "description": "수요일입니다",
+    "url": "./images/bg3.png"
+  },
+  {
+    "id": 4,
+    "title": "목요일",
+    "description": "목요일입니다",
+    "url": "./images/bg4.png"
+  },
+  {
+    "id": 5,
+    "title": "금요일",
+    "description": "금요일입니다",
+    "url": "http://placehold.co/400/97BE5A/FFE8C5?text=good~!"
+  }
+]

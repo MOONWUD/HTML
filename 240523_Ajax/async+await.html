@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>async+await</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style></style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <h1>async함수 awiat키위드</h1>
+  <p>Promaise를 좀 더 쉽게 사용할 수 있게 민든 비동기 함수</p>
+  
+  <ul>
+    <li>promise 객체를 반환하는 함수를 다시 함수로 리패키징</li>
+    <li>해당 패키징 함수에 async 키워드 작성</li>
+    <li>해당 패키징 함수 안쪽 반환하는 promise 함수 앞에 await 지정</li>
+    <li>await로 지정된 함수가 끝날 때까지 그 다음 함수는 동기화</li>
+  </ul>
+  <script>
+    function delay(time) {
+      return new Promise(res => {
+        setTimeout(() => {
+          res()
+        }, time)
+      })
+    }
+
+    delay(3000).then(() => {
+      console.log('test')
+    })
+
+    const test = async() => {
+      await delay(1000);
+      console.log('async test');
+    }
+
+    test();
+  </script>
+</body>
+</html>

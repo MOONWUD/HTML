@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>fetch</title>
+  <style>
+    .bg {
+      background-color: #CAF4FF;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Fetch API</h1>
+  <p>네트워크 통신을 포함한 리소스 취득을 JavaScript에서 접근하고 조작할 수 있도록 인터페이스 제공</p>
+  <ul>
+    <li>fetch() : 리소스를 취득하기 위한 메서드</li>
+    <li>Headers : 요청/응답 헤더</li>
+    <li>Request : 리소스 요청</li>
+    <li>Response : 요청에 대한 응답</li>
+  </ul>
+
+  <div class="result"></div>
+
+  <script>
+    // json 파일 요청
+    fetch('https://jsonplaceholder.typicode.com/photos')
+    // json 파일을 JS 객체로 변환
+    .then(res => res.json())
+    // 출력
+    // .then(json => console.log(json));
+    .then(json => {
+      let items = '';
+      json.forEach((elem, idx) => {
+        if(idx < 10) {
+          console.log(elem);
+          items += `
+            <h2 class="bg">${elem.title}</h2>
+            <ol>
+              <li><strong>url: </strong>${elem.url}</li>
+              <li><strong>thumbnailUrl: </strong><img src="${elem.thumbnailUrl}""></li>
+            </ol>
+          `;
+        }
+      })
+      document.querySelector('.result').innerHTML = items;
+    })
+  </script>
+</body>
+</html>

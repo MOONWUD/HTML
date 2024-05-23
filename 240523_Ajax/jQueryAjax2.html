@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>jQueryAjax2</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <style>
+    .border {
+      border: 1px solid #000;
+      margin: 10px;
+    } 
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+  <h1>jQueryAjax2</h1>
+  <h2>외부 데이터 불러오기</h2>
+
+  <ol class="user-data"></ol>
+
+  <script>
+    $.ajax({
+      url: "https://jsonplaceholder.typicode.com/users",
+      type: 'GET',
+      dataType: "json",
+      success: (users) => {
+        if(users) {
+          console.log(users);
+          // username, email, city
+          $.each(users, (idx, user) => {
+            const dataList = $('<li>').addClass('border');
+            $('<h3>').text(users[idx].username).appendTo(dataList);
+            $('<p>').text(users[idx].email).appendTo(dataList);
+            $('<p>').text(users[idx].address.city).appendTo(dataList);
+
+            $('.user-data').append(dataList);
+          });
+        }
+      },
+      error: (xhr, status, error) => {
+        console.log('AJAX 요청 실패:', xhr, status, error);
+      }
+    })
+  </script>
+</body>
+</html>

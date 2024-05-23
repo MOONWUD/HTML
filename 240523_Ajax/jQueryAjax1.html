@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>jQueryAjax1</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+  <style>
+    li {
+      border: 1px solid #000;
+      width: 300px;
+      height: 500px;
+    }
+    img {
+      height: 60%;
+    } 
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <h1>jQueryAjax1</h1>
+  <h2>Ajax: 비동기 통신 방법으로 전체 페이지를 새로고침하지 않고 필요힌 데이터만 교환하는 방식</h2>
+  <h2>JSOC: 경량화된 데이터 방식(포멧)</h2>
+
+  <ul class="user-data">
+    <!--
+    <li>
+      <h3>bg1</h3>
+      <p>설명</p>
+      <img src="" alt="">
+    </li>
+  -->
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <script>
+    /*
+      jQuery.ajax(url[, settings]);
+      $.ajax(url[, settings]);
+      $.ajax({
+         url: "파일 위치",
+         tyoe: 'GET', 요청 방식
+         dataType: "json", 서버에 반환할 데이터 형식
+         data: { key: '서버로 전송할 테이터로 객체, 문자열, 배열 등' },
+         success: "요청한 결과가 성공했을 때 실행할 함수",
+         error: "요청에 실패했을 때 실행할 함수"
+      });
+    */
+
+    $.ajax({
+      url: "./DB/bgData.json",
+      dataType: "json",
+      success: (data) => {
+        /*
+        console.log(data);
+        console.log(data[0].title);
+        */
+       // $(A).appendTo(B);  부모의 B의 자식들 중 제일 마지막으로 A가 *이동*
+       // $(A).append(B);  A의 자식들 중 제일 마지막에 B를 *추가* 원래 있던 li에 계속 추가하여 li의 수 증가됨
+
+      //  첫번쨰 li
+      /*
+      $('.user-data li').eq(0).append(`<h3>${data[0].title}</h3>`);
+      $('.user-data li').eq(0).append(`<p>${data[0].description}</p>`);
+      $('.user-data li').eq(0).append(`<img src"${data[0].url}" alt="${data[0].title}">`);
+      data.forEach((elem, idx)=>{})
+      */
+    //  if(data.length > 0) {}
+     $.each(data, (idx, elem) => {
+      const dataList = `
+      <h3>${elem.title}</h3>
+      <p>${elem.description}</p>
+      <img src=${elem.url} alt=${elem.title}>
+      `;
+      $('.user-data li').eq(idx).append(dataList);
+     })
+    },
+      error: (xhr, status, error) => {
+        console.log('AJAX 요청 실패: ', xhr, status, error)
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>async+awaitEx</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style></style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <div class="result"></div>
+  <script>
+    const result = document.querySelector('.result');
+    const URL = "https://jsonplaceholder.typicode.com/users";
+
+    // 데이터 요청
+    const data = async() => {
+      const res = await fetch(URL);
+      const users = await res.json();
+      userList(users);
+    }
+    // 문서 출력
+    const userList = (users) => {
+      let output = '';
+      users.forEach(user => {
+        output += `
+          <h2>이름: ${user.username}</h2>
+          
+        `
+      })
+      result.innerHTML = output;
+    }
+
+    data();
+  </script>
+</body>
+</html>
