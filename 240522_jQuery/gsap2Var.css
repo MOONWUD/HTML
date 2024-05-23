@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/* font 설정 */
+/* 한글 */
+@import url(../assets/style/pretendard-subset.css);
+/* font-family: 'Pretendard', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/*   font-family: "PT Sans", sans-serif; */
+
+/* 변수 설정 */
+:root {
+  /* font */
+  --primary-font-en: "PT Sans", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --primary-font-kn: 'Pretendard', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --title-size-xxl: 8.5rem;
+  --title-size-xl: 6.5rem;
+  --title-size-lg: 5rem;
+  --title-size-md: 4rem;
+  --title-size-sm: 2.8rem;
+  --title-size-xs: 2rem;
+
+  --decs-size-md: 1rem;
+  --decs-size-sm: 0.95rem;
+  --decs-size-xs: 0.8rem;
+  --decs-size-xxs: 0.5rem;
+
+  /* color */
+  --primary-color: #141212;
+
+  --list-color1: #006769;
+  --list-color2: #40a578;
+  --list-color3: #9dde8b;
+  --list-color4: #e6ff94;
+  --list-color5: #03aed2;
+  --list-color6: #68d2e8;
+  --list-color7: #fdde55;
+  --list-color8: #9bcf53;
+  --list-color9: #86a7fc;
+
+  /* 기타 */
+  --primary-radius: 20px;
+}
+
+/* global style */
+svg, svg * {
+  pointer-events: none;
+  display: block;
+}
