@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>spread연산자</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+</head>
+
+<body>
+  <h1>spread연산자</h1>
+  <p>배열, 객체, 함수 등에서 사용할 수 있으며 원본을 복사해 반환</p>
+  <script>
+    const data = [
+      { id: 1, name: '아메리카노' },
+      { id: 2, name: '카페라떼' },
+      {
+        id: 3,
+        "name": "Clementine Bauch",
+        "username": "Samantha",
+        "email": "Nathan@yesenia.net",
+        "address": {
+          "street": "Douglas Extension",
+          "suite": "Suite 847",
+          "city": "McKenziehaven",
+          "zipcode": "59590-4157",
+          "geo": {
+            "lat": "-68.6102",
+            "lng": "-47.0653"
+          }
+        },
+        "phone": "1-463-123-4447",
+        "website": "ramiro.info",
+        "company": {
+          "name": "Romaguera-Jacobson",
+          "catchPhrase": "Face to face bifurcated interface",
+          "bs": "e-enable strategic applications"
+        }
+      },
+      { id: 4, name: '바닐라라떼' }
+    ]
+
+    // 복사
+    // const output1 = data.concat();
+    const output1 = [...data];
+    console.log(output1) 
+
+    const output2 = [...data, {id: 5, name: '쌍화탕'}];
+    console.log(output2);
+    console.log(data);
+    
+    // 합침
+    console.log([...output1, ...output2]);
+
+    // 함수 호출에서 복사해서 사용
+    const total = (a, b, c) => console.log(a+b+c);
+    const num = [1, 2, 3]
+    total(...num);
+
+    // Clementine Bauch 탐색해서 moon-js로 변경
+    const output3 = data.map(data => {
+      if(data.id === 3) {
+        // return {name: 'moon-js'} 이 값만 반환
+        return{
+          ...data, 
+          name: 'moon-js'
+        }
+      } else {
+        return data;
+      }
+    })
+    console.log(output3)
+    
+    const output4 = data.map(data => data.id === 3? {...data, username: '자바스크립트의 신'}: data);
+    console.log(output4)
+    
+  </script>
+</body>
+
+</html>

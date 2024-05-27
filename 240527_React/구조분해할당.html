@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>구조분해할당</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style></style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <h1>구조 분해 할당, 구조 분해, 비구조 할당</h1>
+  <p>객체나 배열을 변수로 '분해'할 수 있게 해주는 특별한 문법</p>
+  <a href="https://ko.javascript.info/destructuring-assignment" target="_blank">자바스크립트 인포</a>
+
+  <script>
+    /*
+      객체 생성 :
+        객체 = { 키 : 값 }
+
+      사용(읽기) :
+      객체.키(기본)
+      객체['키']
+    */
+
+    const user = {
+      id : 1, 
+      name : 'moon-jy',
+      item : 'js',
+      email : 'moon@js.org',
+      addr : '평택'
+    }
+
+    console.log(user.name, user.email);
+
+    // 구조분해할당: 속성을 각 각  분해
+    const { id, name, email, addr} = user;
+    console.log('구조분해 할당: ', name, addr);
+
+    const data = {
+      a : 10, 
+      b : 20,
+      c : 30
+    }
+    const { a, b, c } = data;
+    console.log(a, b, c)
+  </script>
+</body>
+</html>

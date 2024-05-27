@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>filter</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style></style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  
+  <script>
+    /*
+      탐색 메서드를 통해 새로운 배열로 반환
+
+      .filter(); 탐색한 값을 배열로 모두 반환
+      .find(); 탐색한 값의 첫번째만 반환
+    */
+
+    let arr = [10,20,30,40,50];
+    const result1 = arr.filter(num => num > 30);
+    console.log('result1: ', result1)
+    // 60 이상의 값을 모두 반환
+    const result2 = arr.filter(num => num >= 60);
+    console.log('result2: ', result2) // 조건에 맞는 값이 없으면 빈'배열' 반환 []
+
+    const data = [
+      {id:1, coffee: '아메리카노'},
+      {id:2, coffee: '라떼'},
+      {id:3, coffee: '모카'},
+      {id:4, coffee: '카푸치노'},
+      {id:5, coffee: '바닐라라떼'},
+    ]
+
+    // 아메리카노를 삭제 하시오(1을 제외한 나머지값 반환)
+    const result3 = data.filter(num => num.id !== 1 );
+    console.log('result3: ', result3);
+    
+    const result4 = arr.find(num => num > 20);
+    console.log('result4: ', result4); // 30
+
+    // 게시판 등에서 수정하고자 하는 아이템 탐색 사용
+    const result5 = data.find(coffee => coffee.id === 5);
+    console.log('result5: ', result5); // {id: 5, coffee: '바닐라라떼'}
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>map</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+</head>
+
+<body>
+  <h1>map()</h1>
+  <script>
+    // 배열의 각 요소를 순회 후 새로운 배열로 반환
+
+    const arr = [10, 20, 30, 40, 50];
+    // 각 요소의 인덱스 번호와 함께 숫자가 출력 인덱스 번호 0 : 10,....
+    arr.map((elem, idx) => console.log(`인덱스 번호는 ${idx}이고, 값은 ${elem}입니다`));
+
+    const data = [
+      {id: 1, lang : 'html5'},
+      {id: 2, lang : 'css3'},
+      {id: 3, lang : 'js'},
+      {id: 4, lang : 'jQuery'},
+      {id: 5, lang : 'react'},
+    ];
+
+    data.map((lang, idx) => console.log(`id는 ${lang.id}고 언어는 ${lang.lang}입니다`));
+
+    // 커피 종류와 가격을 배열로 만들고 콘솔에 커피와 가격을 출력
+    const menu = [
+      {id:1, coffee: '아메리카노', price: '4,100'},
+      {id:2, coffee: '카페라떼', price: '4,800'},
+      {id:3, coffee: '카페모카', price: '5,200'},
+      {id:4, coffee: '바닐라라떼', price: '5,200'},
+      {id:5, coffee: '캬라멜마끼아또', price: '5,200'},
+      {id:6, coffee: '다방커피', price: '3,000'},
+    ];
+
+    menu.map((elem) => console.log(`${elem.coffee}는 ${elem.price}원 입니다.`));
+  </script>
+</body>
+</html>
