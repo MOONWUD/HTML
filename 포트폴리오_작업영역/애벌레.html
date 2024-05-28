@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>애벌레</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style>
+    .wrapper {
+      margin: 400px auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 450px;
+    }
+    .Caterpillars {
+      box-sizing: border-box;
+      background-color: #A6CF98;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 10px;
+      justify-content: center;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      position: relative;
+      text-indent: -9999px;
+      gap: 10px;
+    }
+    .Caterpillars .eye {
+      background-color: #fff;
+      width: 20px;
+      height: 30px;
+      border-radius: 50%;
+    }
+    .Caterpillars .eye span {
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #000;
+      z-index: 9999;
+      margin-left: 5px;
+    }
+    .Caterpillars .mouse {
+      border: 1px solid #000;
+      width: 15px;
+      height: 25px;
+      border-radius: 50%;
+      z-index: 99999;
+      position: absolute;
+      top: 40px;
+    }
+    .Caterpillars::after {
+      content: "";
+      background-color: #B5CF7E;
+      display: block;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      position: absolute;
+      left: 80px;
+      top: -20px;
+    }
+    .Caterpillars::before {
+      content: "";
+      background-color: #A6CF98;
+      display: block;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      position: absolute;
+      left: 160px;
+      top: -40px;
+    }
+    .Caterpillars:last-child {
+      background-color: #A6CF98;
+      display: block;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      position: relative;
+      text-indent: -9999px;
+      top: -50px;
+    }
+    .Caterpillars:last-child::after {
+      content: "";
+      background-color: #B5CF7E;
+      display: block;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      position: absolute;
+      left: 70px;
+      top: -10px;
+    }
+    .Caterpillars:last-child::before {
+      content: "";
+      background-color: #A6CF98;
+      display: block;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      position: absolute;
+      left: 150px;
+      top: 30px;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+  <div class="Caterpillars">
+    <p class="eye">눈<span>눈동자</span></p>
+    <p class="eye">눈<span>눈동자</span></p>
+    <p class="mouse">입</p>
+  </div>
+  <div class="Caterpillars">
+  </div>
+</div>
+  <script></script>
+</body>
+</html>
