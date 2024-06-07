@@ -1,0 +1,65 @@
+$background-dark:           #0A0845;
+$yellow:                    #F4E96B;
+$pink:                      #EB4E89;
+$blue:                      #77D6E2;
+
+*,
+*:before,
+*:after
+{
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $background-dark;
+    padding: 4em 1em 1em;
+}
+header {
+    height: 180px;
+    position: relative;
+}
+.header__avatar {    
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    border-radius: 80px;
+    top: 0;
+    left: 50%;
+    margin: 0 -80px;
+    background-color: black;
+  }
+.header__avatar.drop {    
+    animation-name: dropAvatar;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: .6s;
+}
+@keyframes dropAvatar {
+    // start from top
+    0%  {   
+        transform: translateY(-400px); 
+    }
+    // drop down past 0
+    55% {   
+        transform: translateY(20px); 
+        animation-timing-function: ease-out; 
+    }
+    // bounce up 
+    80% {   
+        transform: translateY(-50px);
+        animation-timing-function: ease-out;
+    }
+    // drop to 0
+	100% {   
+    	transform: translateY(0px); 
+    }
+}
+.header__avatar.spin {    
+    animation-name: spinAvatar;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-duration: .4s;
+}
+@keyframes spinAvatar {
+    100% { transform:rotate(1080deg); }
+}

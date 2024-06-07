@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>apple</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style>
+    body {
+	background-color: #424242;
+	width: 100%;
+	margin: 0px;
+	font-family: Arial;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+.spacer {
+	height: 300px;
+}
+
+#showcase {
+	position: relative;
+}
+
+#showcase > .deviceWrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 3;
+}
+
+#showcase > .deviceWrapper > .device {
+	position: sticky;
+	top: 5vh;
+	width: 80vw;
+	height: 80vh;
+	margin: auto;
+}
+
+#showcase > .deviceWrapper > .device img {
+	top: 3%;
+	opacity: 0.5;
+	height: 100%;
+	width: 100%;
+}
+
+#showcase > .deviceWrapper > .device * {
+	position: absolute;
+	will-change: transform;
+}
+
+.border {
+	background-color: black;
+	--border-top-width: 3%;
+	--border-left-width: 3%;
+	z-index: 3;
+}
+
+.border.top,
+.border.bottom {
+	left: 0%;
+	right: 0%;
+	height: var(--border-top-width);
+}
+
+.border.left,
+.border.right {
+	width: var(--border-left-width);
+	top: 13%;
+	bottom: 30%;
+	border-radius: 4px;
+}
+
+.border.top {
+	top: 13%;
+	border-radius: 4px;
+}
+
+.border.left {
+}
+
+.border.right {
+	right: 0;
+}
+
+.border.bottom {
+	bottom: 30%;
+}
+
+.display {
+	background-color: #eee;
+	top: 15%;
+	left: 2%;
+	right: 2%;
+	bottom: 32%;
+	z-index: 4;
+	border-radius: 3px;
+}
+
+.text {
+	z-index: 5;
+	background: linear-gradient(
+		130deg,
+		rgba(3, 104, 184, 1) 0%,
+		rgba(0, 212, 255, 1) 100%
+	);
+	border-radius: 100px;
+}
+
+.nav.background {
+	left: 2%;
+	right: 2%;
+	height: 6%;
+	background-color: white;
+	border-radius: 2px;
+	z-index: 5;
+	transform-origin: top;
+}
+
+.top.nav.background {
+	top: 15%;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.top.nav.logo {
+	top: 16.49%;
+	height: 3%;
+	left: 4.5%;
+	width: 3%;
+	z-index: 5;
+	border-radius: 3px;
+	background: linear-gradient(130deg, #29b6f6 0%, #81d4fa 100%);
+}
+
+.top.nav.text {
+	top: 16.49%;
+	height: 3%;
+}
+
+.top.nav.text.one {
+	left: 11%;
+	width: 14%;
+}
+
+.top.nav.text.two {
+	left: 29%;
+	width: 10%;
+}
+
+.top.nav.text.three {
+	left: 43%;
+	width: 12%;
+}
+
+.bottom.nav {
+	top: auto;
+	bottom: 32%;
+}
+
+.bottom.nav.background {
+	box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.12), 0 -1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.bottom.nav.text {
+	top: auto;
+	bottom: 33.5%;
+	width: 3%;
+	height: 3%;
+	border-radius: 4px;
+}
+
+.bottom.nav.text.one {
+	left: 23%;
+}
+
+.bottom.nav.text.two {
+	left: 48.5%;
+}
+
+.bottom.nav.text.three {
+	left: 75%;
+}
+
+.main.text {
+	width: 30%;
+	height: 3%;
+	top: 27%;
+	left: 5%;
+}
+
+.sub.text {
+	width: 24%;
+	height: 3%;
+	top: 32%;
+	left: 5%;
+}
+
+.info.text {
+	height: 2%;
+}
+
+.info.text.one {
+	top: 40%;
+	left: 5%;
+	width: 10%;
+}
+
+.info.text.two {
+	top: 40%;
+	left: 16%;
+	width: 6%;
+}
+
+.info.text.three {
+	top: 44%;
+	left: 5%;
+	width: 7%;
+}
+
+.info.text.four {
+	top: 44%;
+	left: 13%;
+	width: 5%;
+}
+
+.info.text.five {
+	top: 44%;
+	left: 19%;
+	width: 7%;
+}
+
+.info.text.six {
+	top: 48%;
+	left: 5%;
+	width: 3%;
+}
+
+.info.text.seven {
+	top: 48%;
+	left: 9%;
+	width: 11%;
+}
+
+.info.text.eight {
+	top: 48%;
+	left: 21%;
+	width: 7%;
+}
+.img {
+	background: linear-gradient(130deg, #29b6f6 10%, #81d4fa 100%);
+	border-radius: 4px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22), 0 1px 2px rgba(0, 0, 0, 0.34);
+	z-index: 5;
+	box-sizing: border-box;
+}
+
+.img.one {
+	top: 27%;
+	left: 45%;
+	width: 15%;
+	height: 32.1%;
+}
+
+.img.two {
+	top: 49%;
+	left: 61%;
+	width: 31.1%;
+	height: 10%;
+}
+
+.img.three {
+	top: 27%;
+	left: 77%;
+	width: 15%;
+	height: 21%;
+}
+
+.img.four {
+	top: 27%;
+	left: 61%;
+	width: 15%;
+	height: 10%;
+}
+
+.img.five {
+	top: 38%;
+	left: 61%;
+	width: 15%;
+	height: 10%;
+}
+
+.chin {
+	background-color: #666;
+	bottom: 23%;
+	height: 10%;
+	left: 0;
+	right: 0;
+	border-radius: 4px;
+	z-index: 2;
+}
+
+.stand {
+	background-color: #999;
+	transform: perspective(10px) rotateX(1.6deg);
+	bottom: 11.3%;
+	left: 34%;
+	right: 34%;
+	height: 14%;
+}
+
+.foot {
+	background-color: #bbb;
+	border-radius: 20px;
+	z-index: 1;
+	left: 28.6%;
+	right: 28.6%;
+	bottom: 10%;
+	height: 3.5%;
+}
+
+.phone > .border {
+	--border-top-width: 8%;
+	--border-left-width: 2.7%;
+}
+
+.phone > .border.top,
+.phone > .border.bottom {
+	left: 25.7%;
+	right: 25.7%;
+	border-radius: 13px;
+}
+
+.phone > .border.left,
+.phone > .border.right {
+	top: 5%;
+	bottom: 5%;
+}
+
+.phone > .border.top {
+	top: 0%;
+}
+
+.phone > .border.left {
+	left: 25.7%;
+}
+
+.phone > .border.right {
+	right: 25.7%;
+}
+
+.phone > .border.bottom {
+	bottom: 0%;
+}
+
+.phone > .display {
+	top: 7.1%;
+	bottom: 7.1%;
+	left: 28.5%;
+	right: 28.5%;
+}
+
+.phone > .nav.background {
+	left: 28.5%;
+	right: 28.5%;
+}
+
+.phone > .nav.background.top {
+	top: 7.1%;
+}
+
+.phone > .nav.background.bottom {
+	bottom: 7.1%;
+}
+
+.phone > .top.nav.logo {
+	top: 8.5%;
+	height: 3%;
+	left: 30%;
+}
+
+.phone > .top.nav.text {
+	top: 8.5%;
+}
+
+.phone > .top.nav.text.one {
+	left: 36.5%;
+}
+
+.phone > .top.nav.text.two {
+	left: 54.5%;
+}
+
+.phone > .top.nav.text.three {
+	left: 68.5%;
+}
+
+.phone > .bottom.nav.text {
+	bottom: 8.5%;
+}
+
+.phone > .bottom.nav.text.one {
+	left: 37%;
+}
+
+.phone > .bottom.nav.text.two {
+	left: 48.5%;
+}
+
+.phone > .bottom.nav.text.three {
+	left: 60%;
+}
+
+.phone > .main.text {
+	top: 15%;
+	left: 35%;
+}
+
+.phone > .sub.text {
+	top: 22%;
+	left: 38%;
+}
+
+.phone > .info.text.one {
+	top: 35%;
+	left: 41.5%;
+	width: 10%;
+}
+
+.phone > .info.text.two {
+	top: 35%;
+	left: 52.5%;
+	width: 6%;
+}
+
+.phone > .info.text.three {
+	top: 39%;
+	left: 39.5%;
+	width: 7%;
+}
+
+.phone > .info.text.four {
+	top: 39%;
+	left: 47.5%;
+	width: 5%;
+}
+
+.phone > .info.text.five {
+	top: 39%;
+	left: 53.5%;
+	width: 7%;
+}
+
+.phone > .info.text.six {
+	top: 43%;
+	left: 39%;
+	width: 3%;
+}
+
+.phone > .info.text.seven {
+	top: 43%;
+	left: 43%;
+	width: 11%;
+}
+
+.phone > .info.text.eight {
+	top: 43%;
+	left: 55%;
+	width: 7%;
+}
+
+.phone > .img.one {
+	top: 64%;
+	left: 34.5%;
+	width: 15%;
+	height: 21.1%;
+}
+
+.phone > .img.two {
+	top: 86%;
+	left: 34.5%;
+	width: 31.1%;
+	height: 0%;
+}
+
+.phone > .img.three {
+	top: 53%;
+	left: 50.5%;
+	width: 15%;
+	height: 21%;
+}
+
+.phone > .img.four {
+	top: 53%;
+	left: 34.5%;
+	width: 15%;
+	height: 10%;
+}
+
+.phone > .img.five {
+	top: 75%;
+	left: 50.5%;
+	width: 15%;
+	height: 10%;
+}
+
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <section id="showcase">
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="deviceWrapper">
+      <div class="device">
+        <div class="top border"></div>
+        <div class="left border"></div>
+        <div class="bottom border"></div>
+        <div class="right border"></div>
+  
+        <div class="display"></div>
+  
+        <div class="chin"></div>
+        <div class="stand"></div>
+        <div class="foot"></div>
+  
+        <div class="top nav background"></div>
+  
+        <div class="top nav logo"></div>
+        <div class="top nav text one"></div>
+        <div class="top nav text two"></div>
+        <div class="top nav text three"></div>
+  
+        <div class="main text"></div>
+        <div class="sub text"></div>
+        <div class="info text one"></div>
+        <div class="info text two"></div>
+        <div class="info text three"></div>
+        <div class="info text four"></div>
+        <div class="info text five"></div>
+        <div class="info text six"></div>
+        <div class="info text seven"></div>
+        <div class="info text eight"></div>
+  
+        <div class="img one"></div>
+        <div class="img two"></div>
+        <div class="img three"></div>
+        <div class="img four"></div>
+        <div class="img five"></div>
+  
+        <div class="bottom nav background mobile"></div>
+  
+        <div class="bottom nav text one"></div>
+        <div class="bottom nav text two"></div>
+        <div class="bottom nav text three"></div>
+      </div>
+    </div>
+  </section>
+  <script>
+    class MorphController {
+	constructor() {
+		this.elm = document.querySelector("#showcase");
+
+		this.device = this.elm.querySelector(".device");
+
+		this.borders = this.device.querySelectorAll(".border");
+		this.display = this.device.querySelector(".display");
+
+		this.topNav = this.device.querySelectorAll(".top.nav");
+		this.bottomNav = this.device.querySelectorAll(".bottom.nav");
+
+		this.textParts = this.device.querySelectorAll(".text:not(.nav)");
+		this.imageParts = this.device.querySelectorAll(".img");
+
+		this.morphingParts = [
+			...this.borders,
+			this.display,
+			...this.topNav,
+			...this.bottomNav,
+			...this.imageParts,
+			...this.textParts
+		];
+
+		this.chin = this.device.querySelector(".chin");
+		this.stand = this.device.querySelector(".stand");
+		this.foot = this.device.querySelector(".foot");
+
+		this.resize();
+		window.addEventListener("resize", this.resize.bind(this));
+		window.addEventListener("scroll", this.scroll.bind(this), { passive: true });
+	}
+
+	resize() {
+		this.device.style.width = "";
+		this.device.style.height = "";
+		this.devicePos = this.device.getBoundingClientRect();
+		if (this.devicePos.width > this.devicePos.height)
+			this.device.style.width = `${this.devicePos.height}px`;
+		else this.device.style.height = `${this.devicePos.width}px`;
+
+		this.device.style.top = `${
+			(window.innerHeight - this.devicePos.height) / 2
+		}px`;
+		console.log((window.innerHeight - this.devicePos.height) / 2);
+		this.elmPos = this.elm.getBoundingClientRect();
+		this.startPos = this.elm.offsetTop;
+		this.endPos = this.startPos + this.elmPos.height - window.innerHeight;
+
+		this.morphingPartsData = this.createMorphingPartsData(this.morphingParts);
+		this.standFootHeight = this.stand.getBoundingClientRect()["height"] * 1.5;
+	}
+
+	createMorphingPartsData(parts) {
+		let isPhone = this.device.classList.contains("phone");
+		this.device.classList.remove("phone");
+		parts = parts.map((elm) => {
+			return {
+				elm,
+				desktopPos: elm.getBoundingClientRect()
+			};
+		});
+
+		this.device.classList.add("phone");
+
+		parts = parts.map((part) => {
+			part.phonePos = part.elm.getBoundingClientRect();
+			part.toPhone = {
+				scaleX: part.phonePos.width / part.desktopPos.width,
+				scaleY: part.phonePos.height / part.desktopPos.height,
+				translateX:
+					part.phonePos.left -
+					part.desktopPos.left -
+					(part.desktopPos.width - part.phonePos.width) / 2,
+				translateY:
+					part.phonePos.top -
+					part.desktopPos.top -
+					(part.desktopPos.height - part.phonePos.height) / 2
+			};
+
+			part.toDesktop = {
+				scaleX: part.desktopPos.width / part.phonePos.width,
+				scaleY: part.desktopPos.height / part.phonePos.height,
+				translateX:
+					part.desktopPos.left -
+					part.phonePos.left -
+					(part.phonePos.width - part.desktopPos.width) / 2,
+				translateY:
+					part.desktopPos.top -
+					part.phonePos.top -
+					(part.phonePos.height - part.desktopPos.height) / 2
+			};
+
+			return part;
+		});
+
+		if (!isPhone) this.device.classList.remove("phone");
+		return parts;
+	}
+
+	scroll() {
+		let pos = window.scrollY;
+		this.scrollBottom(pos);
+
+		this.morphDevice(pos);
+
+		this.adjustScreenParts(pos);
+	}
+
+	morphDevice(pos) {
+		if (pos > this.getPosFromPercent(75)) {
+			this.device.classList.add("phone");
+			for (let part of this.morphingPartsData) {
+				const translateX = this.animate(pos, 30, 80, part.toDesktop.translateX, 0);
+				const translateY = this.animate(pos, 30, 80, part.toDesktop.translateY, 0);
+				const scaleX = this.animate(pos, 30, 80, part.toDesktop.scaleX, 1);
+				const scaleY = this.animate(pos, 30, 80, part.toDesktop.scaleY, 1);
+				part.elm.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`;
+			}
+		} else if (pos > this.getPosFromPercent(30)) {
+			this.device.classList.remove("phone");
+			for (let part of this.morphingPartsData) {
+				const translateX = this.animate(pos, 30, 80, 0, part.toPhone.translateX);
+				const translateY = this.animate(pos, 30, 80, 0, part.toPhone.translateY);
+				const scaleX = this.animate(pos, 30, 80, 1, part.toPhone.scaleX);
+				const scaleY = this.animate(pos, 30, 80, 1, part.toPhone.scaleY);
+				part.elm.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`;
+			}
+		} else {
+			for (let part of this.morphingPartsData) {
+				this.device.classList.add("remove");
+				part.elm.style.transform = ``;
+			}
+		}
+	}
+
+	adjustScreenParts(pos) {
+		let topNavOpacity = this.animate(pos, 60, 70, 1, 0);
+		for (let topNavPart of [...this.topNav]) {
+			topNavPart.style.opacity = topNavOpacity;
+		}
+
+		let bottomNavOpacity = this.animate(pos, 60, 70, 0, 1);
+		for (let bottomNavPart of [...this.bottomNav]) {
+			bottomNavPart.style.opacity = bottomNavOpacity;
+		}
+	}
+
+	scrollBottom(pos) {
+		const standFootMovement = this.animate(pos, 0, 20, 0, -this.standFootHeight);
+		this.stand.style.transform = `translateY(${standFootMovement}px) perspective(10px) rotateX(1.6deg)`;
+		this.foot.style.transform = `translateY(${standFootMovement}px)`;
+
+		this.chin.style.transform = `translateY(${this.animate(
+			pos,
+			14,
+			40,
+			0,
+			-100
+		)}px)`;
+
+		const opacity = this.animate(pos, 20, 21, 1, 0);
+		this.stand.style.opacity = opacity;
+		this.foot.style.opacity = opacity;
+		this.chin.style.opacity = opacity;
+	}
+
+	animate(pos, fromPercent, toPercent, fromOut, toOut) {
+		return pos.map(
+			this.getPosFromPercent(fromPercent),
+			this.getPosFromPercent(toPercent),
+			fromOut,
+			toOut
+		);
+	}
+
+	getPosFromPercent(percent) {
+		let sumDistance = this.endPos - this.startPos;
+		return this.startPos + (sumDistance * percent) / 100;
+	}
+}
+
+Number.prototype.map = function (in_min, in_max, out_min, out_max) {
+	let number = this;
+	if (this > in_max) number = in_max;
+	else if (this < in_min) number = in_min;
+
+	return ((number - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
+};
+
+const morpher = new MorphController();
+
+  </script>
+</body>
+</html>

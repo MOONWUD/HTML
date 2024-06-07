@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>apple4</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+  <style>
+    body {
+      margin: 0;
+      height: 500vh;
+      background-color: antiquewhite;
+    }
+    .test {
+      height: 100vh;
+      background-color: aquamarine;
+    }
+    .appleEating {
+      position: relative;
+      background-color: azure;
+    }
+    @keyframes apple {
+      0% {
+        transform: translate(-50%, -100%) rotate(-15deg);
+      }
+
+      100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+
+      }
+    }
+
+    #target {
+      width: 100%;
+      height: 140vh;
+      position: relative;
+    }
+
+    .imageBox {
+      width: 500px;
+      height: 500px;
+      position: sticky;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -80%) rotate(-15deg);
+      background-image: url('./images/apple1.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      animation: apple 0.3s  forwards;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
+</head>
+
+<body>
+<article class="appleEating">
+  <div data-aos="zoom-in">
+    <div id="target">
+      <div class="imageBox">
+      </div>
+    </div>
+  </div>
+</article>
+
+
+  <script>
+
+    const layerImage = {
+      1: './images/apple1.png',
+      2: './images/apple2.png',
+      3: './images/apple3.png',
+      4: './images/apple4.png',
+      5: './images/apple5.png',
+    }
+
+
+    function checkScroll() {
+      const y = window.scrollY;
+      const scrollPixels = Math.min(Math.floor(y / 100) + 1, 12);
+      const imageToUse = layerImage[scrollPixels];
+      // Change the background image
+      $('.imageBox').css('background-image', `url('${imageToUse}')`);
+    }
+    $(document).ready(() => {
+      $(window).scroll(() => {
+        checkScroll();
+      })
+    })
+
+  </script>
+</body>
+
+</html>

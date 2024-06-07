@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>dropdown</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style>
+    
+  </style>
+  <link rel="stylesheet" href="./dropdown.css">
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <header role="banner">
+    <div class="header__avatar"></div>
+  </header>
+  <script>
+    // Initalize page
+setup();
+
+// Reset button
+$('.reset').click( function() {
+    $('.header__avatar').removeClass('drop');
+});
+
+function setup() {
+    $('.header__avatar').addClass('drop');
+};
+
+// Menu fx on click 
+$('.menu__link').click( function() {
+    
+    // addClass will put back and trigger animation, so we remove it first
+    $('.header__avatar').removeClass('drop');
+    
+    // Trigger spin, wait for animation to finish and remove class.
+    $('.header__avatar').addClass('spin').delay(400).queue(function(next){
+        $(this).removeClass('spin');
+        next();
+    });
+    
+}); 
+  </script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</body>
+</html>

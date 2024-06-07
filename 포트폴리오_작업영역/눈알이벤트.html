@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>눈알이벤트</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+  <style>
+    body {
+      background-color: #000;
+    }
+/*  
+    .container {
+      background-color: #ccc;
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    } */
+
+    .eye {
+      position: absolute;
+      top: calc(30% - 50px/2);
+      left: calc(50% - 50px/2);
+    }
+
+    .eyeContent {
+      width: 50px;
+      height: 50px;
+      background: #fff;
+      position: relative;
+      display: inline-block;
+      border-radius: 4000px;
+      overflow: hidden;
+    }
+
+    .pupil {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #000;
+      border: solid 2px #000;
+      border-radius: 50%;
+      left: calc(50% - 10px/2 - 2px);
+      top: calc(50% - 10px/2 - 2px);
+      transition: all ease .1s;
+      z-index: 1000;
+    } 
+
+    .eyes {
+      text-indent: -9999px;
+      display: flex;
+      justify-content: center;
+      margin: 100px 300px 30px 0;
+    }
+    
+    .eyes .eye {
+      width: 132px;
+      height: 176px;
+      border-radius: 50%;
+      background-color: #fff;
+      overflow: hidden;
+    }
+
+    .eyes .eye .pupil {
+      transition: 0.3;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #481E14;
+      display: block;
+    }
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="eye">
+      <div class="eyeContent">
+        <div class="pupil"></div>
+      </div>
+      <div class="eyeContent">
+        <div class="pupil"></div>
+      </div>
+    </div>
+  </div>
+  <div class="eyes">
+    <div class="eye left">
+      눈
+      <span class="pupil">눈동자</span>
+    </div>
+    <div class="eye right">
+      눈
+      <span class="pupil">눈동자</span>
+    </div>
+  </div>
+  <script>
+    var eyeball = $(".pupil");
+
+    function moveEyes(event) {
+      let x = event.x * 100 / window.innerWidth - 5 + "%";
+      let y = event.y * 100 / window.innerHeight - 5 + "%";
+      console.log(event.clientX * 100 / window.innerWidth);
+      eyeball.css({
+        'left': x,
+        'top': y,
+        //'transform': 'translate(' + x + ' ,' + y + ')'
+      });
+
+    }
+
+    document.addEventListener("mousemove", moveEyes);
+
+    $('body').mouseleave(function (e) {
+      eyeball.css({
+        'transform': 'translate(0,0)',
+        'top': 'calc(50% - 6px)',
+        'left': 'calc(50% - 6px)'
+      });
+    });
+
+
+
+  </script>
+</body>
+
+</html>

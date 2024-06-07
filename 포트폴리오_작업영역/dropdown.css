@@ -1,0 +1,62 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0A0845;
+  padding: 4em 1em 1em;
+}
+
+header {
+  height: 180px;
+  position: relative;
+}
+
+.header__avatar {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  border-radius: 80px;
+  top: 0;
+  left: 50%;
+  margin: 0 -80px;
+  background-color: black;
+}
+
+.header__avatar.drop {
+  animation-name: dropAvatar;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.6s;
+}
+
+@keyframes dropAvatar {
+  0% {
+    transform: translateY(-400px);
+  }
+  55% {
+    transform: translateY(20px);
+    animation-timing-function: ease-out;
+  }
+  80% {
+    transform: translateY(-50px);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.header__avatar.spin {
+  animation-name: spinAvatar;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.4s;
+}
+
+@keyframes spinAvatar {
+  100% {
+    transform: rotate(1080deg);
+  }
+}/*# sourceMappingURL=dropdown.css.map */

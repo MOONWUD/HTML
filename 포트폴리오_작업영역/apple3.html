@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>apple3</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <style>
+    body {
+  padding: 0;
+  margin: 0;
+  min-height: 500vh;
+  background-color: rgb(139, 201, 228);
+}
+
+::-webkit-scrollbar {
+  background: currentcolor;
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: currentcolor;
+}
+::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 10px;
+}
+
+/* .progress {
+  height: 3px;
+  width: 0%;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  animation: progress 1s linear;
+}
+@keyframes progress {
+  0% {
+    background-color: #fff;
+    width: 0%;
+  }
+  100% {
+    background-color: rgb(20, 255, 226);
+    width: 100%;
+  }
+} */
+
+.cube-wrap {
+  --size: 30vmin;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  perspective: 100vmin;
+}
+.cube {
+  transform-style: preserve-3d;
+  transform: rotateX(0deg) rotateZ(45deg) rotateY(-45deg);
+  animation: cube 1s linear;
+}
+@keyframes cube {
+  0% {
+    transform: rotateX(0deg) rotateZ(45deg) rotateY(-45deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateZ(45deg) rotateY(-45deg);
+  }
+}
+
+.side {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  background-color: #eee;
+  backface-visibility: visible;
+  top: calc(var(--size) * -.5);
+  left: calc(var(--size) * -.5);
+}
+.top {
+  background-color: #fff;
+  transform: rotateX(90deg) translateZ(calc(var(--size) * .5));
+}
+.bottom {
+  background-color: #999;
+  transform: rotateX(90deg) translateZ(calc(var(--size) * -.5));
+}
+.left {
+  background-color: #ccc;
+  transform: rotateY(90deg) translateZ(calc(var(--size) * .5));
+}
+.right {
+  background-color: #ddd;
+  transform: rotateY(90deg) translateZ(calc(var(--size) * -.5));
+}
+.front {
+  background-color: #aaa;
+  transform: translateZ(calc(var(--size) * .5));
+}
+.back {
+  background-color: #bbb;
+  transform: translateZ(calc(var(--size) * -.5));
+}
+
+:root * {
+  /* Pause the animation */
+  animation-play-state: paused;
+  /* Bind the animation to scroll */
+  animation-delay: calc(var(--scroll) * -1s);
+  /* These last 2 properites clean up overshoot weirdness */
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <div class="progress"></div>
+
+<div class="cube-wrap">
+  <div class="cube">
+    <div class="side top">
+      <img src="./images/apple1.png" alt="">
+    </div>
+    <div class="side bottom">
+      <img src="./images/apple2.png" alt="">
+    </div>
+    <div class="side front">
+      <img src="./images/apple3.png" alt="">
+    </div>
+    <div class="side back">
+      <img src="./images/apple4.png" alt="">
+    </div>
+    <div class="side left">
+      <img src="./images/apple5.png" alt="">
+    </div>
+  </div>
+</div>
+  <script>
+    var offsetStart = 0;
+var offsetEnd = 0;
+
+window.addEventListener('scroll', () => {
+  document.documentElement.style.setProperty('--scroll', ( window.pageYOffset - offsetStart ) / ( document.body.offsetHeight - offsetStart - offsetEnd - window.innerHeight ));
+}, false);
+  </script>
+</body>
+</html>

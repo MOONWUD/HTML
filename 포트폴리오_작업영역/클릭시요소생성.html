@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>클릭시 요소 생성</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+  <style>
+    /* .clickImg {
+      width: 50px;
+      display: none;
+    }
+    img {
+      width: 100%;
+    }
+    .clickImg.show {
+      display: block;
+    } */
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body onload="Init()">
+  <!-- <div class="clickImg"><img src="./images/apple1.png" alt="사과"></div> -->
+    <script>
+      function Init () {
+        document.onmousedown = function () {
+          if(event.button != "1") return;
+  
+          let x = event.x;
+          let y = event.y;
+  
+          let img = document.createElement("img");
+          img.setAttribute("src", "./images/apple1.png");
+          img.setAttribute("alt", "./images/apple1.png");
+  
+          img.style.position = "absolute";
+          img.syle.left = (x - 50) + "px";
+          img.syle.top = (x - 50) + "px";
+  
+          document.body.appendChild(img);
+        }
+      }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>title</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+  <style>
+    .intro {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200vh;
+  box-sizing: border-box;
+  background: url(https://images.unsplash.com/photo-1693733470033-c628154571b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3000&q=80) 50% 100% / cover no-repeat;
+}
+.cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: red;
+  font-size: 10vw;
+  font-weight: 800;
+  mix-blend-mode: lighten;
+  color: #000;
+  background-color: white;
+}
+section {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  margin:0;
+  padding: 100px 0;
+  background-color: #fff;
+  background-image:
+    linear-gradient(rgba(0,0,0,.07) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(0,0,0,.07) 2px, transparent 2px),
+    linear-gradient(rgba(0,0,0,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,.06) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}
+.box {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 100px;
+  box-sizing: border-box;
+}
+
+.box1 {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: lightblue;  
+}
+.box2 {
+  margin-top: 300px;
+  background: blue;  
+}
+.section2 {
+  height: 50vh;
+}
+  </style>
+  <script src="../assets/jquery-3.7.1.min.js"></script>
+  <script src="../assets/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+  <div class="intro">
+    <div class="cover">ScrollTrigger</div>
+  </div>
+  <section class="section">
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+  </section>
+  <section class="section2"></section>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    // setting
+// https://unpkg.co/gsap@3/dist/gsap.min.js
+// https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js
+
+gsap.to(".cover", {
+  scrollTrigger: {
+    trigger: '.intro',//객체기준범위
+    start: "0% 0%",//시작 지점
+    end: "90% 80%",//끝 지점
+    // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
+    scrub: 1,//부드러운 스크러빙
+    markers: true,//개발가이드선
+  },
+  top: "-100%",
+  // duration: 1
+});
+
+gsap.to(".box1", {
+  scrollTrigger: {
+    trigger: '.section',//객체기준범위
+    start: "0% 30%",//시작 지점
+    end: "100% 80%",//끝 지점
+    // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
+    scrub: 1,//부드러운 스크러빙
+    markers: true,//개발가이드선
+  },
+  scale: 5,
+  borderRadius: 0,
+  duration: 1
+});
+
+gsap.to(".box2", {
+  scrollTrigger: {
+    trigger: '.box2',//객체기준범위
+    start: "0% 30%",//시작 지점
+    end: "100% 80%",//끝 지점
+    // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
+    scrub: 1,//부드러운 스크러빙
+    markers: true,//개발가이드선
+  }, 
+  x: 300,
+  rotation: 360
+});
+  </script>
+</body>
+
+</html>
