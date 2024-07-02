@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이미지로 마우스 커서 설정하기</title>
+<style>
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');/* regular-400, medium-500, semibold-600, bold-700 */ 
+body,html {height:100%;margin:0;padding:0}
+ul, li, dl, dt, dd, p, span{margin:0;padding:0}
+a{text-decoration:none}
+*, :after, :before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+
+:root{--primary:#e4362f;--pale:#f9f2f2;--timing:cubic-bezier(0.77, 0, 0.175, 1)}
+
+#mainVisual{overflow:hidden;padding:50px 0;font-family:'pretendard'}
+
+/* 탭, 컨트롤 */
+#mainVisual .flex{display:flex;align-items:center;max-width:1200px;margin:0 auto 40px}
+#mainVisual .flex > p{padding:10px 25px;margin-right:35px;border-radius:30px;font-size:22px;font-weight:700;color:#fff;background:var(--primary)}
+#mainVisual .tabs span{opacity:1;position:relative;width:auto;height:auto;border-radius:0;font-size:26px;font-weight:700;color:#bbb;background:none;transition:all .3s;font-family:'Poppins'}
+#mainVisual .tabs span+span{margin-left:35px}
+#mainVisual .tabs span:after{opacity:0;content:"";position:absolute;right:-11px;top:-2px;transform:translateY(-15px);width:11px;height:11px ;border-radius:50%;background:var(--primary);transition:all .8s var(--timing)}
+#mainVisual .tabs span.on{color:#000}
+#mainVisual .tabs span.on:after{opacity:1;transform:translateY(0)}
+#mainVisual .controls{flex-shrink:0;margin-left:auto}
+#mainVisual .controls span{cursor:pointer}
+#mainVisual .controls span+span{margin-left:10px}
+
+/* 슬라이드 */
+#mainVisual .img_slide{margin-left:calc((100% - 1200px) / 2)}
+#mainVisual .img_slide ul li{overflow:hidden;width:300px;border-radius:12px;transition:width .8s ease}
+#mainVisual .img_slide ul li.on{width:650px}
+#mainVisual .img_slide ul li a{cursor:none;display:block;transition:all .3s .3s}
+#mainVisual .img_slide ul li img{position:relative;left:50%;transform:translateX(-50%);transition:all .3s}
+#mainVisual .img_slide ul li p{opacity:0;position:absolute;left:40px;bottom:50px;z-index:10;transform:translateY(-15px);font-size:24px;font-weight:600;color:#fff;transition:all .3s}
+
+/* 마우스커서 */
+.cursor{position:fixed;z-index:1000;transform:translate(-50%, -50%);transition-property:background, transform;pointer-events:none}
+.cursor .bg{opacity:0;position:absolute;left:-52px;top:-52px;transform:scale(0);width:105px;height:105px;border-radius:50%;font-size:15px;font-weight:600;text-align:center;line-height:105px;color:#fff;background:var(--primary);transition:all .4s var(--timing);font-family:'Poppins'}
+.cursor.on .bg{opacity:1;transform:scale(1)}
+
+@media(hover:hover){
+#mainVisual .tabs span:not(.on):hover{color:#888}
+#mainVisual .img_slide ul li:hover a{background:#000;transition:all 0s 0s}
+#mainVisual .img_slide ul li:hover img{opacity:.7;transform:translateX(-50%) scale(1.08)}
+#mainVisual .img_slide ul li:hover p{opacity:1;transform:translateY(0)}
+}
+@media(max-width:1300px){
+#mainVisual .flex{padding:0 30px}
+#mainVisual .img_slide{margin-left:30px}
+}
+@media(max-width:1024px){
+#mainVisual .tit{padding:150px 0 80px;font-size:18px}
+#mainVisual .tit p{font-size:58px}  
+#mainVisual .tit p i{bottom:-33px}
+#mainVisual .tit p i img{width:285px}
+#mainVisual .flex{margin-bottom:30px}
+#mainVisual .flex > p{margin-right:25px;font-size:16px}
+#mainVisual .tabs span{font-size:20px}
+#mainVisual .tabs span+span{margin-left:30px}
+#mainVisual .img_slide{margin-left:0}
+#mainVisual .img_slide ul li p{left:0;bottom:0;transform:translateY(15px);width:100%;height:50px;padding:15px;font-size:14px;background:rgba(0,0,0,.65)}
+#mainVisual .img_slide ul li.on p{opacity:1;transform:translateY(0)}
+#mainVisual .img_slide ul li img{width:100%}
+}
+@media(max-width:768px){
+#mainVisual .tit{padding:110px 0 40px;font-size:16px}
+#mainVisual .tit p{font-size:42px}
+#mainVisual .tit p i{bottom:-30px}
+#mainVisual .tit p i img{width:215px}
+#mainVisual .flex{padding:0 20px}
+#mainVisual .flex > p{flex-shrink:0;padding:10px 20px;margin-right:20px;font-size:14px}
+#mainVisual .flex{margin-bottom:20px}
+#mainVisual .tabs span{font-size:16px}
+#mainVisual .tabs span+span{margin-left:25px}
+#mainVisual .tabs span:after{right:-8px;top:0;width:8px;height:8px}
+#mainVisual .controls{display:none}
+}
+@media(max-width:480px){
+#mainVisual .tit{padding:100px 0 20px}
+#mainVisual .tit p{font-size:34px}
+#mainVisual .tit p i{right:-10px;bottom:-22px}
+#mainVisual .tit p i img{width:165px}
+#mainVisual .flex{flex-wrap:wrap;padding-right:0;margin-bottom:10px}
+#mainVisual .flex > p{margin-bottom:15px}
+#mainVisual .flex > div{overflow-y:scroll;-ms-overflow-style:none;width:100%;white-space:nowrap;padding-bottom:10px}
+}
+@media(max-width:380px){
+#mainVisual .tit p{font-size:30px}
+}
+</style>
+</head>
+<body>
+    <div class="cursor"><div class="bg">Click</div></div>
+    <div id="mainVisual">
+          <div class="flex" data-aos="fade-up">
+          <p>MENU</p>
+            <div class="tabs"></div>
+        <div class="controls">
+          <span class="prev"><svg xmlns="http://www.w3.org/2000/svg" color="#000" stroke-width="3px" width="33px" height="20px" viewBox="0 0 33 20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="30" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></span>
+          <span class="next"><svg xmlns="http://www.w3.org/2000/svg" color="#000" stroke-width="3px" width="33px" height="20px" viewBox="0 0 33 20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="30" y2="12"/><polyline points="23 5 30 12 23 19"/></svg></span>
+            </div>
+        </div>
+        <div class="swiper-container img_slide" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="300">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                  <a href="/bbs/board.php?bo_table=table10">
+                      <p>Set</p>
+                      <img src="  https://food1030.shiningcorp.com/sh_img/index/main_banner/main_img01.jpg" alt="Set" />
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="/bbs/board.php?bo_table=table10">
+                      <p>Main</p>
+                      <img src="  https://food1030.shiningcorp.com/sh_img/index/main_banner/main_img02.jpg" alt="Main" />
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="/bbs/board.php?bo_table=table10">
+                      <p>Noodle</p>
+                      <img src="  https://food1030.shiningcorp.com/sh_img/index/main_banner/main_img03.jpg" alt="Noodle"/>
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="/bbs/board.php?bo_table=table10">
+                      <p>Side</p>
+                      <img src="  https://food1030.shiningcorp.com/sh_img/index/main_banner/main_img04.jpg" alt="Side" />
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="/bbs/board.php?bo_table=table10">
+                      <p>Beverage</p>
+                      <img src="  https://food1030.shiningcorp.com/sh_img/index/main_banner/main_img05.jpg" alt="Beverage" />
+                    </a>
+                </li>
+            </ul> 
+        </div>               
+    </div>
+    <script>
+        /* 마우스 커서[s] */
+var cursor = document.querySelector(" .cursor");
+var img_slide = document.querySelectorAll(".img_slide");
+function cursorEvent(e){
+    cursor.style.top = e.pageY - scrollY + "px";
+    cursor.style.left = e.pageX + "px";
+}
+window.addEventListener('mousemove', cursorEvent);
+img_slide.forEach(link =>{
+    if ( link !== img_slide ){
+        link.addEventListener("mouseleave", () => {
+            cursor.classList.remove("on");
+        });
+        link.addEventListener("mouseover", () => {
+            cursor.classList.add("on");
+        });
+    }  
+});
+/* 마우스 커서[e] */
+
+var tab= ['Set', 'Main ', 'Noodle', 'Side','Beverage'];
+var swiper = new Swiper("#mainVisual .img_slide", {
+  loop: true,
+  speed:800,
+  slidesPerView: 1.2,
+  slideActiveClass: 'on',
+  centeredSlides: true, 
+  spaceBetween: 15,
+  navigation: {
+    nextEl: '#mainVisual .next',
+    prevEl: '#mainVisual .prev',
+  },
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction:false,
+  },
+  pagination: {
+    el: '#mainVisual .tabs',
+    clickable: true,
+    bulletActiveClass : 'on',
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (tab[index]) + '</span>';
+    },
+  },
+  breakpoints: {
+    1025: {
+      slidesPerView: "auto",
+      spaceBetween: 25,
+      centeredSlides: false, 
+    },
+    481: {
+      slidesPerView: 1.5,
+      spaceBetween: 15,
+    },
+  },  
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>부모 요소 이동</title>
+<style>
+    .parent {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #ccc;
+        width: 400px; /* 부모 요소의 초기 너비 */
+        transition: transform 0.3s ease; /* 변형에 대한 애니메이션 효과 설정 */
+    }
+
+    .child {
+        width: 200px; /* 자식 요소의 너비 */
+        height: 100px; /* 자식 요소의 높이 */
+        background-color: #f0f0f0;
+    }
+
+    .move-right {
+        transform: translateX(200px); /* 이동할 거리 설정 */
+    }
+
+    .button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+    <button class="button" onclick="moveParent()">이동</button>
+
+    <script>
+        function moveParent() {
+            const parent = document.querySelector('.parent');
+            const childWidth = document.querySelector('.child').offsetWidth; // 자식 요소의 가로 사이즈 가져오기
+            parent.classList.toggle('move-right'); // 클래스를 토글하여 이동 효과 적용
+        }
+    </script>
+</body>
+</html>
